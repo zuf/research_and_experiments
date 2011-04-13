@@ -1,0 +1,84 @@
+Подстветка синтаксиса Pixilang для Kate (http://www.kate-editor.org/)
+
+Вот сегодня набросал файл подстветки синтаксиса для текстового редактора Kate (http://ru.wikipedia.org/wiki/Kate).
+Может кому сгодится.
+Файл я создал на основе подсветки для C, также заглядывал в другие файлы подсветки и в документацию (http://docs.kde.org/kde3/ru/kdebase/kate/highlight.html).
+
+Чтобы установить файл подсветки нужно скопировать pixilang.xml в $KDEDIR/share/apps/katepart/syntax.
+
+Скриншоты:
+[img]pixilang/kate-syntax/kate-pixi-syntax-01.png[/img]
+[img]pixilang/kate-syntax/kate-pixi-syntax-02.png[/img]
+[img]pixilang/kate-syntax/kate-pixi-syntax-subprog-01.png[/img]
+[img]pixilang/kate-syntax/kate-pixi-syntax-subprog-02.png[/img]
+[img]pixilang/kate-syntax/kate-pixi-syntax-subprog-03.png[/img]
+[img]pixilang/kate-syntax/kate-pixi-syntax-subprog-04.png[/img]
+
+
+Примечания:
+
+1. В ходе создания этого файла возникло несколько проблем индентификации сущностей в пикси.
+
+Пример:
+
+[code]
+INCLUDE "somefile.txt"
+
+// Не зная контекста совершенно невозможно понять zxc это переменная или подпрограмма.
+abc = 123 + zxc
+[/code]
+
+Так получается намного понятнее:
+
+[code]
+INCLUDE "somefile.txt"
+
+abc = 123 + zxc()
+[/code]
+
+Поэтому не любой вызов подпрограммы подсвечивается. Подсвечивается только вызов со скобками() и одиночная команда типа:
+[code]
+zxc
+[/code]
+Хотя zxc может быть и переменной, все же обычно это вызов подпрограммы.
+
+2. Еще у меня было желание делать сворачиваемыми подпрограммы.
+Типиченая подпрограмма:
+[code]
+sub_prog1:
+// что-то делаем
+ret
+[/code]
+
+Если определить метку "sub_prog1:" в качестве начала блока и комманду "ret" (также блок могут завершить "go" или "goto") в качетве конца, то в этом примере все работает хорошо.
+но если метки используются не для создания продпрограмм, а сами по себе, то возникает не очень красивая ситуация, как на одном из скрншотов,
+когда закрывается только "вложенная" (или лучше сказать "следующая") метка, а вышестоящая метка тенется до конца файла.
+Кому не нравится такое поведение можно вообще убрать свертывание для подпрограмм. Для этого необходимо закомментировать строки в файле разметки:
+
+[code]
+        <!-- BEGIN: Fold subprograms -->
+        <RegExpr attribute="Label" context="#stay" String="[\w_]+:" beginRegion="Subprog1"   />
+        <RegExpr attribute="Keyword" context="#stay" String="ret" endRegion="Subprog1" />
+        <RegExpr attribute="Keyword" context="#stay" String="(^|\s)+(goto)(^|\s)+" endRegion="Subprog1" />
+        <RegExpr attribute="Keyword" context="#stay" String="(^|\s)+(go)($|\s)+" endRegion="Subprog1" />
+        <!-- END: Fold subprograms -->
+[/code]
+
+А строку чуть выше, наоборот расскоментировать, чтобы осталась подсветка меток:
+[code]
+        <!--  Highlight labels UNCOMMENT ONLY IF YOU DON'T WANT USE subprograms folding (see below) -->
+        <!-- <RegExpr attribute="Label" context="#stay" String="[\w_]+:" /> -->
+[/code]
+
+3. Можно специальными комментариями задавать сворачиваемые блоки:
+
+[code]
+//BEGIN initial values
+mouse_is_down=0
+select_forecolor=1
+//END
+[/code]
+
+См. скриншоты.
+
+А если у кого есть какие пожелания, или кто ошибки найдет - обращайтесь :)

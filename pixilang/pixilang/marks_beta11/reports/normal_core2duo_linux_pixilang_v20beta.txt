@@ -1,0 +1,23 @@
+Pixilang Benchmark 2008
+beta1.1
+
+Results
+
+CPU time: 2965 ms
+CPU marks: 16863
+Memory time: 3459 ms
+Memory marks: 18946
+Graphics time: 5852 ms
+Graphics marks: 87491
+Transp. gfx time: 17645 ms
+Transp. gfx marks: 29016
+Pixi time: 12185 ms
+Pixi marks: 2626
+Inner 3D time: 22811 ms
+Inner 3D marks: 1402
+Transp.In.3D time: 40571 ms
+Transp.In.3D marks: 788
+
+TOTAL
+Work time: 105488 ms
+Marks: 22447

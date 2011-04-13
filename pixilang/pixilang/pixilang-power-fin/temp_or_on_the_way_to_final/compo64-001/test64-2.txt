@@ -1,0 +1,37 @@
+make_sprite
+
+//test_resize_pixi = new_pixi (32,32,1)
+
+main:
+clear(0)
+
+pixi(tmpbuf, -50, -50)
+pixi(test_resize_pixi, 50, 50)
+
+frame(16)
+go main
+
+///////////////////////////
+make_sprite:
+size = 32
+half_size = size/2
+
+tmpbuf = new_pixi(size,size,1)
+y=-half_size
+set_screen(tmpbuf)
+clear(#ffffff)
+while(y<half_size)
+{
+  x=-half_size
+  while(x<half_size)
+  {
+    c=((x+half_size)^(y+half_size))*8
+    dot(x,y, get_color(c,c,c))
+    x=x+1
+  }
+  y=y+1
+}
+set_screen(0)
+test_resize_pixi = resize_pixi(tmpbuf,half_size,half_size,1)
+
+ret

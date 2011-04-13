@@ -1,0 +1,83 @@
+// Попдрограммы рисования инструментов
+
+
+
+line_begin = 1
+brush_toset = 1
+
+current_brush = load_pixi("brushes/test01.gif")
+current_brush_mask = load_pixi("brushes/test01_mask.gif")
+pixi_alpha (current_brush, current_brush_mask)
+//pixi_transp (current_brush,1,#ffffff)
+
+blend_brush
+
+current_instrument = gogle_brush
+
+// -----------------------------------------------------------------------------------------
+
+goto end_instruments
+
+use_current_instrument:
+  if mouse_is_down=1
+  {
+    current_instrument
+  }
+  else
+  {
+    line_begin = 1
+    brush_toset = 1
+  }
+ret
+
+
+gogl_dot:
+  // TODO: save_undo
+  dot (mouse_move_x, mouse_move_y, current_color)
+ret
+
+gogl_line:
+  if line_begin=1
+  {
+    line_begin = 0
+    gogl_pen_move
+    line (mouse_move_x, mouse_move_y, mouse_move_x, mouse_move_y, current_color)
+  }
+  else
+  {
+    line (mouse_move_prev_x, mouse_move_prev_y, mouse_move_x, mouse_move_y, current_color)
+  }
+ret
+
+gogle_brush:
+  //if mouse_move_prev_x!=mouse_move_x
+  //{
+    //if mouse_move_prev_y!=mouse_move_y
+    //{
+      pixi (current_brush, mouse_move_x, mouse_move_y, 1, 0)
+      //gogl_pen_move // HACK: приравниваем текущие координаты указателя, предыдущим, дабы не рисовать поверх браша еще раз...
+    //}
+  //}
+
+ret
+
+
+// Раскрасим текущую кисть текущим цевтом
+blend_brush:
+  br_size_x = get_pixi_xsize(current_brush)
+  br_size_y = get_pixi_ysize(current_brush)
+
+  y = 0
+  while( y < br_size_y )
+  {
+    x = 0
+    while( x < br_size_x )
+    { 
+      current_brush[br_size_x*y+x]=current_color
+      x+1
+    }
+    y+1
+  }
+ret
+
+end_instruments:

@@ -1,0 +1,202 @@
+/*
+ pixilang benchmark
+
+*/
+INCLUDE "marks/common.pixi"
+INCLUDE "marks/cpu.pixi"
+INCLUDE "marks/memory.pixi"
+INCLUDE "marks/graphics.pixi"
+INCLUDE "marks/inner3d.pixi"
+INCLUDE "marks/piximaps.pixi"
+
+main_menu:
+  label=main_menu
+  clear(BACK_COLOR)
+  mnu_x = 0
+  mnu_y = 12 - screen_height/2
+
+  line(4+1-screen_width/2, mnu_y-17+12+1, screen_width/2-5+1, mnu_y-17+12+1, #000000)
+  line(4-screen_width/2, mnu_y-17+12, screen_width/2-5, mnu_y-17+12, #ffd258)
+
+  s = "Pixilang"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #ffd258)
+  mnu_y+10
+  s = "Benchmark"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #ffd258)
+  mnu_y+10
+  s = "2008"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #ffffff)
+  mnu_y+10
+  s = vesion_str
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #e01a00)
+
+  line(4+1-screen_width/2, mnu_y+12+1, screen_width/2-5+1, mnu_y+12+1, #000000)
+  line(4-screen_width/2, mnu_y+12, screen_width/2-5, mnu_y+12, #ffd258)
+  mnu_y+10
+
+  //http://warmplace.ru/soft/pixilang/
+  mnu_y+12
+
+  buttlon_left = 16-screen_width/2
+  button_width = screen_width-16*2
+  button_height = 28
+
+  // Start fast button
+  y_start_fast=mnu_y
+  s = "Start fast benchmark"
+  draw_menu_button
+  mnu_y+35
+  
+  // Start fast button
+  y_start_normal=mnu_y
+  s = "Start normal benchmark"
+  draw_menu_button
+  mnu_y+35
+
+  // Start slow button
+  y_start_long=mnu_y
+  s = "Start long* benchmark"
+  draw_menu_button
+  
+  mnu_y+35
+  y_exit=mnu_y
+  // Exit button
+  s = "Quit"
+  draw_menu_button
+
+  mnu_y+40
+  s = "For more info"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #fff09e)
+  mnu_y+10
+  
+  s = "see readme file"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #fff09e)
+  mnu_y+25
+  
+  s = "Visit"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #fff09e)
+  mnu_y+10
+  s="warmplace.ru"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #ffffff)
+  mnu_y+10
+  s="for more info about pixilang"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #fff09e)
+  mnu_y+20
+  
+  s="* long benchmark can take"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #ffd258)
+  mnu_y+10
+  
+  s="  very long time"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+1, #000000)
+  print(s,mnu_x,mnu_y, #ffd258)
+  mnu_y+10
+
+  handle_pen_keys(
+  {},{},
+  {
+    if gpr(buttlon_left,y_start_fast,button_width, button_height)=1
+    {
+      fast_mode=2
+      label= init
+    }
+    if gpr(buttlon_left,y_start_normal,button_width, button_height)=1
+    {
+      fast_mode=1
+      label= init
+    }
+    if gpr(buttlon_left,y_start_long,button_width, button_height)=1
+    {
+      fast_mode=0
+      label= init
+    }
+    if gpr(buttlon_left,y_exit,button_width, button_height)=1
+    {
+      label= the_end
+    }
+  })
+
+  frame
+go label
+
+init:
+
+score_save_index=0
+saved_work_time = 0
+saved_marks = 0
+
+main:
+
+  start_cpu_bench
+  start_memory_bench
+  start_graphics_bench
+  transp(128)
+  // TODO: ugly hack - to save and restore scores
+  // save normal graphics hack
+  saved_work_time = bench_work_times[BENCH_INDEX_GRAPHICS]
+  saved_marks = bench_scores[BENCH_INDEX_GRAPHICS]
+  // start graphics bench with transparency
+  start_graphics_bench
+  // save transaparency scores
+  bench_work_times[BENCH_INDEX_GRAPHICS_TRANSP] = bench_work_times[BENCH_INDEX_GRAPHICS]
+  bench_scores[BENCH_INDEX_GRAPHICS_TRANSP] = bench_scores[BENCH_INDEX_GRAPHICS]
+  // restore normal graphics mode scores
+  bench_work_times[BENCH_INDEX_GRAPHICS] = saved_work_time
+  bench_scores[BENCH_INDEX_GRAPHICS] = saved_marks
+  transp(256)
+
+  start_pixi_bench
+
+  start_inner3d_bench
+
+  transp(64)
+  // TODO: ugly hack - to save and restore scores
+  score_save_index=BENCH_INDEX_INNER3D
+  save_scores
+  // start graphics bench with transparency
+  start_inner3d_bench
+  // save transaparency scores
+  bench_work_times[BENCH_INDEX_INNER3D_TRANSP] = bench_work_times[BENCH_INDEX_INNER3D]
+  bench_scores[BENCH_INDEX_INNER3D_TRANSP] = bench_scores[BENCH_INDEX_INNER3D]
+  // restore normal graphics mode scores
+  score_save_index=BENCH_INDEX_INNER3D
+  restore_scores
+  transp(256)
+  show_results
+
+  //frame
+go main
+
+
+save_scores:
+  saved_work_time = bench_work_times[score_save_index]
+  saved_marks = bench_scores[score_save_index]
+ret
+
+restore_scores:
+  bench_work_times[score_save_index] = saved_work_time
+  bench_scores[score_save_index] = saved_marks
+ret
+
+the_end:

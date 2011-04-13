@@ -1,0 +1,67 @@
+// В этом файле (модуле) расположен функционал отмены последнего действия (undo/redo)
+
+undo_stack = new_array (cfg_undo_levels)
+undo_stack_begin = -1
+undo_stack_end = -1
+undo_stack_last_lement = -1
+
+// Инициализируем значения
+undo_xsize = -1
+undo_ysize = -1
+
+
+goto end_undo
+
+// Подпрограммы
+
+undo_save:
+  if undo_stack_end<cfg_undo_levels
+  {
+    undo_stack_end+1
+    undo_stack[undo_stack_end] = clone_pixi(0, 1 ) // save all screen
+    i=undo_stack_end
+    while (i<undo_stack_last_lement) 
+    {
+      remove_pixi(undo_stack[i])
+      i+1
+    }
+    undo_stack_last_lement = undo_stack_end
+  }
+  else
+  {
+    last_error = "Undo size overflow!"
+    error
+  } 
+ret
+
+undo_undo:
+  if undo_stack_end>=0
+  {
+    pxs = 0
+    pys = 0
+    undo_stack_end-1
+    pixi(undo_stack[undo_stack_end], pxs, pys,1,0)
+  }
+  else
+  {
+    last_error = "Undo size underflow!"
+    error
+  } 
+ret
+
+undo_redo:
+  if undo_stack_end<=undo_stack_last_lement
+  {
+    pxs = 0
+    pys = 0
+    undo_stack_end+1
+    pixi(undo_stack[undo_stack_end], pxs, pys,1,0)
+  }
+  else
+  {
+    //last_error = "Redo size underflow!"
+    //error
+  } 
+ret
+
+end_undo:

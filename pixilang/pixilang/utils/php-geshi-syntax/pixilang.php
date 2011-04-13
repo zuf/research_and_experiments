@@ -1,0 +1,252 @@
+<?php
+/*************************************************************************************
+ * c.php
+ * -----
+ * Author: Zuf (zuf@democoder.ru)
+ * Contributors:
+ * Copyright: (c) 2008 Zuf
+ * Release Version: 1.0.0.0
+ * Date Started: 2008/12/21
+ *
+ * Pixilang language file for GeSHi.
+ *
+ * CHANGES
+ * -------
+ * 2008/12/21 (1.0.0)
+ *   -  First Release
+ *
+ * TODO (updated 2005/12/21)
+ * -------------------------
+ *  -  Test how this stuff works
+ *
+ *************************************************************************************
+ *
+ *     This file is part of GeSHi.
+ *
+ *   GeSHi is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License, or
+ *   (at your option) any later version.
+ *
+ *   GeSHi is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with GeSHi; if not, write to the Free Software
+ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ ************************************************************************************/
+
+$language_data = array (
+	'LANG_NAME' => 'PIXILANG',
+	'COMMENT_SINGLE' => array(1 => '//'),
+	'COMMENT_MULTI' => array('/*' => '*/'),
+	'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
+	'QUOTEMARKS' => array("'", '"'),
+	'ESCAPE_CHAR' => '\\',
+	'KEYWORDS' => array(
+		1 => array(
+			'if', 'ret', 'while', 'go', 'else', 'goto'
+			),
+		2 => array(
+			'INCLUDE'
+			),
+		3 => array(
+			'dot', 
+			'get_dot', 
+			'fps', 
+			'frame', 
+			'clear', 
+			'print', 
+			'line', 
+			'box', 
+			'fbox', 
+			'triangle', 
+			'pixi_triangle', 
+			'triangles3d', 
+			'sort_triangles', 
+			'save_screen', 
+			'set_screen', 
+			'make_pixi', 
+			'make_ascii_pixi', 
+			'new_pixi', 
+			'load_pixi', 
+			'remove_pixi', 
+			'resize_pixi', 
+			'clone_pixi', 
+			'get_pixi_xsize', 
+			'get_pixi_ysize', 
+			'get_pixi_frames', 
+			'get_pixi_alpha', 
+			'pixi_alpha', 
+			'pixi_transp', 
+			'pixi', 
+			'get_window_xsize', 
+			'get_window_ysize', 
+			'get_color', 
+			'get_red', 
+			'get_green', 
+			'get_blue', 
+			'get_blend', 
+			'transp', 
+			'effector', 
+			'pixel_shader', 
+			'pixi_font', 
+			'get_pixi_font', 
+			't_reset', 
+			't_rotate_x', 
+			't_translate', 
+			't_scale', 
+			't_get_matrix', 
+			't_set_matrix', 
+			't_mul_matrix', 
+			't_get_x', 
+			't_get_y', 
+			't_get_z', 
+			'new_string', 
+			'get_string_size', 
+			'new_array', 
+			'get_array_size', 
+			'start_timer', 
+			'get_timer', 
+			'get_seconds', 
+			'get_minutes', 
+			'get_hours', 
+			'handle_pen_keys', 
+			'get_pen_x', 
+			'gpx', 
+			'get_pen_y', 
+			'gpy', 
+			'get_pen_region', 
+			'gpr', 
+			'get_pen_key', 
+			'gpk', 
+			'handle_hard_keys', 
+			'get_hard_key', 
+			'ghk', 
+			'video_export_gif', 
+			'video_export_avi', 
+			'pause_video_export', 
+			'resume_video_export', 
+			'stop_video_export', 
+			'video_export_fps', 
+			'video_export_realtime', 
+			'video_export_dither', 
+			'video_export_hq', 
+			'load_music', 
+			'play_music', 
+			'stop_music', 
+			'music_volume', 
+			'get_music_pattern', 
+			'get_music_position', 
+			'send_sound', 
+			'send_sound_to', 
+			'get_sound_status', 
+			'sound_volume', 
+			'fopen', 
+			'fclose', 
+			'fgetc', 
+			'fputc', 
+			'fseek', 
+			'ftell', 
+			'feof', 
+			'set_disk0', 
+			'set_disk1', 
+			'set_disk2', 
+			'set_disk3', 
+			'set_disk4', 
+			'set_disk5', 
+			'set_disk6', 
+			'set_disk7', 
+			'set_disk8', 
+			'set_disk9', 
+			'file_dialog', 
+			'sin', 
+			'cos', 
+			'csin', 
+			'ccos', 
+			'rand', 
+			'rand_seed', 
+			'stop', 
+			'halt', 
+			'exit', 
+			'noesc'
+			)
+		),
+	'SYMBOLS' => array(
+		'(', ')', '{', '}', '[', ']', '=', '+', '-', '*', '/', '!', '%', '^', '&'
+		),
+	'CASE_SENSITIVE' => array(
+		GESHI_COMMENTS => true,
+		1 => false,
+		2 => true,
+		3 => false,
+		4 => false,
+		),
+	'STYLES' => array(
+		'KEYWORDS' => array(
+			1 => 'color: #2a4fa1; font-weight: bold;',
+			2 => 'color: #414244; font-weight: bold;',
+			3 => 'color: #b19649; font-weight: bold;'
+			),
+		'COMMENTS' => array(
+			1 => 'color: #808080; font-style: italic;',
+			2 => 'color: #339933;',
+			'MULTI' => 'color: #808080; font-style: italic;'
+			),
+		'ESCAPE_CHAR' => array(
+			0 => 'color: #000099; font-weight: bold;'
+			),
+		'BRACKETS' => array(
+			0 => 'color: #66cc66;'
+			),
+		'STRINGS' => array(
+			0 => 'color: #ff0000;'
+			),
+		'NUMBERS' => array(
+			0 => 'color: #cc66cc;'
+			),
+		'METHODS' => array(
+			1 => 'color: #202020;',
+			2 => 'color: #202020;'
+			),
+		'SYMBOLS' => array(
+			0 => 'color: #66cc99;'
+			),
+		'REGEXPS' => array(
+			0 => 'color: #ffcc66 !important;',
+			1 => 'color: #33aa22 !important; font-weight: bold  !important;',
+			2 => 'font-weight: bold;',
+			2 => 'font-weight: bold;'
+			),
+		'SCRIPT' => array(
+			)
+		),
+	'URLS' => array(
+		1 => '',
+		2 => ''
+		),
+	'OOLANG' => false,
+	'OBJECT_SPLITTERS' => array(
+		),
+	'REGEXPS' => array(
+		0 => '\#[a-zA-Z0-9]{6}',
+		1 => '\#[a-zA-Z0-9_]+\:',
+		2 => '\$[a-zA-Z0-9_]+',
+		3 => "[\\$]{1,2}[a-zA-Z_][a-zA-Z0-9_]*"
+		),
+	'STRICT_MODE_APPLIES' => GESHI_NEVER,
+	'SCRIPT_DELIMITERS' => array(
+		),
+	'HIGHLIGHT_STRICT_BLOCK' => array(
+        ),
+    'TAB_WIDTH' => 2
+);
+
+if (isset($this) && is_a($this, 'GeSHi')) {
+    $language_data['STYLES']['NUMBERS'][0] = $language_data['STYLES']['REGEXPS'][0];
+}
+
+?>

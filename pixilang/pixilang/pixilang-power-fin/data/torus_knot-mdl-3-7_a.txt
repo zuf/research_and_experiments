@@ -1,0 +1,2403 @@
+// torus_knot begin
+knot_vertexes = new_array(1800)
+knot_vertexes[0]=24592  	// x
+knot_vertexes[0+1]=16	// y
+knot_vertexes[0+2]=16	// z
+
+knot_vertexes[3]=24557  	// x
+knot_vertexes[3+1]=787	// y
+knot_vertexes[3+2]=615	// z
+
+knot_vertexes[6]=24455  	// x
+knot_vertexes[6+1]=1553	// y
+knot_vertexes[6+2]=1212	// z
+
+knot_vertexes[9]=24286  	// x
+knot_vertexes[9+1]=2310	// y
+knot_vertexes[9+2]=1803	// z
+
+knot_vertexes[12]=24051  	// x
+knot_vertexes[12+1]=3052	// y
+knot_vertexes[12+2]=2383	// z
+
+knot_vertexes[15]=23752  	// x
+knot_vertexes[15+1]=3775	// y
+knot_vertexes[15+2]=2951	// z
+
+knot_vertexes[18]=23390  	// x
+knot_vertexes[18+1]=4474	// y
+knot_vertexes[18+2]=3503	// z
+
+knot_vertexes[21]=22970  	// x
+knot_vertexes[21+1]=5146	// y
+knot_vertexes[21+2]=4037	// z
+
+knot_vertexes[24]=22494  	// x
+knot_vertexes[24+1]=5787	// y
+knot_vertexes[24+2]=4549	// z
+
+knot_vertexes[27]=21965  	// x
+knot_vertexes[27+1]=6392	// y
+knot_vertexes[27+2]=5036	// z
+
+knot_vertexes[30]=21387  	// x
+knot_vertexes[30+1]=6960	// y
+knot_vertexes[30+2]=5497	// z
+
+knot_vertexes[33]=20766  	// x
+knot_vertexes[33+1]=7486	// y
+knot_vertexes[33+2]=5928	// z
+
+knot_vertexes[36]=20104  	// x
+knot_vertexes[36+1]=7969	// y
+knot_vertexes[36+2]=6328	// z
+
+knot_vertexes[39]=19407  	// x
+knot_vertexes[39+1]=8407	// y
+knot_vertexes[39+2]=6693	// z
+
+knot_vertexes[42]=18680  	// x
+knot_vertexes[42+1]=8798	// y
+knot_vertexes[42+2]=7023	// z
+
+knot_vertexes[45]=17927  	// x
+knot_vertexes[45+1]=9142	// y
+knot_vertexes[45+2]=7315	// z
+
+knot_vertexes[48]=17155  	// x
+knot_vertexes[48+1]=9438	// y
+knot_vertexes[48+2]=7567	// z
+
+knot_vertexes[51]=16367  	// x
+knot_vertexes[51+1]=9686	// y
+knot_vertexes[51+2]=7780	// z
+
+knot_vertexes[54]=15569  	// x
+knot_vertexes[54+1]=9886	// y
+knot_vertexes[54+2]=7950	// z
+
+knot_vertexes[57]=14766  	// x
+knot_vertexes[57+1]=10040	// y
+knot_vertexes[57+2]=8078	// z
+
+knot_vertexes[60]=13963  	// x
+knot_vertexes[60+1]=10149	// y
+knot_vertexes[60+2]=8163	// z
+
+knot_vertexes[63]=13165  	// x
+knot_vertexes[63+1]=10215	// y
+knot_vertexes[63+2]=8203	// z
+
+knot_vertexes[66]=12375  	// x
+knot_vertexes[66+1]=10240	// y
+knot_vertexes[66+2]=8200	// z
+
+knot_vertexes[69]=11599  	// x
+knot_vertexes[69+1]=10228	// y
+knot_vertexes[69+2]=8153	// z
+
+knot_vertexes[72]=10840  	// x
+knot_vertexes[72+1]=10180	// y
+knot_vertexes[72+2]=8062	// z
+
+knot_vertexes[75]=10101  	// x
+knot_vertexes[75+1]=10101	// y
+knot_vertexes[75+2]=7928	// z
+
+knot_vertexes[78]=9387  	// x
+knot_vertexes[78+1]=9995	// y
+knot_vertexes[78+2]=7752	// z
+
+knot_vertexes[81]=8699  	// x
+knot_vertexes[81+1]=9865	// y
+knot_vertexes[81+2]=7534	// z
+
+knot_vertexes[84]=8040  	// x
+knot_vertexes[84+1]=9715	// y
+knot_vertexes[84+2]=7275	// z
+
+knot_vertexes[87]=7412  	// x
+knot_vertexes[87+1]=9550	// y
+knot_vertexes[87+2]=6978	// z
+
+knot_vertexes[90]=6816  	// x
+knot_vertexes[90+1]=9375	// y
+knot_vertexes[90+2]=6643	// z
+
+knot_vertexes[93]=6253  	// x
+knot_vertexes[93+1]=9193	// y
+knot_vertexes[93+2]=6273	// z
+
+knot_vertexes[96]=5723  	// x
+knot_vertexes[96+1]=9010	// y
+knot_vertexes[96+2]=5868	// z
+
+knot_vertexes[99]=5228  	// x
+knot_vertexes[99+1]=8829	// y
+knot_vertexes[99+2]=5433	// z
+
+knot_vertexes[102]=4765  	// x
+knot_vertexes[102+1]=8655	// y
+knot_vertexes[102+2]=4968	// z
+
+knot_vertexes[105]=4335  	// x
+knot_vertexes[105+1]=8492	// y
+knot_vertexes[105+2]=4477	// z
+
+knot_vertexes[108]=3935  	// x
+knot_vertexes[108+1]=8345	// y
+knot_vertexes[108+2]=3962	// z
+
+knot_vertexes[111]=3564  	// x
+knot_vertexes[111+1]=8216	// y
+knot_vertexes[111+2]=3426	// z
+
+knot_vertexes[114]=3220  	// x
+knot_vertexes[114+1]=8110	// y
+knot_vertexes[114+2]=2871	// z
+
+knot_vertexes[117]=2901  	// x
+knot_vertexes[117+1]=8029	// y
+knot_vertexes[117+2]=2301	// z
+
+knot_vertexes[120]=2602  	// x
+knot_vertexes[120+1]=7977	// y
+knot_vertexes[120+2]=1719	// z
+
+knot_vertexes[123]=2322  	// x
+knot_vertexes[123+1]=7955	// y
+knot_vertexes[123+2]=1127	// z
+
+knot_vertexes[126]=2057  	// x
+knot_vertexes[126+1]=7966	// y
+knot_vertexes[126+2]=530	// z
+
+knot_vertexes[129]=1803  	// x
+knot_vertexes[129+1]=8011	// y
+knot_vertexes[129+2]=-69	// z
+
+knot_vertexes[132]=1556  	// x
+knot_vertexes[132+1]=8091	// y
+knot_vertexes[132+2]=-669	// z
+
+knot_vertexes[135]=1313  	// x
+knot_vertexes[135+1]=8206	// y
+knot_vertexes[135+2]=-1265	// z
+
+knot_vertexes[138]=1069  	// x
+knot_vertexes[138+1]=8358	// y
+knot_vertexes[138+2]=-1854	// z
+
+knot_vertexes[141]=822  	// x
+knot_vertexes[141+1]=8544	// y
+knot_vertexes[141+2]=-2433	// z
+
+knot_vertexes[144]=566  	// x
+knot_vertexes[144+1]=8765	// y
+knot_vertexes[144+2]=-2999	// z
+
+knot_vertexes[147]=298  	// x
+knot_vertexes[147+1]=9020	// y
+knot_vertexes[147+2]=-3549	// z
+
+knot_vertexes[150]=15  	// x
+knot_vertexes[150+1]=9305	// y
+knot_vertexes[150+2]=-4080	// z
+
+knot_vertexes[153]=-285  	// x
+knot_vertexes[153+1]=9619	// y
+knot_vertexes[153+2]=-4588	// z
+
+knot_vertexes[156]=-609  	// x
+knot_vertexes[156+1]=9960	// y
+knot_vertexes[156+2]=-5072	// z
+
+knot_vertexes[159]=-958  	// x
+knot_vertexes[159+1]=10323	// y
+knot_vertexes[159+2]=-5528	// z
+
+knot_vertexes[162]=-1334  	// x
+knot_vertexes[162+1]=10707	// y
+knot_vertexes[162+2]=-5955	// z
+
+knot_vertexes[165]=-1740  	// x
+knot_vertexes[165+1]=11106	// y
+knot_vertexes[165+2]=-6350	// z
+
+knot_vertexes[168]=-2177  	// x
+knot_vertexes[168+1]=11517	// y
+knot_vertexes[168+2]=-6710	// z
+
+knot_vertexes[171]=-2648  	// x
+knot_vertexes[171+1]=11935	// y
+knot_vertexes[171+2]=-7035	// z
+
+knot_vertexes[174]=-3152  	// x
+knot_vertexes[174+1]=12357	// y
+knot_vertexes[174+2]=-7321	// z
+
+knot_vertexes[177]=-3691  	// x
+knot_vertexes[177+1]=12777	// y
+knot_vertexes[177+2]=-7568	// z
+
+knot_vertexes[180]=-4264  	// x
+knot_vertexes[180+1]=13190	// y
+knot_vertexes[180+2]=-7775	// z
+
+knot_vertexes[183]=-4871  	// x
+knot_vertexes[183+1]=13592	// y
+knot_vertexes[183+2]=-7939	// z
+
+knot_vertexes[186]=-5512  	// x
+knot_vertexes[186+1]=13979	// y
+knot_vertexes[186+2]=-8061	// z
+
+knot_vertexes[189]=-6184  	// x
+knot_vertexes[189+1]=14344	// y
+knot_vertexes[189+2]=-8139	// z
+
+knot_vertexes[192]=-6886  	// x
+knot_vertexes[192+1]=14685	// y
+knot_vertexes[192+2]=-8174	// z
+
+knot_vertexes[195]=-7616  	// x
+knot_vertexes[195+1]=14996	// y
+knot_vertexes[195+2]=-8164	// z
+
+knot_vertexes[198]=-8371  	// x
+knot_vertexes[198+1]=15273	// y
+knot_vertexes[198+2]=-8111	// z
+
+knot_vertexes[201]=-9148  	// x
+knot_vertexes[201+1]=15512	// y
+knot_vertexes[201+2]=-8014	// z
+
+knot_vertexes[204]=-9943  	// x
+knot_vertexes[204+1]=15709	// y
+knot_vertexes[204+2]=-7874	// z
+
+knot_vertexes[207]=-10752  	// x
+knot_vertexes[207+1]=15861	// y
+knot_vertexes[207+2]=-7691	// z
+
+knot_vertexes[210]=-11572  	// x
+knot_vertexes[210+1]=15966	// y
+knot_vertexes[210+2]=-7467	// z
+
+knot_vertexes[213]=-12398  	// x
+knot_vertexes[213+1]=16020	// y
+knot_vertexes[213+2]=-7203	// z
+
+knot_vertexes[216]=-13225  	// x
+knot_vertexes[216+1]=16022	// y
+knot_vertexes[216+2]=-6900	// z
+
+knot_vertexes[219]=-14048  	// x
+knot_vertexes[219+1]=15969	// y
+knot_vertexes[219+2]=-6560	// z
+
+knot_vertexes[222]=-14863  	// x
+knot_vertexes[222+1]=15861	// y
+knot_vertexes[222+2]=-6185	// z
+
+knot_vertexes[225]=-15665  	// x
+knot_vertexes[225+1]=15697	// y
+knot_vertexes[225+2]=-5776	// z
+
+knot_vertexes[228]=-16447  	// x
+knot_vertexes[228+1]=15476	// y
+knot_vertexes[228+2]=-5336	// z
+
+knot_vertexes[231]=-17207  	// x
+knot_vertexes[231+1]=15200	// y
+knot_vertexes[231+2]=-4868	// z
+
+knot_vertexes[234]=-17937  	// x
+knot_vertexes[234+1]=14868	// y
+knot_vertexes[234+2]=-4373	// z
+
+knot_vertexes[237]=-18634  	// x
+knot_vertexes[237+1]=14482	// y
+knot_vertexes[237+2]=-3855	// z
+
+knot_vertexes[240]=-19293  	// x
+knot_vertexes[240+1]=14045	// y
+knot_vertexes[240+2]=-3315	// z
+
+knot_vertexes[243]=-19909  	// x
+knot_vertexes[243+1]=13557	// y
+knot_vertexes[243+2]=-2758	// z
+
+knot_vertexes[246]=-20479  	// x
+knot_vertexes[246+1]=13022	// y
+knot_vertexes[246+2]=-2186	// z
+
+knot_vertexes[249]=-20998  	// x
+knot_vertexes[249+1]=12443	// y
+knot_vertexes[249+2]=-1603	// z
+
+knot_vertexes[252]=-21463  	// x
+knot_vertexes[252+1]=11824	// y
+knot_vertexes[252+2]=-1010	// z
+
+knot_vertexes[255]=-21871  	// x
+knot_vertexes[255+1]=11168	// y
+knot_vertexes[255+2]=-412	// z
+
+knot_vertexes[258]=-22219  	// x
+knot_vertexes[258+1]=10479	// y
+knot_vertexes[258+2]=187	// z
+
+knot_vertexes[261]=-22505  	// x
+knot_vertexes[261+1]=9761	// y
+knot_vertexes[261+2]=786	// z
+
+knot_vertexes[264]=-22727  	// x
+knot_vertexes[264+1]=9020	// y
+knot_vertexes[264+2]=1382	// z
+
+knot_vertexes[267]=-22884  	// x
+knot_vertexes[267+1]=8260	// y
+knot_vertexes[267+2]=1970	// z
+
+knot_vertexes[270]=-22975  	// x
+knot_vertexes[270+1]=7486	// y
+knot_vertexes[270+2]=2547	// z
+
+knot_vertexes[273]=-23001  	// x
+knot_vertexes[273+1]=6703	// y
+knot_vertexes[273+2]=3111	// z
+
+knot_vertexes[276]=-22960  	// x
+knot_vertexes[276+1]=5915	// y
+knot_vertexes[276+2]=3658	// z
+
+knot_vertexes[279]=-22854  	// x
+knot_vertexes[279+1]=5128	// y
+knot_vertexes[279+2]=4186	// z
+
+knot_vertexes[282]=-22685  	// x
+knot_vertexes[282+1]=4346	// y
+knot_vertexes[282+2]=4691	// z
+
+knot_vertexes[285]=-22454  	// x
+knot_vertexes[285+1]=3574	// y
+knot_vertexes[285+2]=5171	// z
+
+knot_vertexes[288]=-22163  	// x
+knot_vertexes[288+1]=2817	// y
+knot_vertexes[288+2]=5623	// z
+
+knot_vertexes[291]=-21815  	// x
+knot_vertexes[291+1]=2079	// y
+knot_vertexes[291+2]=6046	// z
+
+knot_vertexes[294]=-21414  	// x
+knot_vertexes[294+1]=1364	// y
+knot_vertexes[294+2]=6436	// z
+
+knot_vertexes[297]=-20962  	// x
+knot_vertexes[297+1]=675	// y
+knot_vertexes[297+2]=6791	// z
+
+knot_vertexes[300]=-20464  	// x
+knot_vertexes[300+1]=16	// y
+knot_vertexes[300+2]=7110	// z
+
+knot_vertexes[303]=-19923  	// x
+knot_vertexes[303+1]=-610	// y
+knot_vertexes[303+2]=7391	// z
+
+knot_vertexes[306]=-19345  	// x
+knot_vertexes[306+1]=-1202	// y
+knot_vertexes[306+2]=7632	// z
+
+knot_vertexes[309]=-18734  	// x
+knot_vertexes[309+1]=-1756	// y
+knot_vertexes[309+2]=7833	// z
+
+knot_vertexes[312]=-18094  	// x
+knot_vertexes[312+1]=-2271	// y
+knot_vertexes[312+2]=7991	// z
+
+knot_vertexes[315]=-17432  	// x
+knot_vertexes[315+1]=-2747	// y
+knot_vertexes[315+2]=8107	// z
+
+knot_vertexes[318]=-16751  	// x
+knot_vertexes[318+1]=-3182	// y
+knot_vertexes[318+2]=8179	// z
+
+knot_vertexes[321]=-16057  	// x
+knot_vertexes[321+1]=-3576	// y
+knot_vertexes[321+2]=8207	// z
+
+knot_vertexes[324]=-15355  	// x
+knot_vertexes[324+1]=-3930	// y
+knot_vertexes[324+2]=8191	// z
+
+knot_vertexes[327]=-14649  	// x
+knot_vertexes[327+1]=-4244	// y
+knot_vertexes[327+2]=8132	// z
+
+knot_vertexes[330]=-13946  	// x
+knot_vertexes[330+1]=-4520	// y
+knot_vertexes[330+2]=8028	// z
+
+knot_vertexes[333]=-13249  	// x
+knot_vertexes[333+1]=-4759	// y
+knot_vertexes[333+2]=7882	// z
+
+knot_vertexes[336]=-12562  	// x
+knot_vertexes[336+1]=-4964	// y
+knot_vertexes[336+2]=7694	// z
+
+knot_vertexes[339]=-11890  	// x
+knot_vertexes[339+1]=-5136	// y
+knot_vertexes[339+2]=7464	// z
+
+knot_vertexes[342]=-11237  	// x
+knot_vertexes[342+1]=-5279	// y
+knot_vertexes[342+2]=7194	// z
+
+knot_vertexes[345]=-10606  	// x
+knot_vertexes[345+1]=-5396	// y
+knot_vertexes[345+2]=6886	// z
+
+knot_vertexes[348]=-10001  	// x
+knot_vertexes[348+1]=-5490	// y
+knot_vertexes[348+2]=6541	// z
+
+knot_vertexes[351]=-9423  	// x
+knot_vertexes[351+1]=-5566	// y
+knot_vertexes[351+2]=6160	// z
+
+knot_vertexes[354]=-8875  	// x
+knot_vertexes[354+1]=-5626	// y
+knot_vertexes[354+2]=5747	// z
+
+knot_vertexes[357]=-8359  	// x
+knot_vertexes[357+1]=-5676	// y
+knot_vertexes[357+2]=5303	// z
+
+knot_vertexes[360]=-7877  	// x
+knot_vertexes[360+1]=-5718	// y
+knot_vertexes[360+2]=4831	// z
+
+knot_vertexes[363]=-7428  	// x
+knot_vertexes[363+1]=-5758	// y
+knot_vertexes[363+2]=4332	// z
+
+knot_vertexes[366]=-7014  	// x
+knot_vertexes[366+1]=-5799	// y
+knot_vertexes[366+2]=3811	// z
+
+knot_vertexes[369]=-6634  	// x
+knot_vertexes[369+1]=-5847	// y
+knot_vertexes[369+2]=3269	// z
+
+knot_vertexes[372]=-6287  	// x
+knot_vertexes[372+1]=-5903	// y
+knot_vertexes[372+2]=2710	// z
+
+knot_vertexes[375]=-5973  	// x
+knot_vertexes[375+1]=-5973	// y
+knot_vertexes[375+2]=2136	// z
+
+knot_vertexes[378]=-5691  	// x
+knot_vertexes[378+1]=-6061	// y
+knot_vertexes[378+2]=1551	// z
+
+knot_vertexes[381]=-5437  	// x
+knot_vertexes[381+1]=-6169	// y
+knot_vertexes[381+2]=957	// z
+
+knot_vertexes[384]=-5210  	// x
+knot_vertexes[384+1]=-6301	// y
+knot_vertexes[384+2]=359	// z
+
+knot_vertexes[387]=-5007  	// x
+knot_vertexes[387+1]=-6460	// y
+knot_vertexes[387+2]=-241	// z
+
+knot_vertexes[390]=-4825  	// x
+knot_vertexes[390+1]=-6647	// y
+knot_vertexes[390+2]=-840	// z
+
+knot_vertexes[393]=-4661  	// x
+knot_vertexes[393+1]=-6866	// y
+knot_vertexes[393+2]=-1434	// z
+
+knot_vertexes[396]=-4511  	// x
+knot_vertexes[396+1]=-7118	// y
+knot_vertexes[396+2]=-2021	// z
+
+knot_vertexes[399]=-4371  	// x
+knot_vertexes[399+1]=-7403	// y
+knot_vertexes[399+2]=-2596	// z
+
+knot_vertexes[402]=-4238  	// x
+knot_vertexes[402+1]=-7723	// y
+knot_vertexes[402+2]=-3158	// z
+
+knot_vertexes[405]=-4108  	// x
+knot_vertexes[405+1]=-8078	// y
+knot_vertexes[405+2]=-3703	// z
+
+knot_vertexes[408]=-3976  	// x
+knot_vertexes[408+1]=-8468	// y
+knot_vertexes[408+2]=-4227	// z
+
+knot_vertexes[411]=-3838  	// x
+knot_vertexes[411+1]=-8892	// y
+knot_vertexes[411+2]=-4729	// z
+
+knot_vertexes[414]=-3691  	// x
+knot_vertexes[414+1]=-9348	// y
+knot_vertexes[414+2]=-5205	// z
+
+knot_vertexes[417]=-3531  	// x
+knot_vertexes[417+1]=-9836	// y
+knot_vertexes[417+2]=-5654	// z
+
+knot_vertexes[420]=-3353  	// x
+knot_vertexes[420+1]=-10352	// y
+knot_vertexes[420+2]=-6071	// z
+
+knot_vertexes[423]=-3154  	// x
+knot_vertexes[423+1]=-10895	// y
+knot_vertexes[423+2]=-6456	// z
+
+knot_vertexes[426]=-2931  	// x
+knot_vertexes[426+1]=-11462	// y
+knot_vertexes[426+2]=-6807	// z
+
+knot_vertexes[429]=-2680  	// x
+knot_vertexes[429+1]=-12048	// y
+knot_vertexes[429+2]=-7120	// z
+
+knot_vertexes[432]=-2400  	// x
+knot_vertexes[432+1]=-12651	// y
+knot_vertexes[432+2]=-7396	// z
+
+knot_vertexes[435]=-2087  	// x
+knot_vertexes[435+1]=-13266	// y
+knot_vertexes[435+2]=-7631	// z
+
+knot_vertexes[438]=-1740  	// x
+knot_vertexes[438+1]=-13889	// y
+knot_vertexes[438+2]=-7826	// z
+
+knot_vertexes[441]=-1357  	// x
+knot_vertexes[441+1]=-14516	// y
+knot_vertexes[441+2]=-7978	// z
+
+knot_vertexes[444]=-937  	// x
+knot_vertexes[444+1]=-15141	// y
+knot_vertexes[444+2]=-8088	// z
+
+knot_vertexes[447]=-479  	// x
+knot_vertexes[447+1]=-15760	// y
+knot_vertexes[447+2]=-8154	// z
+
+knot_vertexes[450]=15  	// x
+knot_vertexes[450+1]=-16367	// y
+knot_vertexes[450+2]=-8176	// z
+
+knot_vertexes[453]=549  	// x
+knot_vertexes[453+1]=-16959	// y
+knot_vertexes[453+2]=-8154	// z
+
+knot_vertexes[456]=1119  	// x
+knot_vertexes[456+1]=-17530	// y
+knot_vertexes[456+2]=-8088	// z
+
+knot_vertexes[459]=1726  	// x
+knot_vertexes[459+1]=-18074	// y
+knot_vertexes[459+2]=-7978	// z
+
+knot_vertexes[462]=2366  	// x
+knot_vertexes[462+1]=-18587	// y
+knot_vertexes[462+2]=-7826	// z
+
+knot_vertexes[465]=3038  	// x
+knot_vertexes[465+1]=-19065	// y
+knot_vertexes[465+2]=-7631	// z
+
+knot_vertexes[468]=3739  	// x
+knot_vertexes[468+1]=-19503	// y
+knot_vertexes[468+2]=-7396	// z
+
+knot_vertexes[471]=4467  	// x
+knot_vertexes[471+1]=-19898	// y
+knot_vertexes[471+2]=-7120	// z
+
+knot_vertexes[474]=5217  	// x
+knot_vertexes[474+1]=-20244	// y
+knot_vertexes[474+2]=-6807	// z
+
+knot_vertexes[477]=5987  	// x
+knot_vertexes[477+1]=-20539	// y
+knot_vertexes[477+2]=-6456	// z
+
+knot_vertexes[480]=6772  	// x
+knot_vertexes[480+1]=-20779	// y
+knot_vertexes[480+2]=-6071	// z
+
+knot_vertexes[483]=7568  	// x
+knot_vertexes[483+1]=-20962	// y
+knot_vertexes[483+2]=-5654	// z
+
+knot_vertexes[486]=8370  	// x
+knot_vertexes[486+1]=-21086	// y
+knot_vertexes[486+2]=-5205	// z
+
+knot_vertexes[489]=9174  	// x
+knot_vertexes[489+1]=-21148	// y
+knot_vertexes[489+2]=-4729	// z
+
+knot_vertexes[492]=9975  	// x
+knot_vertexes[492+1]=-21148	// y
+knot_vertexes[492+2]=-4227	// z
+
+knot_vertexes[495]=10767  	// x
+knot_vertexes[495+1]=-21085	// y
+knot_vertexes[495+2]=-3703	// z
+
+knot_vertexes[498]=11547  	// x
+knot_vertexes[498+1]=-20959	// y
+knot_vertexes[498+2]=-3158	// z
+
+knot_vertexes[501]=12308  	// x
+knot_vertexes[501+1]=-20769	// y
+knot_vertexes[501+2]=-2596	// z
+
+knot_vertexes[504]=13046  	// x
+knot_vertexes[504+1]=-20516	// y
+knot_vertexes[504+2]=-2021	// z
+
+knot_vertexes[507]=13756  	// x
+knot_vertexes[507+1]=-20203	// y
+knot_vertexes[507+2]=-1434	// z
+
+knot_vertexes[510]=14435  	// x
+knot_vertexes[510+1]=-19830	// y
+knot_vertexes[510+2]=-840	// z
+
+knot_vertexes[513]=15076  	// x
+knot_vertexes[513+1]=-19399	// y
+knot_vertexes[513+2]=-241	// z
+
+knot_vertexes[516]=15676  	// x
+knot_vertexes[516+1]=-18914	// y
+knot_vertexes[516+2]=359	// z
+
+knot_vertexes[519]=16232  	// x
+knot_vertexes[519+1]=-18378	// y
+knot_vertexes[519+2]=957	// z
+
+knot_vertexes[522]=16740  	// x
+knot_vertexes[522+1]=-17793	// y
+knot_vertexes[522+2]=1551	// z
+
+knot_vertexes[525]=17196  	// x
+knot_vertexes[525+1]=-17164	// y
+knot_vertexes[525+2]=2136	// z
+
+knot_vertexes[528]=17598  	// x
+knot_vertexes[528+1]=-16495	// y
+knot_vertexes[528+2]=2710	// z
+
+knot_vertexes[531]=17945  	// x
+knot_vertexes[531+1]=-15790	// y
+knot_vertexes[531+2]=3269	// z
+
+knot_vertexes[534]=18233  	// x
+knot_vertexes[534+1]=-15055	// y
+knot_vertexes[534+2]=3811	// z
+
+knot_vertexes[537]=18463  	// x
+knot_vertexes[537+1]=-14293	// y
+knot_vertexes[537+2]=4332	// z
+
+knot_vertexes[540]=18632  	// x
+knot_vertexes[540+1]=-13509	// y
+knot_vertexes[540+2]=4831	// z
+
+knot_vertexes[543]=18741  	// x
+knot_vertexes[543+1]=-12710	// y
+knot_vertexes[543+2]=5303	// z
+
+knot_vertexes[546]=18791  	// x
+knot_vertexes[546+1]=-11899	// y
+knot_vertexes[546+2]=5747	// z
+
+knot_vertexes[549]=18781  	// x
+knot_vertexes[549+1]=-11081	// y
+knot_vertexes[549+2]=6160	// z
+
+knot_vertexes[552]=18713  	// x
+knot_vertexes[552+1]=-10263	// y
+knot_vertexes[552+2]=6541	// z
+
+knot_vertexes[555]=18589  	// x
+knot_vertexes[555+1]=-9447	// y
+knot_vertexes[555+2]=6886	// z
+
+knot_vertexes[558]=18411  	// x
+knot_vertexes[558+1]=-8640	// y
+knot_vertexes[558+2]=7194	// z
+
+knot_vertexes[561]=18182  	// x
+knot_vertexes[561+1]=-7845	// y
+knot_vertexes[561+2]=7464	// z
+
+knot_vertexes[564]=17904  	// x
+knot_vertexes[564+1]=-7066	// y
+knot_vertexes[564+2]=7694	// z
+
+knot_vertexes[567]=17581  	// x
+knot_vertexes[567+1]=-6308	// y
+knot_vertexes[567+2]=7882	// z
+
+knot_vertexes[570]=17217  	// x
+knot_vertexes[570+1]=-5573	// y
+knot_vertexes[570+2]=8028	// z
+
+knot_vertexes[573]=16817  	// x
+knot_vertexes[573+1]=-4865	// y
+knot_vertexes[573+2]=8132	// z
+
+knot_vertexes[576]=16383  	// x
+knot_vertexes[576+1]=-4186	// y
+knot_vertexes[576+2]=8191	// z
+
+knot_vertexes[579]=15921  	// x
+knot_vertexes[579+1]=-3539	// y
+knot_vertexes[579+2]=8207	// z
+
+knot_vertexes[582]=15436  	// x
+knot_vertexes[582+1]=-2925	// y
+knot_vertexes[582+2]=8179	// z
+
+knot_vertexes[585]=14932  	// x
+knot_vertexes[585+1]=-2346	// y
+knot_vertexes[585+2]=8107	// z
+
+knot_vertexes[588]=14414  	// x
+knot_vertexes[588+1]=-1803	// y
+knot_vertexes[588+2]=7991	// z
+
+knot_vertexes[591]=13888  	// x
+knot_vertexes[591+1]=-1295	// y
+knot_vertexes[591+2]=7833	// z
+
+knot_vertexes[594]=13357  	// x
+knot_vertexes[594+1]=-823	// y
+knot_vertexes[594+2]=7632	// z
+
+knot_vertexes[597]=12828  	// x
+knot_vertexes[597+1]=-386	// y
+knot_vertexes[597+2]=7391	// z
+
+knot_vertexes[600]=12304  	// x
+knot_vertexes[600+1]=15	// y
+knot_vertexes[600+2]=7110	// z
+
+knot_vertexes[603]=11789  	// x
+knot_vertexes[603+1]=386	// y
+knot_vertexes[603+2]=6791	// z
+
+knot_vertexes[606]=11289  	// x
+knot_vertexes[606+1]=725	// y
+knot_vertexes[606+2]=6436	// z
+
+knot_vertexes[609]=10806  	// x
+knot_vertexes[609+1]=1036	// y
+knot_vertexes[609+2]=6046	// z
+
+knot_vertexes[612]=10346  	// x
+knot_vertexes[612+1]=1321	// y
+knot_vertexes[612+2]=5623	// z
+
+knot_vertexes[615]=9910  	// x
+knot_vertexes[615+1]=1583	// y
+knot_vertexes[615+2]=5171	// z
+
+knot_vertexes[618]=9502  	// x
+knot_vertexes[618+1]=1825	// y
+knot_vertexes[618+2]=4691	// z
+
+knot_vertexes[621]=9124  	// x
+knot_vertexes[621+1]=2051	// y
+knot_vertexes[621+2]=4186	// z
+
+knot_vertexes[624]=8778  	// x
+knot_vertexes[624+1]=2265	// y
+knot_vertexes[624+2]=3658	// z
+
+knot_vertexes[627]=8465  	// x
+knot_vertexes[627+1]=2470	// y
+knot_vertexes[627+2]=3111	// z
+
+knot_vertexes[630]=8188  	// x
+knot_vertexes[630+1]=2671	// y
+knot_vertexes[630+2]=2547	// z
+
+knot_vertexes[633]=7946  	// x
+knot_vertexes[633+1]=2871	// y
+knot_vertexes[633+2]=1970	// z
+
+knot_vertexes[636]=7739  	// x
+knot_vertexes[636+1]=3073	// y
+knot_vertexes[636+2]=1382	// z
+
+knot_vertexes[639]=7567  	// x
+knot_vertexes[639+1]=3283	// y
+knot_vertexes[639+2]=786	// z
+
+knot_vertexes[642]=7429  	// x
+knot_vertexes[642+1]=3504	// y
+knot_vertexes[642+2]=187	// z
+
+knot_vertexes[645]=7325  	// x
+knot_vertexes[645+1]=3740	// y
+knot_vertexes[645+2]=-412	// z
+
+knot_vertexes[648]=7251  	// x
+knot_vertexes[648+1]=3993	// y
+knot_vertexes[648+2]=-1010	// z
+
+knot_vertexes[651]=7206  	// x
+knot_vertexes[651+1]=4268	// y
+knot_vertexes[651+2]=-1603	// z
+
+knot_vertexes[654]=7187  	// x
+knot_vertexes[654+1]=4567	// y
+knot_vertexes[654+2]=-2186	// z
+
+knot_vertexes[657]=7192  	// x
+knot_vertexes[657+1]=4892	// y
+knot_vertexes[657+2]=-2758	// z
+
+knot_vertexes[660]=7216  	// x
+knot_vertexes[660+1]=5247	// y
+knot_vertexes[660+2]=-3315	// z
+
+knot_vertexes[663]=7257  	// x
+knot_vertexes[663+1]=5632	// y
+knot_vertexes[663+2]=-3855	// z
+
+knot_vertexes[666]=7310  	// x
+knot_vertexes[666+1]=6050	// y
+knot_vertexes[666+2]=-4373	// z
+
+knot_vertexes[669]=7372  	// x
+knot_vertexes[669+1]=6501	// y
+knot_vertexes[669+2]=-4868	// z
+
+knot_vertexes[672]=7438  	// x
+knot_vertexes[672+1]=6986	// y
+knot_vertexes[672+2]=-5336	// z
+
+knot_vertexes[675]=7505  	// x
+knot_vertexes[675+1]=7505	// y
+knot_vertexes[675+2]=-5776	// z
+
+knot_vertexes[678]=7567  	// x
+knot_vertexes[678+1]=8057	// y
+knot_vertexes[678+2]=-6185	// z
+
+knot_vertexes[681]=7620  	// x
+knot_vertexes[681+1]=8642	// y
+knot_vertexes[681+2]=-6560	// z
+
+knot_vertexes[684]=7661  	// x
+knot_vertexes[684+1]=9257	// y
+knot_vertexes[684+2]=-6900	// z
+
+knot_vertexes[687]=7685  	// x
+knot_vertexes[687+1]=9903	// y
+knot_vertexes[687+2]=-7203	// z
+
+knot_vertexes[690]=7687  	// x
+knot_vertexes[690+1]=10575	// y
+knot_vertexes[690+2]=-7467	// z
+
+knot_vertexes[693]=7665  	// x
+knot_vertexes[693+1]=11271	// y
+knot_vertexes[693+2]=-7691	// z
+
+knot_vertexes[696]=7614  	// x
+knot_vertexes[696+1]=11989	// y
+knot_vertexes[696+2]=-7874	// z
+
+knot_vertexes[699]=7531  	// x
+knot_vertexes[699+1]=12724	// y
+knot_vertexes[699+2]=-8014	// z
+
+knot_vertexes[702]=7414  	// x
+knot_vertexes[702+1]=13473	// y
+knot_vertexes[702+2]=-8111	// z
+
+knot_vertexes[705]=7259  	// x
+knot_vertexes[705+1]=14232	// y
+knot_vertexes[705+2]=-8164	// z
+
+knot_vertexes[708]=7065  	// x
+knot_vertexes[708+1]=14995	// y
+knot_vertexes[708+2]=-8174	// z
+
+knot_vertexes[711]=6829  	// x
+knot_vertexes[711+1]=15760	// y
+knot_vertexes[711+2]=-8139	// z
+
+knot_vertexes[714]=6550  	// x
+knot_vertexes[714+1]=16519	// y
+knot_vertexes[714+2]=-8061	// z
+
+knot_vertexes[717]=6227  	// x
+knot_vertexes[717+1]=17269	// y
+knot_vertexes[717+2]=-7939	// z
+
+knot_vertexes[720]=5861  	// x
+knot_vertexes[720+1]=18005	// y
+knot_vertexes[720+2]=-7775	// z
+
+knot_vertexes[723]=5450  	// x
+knot_vertexes[723+1]=18721	// y
+knot_vertexes[723+2]=-7568	// z
+
+knot_vertexes[726]=4996  	// x
+knot_vertexes[726+1]=19413	// y
+knot_vertexes[726+2]=-7321	// z
+
+knot_vertexes[729]=4499  	// x
+knot_vertexes[729+1]=20075	// y
+knot_vertexes[729+2]=-7035	// z
+
+knot_vertexes[732]=3962  	// x
+knot_vertexes[732+1]=20702	// y
+knot_vertexes[732+2]=-6710	// z
+
+knot_vertexes[735]=3385  	// x
+knot_vertexes[735+1]=21290	// y
+knot_vertexes[735+2]=-6350	// z
+
+knot_vertexes[738]=2772  	// x
+knot_vertexes[738+1]=21834	// y
+knot_vertexes[738+2]=-5955	// z
+
+knot_vertexes[741]=2125  	// x
+knot_vertexes[741+1]=22330	// y
+knot_vertexes[741+2]=-5528	// z
+
+knot_vertexes[744]=1447  	// x
+knot_vertexes[744+1]=22775	// y
+knot_vertexes[744+2]=-5072	// z
+
+knot_vertexes[747]=743  	// x
+knot_vertexes[747+1]=23164	// y
+knot_vertexes[747+2]=-4588	// z
+
+knot_vertexes[750]=16  	// x
+knot_vertexes[750+1]=23494	// y
+knot_vertexes[750+2]=-4080	// z
+
+knot_vertexes[753]=-730  	// x
+knot_vertexes[753+1]=23763	// y
+knot_vertexes[753+2]=-3549	// z
+
+knot_vertexes[756]=-1491  	// x
+knot_vertexes[756+1]=23969	// y
+knot_vertexes[756+2]=-2999	// z
+
+knot_vertexes[759]=-2261  	// x
+knot_vertexes[759+1]=24109	// y
+knot_vertexes[759+2]=-2433	// z
+
+knot_vertexes[762]=-3037  	// x
+knot_vertexes[762+1]=24183	// y
+knot_vertexes[762+2]=-1854	// z
+
+knot_vertexes[765]=-3812  	// x
+knot_vertexes[765+1]=24189	// y
+knot_vertexes[765+2]=-1265	// z
+
+knot_vertexes[768]=-4583  	// x
+knot_vertexes[768+1]=24128	// y
+knot_vertexes[768+2]=-669	// z
+
+knot_vertexes[771]=-5344  	// x
+knot_vertexes[771+1]=23999	// y
+knot_vertexes[771+2]=-69	// z
+
+knot_vertexes[774]=-6091  	// x
+knot_vertexes[774+1]=23804	// y
+knot_vertexes[774+2]=530	// z
+
+knot_vertexes[777]=-6819  	// x
+knot_vertexes[777+1]=23543	// y
+knot_vertexes[777+2]=1127	// z
+
+knot_vertexes[780]=-7523  	// x
+knot_vertexes[780+1]=23218	// y
+knot_vertexes[780+2]=1719	// z
+
+knot_vertexes[783]=-8198  	// x
+knot_vertexes[783+1]=22833	// y
+knot_vertexes[783+2]=2301	// z
+
+knot_vertexes[786]=-8841  	// x
+knot_vertexes[786+1]=22388	// y
+knot_vertexes[786+2]=2871	// z
+
+knot_vertexes[789]=-9449  	// x
+knot_vertexes[789+1]=21888	// y
+knot_vertexes[789+2]=3426	// z
+
+knot_vertexes[792]=-10016  	// x
+knot_vertexes[792+1]=21336	// y
+knot_vertexes[792+2]=3962	// z
+
+knot_vertexes[795]=-10541  	// x
+knot_vertexes[795+1]=20735	// y
+knot_vertexes[795+2]=4477	// z
+
+knot_vertexes[798]=-11020  	// x
+knot_vertexes[798+1]=20091	// y
+knot_vertexes[798+2]=4968	// z
+
+knot_vertexes[801]=-11452  	// x
+knot_vertexes[801+1]=19407	// y
+knot_vertexes[801+2]=5433	// z
+
+knot_vertexes[804]=-11834  	// x
+knot_vertexes[804+1]=18688	// y
+knot_vertexes[804+2]=5868	// z
+
+knot_vertexes[807]=-12165  	// x
+knot_vertexes[807+1]=17940	// y
+knot_vertexes[807+2]=6273	// z
+
+knot_vertexes[810]=-12444  	// x
+knot_vertexes[810+1]=17166	// y
+knot_vertexes[810+2]=6643	// z
+
+knot_vertexes[813]=-12671  	// x
+knot_vertexes[813+1]=16372	// y
+knot_vertexes[813+2]=6978	// z
+
+knot_vertexes[816]=-12846  	// x
+knot_vertexes[816+1]=15564	// y
+knot_vertexes[816+2]=7275	// z
+
+knot_vertexes[819]=-12970  	// x
+knot_vertexes[819+1]=14746	// y
+knot_vertexes[819+2]=7534	// z
+
+knot_vertexes[822]=-13043  	// x
+knot_vertexes[822+1]=13923	// y
+knot_vertexes[822+2]=7752	// z
+
+knot_vertexes[825]=-13068  	// x
+knot_vertexes[825+1]=13100	// y
+knot_vertexes[825+2]=7928	// z
+
+knot_vertexes[828]=-13046  	// x
+knot_vertexes[828+1]=12282	// y
+knot_vertexes[828+2]=8062	// z
+
+knot_vertexes[831]=-12980  	// x
+knot_vertexes[831+1]=11473	// y
+knot_vertexes[831+2]=8153	// z
+
+knot_vertexes[834]=-12872  	// x
+knot_vertexes[834+1]=10678	// y
+knot_vertexes[834+2]=8200	// z
+
+knot_vertexes[837]=-12726  	// x
+knot_vertexes[837+1]=9900	// y
+knot_vertexes[837+2]=8203	// z
+
+knot_vertexes[840]=-12546  	// x
+knot_vertexes[840+1]=9142	// y
+knot_vertexes[840+2]=8163	// z
+
+knot_vertexes[843]=-12335  	// x
+knot_vertexes[843+1]=8409	// y
+knot_vertexes[843+2]=8078	// z
+
+knot_vertexes[846]=-12097  	// x
+knot_vertexes[846+1]=7703	// y
+knot_vertexes[846+2]=7950	// z
+
+knot_vertexes[849]=-11837  	// x
+knot_vertexes[849+1]=7026	// y
+knot_vertexes[849+2]=7780	// z
+
+knot_vertexes[852]=-11559  	// x
+knot_vertexes[852+1]=6379	// y
+knot_vertexes[852+2]=7567	// z
+
+knot_vertexes[855]=-11268  	// x
+knot_vertexes[855+1]=5765	// y
+knot_vertexes[855+2]=7315	// z
+
+knot_vertexes[858]=-10968  	// x
+knot_vertexes[858+1]=5185	// y
+knot_vertexes[858+2]=7023	// z
+
+knot_vertexes[861]=-10665  	// x
+knot_vertexes[861+1]=4638	// y
+knot_vertexes[861+2]=6693	// z
+
+knot_vertexes[864]=-10362  	// x
+knot_vertexes[864+1]=4125	// y
+knot_vertexes[864+2]=6328	// z
+
+knot_vertexes[867]=-10064  	// x
+knot_vertexes[867+1]=3645	// y
+knot_vertexes[867+2]=5928	// z
+
+knot_vertexes[870]=-9776  	// x
+knot_vertexes[870+1]=3197	// y
+knot_vertexes[870+2]=5497	// z
+
+knot_vertexes[873]=-9501  	// x
+knot_vertexes[873+1]=2781	// y
+knot_vertexes[873+2]=5036	// z
+
+knot_vertexes[876]=-9244  	// x
+knot_vertexes[876+1]=2393	// y
+knot_vertexes[876+2]=4549	// z
+
+knot_vertexes[879]=-9008  	// x
+knot_vertexes[879+1]=2033	// y
+knot_vertexes[879+2]=4037	// z
+
+knot_vertexes[882]=-8796  	// x
+knot_vertexes[882+1]=1697	// y
+knot_vertexes[882+2]=3503	// z
+
+knot_vertexes[885]=-8612  	// x
+knot_vertexes[885+1]=1382	// y
+knot_vertexes[885+2]=2951	// z
+
+knot_vertexes[888]=-8458  	// x
+knot_vertexes[888+1]=1086	// y
+knot_vertexes[888+2]=2383	// z
+
+knot_vertexes[891]=-8336  	// x
+knot_vertexes[891+1]=805	// y
+knot_vertexes[891+2]=1803	// z
+
+knot_vertexes[894]=-8247  	// x
+knot_vertexes[894+1]=535	// y
+knot_vertexes[894+2]=1212	// z
+
+knot_vertexes[897]=-8193  	// x
+knot_vertexes[897+1]=274	// y
+knot_vertexes[897+2]=615	// z
+
+knot_vertexes[900]=-8176  	// x
+knot_vertexes[900+1]=16	// y
+knot_vertexes[900+2]=16	// z
+
+knot_vertexes[903]=-8193  	// x
+knot_vertexes[903+1]=-242	// y
+knot_vertexes[903+2]=-583	// z
+
+knot_vertexes[906]=-8247  	// x
+knot_vertexes[906+1]=-503	// y
+knot_vertexes[906+2]=-1180	// z
+
+knot_vertexes[909]=-8336  	// x
+knot_vertexes[909+1]=-773	// y
+knot_vertexes[909+2]=-1771	// z
+
+knot_vertexes[912]=-8458  	// x
+knot_vertexes[912+1]=-1054	// y
+knot_vertexes[912+2]=-2351	// z
+
+knot_vertexes[915]=-8612  	// x
+knot_vertexes[915+1]=-1350	// y
+knot_vertexes[915+2]=-2919	// z
+
+knot_vertexes[918]=-8796  	// x
+knot_vertexes[918+1]=-1665	// y
+knot_vertexes[918+2]=-3471	// z
+
+knot_vertexes[921]=-9008  	// x
+knot_vertexes[921+1]=-2001	// y
+knot_vertexes[921+2]=-4005	// z
+
+knot_vertexes[924]=-9244  	// x
+knot_vertexes[924+1]=-2361	// y
+knot_vertexes[924+2]=-4517	// z
+
+knot_vertexes[927]=-9501  	// x
+knot_vertexes[927+1]=-2749	// y
+knot_vertexes[927+2]=-5004	// z
+
+knot_vertexes[930]=-9776  	// x
+knot_vertexes[930+1]=-3165	// y
+knot_vertexes[930+2]=-5465	// z
+
+knot_vertexes[933]=-10064  	// x
+knot_vertexes[933+1]=-3613	// y
+knot_vertexes[933+2]=-5896	// z
+
+knot_vertexes[936]=-10362  	// x
+knot_vertexes[936+1]=-4093	// y
+knot_vertexes[936+2]=-6296	// z
+
+knot_vertexes[939]=-10665  	// x
+knot_vertexes[939+1]=-4606	// y
+knot_vertexes[939+2]=-6661	// z
+
+knot_vertexes[942]=-10968  	// x
+knot_vertexes[942+1]=-5153	// y
+knot_vertexes[942+2]=-6991	// z
+
+knot_vertexes[945]=-11268  	// x
+knot_vertexes[945+1]=-5733	// y
+knot_vertexes[945+2]=-7283	// z
+
+knot_vertexes[948]=-11559  	// x
+knot_vertexes[948+1]=-6347	// y
+knot_vertexes[948+2]=-7535	// z
+
+knot_vertexes[951]=-11837  	// x
+knot_vertexes[951+1]=-6994	// y
+knot_vertexes[951+2]=-7748	// z
+
+knot_vertexes[954]=-12097  	// x
+knot_vertexes[954+1]=-7671	// y
+knot_vertexes[954+2]=-7918	// z
+
+knot_vertexes[957]=-12335  	// x
+knot_vertexes[957+1]=-8377	// y
+knot_vertexes[957+2]=-8046	// z
+
+knot_vertexes[960]=-12546  	// x
+knot_vertexes[960+1]=-9110	// y
+knot_vertexes[960+2]=-8131	// z
+
+knot_vertexes[963]=-12726  	// x
+knot_vertexes[963+1]=-9868	// y
+knot_vertexes[963+2]=-8171	// z
+
+knot_vertexes[966]=-12872  	// x
+knot_vertexes[966+1]=-10646	// y
+knot_vertexes[966+2]=-8168	// z
+
+knot_vertexes[969]=-12980  	// x
+knot_vertexes[969+1]=-11441	// y
+knot_vertexes[969+2]=-8121	// z
+
+knot_vertexes[972]=-13046  	// x
+knot_vertexes[972+1]=-12250	// y
+knot_vertexes[972+2]=-8030	// z
+
+knot_vertexes[975]=-13068  	// x
+knot_vertexes[975+1]=-13068	// y
+knot_vertexes[975+2]=-7896	// z
+
+knot_vertexes[978]=-13043  	// x
+knot_vertexes[978+1]=-13891	// y
+knot_vertexes[978+2]=-7720	// z
+
+knot_vertexes[981]=-12970  	// x
+knot_vertexes[981+1]=-14714	// y
+knot_vertexes[981+2]=-7502	// z
+
+knot_vertexes[984]=-12846  	// x
+knot_vertexes[984+1]=-15532	// y
+knot_vertexes[984+2]=-7243	// z
+
+knot_vertexes[987]=-12671  	// x
+knot_vertexes[987+1]=-16340	// y
+knot_vertexes[987+2]=-6946	// z
+
+knot_vertexes[990]=-12444  	// x
+knot_vertexes[990+1]=-17134	// y
+knot_vertexes[990+2]=-6611	// z
+
+knot_vertexes[993]=-12165  	// x
+knot_vertexes[993+1]=-17908	// y
+knot_vertexes[993+2]=-6241	// z
+
+knot_vertexes[996]=-11834  	// x
+knot_vertexes[996+1]=-18656	// y
+knot_vertexes[996+2]=-5836	// z
+
+knot_vertexes[999]=-11452  	// x
+knot_vertexes[999+1]=-19375	// y
+knot_vertexes[999+2]=-5401	// z
+
+knot_vertexes[1002]=-11020  	// x
+knot_vertexes[1002+1]=-20059	// y
+knot_vertexes[1002+2]=-4936	// z
+
+knot_vertexes[1005]=-10541  	// x
+knot_vertexes[1005+1]=-20703	// y
+knot_vertexes[1005+2]=-4445	// z
+
+knot_vertexes[1008]=-10016  	// x
+knot_vertexes[1008+1]=-21304	// y
+knot_vertexes[1008+2]=-3930	// z
+
+knot_vertexes[1011]=-9449  	// x
+knot_vertexes[1011+1]=-21856	// y
+knot_vertexes[1011+2]=-3394	// z
+
+knot_vertexes[1014]=-8841  	// x
+knot_vertexes[1014+1]=-22356	// y
+knot_vertexes[1014+2]=-2839	// z
+
+knot_vertexes[1017]=-8198  	// x
+knot_vertexes[1017+1]=-22801	// y
+knot_vertexes[1017+2]=-2269	// z
+
+knot_vertexes[1020]=-7523  	// x
+knot_vertexes[1020+1]=-23186	// y
+knot_vertexes[1020+2]=-1687	// z
+
+knot_vertexes[1023]=-6819  	// x
+knot_vertexes[1023+1]=-23511	// y
+knot_vertexes[1023+2]=-1095	// z
+
+knot_vertexes[1026]=-6091  	// x
+knot_vertexes[1026+1]=-23772	// y
+knot_vertexes[1026+2]=-498	// z
+
+knot_vertexes[1029]=-5344  	// x
+knot_vertexes[1029+1]=-23967	// y
+knot_vertexes[1029+2]=101	// z
+
+knot_vertexes[1032]=-4583  	// x
+knot_vertexes[1032+1]=-24096	// y
+knot_vertexes[1032+2]=701	// z
+
+knot_vertexes[1035]=-3812  	// x
+knot_vertexes[1035+1]=-24157	// y
+knot_vertexes[1035+2]=1297	// z
+
+knot_vertexes[1038]=-3037  	// x
+knot_vertexes[1038+1]=-24151	// y
+knot_vertexes[1038+2]=1886	// z
+
+knot_vertexes[1041]=-2261  	// x
+knot_vertexes[1041+1]=-24077	// y
+knot_vertexes[1041+2]=2465	// z
+
+knot_vertexes[1044]=-1491  	// x
+knot_vertexes[1044+1]=-23937	// y
+knot_vertexes[1044+2]=3031	// z
+
+knot_vertexes[1047]=-730  	// x
+knot_vertexes[1047+1]=-23731	// y
+knot_vertexes[1047+2]=3581	// z
+
+knot_vertexes[1050]=15  	// x
+knot_vertexes[1050+1]=-23462	// y
+knot_vertexes[1050+2]=4111	// z
+
+knot_vertexes[1053]=743  	// x
+knot_vertexes[1053+1]=-23132	// y
+knot_vertexes[1053+2]=4620	// z
+
+knot_vertexes[1056]=1447  	// x
+knot_vertexes[1056+1]=-22743	// y
+knot_vertexes[1056+2]=5104	// z
+
+knot_vertexes[1059]=2125  	// x
+knot_vertexes[1059+1]=-22298	// y
+knot_vertexes[1059+2]=5560	// z
+
+knot_vertexes[1062]=2772  	// x
+knot_vertexes[1062+1]=-21802	// y
+knot_vertexes[1062+2]=5987	// z
+
+knot_vertexes[1065]=3385  	// x
+knot_vertexes[1065+1]=-21258	// y
+knot_vertexes[1065+2]=6382	// z
+
+knot_vertexes[1068]=3962  	// x
+knot_vertexes[1068+1]=-20670	// y
+knot_vertexes[1068+2]=6742	// z
+
+knot_vertexes[1071]=4499  	// x
+knot_vertexes[1071+1]=-20043	// y
+knot_vertexes[1071+2]=7067	// z
+
+knot_vertexes[1074]=4996  	// x
+knot_vertexes[1074+1]=-19381	// y
+knot_vertexes[1074+2]=7353	// z
+
+knot_vertexes[1077]=5450  	// x
+knot_vertexes[1077+1]=-18689	// y
+knot_vertexes[1077+2]=7600	// z
+
+knot_vertexes[1080]=5861  	// x
+knot_vertexes[1080+1]=-17973	// y
+knot_vertexes[1080+2]=7807	// z
+
+knot_vertexes[1083]=6227  	// x
+knot_vertexes[1083+1]=-17237	// y
+knot_vertexes[1083+2]=7971	// z
+
+knot_vertexes[1086]=6550  	// x
+knot_vertexes[1086+1]=-16487	// y
+knot_vertexes[1086+2]=8093	// z
+
+knot_vertexes[1089]=6829  	// x
+knot_vertexes[1089+1]=-15728	// y
+knot_vertexes[1089+2]=8171	// z
+
+knot_vertexes[1092]=7065  	// x
+knot_vertexes[1092+1]=-14963	// y
+knot_vertexes[1092+2]=8206	// z
+
+knot_vertexes[1095]=7259  	// x
+knot_vertexes[1095+1]=-14200	// y
+knot_vertexes[1095+2]=8196	// z
+
+knot_vertexes[1098]=7414  	// x
+knot_vertexes[1098+1]=-13441	// y
+knot_vertexes[1098+2]=8143	// z
+
+knot_vertexes[1101]=7531  	// x
+knot_vertexes[1101+1]=-12692	// y
+knot_vertexes[1101+2]=8046	// z
+
+knot_vertexes[1104]=7614  	// x
+knot_vertexes[1104+1]=-11957	// y
+knot_vertexes[1104+2]=7906	// z
+
+knot_vertexes[1107]=7665  	// x
+knot_vertexes[1107+1]=-11239	// y
+knot_vertexes[1107+2]=7723	// z
+
+knot_vertexes[1110]=7687  	// x
+knot_vertexes[1110+1]=-10543	// y
+knot_vertexes[1110+2]=7499	// z
+
+knot_vertexes[1113]=7685  	// x
+knot_vertexes[1113+1]=-9871	// y
+knot_vertexes[1113+2]=7235	// z
+
+knot_vertexes[1116]=7661  	// x
+knot_vertexes[1116+1]=-9225	// y
+knot_vertexes[1116+2]=6932	// z
+
+knot_vertexes[1119]=7620  	// x
+knot_vertexes[1119+1]=-8610	// y
+knot_vertexes[1119+2]=6592	// z
+
+knot_vertexes[1122]=7567  	// x
+knot_vertexes[1122+1]=-8025	// y
+knot_vertexes[1122+2]=6217	// z
+
+knot_vertexes[1125]=7505  	// x
+knot_vertexes[1125+1]=-7473	// y
+knot_vertexes[1125+2]=5808	// z
+
+knot_vertexes[1128]=7438  	// x
+knot_vertexes[1128+1]=-6954	// y
+knot_vertexes[1128+2]=5368	// z
+
+knot_vertexes[1131]=7372  	// x
+knot_vertexes[1131+1]=-6469	// y
+knot_vertexes[1131+2]=4900	// z
+
+knot_vertexes[1134]=7310  	// x
+knot_vertexes[1134+1]=-6018	// y
+knot_vertexes[1134+2]=4405	// z
+
+knot_vertexes[1137]=7257  	// x
+knot_vertexes[1137+1]=-5600	// y
+knot_vertexes[1137+2]=3887	// z
+
+knot_vertexes[1140]=7216  	// x
+knot_vertexes[1140+1]=-5215	// y
+knot_vertexes[1140+2]=3347	// z
+
+knot_vertexes[1143]=7192  	// x
+knot_vertexes[1143+1]=-4860	// y
+knot_vertexes[1143+2]=2790	// z
+
+knot_vertexes[1146]=7187  	// x
+knot_vertexes[1146+1]=-4535	// y
+knot_vertexes[1146+2]=2218	// z
+
+knot_vertexes[1149]=7206  	// x
+knot_vertexes[1149+1]=-4236	// y
+knot_vertexes[1149+2]=1635	// z
+
+knot_vertexes[1152]=7251  	// x
+knot_vertexes[1152+1]=-3961	// y
+knot_vertexes[1152+2]=1042	// z
+
+knot_vertexes[1155]=7325  	// x
+knot_vertexes[1155+1]=-3708	// y
+knot_vertexes[1155+2]=444	// z
+
+knot_vertexes[1158]=7429  	// x
+knot_vertexes[1158+1]=-3472	// y
+knot_vertexes[1158+2]=-155	// z
+
+knot_vertexes[1161]=7567  	// x
+knot_vertexes[1161+1]=-3251	// y
+knot_vertexes[1161+2]=-754	// z
+
+knot_vertexes[1164]=7739  	// x
+knot_vertexes[1164+1]=-3041	// y
+knot_vertexes[1164+2]=-1350	// z
+
+knot_vertexes[1167]=7946  	// x
+knot_vertexes[1167+1]=-2839	// y
+knot_vertexes[1167+2]=-1938	// z
+
+knot_vertexes[1170]=8188  	// x
+knot_vertexes[1170+1]=-2639	// y
+knot_vertexes[1170+2]=-2515	// z
+
+knot_vertexes[1173]=8465  	// x
+knot_vertexes[1173+1]=-2438	// y
+knot_vertexes[1173+2]=-3079	// z
+
+knot_vertexes[1176]=8778  	// x
+knot_vertexes[1176+1]=-2233	// y
+knot_vertexes[1176+2]=-3626	// z
+
+knot_vertexes[1179]=9124  	// x
+knot_vertexes[1179+1]=-2019	// y
+knot_vertexes[1179+2]=-4154	// z
+
+knot_vertexes[1182]=9502  	// x
+knot_vertexes[1182+1]=-1793	// y
+knot_vertexes[1182+2]=-4659	// z
+
+knot_vertexes[1185]=9910  	// x
+knot_vertexes[1185+1]=-1551	// y
+knot_vertexes[1185+2]=-5139	// z
+
+knot_vertexes[1188]=10346  	// x
+knot_vertexes[1188+1]=-1289	// y
+knot_vertexes[1188+2]=-5591	// z
+
+knot_vertexes[1191]=10806  	// x
+knot_vertexes[1191+1]=-1004	// y
+knot_vertexes[1191+2]=-6014	// z
+
+knot_vertexes[1194]=11289  	// x
+knot_vertexes[1194+1]=-693	// y
+knot_vertexes[1194+2]=-6404	// z
+
+knot_vertexes[1197]=11789  	// x
+knot_vertexes[1197+1]=-354	// y
+knot_vertexes[1197+2]=-6759	// z
+
+knot_vertexes[1200]=12303  	// x
+knot_vertexes[1200+1]=15	// y
+knot_vertexes[1200+2]=-7078	// z
+
+knot_vertexes[1203]=12828  	// x
+knot_vertexes[1203+1]=418	// y
+knot_vertexes[1203+2]=-7359	// z
+
+knot_vertexes[1206]=13357  	// x
+knot_vertexes[1206+1]=855	// y
+knot_vertexes[1206+2]=-7600	// z
+
+knot_vertexes[1209]=13888  	// x
+knot_vertexes[1209+1]=1327	// y
+knot_vertexes[1209+2]=-7801	// z
+
+knot_vertexes[1212]=14414  	// x
+knot_vertexes[1212+1]=1835	// y
+knot_vertexes[1212+2]=-7959	// z
+
+knot_vertexes[1215]=14932  	// x
+knot_vertexes[1215+1]=2378	// y
+knot_vertexes[1215+2]=-8075	// z
+
+knot_vertexes[1218]=15436  	// x
+knot_vertexes[1218+1]=2957	// y
+knot_vertexes[1218+2]=-8147	// z
+
+knot_vertexes[1221]=15921  	// x
+knot_vertexes[1221+1]=3571	// y
+knot_vertexes[1221+2]=-8175	// z
+
+knot_vertexes[1224]=16383  	// x
+knot_vertexes[1224+1]=4218	// y
+knot_vertexes[1224+2]=-8159	// z
+
+knot_vertexes[1227]=16817  	// x
+knot_vertexes[1227+1]=4897	// y
+knot_vertexes[1227+2]=-8100	// z
+
+knot_vertexes[1230]=17217  	// x
+knot_vertexes[1230+1]=5605	// y
+knot_vertexes[1230+2]=-7996	// z
+
+knot_vertexes[1233]=17581  	// x
+knot_vertexes[1233+1]=6340	// y
+knot_vertexes[1233+2]=-7850	// z
+
+knot_vertexes[1236]=17904  	// x
+knot_vertexes[1236+1]=7098	// y
+knot_vertexes[1236+2]=-7662	// z
+
+knot_vertexes[1239]=18182  	// x
+knot_vertexes[1239+1]=7877	// y
+knot_vertexes[1239+2]=-7432	// z
+
+knot_vertexes[1242]=18411  	// x
+knot_vertexes[1242+1]=8672	// y
+knot_vertexes[1242+2]=-7162	// z
+
+knot_vertexes[1245]=18589  	// x
+knot_vertexes[1245+1]=9479	// y
+knot_vertexes[1245+2]=-6854	// z
+
+knot_vertexes[1248]=18713  	// x
+knot_vertexes[1248+1]=10295	// y
+knot_vertexes[1248+2]=-6509	// z
+
+knot_vertexes[1251]=18781  	// x
+knot_vertexes[1251+1]=11113	// y
+knot_vertexes[1251+2]=-6128	// z
+
+knot_vertexes[1254]=18791  	// x
+knot_vertexes[1254+1]=11931	// y
+knot_vertexes[1254+2]=-5715	// z
+
+knot_vertexes[1257]=18741  	// x
+knot_vertexes[1257+1]=12742	// y
+knot_vertexes[1257+2]=-5271	// z
+
+knot_vertexes[1260]=18632  	// x
+knot_vertexes[1260+1]=13541	// y
+knot_vertexes[1260+2]=-4799	// z
+
+knot_vertexes[1263]=18463  	// x
+knot_vertexes[1263+1]=14325	// y
+knot_vertexes[1263+2]=-4300	// z
+
+knot_vertexes[1266]=18233  	// x
+knot_vertexes[1266+1]=15087	// y
+knot_vertexes[1266+2]=-3779	// z
+
+knot_vertexes[1269]=17945  	// x
+knot_vertexes[1269+1]=15822	// y
+knot_vertexes[1269+2]=-3237	// z
+
+knot_vertexes[1272]=17598  	// x
+knot_vertexes[1272+1]=16527	// y
+knot_vertexes[1272+2]=-2678	// z
+
+knot_vertexes[1275]=17196  	// x
+knot_vertexes[1275+1]=17196	// y
+knot_vertexes[1275+2]=-2104	// z
+
+knot_vertexes[1278]=16740  	// x
+knot_vertexes[1278+1]=17825	// y
+knot_vertexes[1278+2]=-1519	// z
+
+knot_vertexes[1281]=16232  	// x
+knot_vertexes[1281+1]=18410	// y
+knot_vertexes[1281+2]=-925	// z
+
+knot_vertexes[1284]=15676  	// x
+knot_vertexes[1284+1]=18946	// y
+knot_vertexes[1284+2]=-327	// z
+
+knot_vertexes[1287]=15076  	// x
+knot_vertexes[1287+1]=19431	// y
+knot_vertexes[1287+2]=273	// z
+
+knot_vertexes[1290]=14435  	// x
+knot_vertexes[1290+1]=19862	// y
+knot_vertexes[1290+2]=872	// z
+
+knot_vertexes[1293]=13756  	// x
+knot_vertexes[1293+1]=20235	// y
+knot_vertexes[1293+2]=1466	// z
+
+knot_vertexes[1296]=13046  	// x
+knot_vertexes[1296+1]=20548	// y
+knot_vertexes[1296+2]=2053	// z
+
+knot_vertexes[1299]=12308  	// x
+knot_vertexes[1299+1]=20801	// y
+knot_vertexes[1299+2]=2628	// z
+
+knot_vertexes[1302]=11547  	// x
+knot_vertexes[1302+1]=20991	// y
+knot_vertexes[1302+2]=3190	// z
+
+knot_vertexes[1305]=10767  	// x
+knot_vertexes[1305+1]=21117	// y
+knot_vertexes[1305+2]=3735	// z
+
+knot_vertexes[1308]=9975  	// x
+knot_vertexes[1308+1]=21180	// y
+knot_vertexes[1308+2]=4259	// z
+
+knot_vertexes[1311]=9174  	// x
+knot_vertexes[1311+1]=21180	// y
+knot_vertexes[1311+2]=4761	// z
+
+knot_vertexes[1314]=8370  	// x
+knot_vertexes[1314+1]=21118	// y
+knot_vertexes[1314+2]=5237	// z
+
+knot_vertexes[1317]=7568  	// x
+knot_vertexes[1317+1]=20994	// y
+knot_vertexes[1317+2]=5686	// z
+
+knot_vertexes[1320]=6772  	// x
+knot_vertexes[1320+1]=20811	// y
+knot_vertexes[1320+2]=6103	// z
+
+knot_vertexes[1323]=5987  	// x
+knot_vertexes[1323+1]=20571	// y
+knot_vertexes[1323+2]=6488	// z
+
+knot_vertexes[1326]=5217  	// x
+knot_vertexes[1326+1]=20276	// y
+knot_vertexes[1326+2]=6839	// z
+
+knot_vertexes[1329]=4467  	// x
+knot_vertexes[1329+1]=19930	// y
+knot_vertexes[1329+2]=7152	// z
+
+knot_vertexes[1332]=3739  	// x
+knot_vertexes[1332+1]=19535	// y
+knot_vertexes[1332+2]=7428	// z
+
+knot_vertexes[1335]=3038  	// x
+knot_vertexes[1335+1]=19097	// y
+knot_vertexes[1335+2]=7663	// z
+
+knot_vertexes[1338]=2366  	// x
+knot_vertexes[1338+1]=18619	// y
+knot_vertexes[1338+2]=7858	// z
+
+knot_vertexes[1341]=1726  	// x
+knot_vertexes[1341+1]=18106	// y
+knot_vertexes[1341+2]=8010	// z
+
+knot_vertexes[1344]=1119  	// x
+knot_vertexes[1344+1]=17562	// y
+knot_vertexes[1344+2]=8120	// z
+
+knot_vertexes[1347]=549  	// x
+knot_vertexes[1347+1]=16991	// y
+knot_vertexes[1347+2]=8186	// z
+
+knot_vertexes[1350]=16  	// x
+knot_vertexes[1350+1]=16400	// y
+knot_vertexes[1350+2]=8208	// z
+
+knot_vertexes[1353]=-479  	// x
+knot_vertexes[1353+1]=15792	// y
+knot_vertexes[1353+2]=8186	// z
+
+knot_vertexes[1356]=-937  	// x
+knot_vertexes[1356+1]=15173	// y
+knot_vertexes[1356+2]=8120	// z
+
+knot_vertexes[1359]=-1357  	// x
+knot_vertexes[1359+1]=14548	// y
+knot_vertexes[1359+2]=8010	// z
+
+knot_vertexes[1362]=-1740  	// x
+knot_vertexes[1362+1]=13921	// y
+knot_vertexes[1362+2]=7858	// z
+
+knot_vertexes[1365]=-2087  	// x
+knot_vertexes[1365+1]=13298	// y
+knot_vertexes[1365+2]=7663	// z
+
+knot_vertexes[1368]=-2400  	// x
+knot_vertexes[1368+1]=12683	// y
+knot_vertexes[1368+2]=7428	// z
+
+knot_vertexes[1371]=-2680  	// x
+knot_vertexes[1371+1]=12080	// y
+knot_vertexes[1371+2]=7152	// z
+
+knot_vertexes[1374]=-2931  	// x
+knot_vertexes[1374+1]=11494	// y
+knot_vertexes[1374+2]=6839	// z
+
+knot_vertexes[1377]=-3154  	// x
+knot_vertexes[1377+1]=10927	// y
+knot_vertexes[1377+2]=6488	// z
+
+knot_vertexes[1380]=-3353  	// x
+knot_vertexes[1380+1]=10384	// y
+knot_vertexes[1380+2]=6103	// z
+
+knot_vertexes[1383]=-3531  	// x
+knot_vertexes[1383+1]=9868	// y
+knot_vertexes[1383+2]=5686	// z
+
+knot_vertexes[1386]=-3691  	// x
+knot_vertexes[1386+1]=9380	// y
+knot_vertexes[1386+2]=5237	// z
+
+knot_vertexes[1389]=-3838  	// x
+knot_vertexes[1389+1]=8924	// y
+knot_vertexes[1389+2]=4761	// z
+
+knot_vertexes[1392]=-3976  	// x
+knot_vertexes[1392+1]=8500	// y
+knot_vertexes[1392+2]=4259	// z
+
+knot_vertexes[1395]=-4108  	// x
+knot_vertexes[1395+1]=8110	// y
+knot_vertexes[1395+2]=3735	// z
+
+knot_vertexes[1398]=-4238  	// x
+knot_vertexes[1398+1]=7755	// y
+knot_vertexes[1398+2]=3190	// z
+
+knot_vertexes[1401]=-4371  	// x
+knot_vertexes[1401+1]=7435	// y
+knot_vertexes[1401+2]=2628	// z
+
+knot_vertexes[1404]=-4511  	// x
+knot_vertexes[1404+1]=7150	// y
+knot_vertexes[1404+2]=2053	// z
+
+knot_vertexes[1407]=-4661  	// x
+knot_vertexes[1407+1]=6898	// y
+knot_vertexes[1407+2]=1466	// z
+
+knot_vertexes[1410]=-4825  	// x
+knot_vertexes[1410+1]=6679	// y
+knot_vertexes[1410+2]=872	// z
+
+knot_vertexes[1413]=-5007  	// x
+knot_vertexes[1413+1]=6492	// y
+knot_vertexes[1413+2]=273	// z
+
+knot_vertexes[1416]=-5210  	// x
+knot_vertexes[1416+1]=6333	// y
+knot_vertexes[1416+2]=-327	// z
+
+knot_vertexes[1419]=-5437  	// x
+knot_vertexes[1419+1]=6201	// y
+knot_vertexes[1419+2]=-925	// z
+
+knot_vertexes[1422]=-5691  	// x
+knot_vertexes[1422+1]=6093	// y
+knot_vertexes[1422+2]=-1519	// z
+
+knot_vertexes[1425]=-5973  	// x
+knot_vertexes[1425+1]=6005	// y
+knot_vertexes[1425+2]=-2104	// z
+
+knot_vertexes[1428]=-6287  	// x
+knot_vertexes[1428+1]=5935	// y
+knot_vertexes[1428+2]=-2678	// z
+
+knot_vertexes[1431]=-6634  	// x
+knot_vertexes[1431+1]=5879	// y
+knot_vertexes[1431+2]=-3237	// z
+
+knot_vertexes[1434]=-7014  	// x
+knot_vertexes[1434+1]=5831	// y
+knot_vertexes[1434+2]=-3779	// z
+
+knot_vertexes[1437]=-7428  	// x
+knot_vertexes[1437+1]=5790	// y
+knot_vertexes[1437+2]=-4300	// z
+
+knot_vertexes[1440]=-7877  	// x
+knot_vertexes[1440+1]=5750	// y
+knot_vertexes[1440+2]=-4799	// z
+
+knot_vertexes[1443]=-8359  	// x
+knot_vertexes[1443+1]=5708	// y
+knot_vertexes[1443+2]=-5271	// z
+
+knot_vertexes[1446]=-8875  	// x
+knot_vertexes[1446+1]=5658	// y
+knot_vertexes[1446+2]=-5715	// z
+
+knot_vertexes[1449]=-9423  	// x
+knot_vertexes[1449+1]=5598	// y
+knot_vertexes[1449+2]=-6128	// z
+
+knot_vertexes[1452]=-10001  	// x
+knot_vertexes[1452+1]=5522	// y
+knot_vertexes[1452+2]=-6509	// z
+
+knot_vertexes[1455]=-10606  	// x
+knot_vertexes[1455+1]=5428	// y
+knot_vertexes[1455+2]=-6854	// z
+
+knot_vertexes[1458]=-11237  	// x
+knot_vertexes[1458+1]=5311	// y
+knot_vertexes[1458+2]=-7162	// z
+
+knot_vertexes[1461]=-11890  	// x
+knot_vertexes[1461+1]=5168	// y
+knot_vertexes[1461+2]=-7432	// z
+
+knot_vertexes[1464]=-12562  	// x
+knot_vertexes[1464+1]=4996	// y
+knot_vertexes[1464+2]=-7662	// z
+
+knot_vertexes[1467]=-13249  	// x
+knot_vertexes[1467+1]=4791	// y
+knot_vertexes[1467+2]=-7850	// z
+
+knot_vertexes[1470]=-13946  	// x
+knot_vertexes[1470+1]=4552	// y
+knot_vertexes[1470+2]=-7996	// z
+
+knot_vertexes[1473]=-14649  	// x
+knot_vertexes[1473+1]=4276	// y
+knot_vertexes[1473+2]=-8100	// z
+
+knot_vertexes[1476]=-15355  	// x
+knot_vertexes[1476+1]=3962	// y
+knot_vertexes[1476+2]=-8159	// z
+
+knot_vertexes[1479]=-16057  	// x
+knot_vertexes[1479+1]=3608	// y
+knot_vertexes[1479+2]=-8175	// z
+
+knot_vertexes[1482]=-16751  	// x
+knot_vertexes[1482+1]=3214	// y
+knot_vertexes[1482+2]=-8147	// z
+
+knot_vertexes[1485]=-17432  	// x
+knot_vertexes[1485+1]=2779	// y
+knot_vertexes[1485+2]=-8075	// z
+
+knot_vertexes[1488]=-18094  	// x
+knot_vertexes[1488+1]=2303	// y
+knot_vertexes[1488+2]=-7959	// z
+
+knot_vertexes[1491]=-18734  	// x
+knot_vertexes[1491+1]=1788	// y
+knot_vertexes[1491+2]=-7801	// z
+
+knot_vertexes[1494]=-19345  	// x
+knot_vertexes[1494+1]=1234	// y
+knot_vertexes[1494+2]=-7600	// z
+
+knot_vertexes[1497]=-19923  	// x
+knot_vertexes[1497+1]=642	// y
+knot_vertexes[1497+2]=-7359	// z
+
+knot_vertexes[1500]=-20463  	// x
+knot_vertexes[1500+1]=16	// y
+knot_vertexes[1500+2]=-7078	// z
+
+knot_vertexes[1503]=-20962  	// x
+knot_vertexes[1503+1]=-643	// y
+knot_vertexes[1503+2]=-6759	// z
+
+knot_vertexes[1506]=-21414  	// x
+knot_vertexes[1506+1]=-1332	// y
+knot_vertexes[1506+2]=-6404	// z
+
+knot_vertexes[1509]=-21815  	// x
+knot_vertexes[1509+1]=-2047	// y
+knot_vertexes[1509+2]=-6014	// z
+
+knot_vertexes[1512]=-22163  	// x
+knot_vertexes[1512+1]=-2785	// y
+knot_vertexes[1512+2]=-5591	// z
+
+knot_vertexes[1515]=-22454  	// x
+knot_vertexes[1515+1]=-3542	// y
+knot_vertexes[1515+2]=-5139	// z
+
+knot_vertexes[1518]=-22685  	// x
+knot_vertexes[1518+1]=-4314	// y
+knot_vertexes[1518+2]=-4659	// z
+
+knot_vertexes[1521]=-22854  	// x
+knot_vertexes[1521+1]=-5096	// y
+knot_vertexes[1521+2]=-4154	// z
+
+knot_vertexes[1524]=-22960  	// x
+knot_vertexes[1524+1]=-5883	// y
+knot_vertexes[1524+2]=-3626	// z
+
+knot_vertexes[1527]=-23001  	// x
+knot_vertexes[1527+1]=-6671	// y
+knot_vertexes[1527+2]=-3079	// z
+
+knot_vertexes[1530]=-22975  	// x
+knot_vertexes[1530+1]=-7454	// y
+knot_vertexes[1530+2]=-2515	// z
+
+knot_vertexes[1533]=-22884  	// x
+knot_vertexes[1533+1]=-8228	// y
+knot_vertexes[1533+2]=-1938	// z
+
+knot_vertexes[1536]=-22727  	// x
+knot_vertexes[1536+1]=-8988	// y
+knot_vertexes[1536+2]=-1350	// z
+
+knot_vertexes[1539]=-22505  	// x
+knot_vertexes[1539+1]=-9729	// y
+knot_vertexes[1539+2]=-754	// z
+
+knot_vertexes[1542]=-22219  	// x
+knot_vertexes[1542+1]=-10447	// y
+knot_vertexes[1542+2]=-155	// z
+
+knot_vertexes[1545]=-21871  	// x
+knot_vertexes[1545+1]=-11136	// y
+knot_vertexes[1545+2]=444	// z
+
+knot_vertexes[1548]=-21463  	// x
+knot_vertexes[1548+1]=-11792	// y
+knot_vertexes[1548+2]=1042	// z
+
+knot_vertexes[1551]=-20998  	// x
+knot_vertexes[1551+1]=-12411	// y
+knot_vertexes[1551+2]=1635	// z
+
+knot_vertexes[1554]=-20479  	// x
+knot_vertexes[1554+1]=-12990	// y
+knot_vertexes[1554+2]=2218	// z
+
+knot_vertexes[1557]=-19909  	// x
+knot_vertexes[1557+1]=-13525	// y
+knot_vertexes[1557+2]=2790	// z
+
+knot_vertexes[1560]=-19293  	// x
+knot_vertexes[1560+1]=-14013	// y
+knot_vertexes[1560+2]=3347	// z
+
+knot_vertexes[1563]=-18634  	// x
+knot_vertexes[1563+1]=-14450	// y
+knot_vertexes[1563+2]=3887	// z
+
+knot_vertexes[1566]=-17937  	// x
+knot_vertexes[1566+1]=-14836	// y
+knot_vertexes[1566+2]=4405	// z
+
+knot_vertexes[1569]=-17207  	// x
+knot_vertexes[1569+1]=-15168	// y
+knot_vertexes[1569+2]=4900	// z
+
+knot_vertexes[1572]=-16447  	// x
+knot_vertexes[1572+1]=-15444	// y
+knot_vertexes[1572+2]=5368	// z
+
+knot_vertexes[1575]=-15665  	// x
+knot_vertexes[1575+1]=-15665	// y
+knot_vertexes[1575+2]=5808	// z
+
+knot_vertexes[1578]=-14863  	// x
+knot_vertexes[1578+1]=-15829	// y
+knot_vertexes[1578+2]=6217	// z
+
+knot_vertexes[1581]=-14048  	// x
+knot_vertexes[1581+1]=-15937	// y
+knot_vertexes[1581+2]=6592	// z
+
+knot_vertexes[1584]=-13225  	// x
+knot_vertexes[1584+1]=-15990	// y
+knot_vertexes[1584+2]=6932	// z
+
+knot_vertexes[1587]=-12398  	// x
+knot_vertexes[1587+1]=-15988	// y
+knot_vertexes[1587+2]=7235	// z
+
+knot_vertexes[1590]=-11572  	// x
+knot_vertexes[1590+1]=-15934	// y
+knot_vertexes[1590+2]=7499	// z
+
+knot_vertexes[1593]=-10752  	// x
+knot_vertexes[1593+1]=-15829	// y
+knot_vertexes[1593+2]=7723	// z
+
+knot_vertexes[1596]=-9943  	// x
+knot_vertexes[1596+1]=-15677	// y
+knot_vertexes[1596+2]=7906	// z
+
+knot_vertexes[1599]=-9148  	// x
+knot_vertexes[1599+1]=-15480	// y
+knot_vertexes[1599+2]=8046	// z
+
+knot_vertexes[1602]=-8371  	// x
+knot_vertexes[1602+1]=-15241	// y
+knot_vertexes[1602+2]=8143	// z
+
+knot_vertexes[1605]=-7616  	// x
+knot_vertexes[1605+1]=-14964	// y
+knot_vertexes[1605+2]=8196	// z
+
+knot_vertexes[1608]=-6886  	// x
+knot_vertexes[1608+1]=-14653	// y
+knot_vertexes[1608+2]=8206	// z
+
+knot_vertexes[1611]=-6184  	// x
+knot_vertexes[1611+1]=-14312	// y
+knot_vertexes[1611+2]=8171	// z
+
+knot_vertexes[1614]=-5512  	// x
+knot_vertexes[1614+1]=-13947	// y
+knot_vertexes[1614+2]=8093	// z
+
+knot_vertexes[1617]=-4871  	// x
+knot_vertexes[1617+1]=-13560	// y
+knot_vertexes[1617+2]=7971	// z
+
+knot_vertexes[1620]=-4264  	// x
+knot_vertexes[1620+1]=-13158	// y
+knot_vertexes[1620+2]=7807	// z
+
+knot_vertexes[1623]=-3691  	// x
+knot_vertexes[1623+1]=-12745	// y
+knot_vertexes[1623+2]=7600	// z
+
+knot_vertexes[1626]=-3152  	// x
+knot_vertexes[1626+1]=-12325	// y
+knot_vertexes[1626+2]=7353	// z
+
+knot_vertexes[1629]=-2648  	// x
+knot_vertexes[1629+1]=-11903	// y
+knot_vertexes[1629+2]=7067	// z
+
+knot_vertexes[1632]=-2177  	// x
+knot_vertexes[1632+1]=-11485	// y
+knot_vertexes[1632+2]=6742	// z
+
+knot_vertexes[1635]=-1740  	// x
+knot_vertexes[1635+1]=-11074	// y
+knot_vertexes[1635+2]=6382	// z
+
+knot_vertexes[1638]=-1334  	// x
+knot_vertexes[1638+1]=-10675	// y
+knot_vertexes[1638+2]=5987	// z
+
+knot_vertexes[1641]=-958  	// x
+knot_vertexes[1641+1]=-10291	// y
+knot_vertexes[1641+2]=5560	// z
+
+knot_vertexes[1644]=-609  	// x
+knot_vertexes[1644+1]=-9928	// y
+knot_vertexes[1644+2]=5104	// z
+
+knot_vertexes[1647]=-285  	// x
+knot_vertexes[1647+1]=-9587	// y
+knot_vertexes[1647+2]=4620	// z
+
+knot_vertexes[1650]=15  	// x
+knot_vertexes[1650+1]=-9273	// y
+knot_vertexes[1650+2]=4112	// z
+
+knot_vertexes[1653]=298  	// x
+knot_vertexes[1653+1]=-8988	// y
+knot_vertexes[1653+2]=3581	// z
+
+knot_vertexes[1656]=566  	// x
+knot_vertexes[1656+1]=-8733	// y
+knot_vertexes[1656+2]=3031	// z
+
+knot_vertexes[1659]=822  	// x
+knot_vertexes[1659+1]=-8512	// y
+knot_vertexes[1659+2]=2465	// z
+
+knot_vertexes[1662]=1069  	// x
+knot_vertexes[1662+1]=-8326	// y
+knot_vertexes[1662+2]=1886	// z
+
+knot_vertexes[1665]=1313  	// x
+knot_vertexes[1665+1]=-8174	// y
+knot_vertexes[1665+2]=1297	// z
+
+knot_vertexes[1668]=1556  	// x
+knot_vertexes[1668+1]=-8059	// y
+knot_vertexes[1668+2]=701	// z
+
+knot_vertexes[1671]=1803  	// x
+knot_vertexes[1671+1]=-7979	// y
+knot_vertexes[1671+2]=101	// z
+
+knot_vertexes[1674]=2057  	// x
+knot_vertexes[1674+1]=-7934	// y
+knot_vertexes[1674+2]=-498	// z
+
+knot_vertexes[1677]=2322  	// x
+knot_vertexes[1677+1]=-7923	// y
+knot_vertexes[1677+2]=-1095	// z
+
+knot_vertexes[1680]=2602  	// x
+knot_vertexes[1680+1]=-7945	// y
+knot_vertexes[1680+2]=-1687	// z
+
+knot_vertexes[1683]=2901  	// x
+knot_vertexes[1683+1]=-7997	// y
+knot_vertexes[1683+2]=-2269	// z
+
+knot_vertexes[1686]=3220  	// x
+knot_vertexes[1686+1]=-8078	// y
+knot_vertexes[1686+2]=-2839	// z
+
+knot_vertexes[1689]=3564  	// x
+knot_vertexes[1689+1]=-8184	// y
+knot_vertexes[1689+2]=-3394	// z
+
+knot_vertexes[1692]=3935  	// x
+knot_vertexes[1692+1]=-8313	// y
+knot_vertexes[1692+2]=-3930	// z
+
+knot_vertexes[1695]=4335  	// x
+knot_vertexes[1695+1]=-8460	// y
+knot_vertexes[1695+2]=-4445	// z
+
+knot_vertexes[1698]=4765  	// x
+knot_vertexes[1698+1]=-8623	// y
+knot_vertexes[1698+2]=-4936	// z
+
+knot_vertexes[1701]=5228  	// x
+knot_vertexes[1701+1]=-8797	// y
+knot_vertexes[1701+2]=-5401	// z
+
+knot_vertexes[1704]=5723  	// x
+knot_vertexes[1704+1]=-8978	// y
+knot_vertexes[1704+2]=-5836	// z
+
+knot_vertexes[1707]=6253  	// x
+knot_vertexes[1707+1]=-9161	// y
+knot_vertexes[1707+2]=-6241	// z
+
+knot_vertexes[1710]=6816  	// x
+knot_vertexes[1710+1]=-9343	// y
+knot_vertexes[1710+2]=-6611	// z
+
+knot_vertexes[1713]=7412  	// x
+knot_vertexes[1713+1]=-9518	// y
+knot_vertexes[1713+2]=-6946	// z
+
+knot_vertexes[1716]=8040  	// x
+knot_vertexes[1716+1]=-9683	// y
+knot_vertexes[1716+2]=-7243	// z
+
+knot_vertexes[1719]=8699  	// x
+knot_vertexes[1719+1]=-9833	// y
+knot_vertexes[1719+2]=-7502	// z
+
+knot_vertexes[1722]=9387  	// x
+knot_vertexes[1722+1]=-9963	// y
+knot_vertexes[1722+2]=-7720	// z
+
+knot_vertexes[1725]=10101  	// x
+knot_vertexes[1725+1]=-10069	// y
+knot_vertexes[1725+2]=-7896	// z
+
+knot_vertexes[1728]=10840  	// x
+knot_vertexes[1728+1]=-10148	// y
+knot_vertexes[1728+2]=-8030	// z
+
+knot_vertexes[1731]=11599  	// x
+knot_vertexes[1731+1]=-10196	// y
+knot_vertexes[1731+2]=-8121	// z
+
+knot_vertexes[1734]=12375  	// x
+knot_vertexes[1734+1]=-10208	// y
+knot_vertexes[1734+2]=-8168	// z
+
+knot_vertexes[1737]=13165  	// x
+knot_vertexes[1737+1]=-10183	// y
+knot_vertexes[1737+2]=-8171	// z
+
+knot_vertexes[1740]=13963  	// x
+knot_vertexes[1740+1]=-10117	// y
+knot_vertexes[1740+2]=-8131	// z
+
+knot_vertexes[1743]=14766  	// x
+knot_vertexes[1743+1]=-10008	// y
+knot_vertexes[1743+2]=-8046	// z
+
+knot_vertexes[1746]=15569  	// x
+knot_vertexes[1746+1]=-9854	// y
+knot_vertexes[1746+2]=-7918	// z
+
+knot_vertexes[1749]=16367  	// x
+knot_vertexes[1749+1]=-9654	// y
+knot_vertexes[1749+2]=-7748	// z
+
+knot_vertexes[1752]=17155  	// x
+knot_vertexes[1752+1]=-9406	// y
+knot_vertexes[1752+2]=-7535	// z
+
+knot_vertexes[1755]=17927  	// x
+knot_vertexes[1755+1]=-9110	// y
+knot_vertexes[1755+2]=-7283	// z
+
+knot_vertexes[1758]=18680  	// x
+knot_vertexes[1758+1]=-8766	// y
+knot_vertexes[1758+2]=-6991	// z
+
+knot_vertexes[1761]=19407  	// x
+knot_vertexes[1761+1]=-8375	// y
+knot_vertexes[1761+2]=-6661	// z
+
+knot_vertexes[1764]=20104  	// x
+knot_vertexes[1764+1]=-7937	// y
+knot_vertexes[1764+2]=-6296	// z
+
+knot_vertexes[1767]=20766  	// x
+knot_vertexes[1767+1]=-7454	// y
+knot_vertexes[1767+2]=-5896	// z
+
+knot_vertexes[1770]=21387  	// x
+knot_vertexes[1770+1]=-6928	// y
+knot_vertexes[1770+2]=-5465	// z
+
+knot_vertexes[1773]=21965  	// x
+knot_vertexes[1773+1]=-6360	// y
+knot_vertexes[1773+2]=-5004	// z
+
+knot_vertexes[1776]=22494  	// x
+knot_vertexes[1776+1]=-5755	// y
+knot_vertexes[1776+2]=-4517	// z
+
+knot_vertexes[1779]=22970  	// x
+knot_vertexes[1779+1]=-5114	// y
+knot_vertexes[1779+2]=-4005	// z
+
+knot_vertexes[1782]=23390  	// x
+knot_vertexes[1782+1]=-4442	// y
+knot_vertexes[1782+2]=-3471	// z
+
+knot_vertexes[1785]=23752  	// x
+knot_vertexes[1785+1]=-3743	// y
+knot_vertexes[1785+2]=-2919	// z
+
+knot_vertexes[1788]=24051  	// x
+knot_vertexes[1788+1]=-3020	// y
+knot_vertexes[1788+2]=-2351	// z
+
+knot_vertexes[1791]=24286  	// x
+knot_vertexes[1791+1]=-2278	// y
+knot_vertexes[1791+2]=-1771	// z
+
+knot_vertexes[1794]=24455  	// x
+knot_vertexes[1794+1]=-1521	// y
+knot_vertexes[1794+2]=-1180	// z
+
+knot_vertexes[1797]=24557  	// x
+knot_vertexes[1797+1]=-755	// y
+knot_vertexes[1797+2]=-583	// z
+
+// torus_knot End

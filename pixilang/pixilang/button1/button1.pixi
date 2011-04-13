@@ -1,0 +1,86 @@
+
+config:
+scale_level = 4
+
+init:
+font_size=8 // STUB: get real font size
+start_timer(0)
+tk=16
+scale_k = 256*scale_level
+
+pixis:
+B = #ff0000
+pic="
+B......BB......B
+.B....B..B....B.
+..BBBB....BBBB..
+B......BB......B
+.B....B..B....B.
+..BBBB....BBBB..
+B......BB......B
+.B....B..B....B.
+..BBBB....BBBB..
+B......BB......B
+.B....B..B....B.
+..BBBB....BBBB..
+B......BB......B
+.B....B..B....B.
+..BBBB....BBBB..
+B......BB......B
+.B....B..B....B.
+..BBBB....BBBB..
+"
+//ПРЕОБРАЗУЕМ ЭТУ СТРОКУ В КАРТИНКУ:
+make_pixi(pic)
+// -------------------------------------------
+
+
+main:
+clear
+x=-2*font_size
+y=0
+
+t=get_timer(0)%32767
+t_use=t/tk
+
+t_reset
+t_scale (scale_k, scale_k, scale_k)
+t_rotate_x (45, x,y,0)
+//t_rotate_z (45, x,y,0)
+//t_rotate_y (t_use, x,y,0) //print("P", x, y ,#ffffff)
+/*t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("i", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("x", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("i", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("l", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("a", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("n", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("g", x, y)*/
+
+
+sp=pic fx_pixi
+s="P" fx_str
+s="i" fx_str
+s="x" fx_str
+s="i" fx_str
+s="l" fx_str
+s="a" fx_str
+s="n" fx_str
+s="g" fx_str
+
+
+frame(33)
+go main
+
+fx_rot:
+t_rotate_y (t_use, x,y,0) x+font_size y+(sin(t_use)/64) 
+ret
+
+fx_str: // arg = s
+fx_rot
+print(s, x, y, #ffffff)
+ret
+
+fx_pixi: // arg = s
+fx_rot
+pixi(sp, x, y)
+ret

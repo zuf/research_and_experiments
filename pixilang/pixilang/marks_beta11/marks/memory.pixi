@@ -1,0 +1,98 @@
+go memory_bench_end
+
+start_memory_bench:
+conf_memory_bench:
+CYCLES_COUNT = 5000
+ARRAY_SIZE = 128*1024
+if fast_mode=1 {CYCLES_COUNT = CYCLES_COUNT/10}
+if fast_mode=2 {CYCLES_COUNT = CYCLES_COUNT/100}
+
+init_memory_bench:
+int_arr1 = new_array(ARRAY_SIZE)
+int_arr2 = new_array(ARRAY_SIZE)
+int_arr3 = new_array(ARRAY_SIZE)
+int_rnd_indexes = new_array(ARRAY_SIZE)
+i=0
+while(i<ARRAY_SIZE)
+{
+  rand_index:
+  int_rnd_indexes[i] = rand
+  if int_rnd_indexes[i]>=ARRAY_SIZE {go rand_index}
+  i+1
+}
+
+divider = CYCLES_COUNT/100
+if divider<1 {divider=1}
+do_memory_bench=1
+time_end = 0
+work_time = 0
+
+
+// ------------------------------------------------------------
+memory_bench:
+
+i=0
+n=0
+if do_memory_bench=1
+{
+  time_begin = get_timer (0)
+  while (i<CYCLES_COUNT)
+  {
+    // memset
+    n=0 while(n<ARRAY_SIZE)
+    {
+      int_arr1[n] = n
+      n+1
+    }    
+    // mem copy
+    n=0 while(n<ARRAY_SIZE)
+    {
+      int_arr2[n] = int_arr1[n]
+      n+1
+    }
+    // random access
+    n=0 while(n<ARRAY_SIZE)
+    {
+      index = int_rnd_indexes[n]
+      int_arr3[n] = int_arr1[index]
+      n+1
+    }
+    
+    //if (i%divider=0)
+    //{
+      clear(BACK_COLOR)
+      p   = i/divider
+      str = "Memory bench: $p%"
+      y   = -4*get_string_size(str)
+      print(str, y, 0, #ffffff)
+      frame
+    //}
+    i+1
+  }
+
+  do_memory_bench=0
+
+  time_end = get_timer (0)
+  work_time = time_end-time_begin
+  marks = (CYCLES_COUNT*ARRAY_SIZE)/work_time
+  bench_work_times[BENCH_INDEX_MEMORY] = work_time
+  bench_scores[BENCH_INDEX_MEMORY] = marks
+}
+else
+{
+  clear(BACK_COLOR)
+  str = "Memory benchmark time: $work_time ms"
+  y   = -4*get_string_size(str)
+  print(str, y, 0, #ffffff)
+  print("Memory marks: $marks", y, -16, #ffffff)
+  frame
+}
+
+// TODO: Free Arrays
+int_arr1 = 0
+int_arr2 = 0
+int_arr3 = 0
+int_rnd_indexes = 0
+
+ret
+memory_bench_end:

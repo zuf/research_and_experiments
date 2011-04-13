@@ -1,0 +1,4099 @@
+//Torus
+bigtorus_vertexes = new_array(3072)
+bigtorus_vertexes[0]=20480  	// x
+bigtorus_vertexes[0+1]=0	// y
+bigtorus_vertexes[0+2]=0	// z
+
+bigtorus_vertexes[3]=20382  	// x
+bigtorus_vertexes[3+1]=0	// y
+bigtorus_vertexes[3+2]=999	// z
+
+bigtorus_vertexes[6]=20090  	// x
+bigtorus_vertexes[6+1]=0	// y
+bigtorus_vertexes[6+2]=1959	// z
+
+bigtorus_vertexes[9]=19617  	// x
+bigtorus_vertexes[9+1]=0	// y
+bigtorus_vertexes[9+2]=2845	// z
+
+bigtorus_vertexes[12]=18980  	// x
+bigtorus_vertexes[12+1]=0	// y
+bigtorus_vertexes[12+2]=3620	// z
+
+bigtorus_vertexes[15]=18205  	// x
+bigtorus_vertexes[15+1]=0	// y
+bigtorus_vertexes[15+2]=4257	// z
+
+bigtorus_vertexes[18]=17319  	// x
+bigtorus_vertexes[18+1]=0	// y
+bigtorus_vertexes[18+2]=4730	// z
+
+bigtorus_vertexes[21]=16359  	// x
+bigtorus_vertexes[21+1]=0	// y
+bigtorus_vertexes[21+2]=5022	// z
+
+bigtorus_vertexes[24]=15360  	// x
+bigtorus_vertexes[24+1]=0	// y
+bigtorus_vertexes[24+2]=5120	// z
+
+bigtorus_vertexes[27]=14361  	// x
+bigtorus_vertexes[27+1]=0	// y
+bigtorus_vertexes[27+2]=5022	// z
+
+bigtorus_vertexes[30]=13401  	// x
+bigtorus_vertexes[30+1]=0	// y
+bigtorus_vertexes[30+2]=4730	// z
+
+bigtorus_vertexes[33]=12515  	// x
+bigtorus_vertexes[33+1]=0	// y
+bigtorus_vertexes[33+2]=4257	// z
+
+bigtorus_vertexes[36]=11740  	// x
+bigtorus_vertexes[36+1]=0	// y
+bigtorus_vertexes[36+2]=3620	// z
+
+bigtorus_vertexes[39]=11103  	// x
+bigtorus_vertexes[39+1]=0	// y
+bigtorus_vertexes[39+2]=2845	// z
+
+bigtorus_vertexes[42]=10630  	// x
+bigtorus_vertexes[42+1]=0	// y
+bigtorus_vertexes[42+2]=1959	// z
+
+bigtorus_vertexes[45]=10338  	// x
+bigtorus_vertexes[45+1]=0	// y
+bigtorus_vertexes[45+2]=999	// z
+
+bigtorus_vertexes[48]=10240  	// x
+bigtorus_vertexes[48+1]=0	// y
+bigtorus_vertexes[48+2]=0	// z
+
+bigtorus_vertexes[51]=10338  	// x
+bigtorus_vertexes[51+1]=0	// y
+bigtorus_vertexes[51+2]=-998	// z
+
+bigtorus_vertexes[54]=10630  	// x
+bigtorus_vertexes[54+1]=0	// y
+bigtorus_vertexes[54+2]=-1958	// z
+
+bigtorus_vertexes[57]=11103  	// x
+bigtorus_vertexes[57+1]=0	// y
+bigtorus_vertexes[57+2]=-2844	// z
+
+bigtorus_vertexes[60]=11740  	// x
+bigtorus_vertexes[60+1]=0	// y
+bigtorus_vertexes[60+2]=-3619	// z
+
+bigtorus_vertexes[63]=12515  	// x
+bigtorus_vertexes[63+1]=0	// y
+bigtorus_vertexes[63+2]=-4256	// z
+
+bigtorus_vertexes[66]=13401  	// x
+bigtorus_vertexes[66+1]=0	// y
+bigtorus_vertexes[66+2]=-4729	// z
+
+bigtorus_vertexes[69]=14361  	// x
+bigtorus_vertexes[69+1]=0	// y
+bigtorus_vertexes[69+2]=-5021	// z
+
+bigtorus_vertexes[72]=15360  	// x
+bigtorus_vertexes[72+1]=0	// y
+bigtorus_vertexes[72+2]=-5119	// z
+
+bigtorus_vertexes[75]=16359  	// x
+bigtorus_vertexes[75+1]=0	// y
+bigtorus_vertexes[75+2]=-5021	// z
+
+bigtorus_vertexes[78]=17319  	// x
+bigtorus_vertexes[78+1]=0	// y
+bigtorus_vertexes[78+2]=-4729	// z
+
+bigtorus_vertexes[81]=18205  	// x
+bigtorus_vertexes[81+1]=0	// y
+bigtorus_vertexes[81+2]=-4256	// z
+
+bigtorus_vertexes[84]=18980  	// x
+bigtorus_vertexes[84+1]=0	// y
+bigtorus_vertexes[84+2]=-3619	// z
+
+bigtorus_vertexes[87]=19617  	// x
+bigtorus_vertexes[87+1]=0	// y
+bigtorus_vertexes[87+2]=-2844	// z
+
+bigtorus_vertexes[90]=20090  	// x
+bigtorus_vertexes[90+1]=0	// y
+bigtorus_vertexes[90+2]=-1958	// z
+
+bigtorus_vertexes[93]=20382  	// x
+bigtorus_vertexes[93+1]=0	// y
+bigtorus_vertexes[93+2]=-998	// z
+
+bigtorus_vertexes[96]=20086  	// x
+bigtorus_vertexes[96+1]=3995	// y
+bigtorus_vertexes[96+2]=0	// z
+
+bigtorus_vertexes[99]=19990  	// x
+bigtorus_vertexes[99+1]=3976	// y
+bigtorus_vertexes[99+2]=999	// z
+
+bigtorus_vertexes[102]=19704  	// x
+bigtorus_vertexes[102+1]=3919	// y
+bigtorus_vertexes[102+2]=1959	// z
+
+bigtorus_vertexes[105]=19240  	// x
+bigtorus_vertexes[105+1]=3827	// y
+bigtorus_vertexes[105+2]=2845	// z
+
+bigtorus_vertexes[108]=18616  	// x
+bigtorus_vertexes[108+1]=3703	// y
+bigtorus_vertexes[108+2]=3620	// z
+
+bigtorus_vertexes[111]=17855  	// x
+bigtorus_vertexes[111+1]=3552	// y
+bigtorus_vertexes[111+2]=4257	// z
+
+bigtorus_vertexes[114]=16987  	// x
+bigtorus_vertexes[114+1]=3379	// y
+bigtorus_vertexes[114+2]=4730	// z
+
+bigtorus_vertexes[117]=16045  	// x
+bigtorus_vertexes[117+1]=3191	// y
+bigtorus_vertexes[117+2]=5022	// z
+
+bigtorus_vertexes[120]=15065  	// x
+bigtorus_vertexes[120+1]=2997	// y
+bigtorus_vertexes[120+2]=5120	// z
+
+bigtorus_vertexes[123]=14085  	// x
+bigtorus_vertexes[123+1]=2802	// y
+bigtorus_vertexes[123+2]=5022	// z
+
+bigtorus_vertexes[126]=13143  	// x
+bigtorus_vertexes[126+1]=2614	// y
+bigtorus_vertexes[126+2]=4730	// z
+
+bigtorus_vertexes[129]=12275  	// x
+bigtorus_vertexes[129+1]=2442	// y
+bigtorus_vertexes[129+2]=4257	// z
+
+bigtorus_vertexes[132]=11514  	// x
+bigtorus_vertexes[132+1]=2290	// y
+bigtorus_vertexes[132+2]=3620	// z
+
+bigtorus_vertexes[135]=10890  	// x
+bigtorus_vertexes[135+1]=2166	// y
+bigtorus_vertexes[135+2]=2845	// z
+
+bigtorus_vertexes[138]=10425  	// x
+bigtorus_vertexes[138+1]=2074	// y
+bigtorus_vertexes[138+2]=1959	// z
+
+bigtorus_vertexes[141]=10140  	// x
+bigtorus_vertexes[141+1]=2017	// y
+bigtorus_vertexes[141+2]=999	// z
+
+bigtorus_vertexes[144]=10043  	// x
+bigtorus_vertexes[144+1]=1998	// y
+bigtorus_vertexes[144+2]=0	// z
+
+bigtorus_vertexes[147]=10140  	// x
+bigtorus_vertexes[147+1]=2017	// y
+bigtorus_vertexes[147+2]=-998	// z
+
+bigtorus_vertexes[150]=10425  	// x
+bigtorus_vertexes[150+1]=2074	// y
+bigtorus_vertexes[150+2]=-1958	// z
+
+bigtorus_vertexes[153]=10890  	// x
+bigtorus_vertexes[153+1]=2166	// y
+bigtorus_vertexes[153+2]=-2844	// z
+
+bigtorus_vertexes[156]=11514  	// x
+bigtorus_vertexes[156+1]=2290	// y
+bigtorus_vertexes[156+2]=-3619	// z
+
+bigtorus_vertexes[159]=12275  	// x
+bigtorus_vertexes[159+1]=2442	// y
+bigtorus_vertexes[159+2]=-4256	// z
+
+bigtorus_vertexes[162]=13143  	// x
+bigtorus_vertexes[162+1]=2614	// y
+bigtorus_vertexes[162+2]=-4729	// z
+
+bigtorus_vertexes[165]=14085  	// x
+bigtorus_vertexes[165+1]=2802	// y
+bigtorus_vertexes[165+2]=-5021	// z
+
+bigtorus_vertexes[168]=15065  	// x
+bigtorus_vertexes[168+1]=2997	// y
+bigtorus_vertexes[168+2]=-5119	// z
+
+bigtorus_vertexes[171]=16045  	// x
+bigtorus_vertexes[171+1]=3191	// y
+bigtorus_vertexes[171+2]=-5021	// z
+
+bigtorus_vertexes[174]=16987  	// x
+bigtorus_vertexes[174+1]=3379	// y
+bigtorus_vertexes[174+2]=-4729	// z
+
+bigtorus_vertexes[177]=17855  	// x
+bigtorus_vertexes[177+1]=3552	// y
+bigtorus_vertexes[177+2]=-4256	// z
+
+bigtorus_vertexes[180]=18616  	// x
+bigtorus_vertexes[180+1]=3703	// y
+bigtorus_vertexes[180+2]=-3619	// z
+
+bigtorus_vertexes[183]=19240  	// x
+bigtorus_vertexes[183+1]=3827	// y
+bigtorus_vertexes[183+2]=-2844	// z
+
+bigtorus_vertexes[186]=19704  	// x
+bigtorus_vertexes[186+1]=3919	// y
+bigtorus_vertexes[186+2]=-1958	// z
+
+bigtorus_vertexes[189]=19990  	// x
+bigtorus_vertexes[189+1]=3976	// y
+bigtorus_vertexes[189+2]=-998	// z
+
+bigtorus_vertexes[192]=18921  	// x
+bigtorus_vertexes[192+1]=7837	// y
+bigtorus_vertexes[192+2]=0	// z
+
+bigtorus_vertexes[195]=18830  	// x
+bigtorus_vertexes[195+1]=7800	// y
+bigtorus_vertexes[195+2]=999	// z
+
+bigtorus_vertexes[198]=18561  	// x
+bigtorus_vertexes[198+1]=7688	// y
+bigtorus_vertexes[198+2]=1959	// z
+
+bigtorus_vertexes[201]=18124  	// x
+bigtorus_vertexes[201+1]=7507	// y
+bigtorus_vertexes[201+2]=2845	// z
+
+bigtorus_vertexes[204]=17536  	// x
+bigtorus_vertexes[204+1]=7263	// y
+bigtorus_vertexes[204+2]=3620	// z
+
+bigtorus_vertexes[207]=16819  	// x
+bigtorus_vertexes[207+1]=6967	// y
+bigtorus_vertexes[207+2]=4257	// z
+
+bigtorus_vertexes[210]=16001  	// x
+bigtorus_vertexes[210+1]=6628	// y
+bigtorus_vertexes[210+2]=4730	// z
+
+bigtorus_vertexes[213]=15114  	// x
+bigtorus_vertexes[213+1]=6260	// y
+bigtorus_vertexes[213+2]=5022	// z
+
+bigtorus_vertexes[216]=14191  	// x
+bigtorus_vertexes[216+1]=5878	// y
+bigtorus_vertexes[216+2]=5120	// z
+
+bigtorus_vertexes[219]=13268  	// x
+bigtorus_vertexes[219+1]=5496	// y
+bigtorus_vertexes[219+2]=5022	// z
+
+bigtorus_vertexes[222]=12381  	// x
+bigtorus_vertexes[222+1]=5128	// y
+bigtorus_vertexes[222+2]=4730	// z
+
+bigtorus_vertexes[225]=11563  	// x
+bigtorus_vertexes[225+1]=4789	// y
+bigtorus_vertexes[225+2]=4257	// z
+
+bigtorus_vertexes[228]=10846  	// x
+bigtorus_vertexes[228+1]=4493	// y
+bigtorus_vertexes[228+2]=3620	// z
+
+bigtorus_vertexes[231]=10258  	// x
+bigtorus_vertexes[231+1]=4249	// y
+bigtorus_vertexes[231+2]=2845	// z
+
+bigtorus_vertexes[234]=9821  	// x
+bigtorus_vertexes[234+1]=4068	// y
+bigtorus_vertexes[234+2]=1959	// z
+
+bigtorus_vertexes[237]=9551  	// x
+bigtorus_vertexes[237+1]=3956	// y
+bigtorus_vertexes[237+2]=999	// z
+
+bigtorus_vertexes[240]=9461  	// x
+bigtorus_vertexes[240+1]=3919	// y
+bigtorus_vertexes[240+2]=0	// z
+
+bigtorus_vertexes[243]=9551  	// x
+bigtorus_vertexes[243+1]=3956	// y
+bigtorus_vertexes[243+2]=-998	// z
+
+bigtorus_vertexes[246]=9821  	// x
+bigtorus_vertexes[246+1]=4068	// y
+bigtorus_vertexes[246+2]=-1958	// z
+
+bigtorus_vertexes[249]=10258  	// x
+bigtorus_vertexes[249+1]=4249	// y
+bigtorus_vertexes[249+2]=-2844	// z
+
+bigtorus_vertexes[252]=10846  	// x
+bigtorus_vertexes[252+1]=4493	// y
+bigtorus_vertexes[252+2]=-3619	// z
+
+bigtorus_vertexes[255]=11563  	// x
+bigtorus_vertexes[255+1]=4789	// y
+bigtorus_vertexes[255+2]=-4256	// z
+
+bigtorus_vertexes[258]=12381  	// x
+bigtorus_vertexes[258+1]=5128	// y
+bigtorus_vertexes[258+2]=-4729	// z
+
+bigtorus_vertexes[261]=13268  	// x
+bigtorus_vertexes[261+1]=5496	// y
+bigtorus_vertexes[261+2]=-5021	// z
+
+bigtorus_vertexes[264]=14191  	// x
+bigtorus_vertexes[264+1]=5878	// y
+bigtorus_vertexes[264+2]=-5119	// z
+
+bigtorus_vertexes[267]=15114  	// x
+bigtorus_vertexes[267+1]=6260	// y
+bigtorus_vertexes[267+2]=-5021	// z
+
+bigtorus_vertexes[270]=16001  	// x
+bigtorus_vertexes[270+1]=6628	// y
+bigtorus_vertexes[270+2]=-4729	// z
+
+bigtorus_vertexes[273]=16819  	// x
+bigtorus_vertexes[273+1]=6967	// y
+bigtorus_vertexes[273+2]=-4256	// z
+
+bigtorus_vertexes[276]=17536  	// x
+bigtorus_vertexes[276+1]=7263	// y
+bigtorus_vertexes[276+2]=-3619	// z
+
+bigtorus_vertexes[279]=18124  	// x
+bigtorus_vertexes[279+1]=7507	// y
+bigtorus_vertexes[279+2]=-2844	// z
+
+bigtorus_vertexes[282]=18561  	// x
+bigtorus_vertexes[282+1]=7688	// y
+bigtorus_vertexes[282+2]=-1958	// z
+
+bigtorus_vertexes[285]=18830  	// x
+bigtorus_vertexes[285+1]=7800	// y
+bigtorus_vertexes[285+2]=-998	// z
+
+bigtorus_vertexes[288]=17028  	// x
+bigtorus_vertexes[288+1]=11378	// y
+bigtorus_vertexes[288+2]=0	// z
+
+bigtorus_vertexes[291]=16947  	// x
+bigtorus_vertexes[291+1]=11323	// y
+bigtorus_vertexes[291+2]=999	// z
+
+bigtorus_vertexes[294]=16704  	// x
+bigtorus_vertexes[294+1]=11162	// y
+bigtorus_vertexes[294+2]=1959	// z
+
+bigtorus_vertexes[297]=16311  	// x
+bigtorus_vertexes[297+1]=10899	// y
+bigtorus_vertexes[297+2]=2845	// z
+
+bigtorus_vertexes[300]=15782  	// x
+bigtorus_vertexes[300+1]=10545	// y
+bigtorus_vertexes[300+2]=3620	// z
+
+bigtorus_vertexes[303]=15137  	// x
+bigtorus_vertexes[303+1]=10114	// y
+bigtorus_vertexes[303+2]=4257	// z
+
+bigtorus_vertexes[306]=14401  	// x
+bigtorus_vertexes[306+1]=9622	// y
+bigtorus_vertexes[306+2]=4730	// z
+
+bigtorus_vertexes[309]=13602  	// x
+bigtorus_vertexes[309+1]=9088	// y
+bigtorus_vertexes[309+2]=5022	// z
+
+bigtorus_vertexes[312]=12771  	// x
+bigtorus_vertexes[312+1]=8534	// y
+bigtorus_vertexes[312+2]=5120	// z
+
+bigtorus_vertexes[315]=11941  	// x
+bigtorus_vertexes[315+1]=7979	// y
+bigtorus_vertexes[315+2]=5022	// z
+
+bigtorus_vertexes[318]=11142  	// x
+bigtorus_vertexes[318+1]=7445	// y
+bigtorus_vertexes[318+2]=4730	// z
+
+bigtorus_vertexes[321]=10406  	// x
+bigtorus_vertexes[321+1]=6953	// y
+bigtorus_vertexes[321+2]=4257	// z
+
+bigtorus_vertexes[324]=9761  	// x
+bigtorus_vertexes[324+1]=6522	// y
+bigtorus_vertexes[324+2]=3620	// z
+
+bigtorus_vertexes[327]=9232  	// x
+bigtorus_vertexes[327+1]=6168	// y
+bigtorus_vertexes[327+2]=2845	// z
+
+bigtorus_vertexes[330]=8838  	// x
+bigtorus_vertexes[330+1]=5906	// y
+bigtorus_vertexes[330+2]=1959	// z
+
+bigtorus_vertexes[333]=8596  	// x
+bigtorus_vertexes[333+1]=5744	// y
+bigtorus_vertexes[333+2]=999	// z
+
+bigtorus_vertexes[336]=8514  	// x
+bigtorus_vertexes[336+1]=5689	// y
+bigtorus_vertexes[336+2]=0	// z
+
+bigtorus_vertexes[339]=8596  	// x
+bigtorus_vertexes[339+1]=5744	// y
+bigtorus_vertexes[339+2]=-998	// z
+
+bigtorus_vertexes[342]=8838  	// x
+bigtorus_vertexes[342+1]=5906	// y
+bigtorus_vertexes[342+2]=-1958	// z
+
+bigtorus_vertexes[345]=9232  	// x
+bigtorus_vertexes[345+1]=6168	// y
+bigtorus_vertexes[345+2]=-2844	// z
+
+bigtorus_vertexes[348]=9761  	// x
+bigtorus_vertexes[348+1]=6522	// y
+bigtorus_vertexes[348+2]=-3619	// z
+
+bigtorus_vertexes[351]=10406  	// x
+bigtorus_vertexes[351+1]=6953	// y
+bigtorus_vertexes[351+2]=-4256	// z
+
+bigtorus_vertexes[354]=11142  	// x
+bigtorus_vertexes[354+1]=7445	// y
+bigtorus_vertexes[354+2]=-4729	// z
+
+bigtorus_vertexes[357]=11941  	// x
+bigtorus_vertexes[357+1]=7979	// y
+bigtorus_vertexes[357+2]=-5021	// z
+
+bigtorus_vertexes[360]=12771  	// x
+bigtorus_vertexes[360+1]=8534	// y
+bigtorus_vertexes[360+2]=-5119	// z
+
+bigtorus_vertexes[363]=13602  	// x
+bigtorus_vertexes[363+1]=9088	// y
+bigtorus_vertexes[363+2]=-5021	// z
+
+bigtorus_vertexes[366]=14401  	// x
+bigtorus_vertexes[366+1]=9622	// y
+bigtorus_vertexes[366+2]=-4729	// z
+
+bigtorus_vertexes[369]=15137  	// x
+bigtorus_vertexes[369+1]=10114	// y
+bigtorus_vertexes[369+2]=-4256	// z
+
+bigtorus_vertexes[372]=15782  	// x
+bigtorus_vertexes[372+1]=10545	// y
+bigtorus_vertexes[372+2]=-3619	// z
+
+bigtorus_vertexes[375]=16311  	// x
+bigtorus_vertexes[375+1]=10899	// y
+bigtorus_vertexes[375+2]=-2844	// z
+
+bigtorus_vertexes[378]=16704  	// x
+bigtorus_vertexes[378+1]=11162	// y
+bigtorus_vertexes[378+2]=-1958	// z
+
+bigtorus_vertexes[381]=16947  	// x
+bigtorus_vertexes[381+1]=11323	// y
+bigtorus_vertexes[381+2]=-998	// z
+
+bigtorus_vertexes[384]=14482  	// x
+bigtorus_vertexes[384+1]=14482	// y
+bigtorus_vertexes[384+2]=0	// z
+
+bigtorus_vertexes[387]=14412  	// x
+bigtorus_vertexes[387+1]=14412	// y
+bigtorus_vertexes[387+2]=999	// z
+
+bigtorus_vertexes[390]=14206  	// x
+bigtorus_vertexes[390+1]=14206	// y
+bigtorus_vertexes[390+2]=1959	// z
+
+bigtorus_vertexes[393]=13871  	// x
+bigtorus_vertexes[393+1]=13871	// y
+bigtorus_vertexes[393+2]=2845	// z
+
+bigtorus_vertexes[396]=13421  	// x
+bigtorus_vertexes[396+1]=13421	// y
+bigtorus_vertexes[396+2]=3620	// z
+
+bigtorus_vertexes[399]=12873  	// x
+bigtorus_vertexes[399+1]=12873	// y
+bigtorus_vertexes[399+2]=4257	// z
+
+bigtorus_vertexes[402]=12247  	// x
+bigtorus_vertexes[402+1]=12247	// y
+bigtorus_vertexes[402+2]=4730	// z
+
+bigtorus_vertexes[405]=11567  	// x
+bigtorus_vertexes[405+1]=11567	// y
+bigtorus_vertexes[405+2]=5022	// z
+
+bigtorus_vertexes[408]=10861  	// x
+bigtorus_vertexes[408+1]=10861	// y
+bigtorus_vertexes[408+2]=5120	// z
+
+bigtorus_vertexes[411]=10155  	// x
+bigtorus_vertexes[411+1]=10155	// y
+bigtorus_vertexes[411+2]=5022	// z
+
+bigtorus_vertexes[414]=9476  	// x
+bigtorus_vertexes[414+1]=9476	// y
+bigtorus_vertexes[414+2]=4730	// z
+
+bigtorus_vertexes[417]=8850  	// x
+bigtorus_vertexes[417+1]=8850	// y
+bigtorus_vertexes[417+2]=4257	// z
+
+bigtorus_vertexes[420]=8301  	// x
+bigtorus_vertexes[420+1]=8301	// y
+bigtorus_vertexes[420+2]=3620	// z
+
+bigtorus_vertexes[423]=7851  	// x
+bigtorus_vertexes[423+1]=7851	// y
+bigtorus_vertexes[423+2]=2845	// z
+
+bigtorus_vertexes[426]=7516  	// x
+bigtorus_vertexes[426+1]=7516	// y
+bigtorus_vertexes[426+2]=1959	// z
+
+bigtorus_vertexes[429]=7310  	// x
+bigtorus_vertexes[429+1]=7310	// y
+bigtorus_vertexes[429+2]=999	// z
+
+bigtorus_vertexes[432]=7241  	// x
+bigtorus_vertexes[432+1]=7241	// y
+bigtorus_vertexes[432+2]=0	// z
+
+bigtorus_vertexes[435]=7310  	// x
+bigtorus_vertexes[435+1]=7310	// y
+bigtorus_vertexes[435+2]=-998	// z
+
+bigtorus_vertexes[438]=7516  	// x
+bigtorus_vertexes[438+1]=7516	// y
+bigtorus_vertexes[438+2]=-1958	// z
+
+bigtorus_vertexes[441]=7851  	// x
+bigtorus_vertexes[441+1]=7851	// y
+bigtorus_vertexes[441+2]=-2844	// z
+
+bigtorus_vertexes[444]=8301  	// x
+bigtorus_vertexes[444+1]=8301	// y
+bigtorus_vertexes[444+2]=-3619	// z
+
+bigtorus_vertexes[447]=8850  	// x
+bigtorus_vertexes[447+1]=8850	// y
+bigtorus_vertexes[447+2]=-4256	// z
+
+bigtorus_vertexes[450]=9476  	// x
+bigtorus_vertexes[450+1]=9476	// y
+bigtorus_vertexes[450+2]=-4729	// z
+
+bigtorus_vertexes[453]=10155  	// x
+bigtorus_vertexes[453+1]=10155	// y
+bigtorus_vertexes[453+2]=-5021	// z
+
+bigtorus_vertexes[456]=10861  	// x
+bigtorus_vertexes[456+1]=10861	// y
+bigtorus_vertexes[456+2]=-5119	// z
+
+bigtorus_vertexes[459]=11567  	// x
+bigtorus_vertexes[459+1]=11567	// y
+bigtorus_vertexes[459+2]=-5021	// z
+
+bigtorus_vertexes[462]=12247  	// x
+bigtorus_vertexes[462+1]=12247	// y
+bigtorus_vertexes[462+2]=-4729	// z
+
+bigtorus_vertexes[465]=12873  	// x
+bigtorus_vertexes[465+1]=12873	// y
+bigtorus_vertexes[465+2]=-4256	// z
+
+bigtorus_vertexes[468]=13421  	// x
+bigtorus_vertexes[468+1]=13421	// y
+bigtorus_vertexes[468+2]=-3619	// z
+
+bigtorus_vertexes[471]=13871  	// x
+bigtorus_vertexes[471+1]=13871	// y
+bigtorus_vertexes[471+2]=-2844	// z
+
+bigtorus_vertexes[474]=14206  	// x
+bigtorus_vertexes[474+1]=14206	// y
+bigtorus_vertexes[474+2]=-1958	// z
+
+bigtorus_vertexes[477]=14412  	// x
+bigtorus_vertexes[477+1]=14412	// y
+bigtorus_vertexes[477+2]=-998	// z
+
+bigtorus_vertexes[480]=11378  	// x
+bigtorus_vertexes[480+1]=17028	// y
+bigtorus_vertexes[480+2]=0	// z
+
+bigtorus_vertexes[483]=11323  	// x
+bigtorus_vertexes[483+1]=16947	// y
+bigtorus_vertexes[483+2]=999	// z
+
+bigtorus_vertexes[486]=11162  	// x
+bigtorus_vertexes[486+1]=16704	// y
+bigtorus_vertexes[486+2]=1959	// z
+
+bigtorus_vertexes[489]=10899  	// x
+bigtorus_vertexes[489+1]=16311	// y
+bigtorus_vertexes[489+2]=2845	// z
+
+bigtorus_vertexes[492]=10545  	// x
+bigtorus_vertexes[492+1]=15782	// y
+bigtorus_vertexes[492+2]=3620	// z
+
+bigtorus_vertexes[495]=10114  	// x
+bigtorus_vertexes[495+1]=15137	// y
+bigtorus_vertexes[495+2]=4257	// z
+
+bigtorus_vertexes[498]=9622  	// x
+bigtorus_vertexes[498+1]=14401	// y
+bigtorus_vertexes[498+2]=4730	// z
+
+bigtorus_vertexes[501]=9088  	// x
+bigtorus_vertexes[501+1]=13602	// y
+bigtorus_vertexes[501+2]=5022	// z
+
+bigtorus_vertexes[504]=8534  	// x
+bigtorus_vertexes[504+1]=12771	// y
+bigtorus_vertexes[504+2]=5120	// z
+
+bigtorus_vertexes[507]=7979  	// x
+bigtorus_vertexes[507+1]=11941	// y
+bigtorus_vertexes[507+2]=5022	// z
+
+bigtorus_vertexes[510]=7445  	// x
+bigtorus_vertexes[510+1]=11142	// y
+bigtorus_vertexes[510+2]=4730	// z
+
+bigtorus_vertexes[513]=6953  	// x
+bigtorus_vertexes[513+1]=10406	// y
+bigtorus_vertexes[513+2]=4257	// z
+
+bigtorus_vertexes[516]=6522  	// x
+bigtorus_vertexes[516+1]=9761	// y
+bigtorus_vertexes[516+2]=3620	// z
+
+bigtorus_vertexes[519]=6168  	// x
+bigtorus_vertexes[519+1]=9232	// y
+bigtorus_vertexes[519+2]=2845	// z
+
+bigtorus_vertexes[522]=5906  	// x
+bigtorus_vertexes[522+1]=8838	// y
+bigtorus_vertexes[522+2]=1959	// z
+
+bigtorus_vertexes[525]=5744  	// x
+bigtorus_vertexes[525+1]=8596	// y
+bigtorus_vertexes[525+2]=999	// z
+
+bigtorus_vertexes[528]=5689  	// x
+bigtorus_vertexes[528+1]=8514	// y
+bigtorus_vertexes[528+2]=0	// z
+
+bigtorus_vertexes[531]=5744  	// x
+bigtorus_vertexes[531+1]=8596	// y
+bigtorus_vertexes[531+2]=-998	// z
+
+bigtorus_vertexes[534]=5906  	// x
+bigtorus_vertexes[534+1]=8838	// y
+bigtorus_vertexes[534+2]=-1958	// z
+
+bigtorus_vertexes[537]=6168  	// x
+bigtorus_vertexes[537+1]=9232	// y
+bigtorus_vertexes[537+2]=-2844	// z
+
+bigtorus_vertexes[540]=6522  	// x
+bigtorus_vertexes[540+1]=9761	// y
+bigtorus_vertexes[540+2]=-3619	// z
+
+bigtorus_vertexes[543]=6953  	// x
+bigtorus_vertexes[543+1]=10406	// y
+bigtorus_vertexes[543+2]=-4256	// z
+
+bigtorus_vertexes[546]=7445  	// x
+bigtorus_vertexes[546+1]=11142	// y
+bigtorus_vertexes[546+2]=-4729	// z
+
+bigtorus_vertexes[549]=7979  	// x
+bigtorus_vertexes[549+1]=11941	// y
+bigtorus_vertexes[549+2]=-5021	// z
+
+bigtorus_vertexes[552]=8534  	// x
+bigtorus_vertexes[552+1]=12771	// y
+bigtorus_vertexes[552+2]=-5119	// z
+
+bigtorus_vertexes[555]=9088  	// x
+bigtorus_vertexes[555+1]=13602	// y
+bigtorus_vertexes[555+2]=-5021	// z
+
+bigtorus_vertexes[558]=9622  	// x
+bigtorus_vertexes[558+1]=14401	// y
+bigtorus_vertexes[558+2]=-4729	// z
+
+bigtorus_vertexes[561]=10114  	// x
+bigtorus_vertexes[561+1]=15137	// y
+bigtorus_vertexes[561+2]=-4256	// z
+
+bigtorus_vertexes[564]=10545  	// x
+bigtorus_vertexes[564+1]=15782	// y
+bigtorus_vertexes[564+2]=-3619	// z
+
+bigtorus_vertexes[567]=10899  	// x
+bigtorus_vertexes[567+1]=16311	// y
+bigtorus_vertexes[567+2]=-2844	// z
+
+bigtorus_vertexes[570]=11162  	// x
+bigtorus_vertexes[570+1]=16704	// y
+bigtorus_vertexes[570+2]=-1958	// z
+
+bigtorus_vertexes[573]=11323  	// x
+bigtorus_vertexes[573+1]=16947	// y
+bigtorus_vertexes[573+2]=-998	// z
+
+bigtorus_vertexes[576]=7837  	// x
+bigtorus_vertexes[576+1]=18921	// y
+bigtorus_vertexes[576+2]=0	// z
+
+bigtorus_vertexes[579]=7800  	// x
+bigtorus_vertexes[579+1]=18830	// y
+bigtorus_vertexes[579+2]=999	// z
+
+bigtorus_vertexes[582]=7688  	// x
+bigtorus_vertexes[582+1]=18561	// y
+bigtorus_vertexes[582+2]=1959	// z
+
+bigtorus_vertexes[585]=7507  	// x
+bigtorus_vertexes[585+1]=18124	// y
+bigtorus_vertexes[585+2]=2845	// z
+
+bigtorus_vertexes[588]=7263  	// x
+bigtorus_vertexes[588+1]=17536	// y
+bigtorus_vertexes[588+2]=3620	// z
+
+bigtorus_vertexes[591]=6967  	// x
+bigtorus_vertexes[591+1]=16819	// y
+bigtorus_vertexes[591+2]=4257	// z
+
+bigtorus_vertexes[594]=6628  	// x
+bigtorus_vertexes[594+1]=16001	// y
+bigtorus_vertexes[594+2]=4730	// z
+
+bigtorus_vertexes[597]=6260  	// x
+bigtorus_vertexes[597+1]=15114	// y
+bigtorus_vertexes[597+2]=5022	// z
+
+bigtorus_vertexes[600]=5878  	// x
+bigtorus_vertexes[600+1]=14191	// y
+bigtorus_vertexes[600+2]=5120	// z
+
+bigtorus_vertexes[603]=5496  	// x
+bigtorus_vertexes[603+1]=13268	// y
+bigtorus_vertexes[603+2]=5022	// z
+
+bigtorus_vertexes[606]=5128  	// x
+bigtorus_vertexes[606+1]=12381	// y
+bigtorus_vertexes[606+2]=4730	// z
+
+bigtorus_vertexes[609]=4789  	// x
+bigtorus_vertexes[609+1]=11563	// y
+bigtorus_vertexes[609+2]=4257	// z
+
+bigtorus_vertexes[612]=4493  	// x
+bigtorus_vertexes[612+1]=10846	// y
+bigtorus_vertexes[612+2]=3620	// z
+
+bigtorus_vertexes[615]=4249  	// x
+bigtorus_vertexes[615+1]=10258	// y
+bigtorus_vertexes[615+2]=2845	// z
+
+bigtorus_vertexes[618]=4068  	// x
+bigtorus_vertexes[618+1]=9821	// y
+bigtorus_vertexes[618+2]=1959	// z
+
+bigtorus_vertexes[621]=3956  	// x
+bigtorus_vertexes[621+1]=9551	// y
+bigtorus_vertexes[621+2]=999	// z
+
+bigtorus_vertexes[624]=3919  	// x
+bigtorus_vertexes[624+1]=9461	// y
+bigtorus_vertexes[624+2]=0	// z
+
+bigtorus_vertexes[627]=3956  	// x
+bigtorus_vertexes[627+1]=9551	// y
+bigtorus_vertexes[627+2]=-998	// z
+
+bigtorus_vertexes[630]=4068  	// x
+bigtorus_vertexes[630+1]=9821	// y
+bigtorus_vertexes[630+2]=-1958	// z
+
+bigtorus_vertexes[633]=4249  	// x
+bigtorus_vertexes[633+1]=10258	// y
+bigtorus_vertexes[633+2]=-2844	// z
+
+bigtorus_vertexes[636]=4493  	// x
+bigtorus_vertexes[636+1]=10846	// y
+bigtorus_vertexes[636+2]=-3619	// z
+
+bigtorus_vertexes[639]=4789  	// x
+bigtorus_vertexes[639+1]=11563	// y
+bigtorus_vertexes[639+2]=-4256	// z
+
+bigtorus_vertexes[642]=5128  	// x
+bigtorus_vertexes[642+1]=12381	// y
+bigtorus_vertexes[642+2]=-4729	// z
+
+bigtorus_vertexes[645]=5496  	// x
+bigtorus_vertexes[645+1]=13268	// y
+bigtorus_vertexes[645+2]=-5021	// z
+
+bigtorus_vertexes[648]=5878  	// x
+bigtorus_vertexes[648+1]=14191	// y
+bigtorus_vertexes[648+2]=-5119	// z
+
+bigtorus_vertexes[651]=6260  	// x
+bigtorus_vertexes[651+1]=15114	// y
+bigtorus_vertexes[651+2]=-5021	// z
+
+bigtorus_vertexes[654]=6628  	// x
+bigtorus_vertexes[654+1]=16001	// y
+bigtorus_vertexes[654+2]=-4729	// z
+
+bigtorus_vertexes[657]=6967  	// x
+bigtorus_vertexes[657+1]=16819	// y
+bigtorus_vertexes[657+2]=-4256	// z
+
+bigtorus_vertexes[660]=7263  	// x
+bigtorus_vertexes[660+1]=17536	// y
+bigtorus_vertexes[660+2]=-3619	// z
+
+bigtorus_vertexes[663]=7507  	// x
+bigtorus_vertexes[663+1]=18124	// y
+bigtorus_vertexes[663+2]=-2844	// z
+
+bigtorus_vertexes[666]=7688  	// x
+bigtorus_vertexes[666+1]=18561	// y
+bigtorus_vertexes[666+2]=-1958	// z
+
+bigtorus_vertexes[669]=7800  	// x
+bigtorus_vertexes[669+1]=18830	// y
+bigtorus_vertexes[669+2]=-998	// z
+
+bigtorus_vertexes[672]=3995  	// x
+bigtorus_vertexes[672+1]=20086	// y
+bigtorus_vertexes[672+2]=0	// z
+
+bigtorus_vertexes[675]=3976  	// x
+bigtorus_vertexes[675+1]=19990	// y
+bigtorus_vertexes[675+2]=999	// z
+
+bigtorus_vertexes[678]=3919  	// x
+bigtorus_vertexes[678+1]=19704	// y
+bigtorus_vertexes[678+2]=1959	// z
+
+bigtorus_vertexes[681]=3827  	// x
+bigtorus_vertexes[681+1]=19240	// y
+bigtorus_vertexes[681+2]=2845	// z
+
+bigtorus_vertexes[684]=3703  	// x
+bigtorus_vertexes[684+1]=18616	// y
+bigtorus_vertexes[684+2]=3620	// z
+
+bigtorus_vertexes[687]=3552  	// x
+bigtorus_vertexes[687+1]=17855	// y
+bigtorus_vertexes[687+2]=4257	// z
+
+bigtorus_vertexes[690]=3379  	// x
+bigtorus_vertexes[690+1]=16987	// y
+bigtorus_vertexes[690+2]=4730	// z
+
+bigtorus_vertexes[693]=3191  	// x
+bigtorus_vertexes[693+1]=16045	// y
+bigtorus_vertexes[693+2]=5022	// z
+
+bigtorus_vertexes[696]=2997  	// x
+bigtorus_vertexes[696+1]=15065	// y
+bigtorus_vertexes[696+2]=5120	// z
+
+bigtorus_vertexes[699]=2802  	// x
+bigtorus_vertexes[699+1]=14085	// y
+bigtorus_vertexes[699+2]=5022	// z
+
+bigtorus_vertexes[702]=2614  	// x
+bigtorus_vertexes[702+1]=13143	// y
+bigtorus_vertexes[702+2]=4730	// z
+
+bigtorus_vertexes[705]=2442  	// x
+bigtorus_vertexes[705+1]=12275	// y
+bigtorus_vertexes[705+2]=4257	// z
+
+bigtorus_vertexes[708]=2290  	// x
+bigtorus_vertexes[708+1]=11514	// y
+bigtorus_vertexes[708+2]=3620	// z
+
+bigtorus_vertexes[711]=2166  	// x
+bigtorus_vertexes[711+1]=10890	// y
+bigtorus_vertexes[711+2]=2845	// z
+
+bigtorus_vertexes[714]=2074  	// x
+bigtorus_vertexes[714+1]=10425	// y
+bigtorus_vertexes[714+2]=1959	// z
+
+bigtorus_vertexes[717]=2017  	// x
+bigtorus_vertexes[717+1]=10140	// y
+bigtorus_vertexes[717+2]=999	// z
+
+bigtorus_vertexes[720]=1998  	// x
+bigtorus_vertexes[720+1]=10043	// y
+bigtorus_vertexes[720+2]=0	// z
+
+bigtorus_vertexes[723]=2017  	// x
+bigtorus_vertexes[723+1]=10140	// y
+bigtorus_vertexes[723+2]=-998	// z
+
+bigtorus_vertexes[726]=2074  	// x
+bigtorus_vertexes[726+1]=10425	// y
+bigtorus_vertexes[726+2]=-1958	// z
+
+bigtorus_vertexes[729]=2166  	// x
+bigtorus_vertexes[729+1]=10890	// y
+bigtorus_vertexes[729+2]=-2844	// z
+
+bigtorus_vertexes[732]=2290  	// x
+bigtorus_vertexes[732+1]=11514	// y
+bigtorus_vertexes[732+2]=-3619	// z
+
+bigtorus_vertexes[735]=2442  	// x
+bigtorus_vertexes[735+1]=12275	// y
+bigtorus_vertexes[735+2]=-4256	// z
+
+bigtorus_vertexes[738]=2614  	// x
+bigtorus_vertexes[738+1]=13143	// y
+bigtorus_vertexes[738+2]=-4729	// z
+
+bigtorus_vertexes[741]=2802  	// x
+bigtorus_vertexes[741+1]=14085	// y
+bigtorus_vertexes[741+2]=-5021	// z
+
+bigtorus_vertexes[744]=2997  	// x
+bigtorus_vertexes[744+1]=15065	// y
+bigtorus_vertexes[744+2]=-5119	// z
+
+bigtorus_vertexes[747]=3191  	// x
+bigtorus_vertexes[747+1]=16045	// y
+bigtorus_vertexes[747+2]=-5021	// z
+
+bigtorus_vertexes[750]=3379  	// x
+bigtorus_vertexes[750+1]=16987	// y
+bigtorus_vertexes[750+2]=-4729	// z
+
+bigtorus_vertexes[753]=3552  	// x
+bigtorus_vertexes[753+1]=17855	// y
+bigtorus_vertexes[753+2]=-4256	// z
+
+bigtorus_vertexes[756]=3703  	// x
+bigtorus_vertexes[756+1]=18616	// y
+bigtorus_vertexes[756+2]=-3619	// z
+
+bigtorus_vertexes[759]=3827  	// x
+bigtorus_vertexes[759+1]=19240	// y
+bigtorus_vertexes[759+2]=-2844	// z
+
+bigtorus_vertexes[762]=3919  	// x
+bigtorus_vertexes[762+1]=19704	// y
+bigtorus_vertexes[762+2]=-1958	// z
+
+bigtorus_vertexes[765]=3976  	// x
+bigtorus_vertexes[765+1]=19990	// y
+bigtorus_vertexes[765+2]=-998	// z
+
+bigtorus_vertexes[768]=0  	// x
+bigtorus_vertexes[768+1]=20480	// y
+bigtorus_vertexes[768+2]=0	// z
+
+bigtorus_vertexes[771]=0  	// x
+bigtorus_vertexes[771+1]=20382	// y
+bigtorus_vertexes[771+2]=999	// z
+
+bigtorus_vertexes[774]=0  	// x
+bigtorus_vertexes[774+1]=20090	// y
+bigtorus_vertexes[774+2]=1959	// z
+
+bigtorus_vertexes[777]=0  	// x
+bigtorus_vertexes[777+1]=19617	// y
+bigtorus_vertexes[777+2]=2845	// z
+
+bigtorus_vertexes[780]=0  	// x
+bigtorus_vertexes[780+1]=18980	// y
+bigtorus_vertexes[780+2]=3620	// z
+
+bigtorus_vertexes[783]=0  	// x
+bigtorus_vertexes[783+1]=18205	// y
+bigtorus_vertexes[783+2]=4257	// z
+
+bigtorus_vertexes[786]=0  	// x
+bigtorus_vertexes[786+1]=17319	// y
+bigtorus_vertexes[786+2]=4730	// z
+
+bigtorus_vertexes[789]=0  	// x
+bigtorus_vertexes[789+1]=16359	// y
+bigtorus_vertexes[789+2]=5022	// z
+
+bigtorus_vertexes[792]=0  	// x
+bigtorus_vertexes[792+1]=15360	// y
+bigtorus_vertexes[792+2]=5120	// z
+
+bigtorus_vertexes[795]=0  	// x
+bigtorus_vertexes[795+1]=14361	// y
+bigtorus_vertexes[795+2]=5022	// z
+
+bigtorus_vertexes[798]=0  	// x
+bigtorus_vertexes[798+1]=13401	// y
+bigtorus_vertexes[798+2]=4730	// z
+
+bigtorus_vertexes[801]=0  	// x
+bigtorus_vertexes[801+1]=12515	// y
+bigtorus_vertexes[801+2]=4257	// z
+
+bigtorus_vertexes[804]=0  	// x
+bigtorus_vertexes[804+1]=11740	// y
+bigtorus_vertexes[804+2]=3620	// z
+
+bigtorus_vertexes[807]=0  	// x
+bigtorus_vertexes[807+1]=11103	// y
+bigtorus_vertexes[807+2]=2845	// z
+
+bigtorus_vertexes[810]=0  	// x
+bigtorus_vertexes[810+1]=10630	// y
+bigtorus_vertexes[810+2]=1959	// z
+
+bigtorus_vertexes[813]=0  	// x
+bigtorus_vertexes[813+1]=10338	// y
+bigtorus_vertexes[813+2]=999	// z
+
+bigtorus_vertexes[816]=0  	// x
+bigtorus_vertexes[816+1]=10240	// y
+bigtorus_vertexes[816+2]=0	// z
+
+bigtorus_vertexes[819]=0  	// x
+bigtorus_vertexes[819+1]=10338	// y
+bigtorus_vertexes[819+2]=-998	// z
+
+bigtorus_vertexes[822]=0  	// x
+bigtorus_vertexes[822+1]=10630	// y
+bigtorus_vertexes[822+2]=-1958	// z
+
+bigtorus_vertexes[825]=0  	// x
+bigtorus_vertexes[825+1]=11103	// y
+bigtorus_vertexes[825+2]=-2844	// z
+
+bigtorus_vertexes[828]=0  	// x
+bigtorus_vertexes[828+1]=11740	// y
+bigtorus_vertexes[828+2]=-3619	// z
+
+bigtorus_vertexes[831]=0  	// x
+bigtorus_vertexes[831+1]=12515	// y
+bigtorus_vertexes[831+2]=-4256	// z
+
+bigtorus_vertexes[834]=0  	// x
+bigtorus_vertexes[834+1]=13401	// y
+bigtorus_vertexes[834+2]=-4729	// z
+
+bigtorus_vertexes[837]=0  	// x
+bigtorus_vertexes[837+1]=14361	// y
+bigtorus_vertexes[837+2]=-5021	// z
+
+bigtorus_vertexes[840]=0  	// x
+bigtorus_vertexes[840+1]=15360	// y
+bigtorus_vertexes[840+2]=-5119	// z
+
+bigtorus_vertexes[843]=0  	// x
+bigtorus_vertexes[843+1]=16359	// y
+bigtorus_vertexes[843+2]=-5021	// z
+
+bigtorus_vertexes[846]=0  	// x
+bigtorus_vertexes[846+1]=17319	// y
+bigtorus_vertexes[846+2]=-4729	// z
+
+bigtorus_vertexes[849]=0  	// x
+bigtorus_vertexes[849+1]=18205	// y
+bigtorus_vertexes[849+2]=-4256	// z
+
+bigtorus_vertexes[852]=0  	// x
+bigtorus_vertexes[852+1]=18980	// y
+bigtorus_vertexes[852+2]=-3619	// z
+
+bigtorus_vertexes[855]=0  	// x
+bigtorus_vertexes[855+1]=19617	// y
+bigtorus_vertexes[855+2]=-2844	// z
+
+bigtorus_vertexes[858]=0  	// x
+bigtorus_vertexes[858+1]=20090	// y
+bigtorus_vertexes[858+2]=-1958	// z
+
+bigtorus_vertexes[861]=0  	// x
+bigtorus_vertexes[861+1]=20382	// y
+bigtorus_vertexes[861+2]=-998	// z
+
+bigtorus_vertexes[864]=-3994  	// x
+bigtorus_vertexes[864+1]=20086	// y
+bigtorus_vertexes[864+2]=0	// z
+
+bigtorus_vertexes[867]=-3975  	// x
+bigtorus_vertexes[867+1]=19990	// y
+bigtorus_vertexes[867+2]=999	// z
+
+bigtorus_vertexes[870]=-3918  	// x
+bigtorus_vertexes[870+1]=19704	// y
+bigtorus_vertexes[870+2]=1959	// z
+
+bigtorus_vertexes[873]=-3826  	// x
+bigtorus_vertexes[873+1]=19240	// y
+bigtorus_vertexes[873+2]=2845	// z
+
+bigtorus_vertexes[876]=-3702  	// x
+bigtorus_vertexes[876+1]=18616	// y
+bigtorus_vertexes[876+2]=3620	// z
+
+bigtorus_vertexes[879]=-3551  	// x
+bigtorus_vertexes[879+1]=17855	// y
+bigtorus_vertexes[879+2]=4257	// z
+
+bigtorus_vertexes[882]=-3378  	// x
+bigtorus_vertexes[882+1]=16987	// y
+bigtorus_vertexes[882+2]=4730	// z
+
+bigtorus_vertexes[885]=-3190  	// x
+bigtorus_vertexes[885+1]=16045	// y
+bigtorus_vertexes[885+2]=5022	// z
+
+bigtorus_vertexes[888]=-2996  	// x
+bigtorus_vertexes[888+1]=15065	// y
+bigtorus_vertexes[888+2]=5120	// z
+
+bigtorus_vertexes[891]=-2801  	// x
+bigtorus_vertexes[891+1]=14085	// y
+bigtorus_vertexes[891+2]=5022	// z
+
+bigtorus_vertexes[894]=-2613  	// x
+bigtorus_vertexes[894+1]=13143	// y
+bigtorus_vertexes[894+2]=4730	// z
+
+bigtorus_vertexes[897]=-2441  	// x
+bigtorus_vertexes[897+1]=12275	// y
+bigtorus_vertexes[897+2]=4257	// z
+
+bigtorus_vertexes[900]=-2289  	// x
+bigtorus_vertexes[900+1]=11514	// y
+bigtorus_vertexes[900+2]=3620	// z
+
+bigtorus_vertexes[903]=-2165  	// x
+bigtorus_vertexes[903+1]=10890	// y
+bigtorus_vertexes[903+2]=2845	// z
+
+bigtorus_vertexes[906]=-2073  	// x
+bigtorus_vertexes[906+1]=10425	// y
+bigtorus_vertexes[906+2]=1959	// z
+
+bigtorus_vertexes[909]=-2016  	// x
+bigtorus_vertexes[909+1]=10140	// y
+bigtorus_vertexes[909+2]=999	// z
+
+bigtorus_vertexes[912]=-1997  	// x
+bigtorus_vertexes[912+1]=10043	// y
+bigtorus_vertexes[912+2]=0	// z
+
+bigtorus_vertexes[915]=-2016  	// x
+bigtorus_vertexes[915+1]=10140	// y
+bigtorus_vertexes[915+2]=-998	// z
+
+bigtorus_vertexes[918]=-2073  	// x
+bigtorus_vertexes[918+1]=10425	// y
+bigtorus_vertexes[918+2]=-1958	// z
+
+bigtorus_vertexes[921]=-2165  	// x
+bigtorus_vertexes[921+1]=10890	// y
+bigtorus_vertexes[921+2]=-2844	// z
+
+bigtorus_vertexes[924]=-2289  	// x
+bigtorus_vertexes[924+1]=11514	// y
+bigtorus_vertexes[924+2]=-3619	// z
+
+bigtorus_vertexes[927]=-2441  	// x
+bigtorus_vertexes[927+1]=12275	// y
+bigtorus_vertexes[927+2]=-4256	// z
+
+bigtorus_vertexes[930]=-2613  	// x
+bigtorus_vertexes[930+1]=13143	// y
+bigtorus_vertexes[930+2]=-4729	// z
+
+bigtorus_vertexes[933]=-2801  	// x
+bigtorus_vertexes[933+1]=14085	// y
+bigtorus_vertexes[933+2]=-5021	// z
+
+bigtorus_vertexes[936]=-2996  	// x
+bigtorus_vertexes[936+1]=15065	// y
+bigtorus_vertexes[936+2]=-5119	// z
+
+bigtorus_vertexes[939]=-3190  	// x
+bigtorus_vertexes[939+1]=16045	// y
+bigtorus_vertexes[939+2]=-5021	// z
+
+bigtorus_vertexes[942]=-3378  	// x
+bigtorus_vertexes[942+1]=16987	// y
+bigtorus_vertexes[942+2]=-4729	// z
+
+bigtorus_vertexes[945]=-3551  	// x
+bigtorus_vertexes[945+1]=17855	// y
+bigtorus_vertexes[945+2]=-4256	// z
+
+bigtorus_vertexes[948]=-3702  	// x
+bigtorus_vertexes[948+1]=18616	// y
+bigtorus_vertexes[948+2]=-3619	// z
+
+bigtorus_vertexes[951]=-3826  	// x
+bigtorus_vertexes[951+1]=19240	// y
+bigtorus_vertexes[951+2]=-2844	// z
+
+bigtorus_vertexes[954]=-3918  	// x
+bigtorus_vertexes[954+1]=19704	// y
+bigtorus_vertexes[954+2]=-1958	// z
+
+bigtorus_vertexes[957]=-3975  	// x
+bigtorus_vertexes[957+1]=19990	// y
+bigtorus_vertexes[957+2]=-998	// z
+
+bigtorus_vertexes[960]=-7836  	// x
+bigtorus_vertexes[960+1]=18921	// y
+bigtorus_vertexes[960+2]=0	// z
+
+bigtorus_vertexes[963]=-7799  	// x
+bigtorus_vertexes[963+1]=18830	// y
+bigtorus_vertexes[963+2]=999	// z
+
+bigtorus_vertexes[966]=-7687  	// x
+bigtorus_vertexes[966+1]=18561	// y
+bigtorus_vertexes[966+2]=1959	// z
+
+bigtorus_vertexes[969]=-7506  	// x
+bigtorus_vertexes[969+1]=18124	// y
+bigtorus_vertexes[969+2]=2845	// z
+
+bigtorus_vertexes[972]=-7262  	// x
+bigtorus_vertexes[972+1]=17536	// y
+bigtorus_vertexes[972+2]=3620	// z
+
+bigtorus_vertexes[975]=-6966  	// x
+bigtorus_vertexes[975+1]=16819	// y
+bigtorus_vertexes[975+2]=4257	// z
+
+bigtorus_vertexes[978]=-6627  	// x
+bigtorus_vertexes[978+1]=16001	// y
+bigtorus_vertexes[978+2]=4730	// z
+
+bigtorus_vertexes[981]=-6259  	// x
+bigtorus_vertexes[981+1]=15114	// y
+bigtorus_vertexes[981+2]=5022	// z
+
+bigtorus_vertexes[984]=-5877  	// x
+bigtorus_vertexes[984+1]=14191	// y
+bigtorus_vertexes[984+2]=5120	// z
+
+bigtorus_vertexes[987]=-5495  	// x
+bigtorus_vertexes[987+1]=13268	// y
+bigtorus_vertexes[987+2]=5022	// z
+
+bigtorus_vertexes[990]=-5127  	// x
+bigtorus_vertexes[990+1]=12381	// y
+bigtorus_vertexes[990+2]=4730	// z
+
+bigtorus_vertexes[993]=-4788  	// x
+bigtorus_vertexes[993+1]=11563	// y
+bigtorus_vertexes[993+2]=4257	// z
+
+bigtorus_vertexes[996]=-4492  	// x
+bigtorus_vertexes[996+1]=10846	// y
+bigtorus_vertexes[996+2]=3620	// z
+
+bigtorus_vertexes[999]=-4248  	// x
+bigtorus_vertexes[999+1]=10258	// y
+bigtorus_vertexes[999+2]=2845	// z
+
+bigtorus_vertexes[1002]=-4067  	// x
+bigtorus_vertexes[1002+1]=9821	// y
+bigtorus_vertexes[1002+2]=1959	// z
+
+bigtorus_vertexes[1005]=-3955  	// x
+bigtorus_vertexes[1005+1]=9551	// y
+bigtorus_vertexes[1005+2]=999	// z
+
+bigtorus_vertexes[1008]=-3918  	// x
+bigtorus_vertexes[1008+1]=9461	// y
+bigtorus_vertexes[1008+2]=0	// z
+
+bigtorus_vertexes[1011]=-3955  	// x
+bigtorus_vertexes[1011+1]=9551	// y
+bigtorus_vertexes[1011+2]=-998	// z
+
+bigtorus_vertexes[1014]=-4067  	// x
+bigtorus_vertexes[1014+1]=9821	// y
+bigtorus_vertexes[1014+2]=-1958	// z
+
+bigtorus_vertexes[1017]=-4248  	// x
+bigtorus_vertexes[1017+1]=10258	// y
+bigtorus_vertexes[1017+2]=-2844	// z
+
+bigtorus_vertexes[1020]=-4492  	// x
+bigtorus_vertexes[1020+1]=10846	// y
+bigtorus_vertexes[1020+2]=-3619	// z
+
+bigtorus_vertexes[1023]=-4788  	// x
+bigtorus_vertexes[1023+1]=11563	// y
+bigtorus_vertexes[1023+2]=-4256	// z
+
+bigtorus_vertexes[1026]=-5127  	// x
+bigtorus_vertexes[1026+1]=12381	// y
+bigtorus_vertexes[1026+2]=-4729	// z
+
+bigtorus_vertexes[1029]=-5495  	// x
+bigtorus_vertexes[1029+1]=13268	// y
+bigtorus_vertexes[1029+2]=-5021	// z
+
+bigtorus_vertexes[1032]=-5877  	// x
+bigtorus_vertexes[1032+1]=14191	// y
+bigtorus_vertexes[1032+2]=-5119	// z
+
+bigtorus_vertexes[1035]=-6259  	// x
+bigtorus_vertexes[1035+1]=15114	// y
+bigtorus_vertexes[1035+2]=-5021	// z
+
+bigtorus_vertexes[1038]=-6627  	// x
+bigtorus_vertexes[1038+1]=16001	// y
+bigtorus_vertexes[1038+2]=-4729	// z
+
+bigtorus_vertexes[1041]=-6966  	// x
+bigtorus_vertexes[1041+1]=16819	// y
+bigtorus_vertexes[1041+2]=-4256	// z
+
+bigtorus_vertexes[1044]=-7262  	// x
+bigtorus_vertexes[1044+1]=17536	// y
+bigtorus_vertexes[1044+2]=-3619	// z
+
+bigtorus_vertexes[1047]=-7506  	// x
+bigtorus_vertexes[1047+1]=18124	// y
+bigtorus_vertexes[1047+2]=-2844	// z
+
+bigtorus_vertexes[1050]=-7687  	// x
+bigtorus_vertexes[1050+1]=18561	// y
+bigtorus_vertexes[1050+2]=-1958	// z
+
+bigtorus_vertexes[1053]=-7799  	// x
+bigtorus_vertexes[1053+1]=18830	// y
+bigtorus_vertexes[1053+2]=-998	// z
+
+bigtorus_vertexes[1056]=-11377  	// x
+bigtorus_vertexes[1056+1]=17028	// y
+bigtorus_vertexes[1056+2]=0	// z
+
+bigtorus_vertexes[1059]=-11322  	// x
+bigtorus_vertexes[1059+1]=16947	// y
+bigtorus_vertexes[1059+2]=999	// z
+
+bigtorus_vertexes[1062]=-11161  	// x
+bigtorus_vertexes[1062+1]=16704	// y
+bigtorus_vertexes[1062+2]=1959	// z
+
+bigtorus_vertexes[1065]=-10898  	// x
+bigtorus_vertexes[1065+1]=16311	// y
+bigtorus_vertexes[1065+2]=2845	// z
+
+bigtorus_vertexes[1068]=-10544  	// x
+bigtorus_vertexes[1068+1]=15782	// y
+bigtorus_vertexes[1068+2]=3620	// z
+
+bigtorus_vertexes[1071]=-10113  	// x
+bigtorus_vertexes[1071+1]=15137	// y
+bigtorus_vertexes[1071+2]=4257	// z
+
+bigtorus_vertexes[1074]=-9621  	// x
+bigtorus_vertexes[1074+1]=14401	// y
+bigtorus_vertexes[1074+2]=4730	// z
+
+bigtorus_vertexes[1077]=-9087  	// x
+bigtorus_vertexes[1077+1]=13602	// y
+bigtorus_vertexes[1077+2]=5022	// z
+
+bigtorus_vertexes[1080]=-8533  	// x
+bigtorus_vertexes[1080+1]=12771	// y
+bigtorus_vertexes[1080+2]=5120	// z
+
+bigtorus_vertexes[1083]=-7978  	// x
+bigtorus_vertexes[1083+1]=11941	// y
+bigtorus_vertexes[1083+2]=5022	// z
+
+bigtorus_vertexes[1086]=-7444  	// x
+bigtorus_vertexes[1086+1]=11142	// y
+bigtorus_vertexes[1086+2]=4730	// z
+
+bigtorus_vertexes[1089]=-6952  	// x
+bigtorus_vertexes[1089+1]=10406	// y
+bigtorus_vertexes[1089+2]=4257	// z
+
+bigtorus_vertexes[1092]=-6521  	// x
+bigtorus_vertexes[1092+1]=9761	// y
+bigtorus_vertexes[1092+2]=3620	// z
+
+bigtorus_vertexes[1095]=-6167  	// x
+bigtorus_vertexes[1095+1]=9232	// y
+bigtorus_vertexes[1095+2]=2845	// z
+
+bigtorus_vertexes[1098]=-5905  	// x
+bigtorus_vertexes[1098+1]=8838	// y
+bigtorus_vertexes[1098+2]=1959	// z
+
+bigtorus_vertexes[1101]=-5743  	// x
+bigtorus_vertexes[1101+1]=8596	// y
+bigtorus_vertexes[1101+2]=999	// z
+
+bigtorus_vertexes[1104]=-5688  	// x
+bigtorus_vertexes[1104+1]=8514	// y
+bigtorus_vertexes[1104+2]=0	// z
+
+bigtorus_vertexes[1107]=-5743  	// x
+bigtorus_vertexes[1107+1]=8596	// y
+bigtorus_vertexes[1107+2]=-998	// z
+
+bigtorus_vertexes[1110]=-5905  	// x
+bigtorus_vertexes[1110+1]=8838	// y
+bigtorus_vertexes[1110+2]=-1958	// z
+
+bigtorus_vertexes[1113]=-6167  	// x
+bigtorus_vertexes[1113+1]=9232	// y
+bigtorus_vertexes[1113+2]=-2844	// z
+
+bigtorus_vertexes[1116]=-6521  	// x
+bigtorus_vertexes[1116+1]=9761	// y
+bigtorus_vertexes[1116+2]=-3619	// z
+
+bigtorus_vertexes[1119]=-6952  	// x
+bigtorus_vertexes[1119+1]=10406	// y
+bigtorus_vertexes[1119+2]=-4256	// z
+
+bigtorus_vertexes[1122]=-7444  	// x
+bigtorus_vertexes[1122+1]=11142	// y
+bigtorus_vertexes[1122+2]=-4729	// z
+
+bigtorus_vertexes[1125]=-7978  	// x
+bigtorus_vertexes[1125+1]=11941	// y
+bigtorus_vertexes[1125+2]=-5021	// z
+
+bigtorus_vertexes[1128]=-8533  	// x
+bigtorus_vertexes[1128+1]=12771	// y
+bigtorus_vertexes[1128+2]=-5119	// z
+
+bigtorus_vertexes[1131]=-9087  	// x
+bigtorus_vertexes[1131+1]=13602	// y
+bigtorus_vertexes[1131+2]=-5021	// z
+
+bigtorus_vertexes[1134]=-9621  	// x
+bigtorus_vertexes[1134+1]=14401	// y
+bigtorus_vertexes[1134+2]=-4729	// z
+
+bigtorus_vertexes[1137]=-10113  	// x
+bigtorus_vertexes[1137+1]=15137	// y
+bigtorus_vertexes[1137+2]=-4256	// z
+
+bigtorus_vertexes[1140]=-10544  	// x
+bigtorus_vertexes[1140+1]=15782	// y
+bigtorus_vertexes[1140+2]=-3619	// z
+
+bigtorus_vertexes[1143]=-10898  	// x
+bigtorus_vertexes[1143+1]=16311	// y
+bigtorus_vertexes[1143+2]=-2844	// z
+
+bigtorus_vertexes[1146]=-11161  	// x
+bigtorus_vertexes[1146+1]=16704	// y
+bigtorus_vertexes[1146+2]=-1958	// z
+
+bigtorus_vertexes[1149]=-11322  	// x
+bigtorus_vertexes[1149+1]=16947	// y
+bigtorus_vertexes[1149+2]=-998	// z
+
+bigtorus_vertexes[1152]=-14481  	// x
+bigtorus_vertexes[1152+1]=14482	// y
+bigtorus_vertexes[1152+2]=0	// z
+
+bigtorus_vertexes[1155]=-14411  	// x
+bigtorus_vertexes[1155+1]=14412	// y
+bigtorus_vertexes[1155+2]=999	// z
+
+bigtorus_vertexes[1158]=-14205  	// x
+bigtorus_vertexes[1158+1]=14206	// y
+bigtorus_vertexes[1158+2]=1959	// z
+
+bigtorus_vertexes[1161]=-13870  	// x
+bigtorus_vertexes[1161+1]=13871	// y
+bigtorus_vertexes[1161+2]=2845	// z
+
+bigtorus_vertexes[1164]=-13420  	// x
+bigtorus_vertexes[1164+1]=13421	// y
+bigtorus_vertexes[1164+2]=3620	// z
+
+bigtorus_vertexes[1167]=-12872  	// x
+bigtorus_vertexes[1167+1]=12873	// y
+bigtorus_vertexes[1167+2]=4257	// z
+
+bigtorus_vertexes[1170]=-12246  	// x
+bigtorus_vertexes[1170+1]=12247	// y
+bigtorus_vertexes[1170+2]=4730	// z
+
+bigtorus_vertexes[1173]=-11566  	// x
+bigtorus_vertexes[1173+1]=11567	// y
+bigtorus_vertexes[1173+2]=5022	// z
+
+bigtorus_vertexes[1176]=-10860  	// x
+bigtorus_vertexes[1176+1]=10861	// y
+bigtorus_vertexes[1176+2]=5120	// z
+
+bigtorus_vertexes[1179]=-10154  	// x
+bigtorus_vertexes[1179+1]=10155	// y
+bigtorus_vertexes[1179+2]=5022	// z
+
+bigtorus_vertexes[1182]=-9475  	// x
+bigtorus_vertexes[1182+1]=9476	// y
+bigtorus_vertexes[1182+2]=4730	// z
+
+bigtorus_vertexes[1185]=-8849  	// x
+bigtorus_vertexes[1185+1]=8850	// y
+bigtorus_vertexes[1185+2]=4257	// z
+
+bigtorus_vertexes[1188]=-8300  	// x
+bigtorus_vertexes[1188+1]=8301	// y
+bigtorus_vertexes[1188+2]=3620	// z
+
+bigtorus_vertexes[1191]=-7850  	// x
+bigtorus_vertexes[1191+1]=7851	// y
+bigtorus_vertexes[1191+2]=2845	// z
+
+bigtorus_vertexes[1194]=-7515  	// x
+bigtorus_vertexes[1194+1]=7516	// y
+bigtorus_vertexes[1194+2]=1959	// z
+
+bigtorus_vertexes[1197]=-7309  	// x
+bigtorus_vertexes[1197+1]=7310	// y
+bigtorus_vertexes[1197+2]=999	// z
+
+bigtorus_vertexes[1200]=-7240  	// x
+bigtorus_vertexes[1200+1]=7241	// y
+bigtorus_vertexes[1200+2]=0	// z
+
+bigtorus_vertexes[1203]=-7309  	// x
+bigtorus_vertexes[1203+1]=7310	// y
+bigtorus_vertexes[1203+2]=-998	// z
+
+bigtorus_vertexes[1206]=-7515  	// x
+bigtorus_vertexes[1206+1]=7516	// y
+bigtorus_vertexes[1206+2]=-1958	// z
+
+bigtorus_vertexes[1209]=-7850  	// x
+bigtorus_vertexes[1209+1]=7851	// y
+bigtorus_vertexes[1209+2]=-2844	// z
+
+bigtorus_vertexes[1212]=-8300  	// x
+bigtorus_vertexes[1212+1]=8301	// y
+bigtorus_vertexes[1212+2]=-3619	// z
+
+bigtorus_vertexes[1215]=-8849  	// x
+bigtorus_vertexes[1215+1]=8850	// y
+bigtorus_vertexes[1215+2]=-4256	// z
+
+bigtorus_vertexes[1218]=-9475  	// x
+bigtorus_vertexes[1218+1]=9476	// y
+bigtorus_vertexes[1218+2]=-4729	// z
+
+bigtorus_vertexes[1221]=-10154  	// x
+bigtorus_vertexes[1221+1]=10155	// y
+bigtorus_vertexes[1221+2]=-5021	// z
+
+bigtorus_vertexes[1224]=-10860  	// x
+bigtorus_vertexes[1224+1]=10861	// y
+bigtorus_vertexes[1224+2]=-5119	// z
+
+bigtorus_vertexes[1227]=-11566  	// x
+bigtorus_vertexes[1227+1]=11567	// y
+bigtorus_vertexes[1227+2]=-5021	// z
+
+bigtorus_vertexes[1230]=-12246  	// x
+bigtorus_vertexes[1230+1]=12247	// y
+bigtorus_vertexes[1230+2]=-4729	// z
+
+bigtorus_vertexes[1233]=-12872  	// x
+bigtorus_vertexes[1233+1]=12873	// y
+bigtorus_vertexes[1233+2]=-4256	// z
+
+bigtorus_vertexes[1236]=-13420  	// x
+bigtorus_vertexes[1236+1]=13421	// y
+bigtorus_vertexes[1236+2]=-3619	// z
+
+bigtorus_vertexes[1239]=-13870  	// x
+bigtorus_vertexes[1239+1]=13871	// y
+bigtorus_vertexes[1239+2]=-2844	// z
+
+bigtorus_vertexes[1242]=-14205  	// x
+bigtorus_vertexes[1242+1]=14206	// y
+bigtorus_vertexes[1242+2]=-1958	// z
+
+bigtorus_vertexes[1245]=-14411  	// x
+bigtorus_vertexes[1245+1]=14412	// y
+bigtorus_vertexes[1245+2]=-998	// z
+
+bigtorus_vertexes[1248]=-17027  	// x
+bigtorus_vertexes[1248+1]=11378	// y
+bigtorus_vertexes[1248+2]=0	// z
+
+bigtorus_vertexes[1251]=-16946  	// x
+bigtorus_vertexes[1251+1]=11323	// y
+bigtorus_vertexes[1251+2]=999	// z
+
+bigtorus_vertexes[1254]=-16703  	// x
+bigtorus_vertexes[1254+1]=11162	// y
+bigtorus_vertexes[1254+2]=1959	// z
+
+bigtorus_vertexes[1257]=-16310  	// x
+bigtorus_vertexes[1257+1]=10899	// y
+bigtorus_vertexes[1257+2]=2845	// z
+
+bigtorus_vertexes[1260]=-15781  	// x
+bigtorus_vertexes[1260+1]=10545	// y
+bigtorus_vertexes[1260+2]=3620	// z
+
+bigtorus_vertexes[1263]=-15136  	// x
+bigtorus_vertexes[1263+1]=10114	// y
+bigtorus_vertexes[1263+2]=4257	// z
+
+bigtorus_vertexes[1266]=-14400  	// x
+bigtorus_vertexes[1266+1]=9622	// y
+bigtorus_vertexes[1266+2]=4730	// z
+
+bigtorus_vertexes[1269]=-13601  	// x
+bigtorus_vertexes[1269+1]=9088	// y
+bigtorus_vertexes[1269+2]=5022	// z
+
+bigtorus_vertexes[1272]=-12770  	// x
+bigtorus_vertexes[1272+1]=8534	// y
+bigtorus_vertexes[1272+2]=5120	// z
+
+bigtorus_vertexes[1275]=-11940  	// x
+bigtorus_vertexes[1275+1]=7979	// y
+bigtorus_vertexes[1275+2]=5022	// z
+
+bigtorus_vertexes[1278]=-11141  	// x
+bigtorus_vertexes[1278+1]=7445	// y
+bigtorus_vertexes[1278+2]=4730	// z
+
+bigtorus_vertexes[1281]=-10405  	// x
+bigtorus_vertexes[1281+1]=6953	// y
+bigtorus_vertexes[1281+2]=4257	// z
+
+bigtorus_vertexes[1284]=-9760  	// x
+bigtorus_vertexes[1284+1]=6522	// y
+bigtorus_vertexes[1284+2]=3620	// z
+
+bigtorus_vertexes[1287]=-9231  	// x
+bigtorus_vertexes[1287+1]=6168	// y
+bigtorus_vertexes[1287+2]=2845	// z
+
+bigtorus_vertexes[1290]=-8837  	// x
+bigtorus_vertexes[1290+1]=5906	// y
+bigtorus_vertexes[1290+2]=1959	// z
+
+bigtorus_vertexes[1293]=-8595  	// x
+bigtorus_vertexes[1293+1]=5744	// y
+bigtorus_vertexes[1293+2]=999	// z
+
+bigtorus_vertexes[1296]=-8513  	// x
+bigtorus_vertexes[1296+1]=5689	// y
+bigtorus_vertexes[1296+2]=0	// z
+
+bigtorus_vertexes[1299]=-8595  	// x
+bigtorus_vertexes[1299+1]=5744	// y
+bigtorus_vertexes[1299+2]=-998	// z
+
+bigtorus_vertexes[1302]=-8837  	// x
+bigtorus_vertexes[1302+1]=5906	// y
+bigtorus_vertexes[1302+2]=-1958	// z
+
+bigtorus_vertexes[1305]=-9231  	// x
+bigtorus_vertexes[1305+1]=6168	// y
+bigtorus_vertexes[1305+2]=-2844	// z
+
+bigtorus_vertexes[1308]=-9760  	// x
+bigtorus_vertexes[1308+1]=6522	// y
+bigtorus_vertexes[1308+2]=-3619	// z
+
+bigtorus_vertexes[1311]=-10405  	// x
+bigtorus_vertexes[1311+1]=6953	// y
+bigtorus_vertexes[1311+2]=-4256	// z
+
+bigtorus_vertexes[1314]=-11141  	// x
+bigtorus_vertexes[1314+1]=7445	// y
+bigtorus_vertexes[1314+2]=-4729	// z
+
+bigtorus_vertexes[1317]=-11940  	// x
+bigtorus_vertexes[1317+1]=7979	// y
+bigtorus_vertexes[1317+2]=-5021	// z
+
+bigtorus_vertexes[1320]=-12770  	// x
+bigtorus_vertexes[1320+1]=8534	// y
+bigtorus_vertexes[1320+2]=-5119	// z
+
+bigtorus_vertexes[1323]=-13601  	// x
+bigtorus_vertexes[1323+1]=9088	// y
+bigtorus_vertexes[1323+2]=-5021	// z
+
+bigtorus_vertexes[1326]=-14400  	// x
+bigtorus_vertexes[1326+1]=9622	// y
+bigtorus_vertexes[1326+2]=-4729	// z
+
+bigtorus_vertexes[1329]=-15136  	// x
+bigtorus_vertexes[1329+1]=10114	// y
+bigtorus_vertexes[1329+2]=-4256	// z
+
+bigtorus_vertexes[1332]=-15781  	// x
+bigtorus_vertexes[1332+1]=10545	// y
+bigtorus_vertexes[1332+2]=-3619	// z
+
+bigtorus_vertexes[1335]=-16310  	// x
+bigtorus_vertexes[1335+1]=10899	// y
+bigtorus_vertexes[1335+2]=-2844	// z
+
+bigtorus_vertexes[1338]=-16703  	// x
+bigtorus_vertexes[1338+1]=11162	// y
+bigtorus_vertexes[1338+2]=-1958	// z
+
+bigtorus_vertexes[1341]=-16946  	// x
+bigtorus_vertexes[1341+1]=11323	// y
+bigtorus_vertexes[1341+2]=-998	// z
+
+bigtorus_vertexes[1344]=-18920  	// x
+bigtorus_vertexes[1344+1]=7837	// y
+bigtorus_vertexes[1344+2]=0	// z
+
+bigtorus_vertexes[1347]=-18829  	// x
+bigtorus_vertexes[1347+1]=7800	// y
+bigtorus_vertexes[1347+2]=999	// z
+
+bigtorus_vertexes[1350]=-18560  	// x
+bigtorus_vertexes[1350+1]=7688	// y
+bigtorus_vertexes[1350+2]=1959	// z
+
+bigtorus_vertexes[1353]=-18123  	// x
+bigtorus_vertexes[1353+1]=7507	// y
+bigtorus_vertexes[1353+2]=2845	// z
+
+bigtorus_vertexes[1356]=-17535  	// x
+bigtorus_vertexes[1356+1]=7263	// y
+bigtorus_vertexes[1356+2]=3620	// z
+
+bigtorus_vertexes[1359]=-16818  	// x
+bigtorus_vertexes[1359+1]=6967	// y
+bigtorus_vertexes[1359+2]=4257	// z
+
+bigtorus_vertexes[1362]=-16000  	// x
+bigtorus_vertexes[1362+1]=6628	// y
+bigtorus_vertexes[1362+2]=4730	// z
+
+bigtorus_vertexes[1365]=-15113  	// x
+bigtorus_vertexes[1365+1]=6260	// y
+bigtorus_vertexes[1365+2]=5022	// z
+
+bigtorus_vertexes[1368]=-14190  	// x
+bigtorus_vertexes[1368+1]=5878	// y
+bigtorus_vertexes[1368+2]=5120	// z
+
+bigtorus_vertexes[1371]=-13267  	// x
+bigtorus_vertexes[1371+1]=5496	// y
+bigtorus_vertexes[1371+2]=5022	// z
+
+bigtorus_vertexes[1374]=-12380  	// x
+bigtorus_vertexes[1374+1]=5128	// y
+bigtorus_vertexes[1374+2]=4730	// z
+
+bigtorus_vertexes[1377]=-11562  	// x
+bigtorus_vertexes[1377+1]=4789	// y
+bigtorus_vertexes[1377+2]=4257	// z
+
+bigtorus_vertexes[1380]=-10845  	// x
+bigtorus_vertexes[1380+1]=4493	// y
+bigtorus_vertexes[1380+2]=3620	// z
+
+bigtorus_vertexes[1383]=-10257  	// x
+bigtorus_vertexes[1383+1]=4249	// y
+bigtorus_vertexes[1383+2]=2845	// z
+
+bigtorus_vertexes[1386]=-9820  	// x
+bigtorus_vertexes[1386+1]=4068	// y
+bigtorus_vertexes[1386+2]=1959	// z
+
+bigtorus_vertexes[1389]=-9550  	// x
+bigtorus_vertexes[1389+1]=3956	// y
+bigtorus_vertexes[1389+2]=999	// z
+
+bigtorus_vertexes[1392]=-9460  	// x
+bigtorus_vertexes[1392+1]=3919	// y
+bigtorus_vertexes[1392+2]=0	// z
+
+bigtorus_vertexes[1395]=-9550  	// x
+bigtorus_vertexes[1395+1]=3956	// y
+bigtorus_vertexes[1395+2]=-998	// z
+
+bigtorus_vertexes[1398]=-9820  	// x
+bigtorus_vertexes[1398+1]=4068	// y
+bigtorus_vertexes[1398+2]=-1958	// z
+
+bigtorus_vertexes[1401]=-10257  	// x
+bigtorus_vertexes[1401+1]=4249	// y
+bigtorus_vertexes[1401+2]=-2844	// z
+
+bigtorus_vertexes[1404]=-10845  	// x
+bigtorus_vertexes[1404+1]=4493	// y
+bigtorus_vertexes[1404+2]=-3619	// z
+
+bigtorus_vertexes[1407]=-11562  	// x
+bigtorus_vertexes[1407+1]=4789	// y
+bigtorus_vertexes[1407+2]=-4256	// z
+
+bigtorus_vertexes[1410]=-12380  	// x
+bigtorus_vertexes[1410+1]=5128	// y
+bigtorus_vertexes[1410+2]=-4729	// z
+
+bigtorus_vertexes[1413]=-13267  	// x
+bigtorus_vertexes[1413+1]=5496	// y
+bigtorus_vertexes[1413+2]=-5021	// z
+
+bigtorus_vertexes[1416]=-14190  	// x
+bigtorus_vertexes[1416+1]=5878	// y
+bigtorus_vertexes[1416+2]=-5119	// z
+
+bigtorus_vertexes[1419]=-15113  	// x
+bigtorus_vertexes[1419+1]=6260	// y
+bigtorus_vertexes[1419+2]=-5021	// z
+
+bigtorus_vertexes[1422]=-16000  	// x
+bigtorus_vertexes[1422+1]=6628	// y
+bigtorus_vertexes[1422+2]=-4729	// z
+
+bigtorus_vertexes[1425]=-16818  	// x
+bigtorus_vertexes[1425+1]=6967	// y
+bigtorus_vertexes[1425+2]=-4256	// z
+
+bigtorus_vertexes[1428]=-17535  	// x
+bigtorus_vertexes[1428+1]=7263	// y
+bigtorus_vertexes[1428+2]=-3619	// z
+
+bigtorus_vertexes[1431]=-18123  	// x
+bigtorus_vertexes[1431+1]=7507	// y
+bigtorus_vertexes[1431+2]=-2844	// z
+
+bigtorus_vertexes[1434]=-18560  	// x
+bigtorus_vertexes[1434+1]=7688	// y
+bigtorus_vertexes[1434+2]=-1958	// z
+
+bigtorus_vertexes[1437]=-18829  	// x
+bigtorus_vertexes[1437+1]=7800	// y
+bigtorus_vertexes[1437+2]=-998	// z
+
+bigtorus_vertexes[1440]=-20085  	// x
+bigtorus_vertexes[1440+1]=3995	// y
+bigtorus_vertexes[1440+2]=0	// z
+
+bigtorus_vertexes[1443]=-19989  	// x
+bigtorus_vertexes[1443+1]=3976	// y
+bigtorus_vertexes[1443+2]=999	// z
+
+bigtorus_vertexes[1446]=-19703  	// x
+bigtorus_vertexes[1446+1]=3919	// y
+bigtorus_vertexes[1446+2]=1959	// z
+
+bigtorus_vertexes[1449]=-19239  	// x
+bigtorus_vertexes[1449+1]=3827	// y
+bigtorus_vertexes[1449+2]=2845	// z
+
+bigtorus_vertexes[1452]=-18615  	// x
+bigtorus_vertexes[1452+1]=3703	// y
+bigtorus_vertexes[1452+2]=3620	// z
+
+bigtorus_vertexes[1455]=-17854  	// x
+bigtorus_vertexes[1455+1]=3552	// y
+bigtorus_vertexes[1455+2]=4257	// z
+
+bigtorus_vertexes[1458]=-16986  	// x
+bigtorus_vertexes[1458+1]=3379	// y
+bigtorus_vertexes[1458+2]=4730	// z
+
+bigtorus_vertexes[1461]=-16044  	// x
+bigtorus_vertexes[1461+1]=3191	// y
+bigtorus_vertexes[1461+2]=5022	// z
+
+bigtorus_vertexes[1464]=-15064  	// x
+bigtorus_vertexes[1464+1]=2997	// y
+bigtorus_vertexes[1464+2]=5120	// z
+
+bigtorus_vertexes[1467]=-14084  	// x
+bigtorus_vertexes[1467+1]=2802	// y
+bigtorus_vertexes[1467+2]=5022	// z
+
+bigtorus_vertexes[1470]=-13142  	// x
+bigtorus_vertexes[1470+1]=2614	// y
+bigtorus_vertexes[1470+2]=4730	// z
+
+bigtorus_vertexes[1473]=-12274  	// x
+bigtorus_vertexes[1473+1]=2442	// y
+bigtorus_vertexes[1473+2]=4257	// z
+
+bigtorus_vertexes[1476]=-11513  	// x
+bigtorus_vertexes[1476+1]=2290	// y
+bigtorus_vertexes[1476+2]=3620	// z
+
+bigtorus_vertexes[1479]=-10889  	// x
+bigtorus_vertexes[1479+1]=2166	// y
+bigtorus_vertexes[1479+2]=2845	// z
+
+bigtorus_vertexes[1482]=-10424  	// x
+bigtorus_vertexes[1482+1]=2074	// y
+bigtorus_vertexes[1482+2]=1959	// z
+
+bigtorus_vertexes[1485]=-10139  	// x
+bigtorus_vertexes[1485+1]=2017	// y
+bigtorus_vertexes[1485+2]=999	// z
+
+bigtorus_vertexes[1488]=-10042  	// x
+bigtorus_vertexes[1488+1]=1998	// y
+bigtorus_vertexes[1488+2]=0	// z
+
+bigtorus_vertexes[1491]=-10139  	// x
+bigtorus_vertexes[1491+1]=2017	// y
+bigtorus_vertexes[1491+2]=-998	// z
+
+bigtorus_vertexes[1494]=-10424  	// x
+bigtorus_vertexes[1494+1]=2074	// y
+bigtorus_vertexes[1494+2]=-1958	// z
+
+bigtorus_vertexes[1497]=-10889  	// x
+bigtorus_vertexes[1497+1]=2166	// y
+bigtorus_vertexes[1497+2]=-2844	// z
+
+bigtorus_vertexes[1500]=-11513  	// x
+bigtorus_vertexes[1500+1]=2290	// y
+bigtorus_vertexes[1500+2]=-3619	// z
+
+bigtorus_vertexes[1503]=-12274  	// x
+bigtorus_vertexes[1503+1]=2442	// y
+bigtorus_vertexes[1503+2]=-4256	// z
+
+bigtorus_vertexes[1506]=-13142  	// x
+bigtorus_vertexes[1506+1]=2614	// y
+bigtorus_vertexes[1506+2]=-4729	// z
+
+bigtorus_vertexes[1509]=-14084  	// x
+bigtorus_vertexes[1509+1]=2802	// y
+bigtorus_vertexes[1509+2]=-5021	// z
+
+bigtorus_vertexes[1512]=-15064  	// x
+bigtorus_vertexes[1512+1]=2997	// y
+bigtorus_vertexes[1512+2]=-5119	// z
+
+bigtorus_vertexes[1515]=-16044  	// x
+bigtorus_vertexes[1515+1]=3191	// y
+bigtorus_vertexes[1515+2]=-5021	// z
+
+bigtorus_vertexes[1518]=-16986  	// x
+bigtorus_vertexes[1518+1]=3379	// y
+bigtorus_vertexes[1518+2]=-4729	// z
+
+bigtorus_vertexes[1521]=-17854  	// x
+bigtorus_vertexes[1521+1]=3552	// y
+bigtorus_vertexes[1521+2]=-4256	// z
+
+bigtorus_vertexes[1524]=-18615  	// x
+bigtorus_vertexes[1524+1]=3703	// y
+bigtorus_vertexes[1524+2]=-3619	// z
+
+bigtorus_vertexes[1527]=-19239  	// x
+bigtorus_vertexes[1527+1]=3827	// y
+bigtorus_vertexes[1527+2]=-2844	// z
+
+bigtorus_vertexes[1530]=-19703  	// x
+bigtorus_vertexes[1530+1]=3919	// y
+bigtorus_vertexes[1530+2]=-1958	// z
+
+bigtorus_vertexes[1533]=-19989  	// x
+bigtorus_vertexes[1533+1]=3976	// y
+bigtorus_vertexes[1533+2]=-998	// z
+
+bigtorus_vertexes[1536]=-20479  	// x
+bigtorus_vertexes[1536+1]=0	// y
+bigtorus_vertexes[1536+2]=0	// z
+
+bigtorus_vertexes[1539]=-20381  	// x
+bigtorus_vertexes[1539+1]=0	// y
+bigtorus_vertexes[1539+2]=999	// z
+
+bigtorus_vertexes[1542]=-20089  	// x
+bigtorus_vertexes[1542+1]=0	// y
+bigtorus_vertexes[1542+2]=1959	// z
+
+bigtorus_vertexes[1545]=-19616  	// x
+bigtorus_vertexes[1545+1]=0	// y
+bigtorus_vertexes[1545+2]=2845	// z
+
+bigtorus_vertexes[1548]=-18979  	// x
+bigtorus_vertexes[1548+1]=0	// y
+bigtorus_vertexes[1548+2]=3620	// z
+
+bigtorus_vertexes[1551]=-18204  	// x
+bigtorus_vertexes[1551+1]=0	// y
+bigtorus_vertexes[1551+2]=4257	// z
+
+bigtorus_vertexes[1554]=-17318  	// x
+bigtorus_vertexes[1554+1]=0	// y
+bigtorus_vertexes[1554+2]=4730	// z
+
+bigtorus_vertexes[1557]=-16358  	// x
+bigtorus_vertexes[1557+1]=0	// y
+bigtorus_vertexes[1557+2]=5022	// z
+
+bigtorus_vertexes[1560]=-15359  	// x
+bigtorus_vertexes[1560+1]=0	// y
+bigtorus_vertexes[1560+2]=5120	// z
+
+bigtorus_vertexes[1563]=-14360  	// x
+bigtorus_vertexes[1563+1]=0	// y
+bigtorus_vertexes[1563+2]=5022	// z
+
+bigtorus_vertexes[1566]=-13400  	// x
+bigtorus_vertexes[1566+1]=0	// y
+bigtorus_vertexes[1566+2]=4730	// z
+
+bigtorus_vertexes[1569]=-12514  	// x
+bigtorus_vertexes[1569+1]=0	// y
+bigtorus_vertexes[1569+2]=4257	// z
+
+bigtorus_vertexes[1572]=-11739  	// x
+bigtorus_vertexes[1572+1]=0	// y
+bigtorus_vertexes[1572+2]=3620	// z
+
+bigtorus_vertexes[1575]=-11102  	// x
+bigtorus_vertexes[1575+1]=0	// y
+bigtorus_vertexes[1575+2]=2845	// z
+
+bigtorus_vertexes[1578]=-10629  	// x
+bigtorus_vertexes[1578+1]=0	// y
+bigtorus_vertexes[1578+2]=1959	// z
+
+bigtorus_vertexes[1581]=-10337  	// x
+bigtorus_vertexes[1581+1]=0	// y
+bigtorus_vertexes[1581+2]=999	// z
+
+bigtorus_vertexes[1584]=-10239  	// x
+bigtorus_vertexes[1584+1]=0	// y
+bigtorus_vertexes[1584+2]=0	// z
+
+bigtorus_vertexes[1587]=-10337  	// x
+bigtorus_vertexes[1587+1]=0	// y
+bigtorus_vertexes[1587+2]=-998	// z
+
+bigtorus_vertexes[1590]=-10629  	// x
+bigtorus_vertexes[1590+1]=0	// y
+bigtorus_vertexes[1590+2]=-1958	// z
+
+bigtorus_vertexes[1593]=-11102  	// x
+bigtorus_vertexes[1593+1]=0	// y
+bigtorus_vertexes[1593+2]=-2844	// z
+
+bigtorus_vertexes[1596]=-11739  	// x
+bigtorus_vertexes[1596+1]=0	// y
+bigtorus_vertexes[1596+2]=-3619	// z
+
+bigtorus_vertexes[1599]=-12514  	// x
+bigtorus_vertexes[1599+1]=0	// y
+bigtorus_vertexes[1599+2]=-4256	// z
+
+bigtorus_vertexes[1602]=-13400  	// x
+bigtorus_vertexes[1602+1]=0	// y
+bigtorus_vertexes[1602+2]=-4729	// z
+
+bigtorus_vertexes[1605]=-14360  	// x
+bigtorus_vertexes[1605+1]=0	// y
+bigtorus_vertexes[1605+2]=-5021	// z
+
+bigtorus_vertexes[1608]=-15359  	// x
+bigtorus_vertexes[1608+1]=0	// y
+bigtorus_vertexes[1608+2]=-5119	// z
+
+bigtorus_vertexes[1611]=-16358  	// x
+bigtorus_vertexes[1611+1]=0	// y
+bigtorus_vertexes[1611+2]=-5021	// z
+
+bigtorus_vertexes[1614]=-17318  	// x
+bigtorus_vertexes[1614+1]=0	// y
+bigtorus_vertexes[1614+2]=-4729	// z
+
+bigtorus_vertexes[1617]=-18204  	// x
+bigtorus_vertexes[1617+1]=0	// y
+bigtorus_vertexes[1617+2]=-4256	// z
+
+bigtorus_vertexes[1620]=-18979  	// x
+bigtorus_vertexes[1620+1]=0	// y
+bigtorus_vertexes[1620+2]=-3619	// z
+
+bigtorus_vertexes[1623]=-19616  	// x
+bigtorus_vertexes[1623+1]=0	// y
+bigtorus_vertexes[1623+2]=-2844	// z
+
+bigtorus_vertexes[1626]=-20089  	// x
+bigtorus_vertexes[1626+1]=0	// y
+bigtorus_vertexes[1626+2]=-1958	// z
+
+bigtorus_vertexes[1629]=-20381  	// x
+bigtorus_vertexes[1629+1]=0	// y
+bigtorus_vertexes[1629+2]=-998	// z
+
+bigtorus_vertexes[1632]=-20085  	// x
+bigtorus_vertexes[1632+1]=-3994	// y
+bigtorus_vertexes[1632+2]=0	// z
+
+bigtorus_vertexes[1635]=-19989  	// x
+bigtorus_vertexes[1635+1]=-3975	// y
+bigtorus_vertexes[1635+2]=999	// z
+
+bigtorus_vertexes[1638]=-19703  	// x
+bigtorus_vertexes[1638+1]=-3918	// y
+bigtorus_vertexes[1638+2]=1959	// z
+
+bigtorus_vertexes[1641]=-19239  	// x
+bigtorus_vertexes[1641+1]=-3826	// y
+bigtorus_vertexes[1641+2]=2845	// z
+
+bigtorus_vertexes[1644]=-18615  	// x
+bigtorus_vertexes[1644+1]=-3702	// y
+bigtorus_vertexes[1644+2]=3620	// z
+
+bigtorus_vertexes[1647]=-17854  	// x
+bigtorus_vertexes[1647+1]=-3551	// y
+bigtorus_vertexes[1647+2]=4257	// z
+
+bigtorus_vertexes[1650]=-16986  	// x
+bigtorus_vertexes[1650+1]=-3378	// y
+bigtorus_vertexes[1650+2]=4730	// z
+
+bigtorus_vertexes[1653]=-16044  	// x
+bigtorus_vertexes[1653+1]=-3190	// y
+bigtorus_vertexes[1653+2]=5022	// z
+
+bigtorus_vertexes[1656]=-15064  	// x
+bigtorus_vertexes[1656+1]=-2996	// y
+bigtorus_vertexes[1656+2]=5120	// z
+
+bigtorus_vertexes[1659]=-14084  	// x
+bigtorus_vertexes[1659+1]=-2801	// y
+bigtorus_vertexes[1659+2]=5022	// z
+
+bigtorus_vertexes[1662]=-13142  	// x
+bigtorus_vertexes[1662+1]=-2613	// y
+bigtorus_vertexes[1662+2]=4730	// z
+
+bigtorus_vertexes[1665]=-12274  	// x
+bigtorus_vertexes[1665+1]=-2441	// y
+bigtorus_vertexes[1665+2]=4257	// z
+
+bigtorus_vertexes[1668]=-11513  	// x
+bigtorus_vertexes[1668+1]=-2289	// y
+bigtorus_vertexes[1668+2]=3620	// z
+
+bigtorus_vertexes[1671]=-10889  	// x
+bigtorus_vertexes[1671+1]=-2165	// y
+bigtorus_vertexes[1671+2]=2845	// z
+
+bigtorus_vertexes[1674]=-10424  	// x
+bigtorus_vertexes[1674+1]=-2073	// y
+bigtorus_vertexes[1674+2]=1959	// z
+
+bigtorus_vertexes[1677]=-10139  	// x
+bigtorus_vertexes[1677+1]=-2016	// y
+bigtorus_vertexes[1677+2]=999	// z
+
+bigtorus_vertexes[1680]=-10042  	// x
+bigtorus_vertexes[1680+1]=-1997	// y
+bigtorus_vertexes[1680+2]=0	// z
+
+bigtorus_vertexes[1683]=-10139  	// x
+bigtorus_vertexes[1683+1]=-2016	// y
+bigtorus_vertexes[1683+2]=-998	// z
+
+bigtorus_vertexes[1686]=-10424  	// x
+bigtorus_vertexes[1686+1]=-2073	// y
+bigtorus_vertexes[1686+2]=-1958	// z
+
+bigtorus_vertexes[1689]=-10889  	// x
+bigtorus_vertexes[1689+1]=-2165	// y
+bigtorus_vertexes[1689+2]=-2844	// z
+
+bigtorus_vertexes[1692]=-11513  	// x
+bigtorus_vertexes[1692+1]=-2289	// y
+bigtorus_vertexes[1692+2]=-3619	// z
+
+bigtorus_vertexes[1695]=-12274  	// x
+bigtorus_vertexes[1695+1]=-2441	// y
+bigtorus_vertexes[1695+2]=-4256	// z
+
+bigtorus_vertexes[1698]=-13142  	// x
+bigtorus_vertexes[1698+1]=-2613	// y
+bigtorus_vertexes[1698+2]=-4729	// z
+
+bigtorus_vertexes[1701]=-14084  	// x
+bigtorus_vertexes[1701+1]=-2801	// y
+bigtorus_vertexes[1701+2]=-5021	// z
+
+bigtorus_vertexes[1704]=-15064  	// x
+bigtorus_vertexes[1704+1]=-2996	// y
+bigtorus_vertexes[1704+2]=-5119	// z
+
+bigtorus_vertexes[1707]=-16044  	// x
+bigtorus_vertexes[1707+1]=-3190	// y
+bigtorus_vertexes[1707+2]=-5021	// z
+
+bigtorus_vertexes[1710]=-16986  	// x
+bigtorus_vertexes[1710+1]=-3378	// y
+bigtorus_vertexes[1710+2]=-4729	// z
+
+bigtorus_vertexes[1713]=-17854  	// x
+bigtorus_vertexes[1713+1]=-3551	// y
+bigtorus_vertexes[1713+2]=-4256	// z
+
+bigtorus_vertexes[1716]=-18615  	// x
+bigtorus_vertexes[1716+1]=-3702	// y
+bigtorus_vertexes[1716+2]=-3619	// z
+
+bigtorus_vertexes[1719]=-19239  	// x
+bigtorus_vertexes[1719+1]=-3826	// y
+bigtorus_vertexes[1719+2]=-2844	// z
+
+bigtorus_vertexes[1722]=-19703  	// x
+bigtorus_vertexes[1722+1]=-3918	// y
+bigtorus_vertexes[1722+2]=-1958	// z
+
+bigtorus_vertexes[1725]=-19989  	// x
+bigtorus_vertexes[1725+1]=-3975	// y
+bigtorus_vertexes[1725+2]=-998	// z
+
+bigtorus_vertexes[1728]=-18920  	// x
+bigtorus_vertexes[1728+1]=-7836	// y
+bigtorus_vertexes[1728+2]=0	// z
+
+bigtorus_vertexes[1731]=-18829  	// x
+bigtorus_vertexes[1731+1]=-7799	// y
+bigtorus_vertexes[1731+2]=999	// z
+
+bigtorus_vertexes[1734]=-18560  	// x
+bigtorus_vertexes[1734+1]=-7687	// y
+bigtorus_vertexes[1734+2]=1959	// z
+
+bigtorus_vertexes[1737]=-18123  	// x
+bigtorus_vertexes[1737+1]=-7506	// y
+bigtorus_vertexes[1737+2]=2845	// z
+
+bigtorus_vertexes[1740]=-17535  	// x
+bigtorus_vertexes[1740+1]=-7262	// y
+bigtorus_vertexes[1740+2]=3620	// z
+
+bigtorus_vertexes[1743]=-16818  	// x
+bigtorus_vertexes[1743+1]=-6966	// y
+bigtorus_vertexes[1743+2]=4257	// z
+
+bigtorus_vertexes[1746]=-16000  	// x
+bigtorus_vertexes[1746+1]=-6627	// y
+bigtorus_vertexes[1746+2]=4730	// z
+
+bigtorus_vertexes[1749]=-15113  	// x
+bigtorus_vertexes[1749+1]=-6259	// y
+bigtorus_vertexes[1749+2]=5022	// z
+
+bigtorus_vertexes[1752]=-14190  	// x
+bigtorus_vertexes[1752+1]=-5877	// y
+bigtorus_vertexes[1752+2]=5120	// z
+
+bigtorus_vertexes[1755]=-13267  	// x
+bigtorus_vertexes[1755+1]=-5495	// y
+bigtorus_vertexes[1755+2]=5022	// z
+
+bigtorus_vertexes[1758]=-12380  	// x
+bigtorus_vertexes[1758+1]=-5127	// y
+bigtorus_vertexes[1758+2]=4730	// z
+
+bigtorus_vertexes[1761]=-11562  	// x
+bigtorus_vertexes[1761+1]=-4788	// y
+bigtorus_vertexes[1761+2]=4257	// z
+
+bigtorus_vertexes[1764]=-10845  	// x
+bigtorus_vertexes[1764+1]=-4492	// y
+bigtorus_vertexes[1764+2]=3620	// z
+
+bigtorus_vertexes[1767]=-10257  	// x
+bigtorus_vertexes[1767+1]=-4248	// y
+bigtorus_vertexes[1767+2]=2845	// z
+
+bigtorus_vertexes[1770]=-9820  	// x
+bigtorus_vertexes[1770+1]=-4067	// y
+bigtorus_vertexes[1770+2]=1959	// z
+
+bigtorus_vertexes[1773]=-9550  	// x
+bigtorus_vertexes[1773+1]=-3955	// y
+bigtorus_vertexes[1773+2]=999	// z
+
+bigtorus_vertexes[1776]=-9460  	// x
+bigtorus_vertexes[1776+1]=-3918	// y
+bigtorus_vertexes[1776+2]=0	// z
+
+bigtorus_vertexes[1779]=-9550  	// x
+bigtorus_vertexes[1779+1]=-3955	// y
+bigtorus_vertexes[1779+2]=-998	// z
+
+bigtorus_vertexes[1782]=-9820  	// x
+bigtorus_vertexes[1782+1]=-4067	// y
+bigtorus_vertexes[1782+2]=-1958	// z
+
+bigtorus_vertexes[1785]=-10257  	// x
+bigtorus_vertexes[1785+1]=-4248	// y
+bigtorus_vertexes[1785+2]=-2844	// z
+
+bigtorus_vertexes[1788]=-10845  	// x
+bigtorus_vertexes[1788+1]=-4492	// y
+bigtorus_vertexes[1788+2]=-3619	// z
+
+bigtorus_vertexes[1791]=-11562  	// x
+bigtorus_vertexes[1791+1]=-4788	// y
+bigtorus_vertexes[1791+2]=-4256	// z
+
+bigtorus_vertexes[1794]=-12380  	// x
+bigtorus_vertexes[1794+1]=-5127	// y
+bigtorus_vertexes[1794+2]=-4729	// z
+
+bigtorus_vertexes[1797]=-13267  	// x
+bigtorus_vertexes[1797+1]=-5495	// y
+bigtorus_vertexes[1797+2]=-5021	// z
+
+bigtorus_vertexes[1800]=-14190  	// x
+bigtorus_vertexes[1800+1]=-5877	// y
+bigtorus_vertexes[1800+2]=-5119	// z
+
+bigtorus_vertexes[1803]=-15113  	// x
+bigtorus_vertexes[1803+1]=-6259	// y
+bigtorus_vertexes[1803+2]=-5021	// z
+
+bigtorus_vertexes[1806]=-16000  	// x
+bigtorus_vertexes[1806+1]=-6627	// y
+bigtorus_vertexes[1806+2]=-4729	// z
+
+bigtorus_vertexes[1809]=-16818  	// x
+bigtorus_vertexes[1809+1]=-6966	// y
+bigtorus_vertexes[1809+2]=-4256	// z
+
+bigtorus_vertexes[1812]=-17535  	// x
+bigtorus_vertexes[1812+1]=-7262	// y
+bigtorus_vertexes[1812+2]=-3619	// z
+
+bigtorus_vertexes[1815]=-18123  	// x
+bigtorus_vertexes[1815+1]=-7506	// y
+bigtorus_vertexes[1815+2]=-2844	// z
+
+bigtorus_vertexes[1818]=-18560  	// x
+bigtorus_vertexes[1818+1]=-7687	// y
+bigtorus_vertexes[1818+2]=-1958	// z
+
+bigtorus_vertexes[1821]=-18829  	// x
+bigtorus_vertexes[1821+1]=-7799	// y
+bigtorus_vertexes[1821+2]=-998	// z
+
+bigtorus_vertexes[1824]=-17027  	// x
+bigtorus_vertexes[1824+1]=-11377	// y
+bigtorus_vertexes[1824+2]=0	// z
+
+bigtorus_vertexes[1827]=-16946  	// x
+bigtorus_vertexes[1827+1]=-11322	// y
+bigtorus_vertexes[1827+2]=999	// z
+
+bigtorus_vertexes[1830]=-16703  	// x
+bigtorus_vertexes[1830+1]=-11161	// y
+bigtorus_vertexes[1830+2]=1959	// z
+
+bigtorus_vertexes[1833]=-16310  	// x
+bigtorus_vertexes[1833+1]=-10898	// y
+bigtorus_vertexes[1833+2]=2845	// z
+
+bigtorus_vertexes[1836]=-15781  	// x
+bigtorus_vertexes[1836+1]=-10544	// y
+bigtorus_vertexes[1836+2]=3620	// z
+
+bigtorus_vertexes[1839]=-15136  	// x
+bigtorus_vertexes[1839+1]=-10113	// y
+bigtorus_vertexes[1839+2]=4257	// z
+
+bigtorus_vertexes[1842]=-14400  	// x
+bigtorus_vertexes[1842+1]=-9621	// y
+bigtorus_vertexes[1842+2]=4730	// z
+
+bigtorus_vertexes[1845]=-13601  	// x
+bigtorus_vertexes[1845+1]=-9087	// y
+bigtorus_vertexes[1845+2]=5022	// z
+
+bigtorus_vertexes[1848]=-12770  	// x
+bigtorus_vertexes[1848+1]=-8533	// y
+bigtorus_vertexes[1848+2]=5120	// z
+
+bigtorus_vertexes[1851]=-11940  	// x
+bigtorus_vertexes[1851+1]=-7978	// y
+bigtorus_vertexes[1851+2]=5022	// z
+
+bigtorus_vertexes[1854]=-11141  	// x
+bigtorus_vertexes[1854+1]=-7444	// y
+bigtorus_vertexes[1854+2]=4730	// z
+
+bigtorus_vertexes[1857]=-10405  	// x
+bigtorus_vertexes[1857+1]=-6952	// y
+bigtorus_vertexes[1857+2]=4257	// z
+
+bigtorus_vertexes[1860]=-9760  	// x
+bigtorus_vertexes[1860+1]=-6521	// y
+bigtorus_vertexes[1860+2]=3620	// z
+
+bigtorus_vertexes[1863]=-9231  	// x
+bigtorus_vertexes[1863+1]=-6167	// y
+bigtorus_vertexes[1863+2]=2845	// z
+
+bigtorus_vertexes[1866]=-8837  	// x
+bigtorus_vertexes[1866+1]=-5905	// y
+bigtorus_vertexes[1866+2]=1959	// z
+
+bigtorus_vertexes[1869]=-8595  	// x
+bigtorus_vertexes[1869+1]=-5743	// y
+bigtorus_vertexes[1869+2]=999	// z
+
+bigtorus_vertexes[1872]=-8513  	// x
+bigtorus_vertexes[1872+1]=-5688	// y
+bigtorus_vertexes[1872+2]=0	// z
+
+bigtorus_vertexes[1875]=-8595  	// x
+bigtorus_vertexes[1875+1]=-5743	// y
+bigtorus_vertexes[1875+2]=-998	// z
+
+bigtorus_vertexes[1878]=-8837  	// x
+bigtorus_vertexes[1878+1]=-5905	// y
+bigtorus_vertexes[1878+2]=-1958	// z
+
+bigtorus_vertexes[1881]=-9231  	// x
+bigtorus_vertexes[1881+1]=-6167	// y
+bigtorus_vertexes[1881+2]=-2844	// z
+
+bigtorus_vertexes[1884]=-9760  	// x
+bigtorus_vertexes[1884+1]=-6521	// y
+bigtorus_vertexes[1884+2]=-3619	// z
+
+bigtorus_vertexes[1887]=-10405  	// x
+bigtorus_vertexes[1887+1]=-6952	// y
+bigtorus_vertexes[1887+2]=-4256	// z
+
+bigtorus_vertexes[1890]=-11141  	// x
+bigtorus_vertexes[1890+1]=-7444	// y
+bigtorus_vertexes[1890+2]=-4729	// z
+
+bigtorus_vertexes[1893]=-11940  	// x
+bigtorus_vertexes[1893+1]=-7978	// y
+bigtorus_vertexes[1893+2]=-5021	// z
+
+bigtorus_vertexes[1896]=-12770  	// x
+bigtorus_vertexes[1896+1]=-8533	// y
+bigtorus_vertexes[1896+2]=-5119	// z
+
+bigtorus_vertexes[1899]=-13601  	// x
+bigtorus_vertexes[1899+1]=-9087	// y
+bigtorus_vertexes[1899+2]=-5021	// z
+
+bigtorus_vertexes[1902]=-14400  	// x
+bigtorus_vertexes[1902+1]=-9621	// y
+bigtorus_vertexes[1902+2]=-4729	// z
+
+bigtorus_vertexes[1905]=-15136  	// x
+bigtorus_vertexes[1905+1]=-10113	// y
+bigtorus_vertexes[1905+2]=-4256	// z
+
+bigtorus_vertexes[1908]=-15781  	// x
+bigtorus_vertexes[1908+1]=-10544	// y
+bigtorus_vertexes[1908+2]=-3619	// z
+
+bigtorus_vertexes[1911]=-16310  	// x
+bigtorus_vertexes[1911+1]=-10898	// y
+bigtorus_vertexes[1911+2]=-2844	// z
+
+bigtorus_vertexes[1914]=-16703  	// x
+bigtorus_vertexes[1914+1]=-11161	// y
+bigtorus_vertexes[1914+2]=-1958	// z
+
+bigtorus_vertexes[1917]=-16946  	// x
+bigtorus_vertexes[1917+1]=-11322	// y
+bigtorus_vertexes[1917+2]=-998	// z
+
+bigtorus_vertexes[1920]=-14481  	// x
+bigtorus_vertexes[1920+1]=-14481	// y
+bigtorus_vertexes[1920+2]=0	// z
+
+bigtorus_vertexes[1923]=-14411  	// x
+bigtorus_vertexes[1923+1]=-14411	// y
+bigtorus_vertexes[1923+2]=999	// z
+
+bigtorus_vertexes[1926]=-14205  	// x
+bigtorus_vertexes[1926+1]=-14205	// y
+bigtorus_vertexes[1926+2]=1959	// z
+
+bigtorus_vertexes[1929]=-13870  	// x
+bigtorus_vertexes[1929+1]=-13870	// y
+bigtorus_vertexes[1929+2]=2845	// z
+
+bigtorus_vertexes[1932]=-13420  	// x
+bigtorus_vertexes[1932+1]=-13420	// y
+bigtorus_vertexes[1932+2]=3620	// z
+
+bigtorus_vertexes[1935]=-12872  	// x
+bigtorus_vertexes[1935+1]=-12872	// y
+bigtorus_vertexes[1935+2]=4257	// z
+
+bigtorus_vertexes[1938]=-12246  	// x
+bigtorus_vertexes[1938+1]=-12246	// y
+bigtorus_vertexes[1938+2]=4730	// z
+
+bigtorus_vertexes[1941]=-11566  	// x
+bigtorus_vertexes[1941+1]=-11566	// y
+bigtorus_vertexes[1941+2]=5022	// z
+
+bigtorus_vertexes[1944]=-10860  	// x
+bigtorus_vertexes[1944+1]=-10860	// y
+bigtorus_vertexes[1944+2]=5120	// z
+
+bigtorus_vertexes[1947]=-10154  	// x
+bigtorus_vertexes[1947+1]=-10154	// y
+bigtorus_vertexes[1947+2]=5022	// z
+
+bigtorus_vertexes[1950]=-9475  	// x
+bigtorus_vertexes[1950+1]=-9475	// y
+bigtorus_vertexes[1950+2]=4730	// z
+
+bigtorus_vertexes[1953]=-8849  	// x
+bigtorus_vertexes[1953+1]=-8849	// y
+bigtorus_vertexes[1953+2]=4257	// z
+
+bigtorus_vertexes[1956]=-8300  	// x
+bigtorus_vertexes[1956+1]=-8300	// y
+bigtorus_vertexes[1956+2]=3620	// z
+
+bigtorus_vertexes[1959]=-7850  	// x
+bigtorus_vertexes[1959+1]=-7850	// y
+bigtorus_vertexes[1959+2]=2845	// z
+
+bigtorus_vertexes[1962]=-7515  	// x
+bigtorus_vertexes[1962+1]=-7515	// y
+bigtorus_vertexes[1962+2]=1959	// z
+
+bigtorus_vertexes[1965]=-7309  	// x
+bigtorus_vertexes[1965+1]=-7309	// y
+bigtorus_vertexes[1965+2]=999	// z
+
+bigtorus_vertexes[1968]=-7240  	// x
+bigtorus_vertexes[1968+1]=-7240	// y
+bigtorus_vertexes[1968+2]=0	// z
+
+bigtorus_vertexes[1971]=-7309  	// x
+bigtorus_vertexes[1971+1]=-7309	// y
+bigtorus_vertexes[1971+2]=-998	// z
+
+bigtorus_vertexes[1974]=-7515  	// x
+bigtorus_vertexes[1974+1]=-7515	// y
+bigtorus_vertexes[1974+2]=-1958	// z
+
+bigtorus_vertexes[1977]=-7850  	// x
+bigtorus_vertexes[1977+1]=-7850	// y
+bigtorus_vertexes[1977+2]=-2844	// z
+
+bigtorus_vertexes[1980]=-8300  	// x
+bigtorus_vertexes[1980+1]=-8300	// y
+bigtorus_vertexes[1980+2]=-3619	// z
+
+bigtorus_vertexes[1983]=-8849  	// x
+bigtorus_vertexes[1983+1]=-8849	// y
+bigtorus_vertexes[1983+2]=-4256	// z
+
+bigtorus_vertexes[1986]=-9475  	// x
+bigtorus_vertexes[1986+1]=-9475	// y
+bigtorus_vertexes[1986+2]=-4729	// z
+
+bigtorus_vertexes[1989]=-10154  	// x
+bigtorus_vertexes[1989+1]=-10154	// y
+bigtorus_vertexes[1989+2]=-5021	// z
+
+bigtorus_vertexes[1992]=-10860  	// x
+bigtorus_vertexes[1992+1]=-10860	// y
+bigtorus_vertexes[1992+2]=-5119	// z
+
+bigtorus_vertexes[1995]=-11566  	// x
+bigtorus_vertexes[1995+1]=-11566	// y
+bigtorus_vertexes[1995+2]=-5021	// z
+
+bigtorus_vertexes[1998]=-12246  	// x
+bigtorus_vertexes[1998+1]=-12246	// y
+bigtorus_vertexes[1998+2]=-4729	// z
+
+bigtorus_vertexes[2001]=-12872  	// x
+bigtorus_vertexes[2001+1]=-12872	// y
+bigtorus_vertexes[2001+2]=-4256	// z
+
+bigtorus_vertexes[2004]=-13420  	// x
+bigtorus_vertexes[2004+1]=-13420	// y
+bigtorus_vertexes[2004+2]=-3619	// z
+
+bigtorus_vertexes[2007]=-13870  	// x
+bigtorus_vertexes[2007+1]=-13870	// y
+bigtorus_vertexes[2007+2]=-2844	// z
+
+bigtorus_vertexes[2010]=-14205  	// x
+bigtorus_vertexes[2010+1]=-14205	// y
+bigtorus_vertexes[2010+2]=-1958	// z
+
+bigtorus_vertexes[2013]=-14411  	// x
+bigtorus_vertexes[2013+1]=-14411	// y
+bigtorus_vertexes[2013+2]=-998	// z
+
+bigtorus_vertexes[2016]=-11377  	// x
+bigtorus_vertexes[2016+1]=-17027	// y
+bigtorus_vertexes[2016+2]=0	// z
+
+bigtorus_vertexes[2019]=-11322  	// x
+bigtorus_vertexes[2019+1]=-16946	// y
+bigtorus_vertexes[2019+2]=999	// z
+
+bigtorus_vertexes[2022]=-11161  	// x
+bigtorus_vertexes[2022+1]=-16703	// y
+bigtorus_vertexes[2022+2]=1959	// z
+
+bigtorus_vertexes[2025]=-10898  	// x
+bigtorus_vertexes[2025+1]=-16310	// y
+bigtorus_vertexes[2025+2]=2845	// z
+
+bigtorus_vertexes[2028]=-10544  	// x
+bigtorus_vertexes[2028+1]=-15781	// y
+bigtorus_vertexes[2028+2]=3620	// z
+
+bigtorus_vertexes[2031]=-10113  	// x
+bigtorus_vertexes[2031+1]=-15136	// y
+bigtorus_vertexes[2031+2]=4257	// z
+
+bigtorus_vertexes[2034]=-9621  	// x
+bigtorus_vertexes[2034+1]=-14400	// y
+bigtorus_vertexes[2034+2]=4730	// z
+
+bigtorus_vertexes[2037]=-9087  	// x
+bigtorus_vertexes[2037+1]=-13601	// y
+bigtorus_vertexes[2037+2]=5022	// z
+
+bigtorus_vertexes[2040]=-8533  	// x
+bigtorus_vertexes[2040+1]=-12770	// y
+bigtorus_vertexes[2040+2]=5120	// z
+
+bigtorus_vertexes[2043]=-7978  	// x
+bigtorus_vertexes[2043+1]=-11940	// y
+bigtorus_vertexes[2043+2]=5022	// z
+
+bigtorus_vertexes[2046]=-7444  	// x
+bigtorus_vertexes[2046+1]=-11141	// y
+bigtorus_vertexes[2046+2]=4730	// z
+
+bigtorus_vertexes[2049]=-6952  	// x
+bigtorus_vertexes[2049+1]=-10405	// y
+bigtorus_vertexes[2049+2]=4257	// z
+
+bigtorus_vertexes[2052]=-6521  	// x
+bigtorus_vertexes[2052+1]=-9760	// y
+bigtorus_vertexes[2052+2]=3620	// z
+
+bigtorus_vertexes[2055]=-6167  	// x
+bigtorus_vertexes[2055+1]=-9231	// y
+bigtorus_vertexes[2055+2]=2845	// z
+
+bigtorus_vertexes[2058]=-5905  	// x
+bigtorus_vertexes[2058+1]=-8837	// y
+bigtorus_vertexes[2058+2]=1959	// z
+
+bigtorus_vertexes[2061]=-5743  	// x
+bigtorus_vertexes[2061+1]=-8595	// y
+bigtorus_vertexes[2061+2]=999	// z
+
+bigtorus_vertexes[2064]=-5688  	// x
+bigtorus_vertexes[2064+1]=-8513	// y
+bigtorus_vertexes[2064+2]=0	// z
+
+bigtorus_vertexes[2067]=-5743  	// x
+bigtorus_vertexes[2067+1]=-8595	// y
+bigtorus_vertexes[2067+2]=-998	// z
+
+bigtorus_vertexes[2070]=-5905  	// x
+bigtorus_vertexes[2070+1]=-8837	// y
+bigtorus_vertexes[2070+2]=-1958	// z
+
+bigtorus_vertexes[2073]=-6167  	// x
+bigtorus_vertexes[2073+1]=-9231	// y
+bigtorus_vertexes[2073+2]=-2844	// z
+
+bigtorus_vertexes[2076]=-6521  	// x
+bigtorus_vertexes[2076+1]=-9760	// y
+bigtorus_vertexes[2076+2]=-3619	// z
+
+bigtorus_vertexes[2079]=-6952  	// x
+bigtorus_vertexes[2079+1]=-10405	// y
+bigtorus_vertexes[2079+2]=-4256	// z
+
+bigtorus_vertexes[2082]=-7444  	// x
+bigtorus_vertexes[2082+1]=-11141	// y
+bigtorus_vertexes[2082+2]=-4729	// z
+
+bigtorus_vertexes[2085]=-7978  	// x
+bigtorus_vertexes[2085+1]=-11940	// y
+bigtorus_vertexes[2085+2]=-5021	// z
+
+bigtorus_vertexes[2088]=-8533  	// x
+bigtorus_vertexes[2088+1]=-12770	// y
+bigtorus_vertexes[2088+2]=-5119	// z
+
+bigtorus_vertexes[2091]=-9087  	// x
+bigtorus_vertexes[2091+1]=-13601	// y
+bigtorus_vertexes[2091+2]=-5021	// z
+
+bigtorus_vertexes[2094]=-9621  	// x
+bigtorus_vertexes[2094+1]=-14400	// y
+bigtorus_vertexes[2094+2]=-4729	// z
+
+bigtorus_vertexes[2097]=-10113  	// x
+bigtorus_vertexes[2097+1]=-15136	// y
+bigtorus_vertexes[2097+2]=-4256	// z
+
+bigtorus_vertexes[2100]=-10544  	// x
+bigtorus_vertexes[2100+1]=-15781	// y
+bigtorus_vertexes[2100+2]=-3619	// z
+
+bigtorus_vertexes[2103]=-10898  	// x
+bigtorus_vertexes[2103+1]=-16310	// y
+bigtorus_vertexes[2103+2]=-2844	// z
+
+bigtorus_vertexes[2106]=-11161  	// x
+bigtorus_vertexes[2106+1]=-16703	// y
+bigtorus_vertexes[2106+2]=-1958	// z
+
+bigtorus_vertexes[2109]=-11322  	// x
+bigtorus_vertexes[2109+1]=-16946	// y
+bigtorus_vertexes[2109+2]=-998	// z
+
+bigtorus_vertexes[2112]=-7836  	// x
+bigtorus_vertexes[2112+1]=-18920	// y
+bigtorus_vertexes[2112+2]=0	// z
+
+bigtorus_vertexes[2115]=-7799  	// x
+bigtorus_vertexes[2115+1]=-18829	// y
+bigtorus_vertexes[2115+2]=999	// z
+
+bigtorus_vertexes[2118]=-7687  	// x
+bigtorus_vertexes[2118+1]=-18560	// y
+bigtorus_vertexes[2118+2]=1959	// z
+
+bigtorus_vertexes[2121]=-7506  	// x
+bigtorus_vertexes[2121+1]=-18123	// y
+bigtorus_vertexes[2121+2]=2845	// z
+
+bigtorus_vertexes[2124]=-7262  	// x
+bigtorus_vertexes[2124+1]=-17535	// y
+bigtorus_vertexes[2124+2]=3620	// z
+
+bigtorus_vertexes[2127]=-6966  	// x
+bigtorus_vertexes[2127+1]=-16818	// y
+bigtorus_vertexes[2127+2]=4257	// z
+
+bigtorus_vertexes[2130]=-6627  	// x
+bigtorus_vertexes[2130+1]=-16000	// y
+bigtorus_vertexes[2130+2]=4730	// z
+
+bigtorus_vertexes[2133]=-6259  	// x
+bigtorus_vertexes[2133+1]=-15113	// y
+bigtorus_vertexes[2133+2]=5022	// z
+
+bigtorus_vertexes[2136]=-5877  	// x
+bigtorus_vertexes[2136+1]=-14190	// y
+bigtorus_vertexes[2136+2]=5120	// z
+
+bigtorus_vertexes[2139]=-5495  	// x
+bigtorus_vertexes[2139+1]=-13267	// y
+bigtorus_vertexes[2139+2]=5022	// z
+
+bigtorus_vertexes[2142]=-5127  	// x
+bigtorus_vertexes[2142+1]=-12380	// y
+bigtorus_vertexes[2142+2]=4730	// z
+
+bigtorus_vertexes[2145]=-4788  	// x
+bigtorus_vertexes[2145+1]=-11562	// y
+bigtorus_vertexes[2145+2]=4257	// z
+
+bigtorus_vertexes[2148]=-4492  	// x
+bigtorus_vertexes[2148+1]=-10845	// y
+bigtorus_vertexes[2148+2]=3620	// z
+
+bigtorus_vertexes[2151]=-4248  	// x
+bigtorus_vertexes[2151+1]=-10257	// y
+bigtorus_vertexes[2151+2]=2845	// z
+
+bigtorus_vertexes[2154]=-4067  	// x
+bigtorus_vertexes[2154+1]=-9820	// y
+bigtorus_vertexes[2154+2]=1959	// z
+
+bigtorus_vertexes[2157]=-3955  	// x
+bigtorus_vertexes[2157+1]=-9550	// y
+bigtorus_vertexes[2157+2]=999	// z
+
+bigtorus_vertexes[2160]=-3918  	// x
+bigtorus_vertexes[2160+1]=-9460	// y
+bigtorus_vertexes[2160+2]=0	// z
+
+bigtorus_vertexes[2163]=-3955  	// x
+bigtorus_vertexes[2163+1]=-9550	// y
+bigtorus_vertexes[2163+2]=-998	// z
+
+bigtorus_vertexes[2166]=-4067  	// x
+bigtorus_vertexes[2166+1]=-9820	// y
+bigtorus_vertexes[2166+2]=-1958	// z
+
+bigtorus_vertexes[2169]=-4248  	// x
+bigtorus_vertexes[2169+1]=-10257	// y
+bigtorus_vertexes[2169+2]=-2844	// z
+
+bigtorus_vertexes[2172]=-4492  	// x
+bigtorus_vertexes[2172+1]=-10845	// y
+bigtorus_vertexes[2172+2]=-3619	// z
+
+bigtorus_vertexes[2175]=-4788  	// x
+bigtorus_vertexes[2175+1]=-11562	// y
+bigtorus_vertexes[2175+2]=-4256	// z
+
+bigtorus_vertexes[2178]=-5127  	// x
+bigtorus_vertexes[2178+1]=-12380	// y
+bigtorus_vertexes[2178+2]=-4729	// z
+
+bigtorus_vertexes[2181]=-5495  	// x
+bigtorus_vertexes[2181+1]=-13267	// y
+bigtorus_vertexes[2181+2]=-5021	// z
+
+bigtorus_vertexes[2184]=-5877  	// x
+bigtorus_vertexes[2184+1]=-14190	// y
+bigtorus_vertexes[2184+2]=-5119	// z
+
+bigtorus_vertexes[2187]=-6259  	// x
+bigtorus_vertexes[2187+1]=-15113	// y
+bigtorus_vertexes[2187+2]=-5021	// z
+
+bigtorus_vertexes[2190]=-6627  	// x
+bigtorus_vertexes[2190+1]=-16000	// y
+bigtorus_vertexes[2190+2]=-4729	// z
+
+bigtorus_vertexes[2193]=-6966  	// x
+bigtorus_vertexes[2193+1]=-16818	// y
+bigtorus_vertexes[2193+2]=-4256	// z
+
+bigtorus_vertexes[2196]=-7262  	// x
+bigtorus_vertexes[2196+1]=-17535	// y
+bigtorus_vertexes[2196+2]=-3619	// z
+
+bigtorus_vertexes[2199]=-7506  	// x
+bigtorus_vertexes[2199+1]=-18123	// y
+bigtorus_vertexes[2199+2]=-2844	// z
+
+bigtorus_vertexes[2202]=-7687  	// x
+bigtorus_vertexes[2202+1]=-18560	// y
+bigtorus_vertexes[2202+2]=-1958	// z
+
+bigtorus_vertexes[2205]=-7799  	// x
+bigtorus_vertexes[2205+1]=-18829	// y
+bigtorus_vertexes[2205+2]=-998	// z
+
+bigtorus_vertexes[2208]=-3994  	// x
+bigtorus_vertexes[2208+1]=-20085	// y
+bigtorus_vertexes[2208+2]=0	// z
+
+bigtorus_vertexes[2211]=-3975  	// x
+bigtorus_vertexes[2211+1]=-19989	// y
+bigtorus_vertexes[2211+2]=999	// z
+
+bigtorus_vertexes[2214]=-3918  	// x
+bigtorus_vertexes[2214+1]=-19703	// y
+bigtorus_vertexes[2214+2]=1959	// z
+
+bigtorus_vertexes[2217]=-3826  	// x
+bigtorus_vertexes[2217+1]=-19239	// y
+bigtorus_vertexes[2217+2]=2845	// z
+
+bigtorus_vertexes[2220]=-3702  	// x
+bigtorus_vertexes[2220+1]=-18615	// y
+bigtorus_vertexes[2220+2]=3620	// z
+
+bigtorus_vertexes[2223]=-3551  	// x
+bigtorus_vertexes[2223+1]=-17854	// y
+bigtorus_vertexes[2223+2]=4257	// z
+
+bigtorus_vertexes[2226]=-3378  	// x
+bigtorus_vertexes[2226+1]=-16986	// y
+bigtorus_vertexes[2226+2]=4730	// z
+
+bigtorus_vertexes[2229]=-3190  	// x
+bigtorus_vertexes[2229+1]=-16044	// y
+bigtorus_vertexes[2229+2]=5022	// z
+
+bigtorus_vertexes[2232]=-2996  	// x
+bigtorus_vertexes[2232+1]=-15064	// y
+bigtorus_vertexes[2232+2]=5120	// z
+
+bigtorus_vertexes[2235]=-2801  	// x
+bigtorus_vertexes[2235+1]=-14084	// y
+bigtorus_vertexes[2235+2]=5022	// z
+
+bigtorus_vertexes[2238]=-2613  	// x
+bigtorus_vertexes[2238+1]=-13142	// y
+bigtorus_vertexes[2238+2]=4730	// z
+
+bigtorus_vertexes[2241]=-2441  	// x
+bigtorus_vertexes[2241+1]=-12274	// y
+bigtorus_vertexes[2241+2]=4257	// z
+
+bigtorus_vertexes[2244]=-2289  	// x
+bigtorus_vertexes[2244+1]=-11513	// y
+bigtorus_vertexes[2244+2]=3620	// z
+
+bigtorus_vertexes[2247]=-2165  	// x
+bigtorus_vertexes[2247+1]=-10889	// y
+bigtorus_vertexes[2247+2]=2845	// z
+
+bigtorus_vertexes[2250]=-2073  	// x
+bigtorus_vertexes[2250+1]=-10424	// y
+bigtorus_vertexes[2250+2]=1959	// z
+
+bigtorus_vertexes[2253]=-2016  	// x
+bigtorus_vertexes[2253+1]=-10139	// y
+bigtorus_vertexes[2253+2]=999	// z
+
+bigtorus_vertexes[2256]=-1997  	// x
+bigtorus_vertexes[2256+1]=-10042	// y
+bigtorus_vertexes[2256+2]=0	// z
+
+bigtorus_vertexes[2259]=-2016  	// x
+bigtorus_vertexes[2259+1]=-10139	// y
+bigtorus_vertexes[2259+2]=-998	// z
+
+bigtorus_vertexes[2262]=-2073  	// x
+bigtorus_vertexes[2262+1]=-10424	// y
+bigtorus_vertexes[2262+2]=-1958	// z
+
+bigtorus_vertexes[2265]=-2165  	// x
+bigtorus_vertexes[2265+1]=-10889	// y
+bigtorus_vertexes[2265+2]=-2844	// z
+
+bigtorus_vertexes[2268]=-2289  	// x
+bigtorus_vertexes[2268+1]=-11513	// y
+bigtorus_vertexes[2268+2]=-3619	// z
+
+bigtorus_vertexes[2271]=-2441  	// x
+bigtorus_vertexes[2271+1]=-12274	// y
+bigtorus_vertexes[2271+2]=-4256	// z
+
+bigtorus_vertexes[2274]=-2613  	// x
+bigtorus_vertexes[2274+1]=-13142	// y
+bigtorus_vertexes[2274+2]=-4729	// z
+
+bigtorus_vertexes[2277]=-2801  	// x
+bigtorus_vertexes[2277+1]=-14084	// y
+bigtorus_vertexes[2277+2]=-5021	// z
+
+bigtorus_vertexes[2280]=-2996  	// x
+bigtorus_vertexes[2280+1]=-15064	// y
+bigtorus_vertexes[2280+2]=-5119	// z
+
+bigtorus_vertexes[2283]=-3190  	// x
+bigtorus_vertexes[2283+1]=-16044	// y
+bigtorus_vertexes[2283+2]=-5021	// z
+
+bigtorus_vertexes[2286]=-3378  	// x
+bigtorus_vertexes[2286+1]=-16986	// y
+bigtorus_vertexes[2286+2]=-4729	// z
+
+bigtorus_vertexes[2289]=-3551  	// x
+bigtorus_vertexes[2289+1]=-17854	// y
+bigtorus_vertexes[2289+2]=-4256	// z
+
+bigtorus_vertexes[2292]=-3702  	// x
+bigtorus_vertexes[2292+1]=-18615	// y
+bigtorus_vertexes[2292+2]=-3619	// z
+
+bigtorus_vertexes[2295]=-3826  	// x
+bigtorus_vertexes[2295+1]=-19239	// y
+bigtorus_vertexes[2295+2]=-2844	// z
+
+bigtorus_vertexes[2298]=-3918  	// x
+bigtorus_vertexes[2298+1]=-19703	// y
+bigtorus_vertexes[2298+2]=-1958	// z
+
+bigtorus_vertexes[2301]=-3975  	// x
+bigtorus_vertexes[2301+1]=-19989	// y
+bigtorus_vertexes[2301+2]=-998	// z
+
+bigtorus_vertexes[2304]=0  	// x
+bigtorus_vertexes[2304+1]=-20479	// y
+bigtorus_vertexes[2304+2]=0	// z
+
+bigtorus_vertexes[2307]=0  	// x
+bigtorus_vertexes[2307+1]=-20381	// y
+bigtorus_vertexes[2307+2]=999	// z
+
+bigtorus_vertexes[2310]=0  	// x
+bigtorus_vertexes[2310+1]=-20089	// y
+bigtorus_vertexes[2310+2]=1959	// z
+
+bigtorus_vertexes[2313]=0  	// x
+bigtorus_vertexes[2313+1]=-19616	// y
+bigtorus_vertexes[2313+2]=2845	// z
+
+bigtorus_vertexes[2316]=0  	// x
+bigtorus_vertexes[2316+1]=-18979	// y
+bigtorus_vertexes[2316+2]=3620	// z
+
+bigtorus_vertexes[2319]=0  	// x
+bigtorus_vertexes[2319+1]=-18204	// y
+bigtorus_vertexes[2319+2]=4257	// z
+
+bigtorus_vertexes[2322]=0  	// x
+bigtorus_vertexes[2322+1]=-17318	// y
+bigtorus_vertexes[2322+2]=4730	// z
+
+bigtorus_vertexes[2325]=0  	// x
+bigtorus_vertexes[2325+1]=-16358	// y
+bigtorus_vertexes[2325+2]=5022	// z
+
+bigtorus_vertexes[2328]=0  	// x
+bigtorus_vertexes[2328+1]=-15359	// y
+bigtorus_vertexes[2328+2]=5120	// z
+
+bigtorus_vertexes[2331]=0  	// x
+bigtorus_vertexes[2331+1]=-14360	// y
+bigtorus_vertexes[2331+2]=5022	// z
+
+bigtorus_vertexes[2334]=0  	// x
+bigtorus_vertexes[2334+1]=-13400	// y
+bigtorus_vertexes[2334+2]=4730	// z
+
+bigtorus_vertexes[2337]=0  	// x
+bigtorus_vertexes[2337+1]=-12514	// y
+bigtorus_vertexes[2337+2]=4257	// z
+
+bigtorus_vertexes[2340]=0  	// x
+bigtorus_vertexes[2340+1]=-11739	// y
+bigtorus_vertexes[2340+2]=3620	// z
+
+bigtorus_vertexes[2343]=0  	// x
+bigtorus_vertexes[2343+1]=-11102	// y
+bigtorus_vertexes[2343+2]=2845	// z
+
+bigtorus_vertexes[2346]=0  	// x
+bigtorus_vertexes[2346+1]=-10629	// y
+bigtorus_vertexes[2346+2]=1959	// z
+
+bigtorus_vertexes[2349]=0  	// x
+bigtorus_vertexes[2349+1]=-10337	// y
+bigtorus_vertexes[2349+2]=999	// z
+
+bigtorus_vertexes[2352]=0  	// x
+bigtorus_vertexes[2352+1]=-10239	// y
+bigtorus_vertexes[2352+2]=0	// z
+
+bigtorus_vertexes[2355]=0  	// x
+bigtorus_vertexes[2355+1]=-10337	// y
+bigtorus_vertexes[2355+2]=-998	// z
+
+bigtorus_vertexes[2358]=0  	// x
+bigtorus_vertexes[2358+1]=-10629	// y
+bigtorus_vertexes[2358+2]=-1958	// z
+
+bigtorus_vertexes[2361]=0  	// x
+bigtorus_vertexes[2361+1]=-11102	// y
+bigtorus_vertexes[2361+2]=-2844	// z
+
+bigtorus_vertexes[2364]=0  	// x
+bigtorus_vertexes[2364+1]=-11739	// y
+bigtorus_vertexes[2364+2]=-3619	// z
+
+bigtorus_vertexes[2367]=0  	// x
+bigtorus_vertexes[2367+1]=-12514	// y
+bigtorus_vertexes[2367+2]=-4256	// z
+
+bigtorus_vertexes[2370]=0  	// x
+bigtorus_vertexes[2370+1]=-13400	// y
+bigtorus_vertexes[2370+2]=-4729	// z
+
+bigtorus_vertexes[2373]=0  	// x
+bigtorus_vertexes[2373+1]=-14360	// y
+bigtorus_vertexes[2373+2]=-5021	// z
+
+bigtorus_vertexes[2376]=0  	// x
+bigtorus_vertexes[2376+1]=-15359	// y
+bigtorus_vertexes[2376+2]=-5119	// z
+
+bigtorus_vertexes[2379]=0  	// x
+bigtorus_vertexes[2379+1]=-16358	// y
+bigtorus_vertexes[2379+2]=-5021	// z
+
+bigtorus_vertexes[2382]=0  	// x
+bigtorus_vertexes[2382+1]=-17318	// y
+bigtorus_vertexes[2382+2]=-4729	// z
+
+bigtorus_vertexes[2385]=0  	// x
+bigtorus_vertexes[2385+1]=-18204	// y
+bigtorus_vertexes[2385+2]=-4256	// z
+
+bigtorus_vertexes[2388]=0  	// x
+bigtorus_vertexes[2388+1]=-18979	// y
+bigtorus_vertexes[2388+2]=-3619	// z
+
+bigtorus_vertexes[2391]=0  	// x
+bigtorus_vertexes[2391+1]=-19616	// y
+bigtorus_vertexes[2391+2]=-2844	// z
+
+bigtorus_vertexes[2394]=0  	// x
+bigtorus_vertexes[2394+1]=-20089	// y
+bigtorus_vertexes[2394+2]=-1958	// z
+
+bigtorus_vertexes[2397]=0  	// x
+bigtorus_vertexes[2397+1]=-20381	// y
+bigtorus_vertexes[2397+2]=-998	// z
+
+bigtorus_vertexes[2400]=3995  	// x
+bigtorus_vertexes[2400+1]=-20085	// y
+bigtorus_vertexes[2400+2]=0	// z
+
+bigtorus_vertexes[2403]=3976  	// x
+bigtorus_vertexes[2403+1]=-19989	// y
+bigtorus_vertexes[2403+2]=999	// z
+
+bigtorus_vertexes[2406]=3919  	// x
+bigtorus_vertexes[2406+1]=-19703	// y
+bigtorus_vertexes[2406+2]=1959	// z
+
+bigtorus_vertexes[2409]=3827  	// x
+bigtorus_vertexes[2409+1]=-19239	// y
+bigtorus_vertexes[2409+2]=2845	// z
+
+bigtorus_vertexes[2412]=3703  	// x
+bigtorus_vertexes[2412+1]=-18615	// y
+bigtorus_vertexes[2412+2]=3620	// z
+
+bigtorus_vertexes[2415]=3552  	// x
+bigtorus_vertexes[2415+1]=-17854	// y
+bigtorus_vertexes[2415+2]=4257	// z
+
+bigtorus_vertexes[2418]=3379  	// x
+bigtorus_vertexes[2418+1]=-16986	// y
+bigtorus_vertexes[2418+2]=4730	// z
+
+bigtorus_vertexes[2421]=3191  	// x
+bigtorus_vertexes[2421+1]=-16044	// y
+bigtorus_vertexes[2421+2]=5022	// z
+
+bigtorus_vertexes[2424]=2997  	// x
+bigtorus_vertexes[2424+1]=-15064	// y
+bigtorus_vertexes[2424+2]=5120	// z
+
+bigtorus_vertexes[2427]=2802  	// x
+bigtorus_vertexes[2427+1]=-14084	// y
+bigtorus_vertexes[2427+2]=5022	// z
+
+bigtorus_vertexes[2430]=2614  	// x
+bigtorus_vertexes[2430+1]=-13142	// y
+bigtorus_vertexes[2430+2]=4730	// z
+
+bigtorus_vertexes[2433]=2442  	// x
+bigtorus_vertexes[2433+1]=-12274	// y
+bigtorus_vertexes[2433+2]=4257	// z
+
+bigtorus_vertexes[2436]=2290  	// x
+bigtorus_vertexes[2436+1]=-11513	// y
+bigtorus_vertexes[2436+2]=3620	// z
+
+bigtorus_vertexes[2439]=2166  	// x
+bigtorus_vertexes[2439+1]=-10889	// y
+bigtorus_vertexes[2439+2]=2845	// z
+
+bigtorus_vertexes[2442]=2074  	// x
+bigtorus_vertexes[2442+1]=-10424	// y
+bigtorus_vertexes[2442+2]=1959	// z
+
+bigtorus_vertexes[2445]=2017  	// x
+bigtorus_vertexes[2445+1]=-10139	// y
+bigtorus_vertexes[2445+2]=999	// z
+
+bigtorus_vertexes[2448]=1998  	// x
+bigtorus_vertexes[2448+1]=-10042	// y
+bigtorus_vertexes[2448+2]=0	// z
+
+bigtorus_vertexes[2451]=2017  	// x
+bigtorus_vertexes[2451+1]=-10139	// y
+bigtorus_vertexes[2451+2]=-998	// z
+
+bigtorus_vertexes[2454]=2074  	// x
+bigtorus_vertexes[2454+1]=-10424	// y
+bigtorus_vertexes[2454+2]=-1958	// z
+
+bigtorus_vertexes[2457]=2166  	// x
+bigtorus_vertexes[2457+1]=-10889	// y
+bigtorus_vertexes[2457+2]=-2844	// z
+
+bigtorus_vertexes[2460]=2290  	// x
+bigtorus_vertexes[2460+1]=-11513	// y
+bigtorus_vertexes[2460+2]=-3619	// z
+
+bigtorus_vertexes[2463]=2442  	// x
+bigtorus_vertexes[2463+1]=-12274	// y
+bigtorus_vertexes[2463+2]=-4256	// z
+
+bigtorus_vertexes[2466]=2614  	// x
+bigtorus_vertexes[2466+1]=-13142	// y
+bigtorus_vertexes[2466+2]=-4729	// z
+
+bigtorus_vertexes[2469]=2802  	// x
+bigtorus_vertexes[2469+1]=-14084	// y
+bigtorus_vertexes[2469+2]=-5021	// z
+
+bigtorus_vertexes[2472]=2997  	// x
+bigtorus_vertexes[2472+1]=-15064	// y
+bigtorus_vertexes[2472+2]=-5119	// z
+
+bigtorus_vertexes[2475]=3191  	// x
+bigtorus_vertexes[2475+1]=-16044	// y
+bigtorus_vertexes[2475+2]=-5021	// z
+
+bigtorus_vertexes[2478]=3379  	// x
+bigtorus_vertexes[2478+1]=-16986	// y
+bigtorus_vertexes[2478+2]=-4729	// z
+
+bigtorus_vertexes[2481]=3552  	// x
+bigtorus_vertexes[2481+1]=-17854	// y
+bigtorus_vertexes[2481+2]=-4256	// z
+
+bigtorus_vertexes[2484]=3703  	// x
+bigtorus_vertexes[2484+1]=-18615	// y
+bigtorus_vertexes[2484+2]=-3619	// z
+
+bigtorus_vertexes[2487]=3827  	// x
+bigtorus_vertexes[2487+1]=-19239	// y
+bigtorus_vertexes[2487+2]=-2844	// z
+
+bigtorus_vertexes[2490]=3919  	// x
+bigtorus_vertexes[2490+1]=-19703	// y
+bigtorus_vertexes[2490+2]=-1958	// z
+
+bigtorus_vertexes[2493]=3976  	// x
+bigtorus_vertexes[2493+1]=-19989	// y
+bigtorus_vertexes[2493+2]=-998	// z
+
+bigtorus_vertexes[2496]=7837  	// x
+bigtorus_vertexes[2496+1]=-18920	// y
+bigtorus_vertexes[2496+2]=0	// z
+
+bigtorus_vertexes[2499]=7800  	// x
+bigtorus_vertexes[2499+1]=-18829	// y
+bigtorus_vertexes[2499+2]=999	// z
+
+bigtorus_vertexes[2502]=7688  	// x
+bigtorus_vertexes[2502+1]=-18560	// y
+bigtorus_vertexes[2502+2]=1959	// z
+
+bigtorus_vertexes[2505]=7507  	// x
+bigtorus_vertexes[2505+1]=-18123	// y
+bigtorus_vertexes[2505+2]=2845	// z
+
+bigtorus_vertexes[2508]=7263  	// x
+bigtorus_vertexes[2508+1]=-17535	// y
+bigtorus_vertexes[2508+2]=3620	// z
+
+bigtorus_vertexes[2511]=6967  	// x
+bigtorus_vertexes[2511+1]=-16818	// y
+bigtorus_vertexes[2511+2]=4257	// z
+
+bigtorus_vertexes[2514]=6628  	// x
+bigtorus_vertexes[2514+1]=-16000	// y
+bigtorus_vertexes[2514+2]=4730	// z
+
+bigtorus_vertexes[2517]=6260  	// x
+bigtorus_vertexes[2517+1]=-15113	// y
+bigtorus_vertexes[2517+2]=5022	// z
+
+bigtorus_vertexes[2520]=5878  	// x
+bigtorus_vertexes[2520+1]=-14190	// y
+bigtorus_vertexes[2520+2]=5120	// z
+
+bigtorus_vertexes[2523]=5496  	// x
+bigtorus_vertexes[2523+1]=-13267	// y
+bigtorus_vertexes[2523+2]=5022	// z
+
+bigtorus_vertexes[2526]=5128  	// x
+bigtorus_vertexes[2526+1]=-12380	// y
+bigtorus_vertexes[2526+2]=4730	// z
+
+bigtorus_vertexes[2529]=4789  	// x
+bigtorus_vertexes[2529+1]=-11562	// y
+bigtorus_vertexes[2529+2]=4257	// z
+
+bigtorus_vertexes[2532]=4493  	// x
+bigtorus_vertexes[2532+1]=-10845	// y
+bigtorus_vertexes[2532+2]=3620	// z
+
+bigtorus_vertexes[2535]=4249  	// x
+bigtorus_vertexes[2535+1]=-10257	// y
+bigtorus_vertexes[2535+2]=2845	// z
+
+bigtorus_vertexes[2538]=4068  	// x
+bigtorus_vertexes[2538+1]=-9820	// y
+bigtorus_vertexes[2538+2]=1959	// z
+
+bigtorus_vertexes[2541]=3956  	// x
+bigtorus_vertexes[2541+1]=-9550	// y
+bigtorus_vertexes[2541+2]=999	// z
+
+bigtorus_vertexes[2544]=3919  	// x
+bigtorus_vertexes[2544+1]=-9460	// y
+bigtorus_vertexes[2544+2]=0	// z
+
+bigtorus_vertexes[2547]=3956  	// x
+bigtorus_vertexes[2547+1]=-9550	// y
+bigtorus_vertexes[2547+2]=-998	// z
+
+bigtorus_vertexes[2550]=4068  	// x
+bigtorus_vertexes[2550+1]=-9820	// y
+bigtorus_vertexes[2550+2]=-1958	// z
+
+bigtorus_vertexes[2553]=4249  	// x
+bigtorus_vertexes[2553+1]=-10257	// y
+bigtorus_vertexes[2553+2]=-2844	// z
+
+bigtorus_vertexes[2556]=4493  	// x
+bigtorus_vertexes[2556+1]=-10845	// y
+bigtorus_vertexes[2556+2]=-3619	// z
+
+bigtorus_vertexes[2559]=4789  	// x
+bigtorus_vertexes[2559+1]=-11562	// y
+bigtorus_vertexes[2559+2]=-4256	// z
+
+bigtorus_vertexes[2562]=5128  	// x
+bigtorus_vertexes[2562+1]=-12380	// y
+bigtorus_vertexes[2562+2]=-4729	// z
+
+bigtorus_vertexes[2565]=5496  	// x
+bigtorus_vertexes[2565+1]=-13267	// y
+bigtorus_vertexes[2565+2]=-5021	// z
+
+bigtorus_vertexes[2568]=5878  	// x
+bigtorus_vertexes[2568+1]=-14190	// y
+bigtorus_vertexes[2568+2]=-5119	// z
+
+bigtorus_vertexes[2571]=6260  	// x
+bigtorus_vertexes[2571+1]=-15113	// y
+bigtorus_vertexes[2571+2]=-5021	// z
+
+bigtorus_vertexes[2574]=6628  	// x
+bigtorus_vertexes[2574+1]=-16000	// y
+bigtorus_vertexes[2574+2]=-4729	// z
+
+bigtorus_vertexes[2577]=6967  	// x
+bigtorus_vertexes[2577+1]=-16818	// y
+bigtorus_vertexes[2577+2]=-4256	// z
+
+bigtorus_vertexes[2580]=7263  	// x
+bigtorus_vertexes[2580+1]=-17535	// y
+bigtorus_vertexes[2580+2]=-3619	// z
+
+bigtorus_vertexes[2583]=7507  	// x
+bigtorus_vertexes[2583+1]=-18123	// y
+bigtorus_vertexes[2583+2]=-2844	// z
+
+bigtorus_vertexes[2586]=7688  	// x
+bigtorus_vertexes[2586+1]=-18560	// y
+bigtorus_vertexes[2586+2]=-1958	// z
+
+bigtorus_vertexes[2589]=7800  	// x
+bigtorus_vertexes[2589+1]=-18829	// y
+bigtorus_vertexes[2589+2]=-998	// z
+
+bigtorus_vertexes[2592]=11378  	// x
+bigtorus_vertexes[2592+1]=-17027	// y
+bigtorus_vertexes[2592+2]=0	// z
+
+bigtorus_vertexes[2595]=11323  	// x
+bigtorus_vertexes[2595+1]=-16946	// y
+bigtorus_vertexes[2595+2]=999	// z
+
+bigtorus_vertexes[2598]=11162  	// x
+bigtorus_vertexes[2598+1]=-16703	// y
+bigtorus_vertexes[2598+2]=1959	// z
+
+bigtorus_vertexes[2601]=10899  	// x
+bigtorus_vertexes[2601+1]=-16310	// y
+bigtorus_vertexes[2601+2]=2845	// z
+
+bigtorus_vertexes[2604]=10545  	// x
+bigtorus_vertexes[2604+1]=-15781	// y
+bigtorus_vertexes[2604+2]=3620	// z
+
+bigtorus_vertexes[2607]=10114  	// x
+bigtorus_vertexes[2607+1]=-15136	// y
+bigtorus_vertexes[2607+2]=4257	// z
+
+bigtorus_vertexes[2610]=9622  	// x
+bigtorus_vertexes[2610+1]=-14400	// y
+bigtorus_vertexes[2610+2]=4730	// z
+
+bigtorus_vertexes[2613]=9088  	// x
+bigtorus_vertexes[2613+1]=-13601	// y
+bigtorus_vertexes[2613+2]=5022	// z
+
+bigtorus_vertexes[2616]=8534  	// x
+bigtorus_vertexes[2616+1]=-12770	// y
+bigtorus_vertexes[2616+2]=5120	// z
+
+bigtorus_vertexes[2619]=7979  	// x
+bigtorus_vertexes[2619+1]=-11940	// y
+bigtorus_vertexes[2619+2]=5022	// z
+
+bigtorus_vertexes[2622]=7445  	// x
+bigtorus_vertexes[2622+1]=-11141	// y
+bigtorus_vertexes[2622+2]=4730	// z
+
+bigtorus_vertexes[2625]=6953  	// x
+bigtorus_vertexes[2625+1]=-10405	// y
+bigtorus_vertexes[2625+2]=4257	// z
+
+bigtorus_vertexes[2628]=6522  	// x
+bigtorus_vertexes[2628+1]=-9760	// y
+bigtorus_vertexes[2628+2]=3620	// z
+
+bigtorus_vertexes[2631]=6168  	// x
+bigtorus_vertexes[2631+1]=-9231	// y
+bigtorus_vertexes[2631+2]=2845	// z
+
+bigtorus_vertexes[2634]=5906  	// x
+bigtorus_vertexes[2634+1]=-8837	// y
+bigtorus_vertexes[2634+2]=1959	// z
+
+bigtorus_vertexes[2637]=5744  	// x
+bigtorus_vertexes[2637+1]=-8595	// y
+bigtorus_vertexes[2637+2]=999	// z
+
+bigtorus_vertexes[2640]=5689  	// x
+bigtorus_vertexes[2640+1]=-8513	// y
+bigtorus_vertexes[2640+2]=0	// z
+
+bigtorus_vertexes[2643]=5744  	// x
+bigtorus_vertexes[2643+1]=-8595	// y
+bigtorus_vertexes[2643+2]=-998	// z
+
+bigtorus_vertexes[2646]=5906  	// x
+bigtorus_vertexes[2646+1]=-8837	// y
+bigtorus_vertexes[2646+2]=-1958	// z
+
+bigtorus_vertexes[2649]=6168  	// x
+bigtorus_vertexes[2649+1]=-9231	// y
+bigtorus_vertexes[2649+2]=-2844	// z
+
+bigtorus_vertexes[2652]=6522  	// x
+bigtorus_vertexes[2652+1]=-9760	// y
+bigtorus_vertexes[2652+2]=-3619	// z
+
+bigtorus_vertexes[2655]=6953  	// x
+bigtorus_vertexes[2655+1]=-10405	// y
+bigtorus_vertexes[2655+2]=-4256	// z
+
+bigtorus_vertexes[2658]=7445  	// x
+bigtorus_vertexes[2658+1]=-11141	// y
+bigtorus_vertexes[2658+2]=-4729	// z
+
+bigtorus_vertexes[2661]=7979  	// x
+bigtorus_vertexes[2661+1]=-11940	// y
+bigtorus_vertexes[2661+2]=-5021	// z
+
+bigtorus_vertexes[2664]=8534  	// x
+bigtorus_vertexes[2664+1]=-12770	// y
+bigtorus_vertexes[2664+2]=-5119	// z
+
+bigtorus_vertexes[2667]=9088  	// x
+bigtorus_vertexes[2667+1]=-13601	// y
+bigtorus_vertexes[2667+2]=-5021	// z
+
+bigtorus_vertexes[2670]=9622  	// x
+bigtorus_vertexes[2670+1]=-14400	// y
+bigtorus_vertexes[2670+2]=-4729	// z
+
+bigtorus_vertexes[2673]=10114  	// x
+bigtorus_vertexes[2673+1]=-15136	// y
+bigtorus_vertexes[2673+2]=-4256	// z
+
+bigtorus_vertexes[2676]=10545  	// x
+bigtorus_vertexes[2676+1]=-15781	// y
+bigtorus_vertexes[2676+2]=-3619	// z
+
+bigtorus_vertexes[2679]=10899  	// x
+bigtorus_vertexes[2679+1]=-16310	// y
+bigtorus_vertexes[2679+2]=-2844	// z
+
+bigtorus_vertexes[2682]=11162  	// x
+bigtorus_vertexes[2682+1]=-16703	// y
+bigtorus_vertexes[2682+2]=-1958	// z
+
+bigtorus_vertexes[2685]=11323  	// x
+bigtorus_vertexes[2685+1]=-16946	// y
+bigtorus_vertexes[2685+2]=-998	// z
+
+bigtorus_vertexes[2688]=14482  	// x
+bigtorus_vertexes[2688+1]=-14481	// y
+bigtorus_vertexes[2688+2]=0	// z
+
+bigtorus_vertexes[2691]=14412  	// x
+bigtorus_vertexes[2691+1]=-14411	// y
+bigtorus_vertexes[2691+2]=999	// z
+
+bigtorus_vertexes[2694]=14206  	// x
+bigtorus_vertexes[2694+1]=-14205	// y
+bigtorus_vertexes[2694+2]=1959	// z
+
+bigtorus_vertexes[2697]=13871  	// x
+bigtorus_vertexes[2697+1]=-13870	// y
+bigtorus_vertexes[2697+2]=2845	// z
+
+bigtorus_vertexes[2700]=13421  	// x
+bigtorus_vertexes[2700+1]=-13420	// y
+bigtorus_vertexes[2700+2]=3620	// z
+
+bigtorus_vertexes[2703]=12873  	// x
+bigtorus_vertexes[2703+1]=-12872	// y
+bigtorus_vertexes[2703+2]=4257	// z
+
+bigtorus_vertexes[2706]=12247  	// x
+bigtorus_vertexes[2706+1]=-12246	// y
+bigtorus_vertexes[2706+2]=4730	// z
+
+bigtorus_vertexes[2709]=11567  	// x
+bigtorus_vertexes[2709+1]=-11566	// y
+bigtorus_vertexes[2709+2]=5022	// z
+
+bigtorus_vertexes[2712]=10861  	// x
+bigtorus_vertexes[2712+1]=-10860	// y
+bigtorus_vertexes[2712+2]=5120	// z
+
+bigtorus_vertexes[2715]=10155  	// x
+bigtorus_vertexes[2715+1]=-10154	// y
+bigtorus_vertexes[2715+2]=5022	// z
+
+bigtorus_vertexes[2718]=9476  	// x
+bigtorus_vertexes[2718+1]=-9475	// y
+bigtorus_vertexes[2718+2]=4730	// z
+
+bigtorus_vertexes[2721]=8850  	// x
+bigtorus_vertexes[2721+1]=-8849	// y
+bigtorus_vertexes[2721+2]=4257	// z
+
+bigtorus_vertexes[2724]=8301  	// x
+bigtorus_vertexes[2724+1]=-8300	// y
+bigtorus_vertexes[2724+2]=3620	// z
+
+bigtorus_vertexes[2727]=7851  	// x
+bigtorus_vertexes[2727+1]=-7850	// y
+bigtorus_vertexes[2727+2]=2845	// z
+
+bigtorus_vertexes[2730]=7516  	// x
+bigtorus_vertexes[2730+1]=-7515	// y
+bigtorus_vertexes[2730+2]=1959	// z
+
+bigtorus_vertexes[2733]=7310  	// x
+bigtorus_vertexes[2733+1]=-7309	// y
+bigtorus_vertexes[2733+2]=999	// z
+
+bigtorus_vertexes[2736]=7241  	// x
+bigtorus_vertexes[2736+1]=-7240	// y
+bigtorus_vertexes[2736+2]=0	// z
+
+bigtorus_vertexes[2739]=7310  	// x
+bigtorus_vertexes[2739+1]=-7309	// y
+bigtorus_vertexes[2739+2]=-998	// z
+
+bigtorus_vertexes[2742]=7516  	// x
+bigtorus_vertexes[2742+1]=-7515	// y
+bigtorus_vertexes[2742+2]=-1958	// z
+
+bigtorus_vertexes[2745]=7851  	// x
+bigtorus_vertexes[2745+1]=-7850	// y
+bigtorus_vertexes[2745+2]=-2844	// z
+
+bigtorus_vertexes[2748]=8301  	// x
+bigtorus_vertexes[2748+1]=-8300	// y
+bigtorus_vertexes[2748+2]=-3619	// z
+
+bigtorus_vertexes[2751]=8850  	// x
+bigtorus_vertexes[2751+1]=-8849	// y
+bigtorus_vertexes[2751+2]=-4256	// z
+
+bigtorus_vertexes[2754]=9476  	// x
+bigtorus_vertexes[2754+1]=-9475	// y
+bigtorus_vertexes[2754+2]=-4729	// z
+
+bigtorus_vertexes[2757]=10155  	// x
+bigtorus_vertexes[2757+1]=-10154	// y
+bigtorus_vertexes[2757+2]=-5021	// z
+
+bigtorus_vertexes[2760]=10861  	// x
+bigtorus_vertexes[2760+1]=-10860	// y
+bigtorus_vertexes[2760+2]=-5119	// z
+
+bigtorus_vertexes[2763]=11567  	// x
+bigtorus_vertexes[2763+1]=-11566	// y
+bigtorus_vertexes[2763+2]=-5021	// z
+
+bigtorus_vertexes[2766]=12247  	// x
+bigtorus_vertexes[2766+1]=-12246	// y
+bigtorus_vertexes[2766+2]=-4729	// z
+
+bigtorus_vertexes[2769]=12873  	// x
+bigtorus_vertexes[2769+1]=-12872	// y
+bigtorus_vertexes[2769+2]=-4256	// z
+
+bigtorus_vertexes[2772]=13421  	// x
+bigtorus_vertexes[2772+1]=-13420	// y
+bigtorus_vertexes[2772+2]=-3619	// z
+
+bigtorus_vertexes[2775]=13871  	// x
+bigtorus_vertexes[2775+1]=-13870	// y
+bigtorus_vertexes[2775+2]=-2844	// z
+
+bigtorus_vertexes[2778]=14206  	// x
+bigtorus_vertexes[2778+1]=-14205	// y
+bigtorus_vertexes[2778+2]=-1958	// z
+
+bigtorus_vertexes[2781]=14412  	// x
+bigtorus_vertexes[2781+1]=-14411	// y
+bigtorus_vertexes[2781+2]=-998	// z
+
+bigtorus_vertexes[2784]=17028  	// x
+bigtorus_vertexes[2784+1]=-11377	// y
+bigtorus_vertexes[2784+2]=0	// z
+
+bigtorus_vertexes[2787]=16947  	// x
+bigtorus_vertexes[2787+1]=-11322	// y
+bigtorus_vertexes[2787+2]=999	// z
+
+bigtorus_vertexes[2790]=16704  	// x
+bigtorus_vertexes[2790+1]=-11161	// y
+bigtorus_vertexes[2790+2]=1959	// z
+
+bigtorus_vertexes[2793]=16311  	// x
+bigtorus_vertexes[2793+1]=-10898	// y
+bigtorus_vertexes[2793+2]=2845	// z
+
+bigtorus_vertexes[2796]=15782  	// x
+bigtorus_vertexes[2796+1]=-10544	// y
+bigtorus_vertexes[2796+2]=3620	// z
+
+bigtorus_vertexes[2799]=15137  	// x
+bigtorus_vertexes[2799+1]=-10113	// y
+bigtorus_vertexes[2799+2]=4257	// z
+
+bigtorus_vertexes[2802]=14401  	// x
+bigtorus_vertexes[2802+1]=-9621	// y
+bigtorus_vertexes[2802+2]=4730	// z
+
+bigtorus_vertexes[2805]=13602  	// x
+bigtorus_vertexes[2805+1]=-9087	// y
+bigtorus_vertexes[2805+2]=5022	// z
+
+bigtorus_vertexes[2808]=12771  	// x
+bigtorus_vertexes[2808+1]=-8533	// y
+bigtorus_vertexes[2808+2]=5120	// z
+
+bigtorus_vertexes[2811]=11941  	// x
+bigtorus_vertexes[2811+1]=-7978	// y
+bigtorus_vertexes[2811+2]=5022	// z
+
+bigtorus_vertexes[2814]=11142  	// x
+bigtorus_vertexes[2814+1]=-7444	// y
+bigtorus_vertexes[2814+2]=4730	// z
+
+bigtorus_vertexes[2817]=10406  	// x
+bigtorus_vertexes[2817+1]=-6952	// y
+bigtorus_vertexes[2817+2]=4257	// z
+
+bigtorus_vertexes[2820]=9761  	// x
+bigtorus_vertexes[2820+1]=-6521	// y
+bigtorus_vertexes[2820+2]=3620	// z
+
+bigtorus_vertexes[2823]=9232  	// x
+bigtorus_vertexes[2823+1]=-6167	// y
+bigtorus_vertexes[2823+2]=2845	// z
+
+bigtorus_vertexes[2826]=8838  	// x
+bigtorus_vertexes[2826+1]=-5905	// y
+bigtorus_vertexes[2826+2]=1959	// z
+
+bigtorus_vertexes[2829]=8596  	// x
+bigtorus_vertexes[2829+1]=-5743	// y
+bigtorus_vertexes[2829+2]=999	// z
+
+bigtorus_vertexes[2832]=8514  	// x
+bigtorus_vertexes[2832+1]=-5688	// y
+bigtorus_vertexes[2832+2]=0	// z
+
+bigtorus_vertexes[2835]=8596  	// x
+bigtorus_vertexes[2835+1]=-5743	// y
+bigtorus_vertexes[2835+2]=-998	// z
+
+bigtorus_vertexes[2838]=8838  	// x
+bigtorus_vertexes[2838+1]=-5905	// y
+bigtorus_vertexes[2838+2]=-1958	// z
+
+bigtorus_vertexes[2841]=9232  	// x
+bigtorus_vertexes[2841+1]=-6167	// y
+bigtorus_vertexes[2841+2]=-2844	// z
+
+bigtorus_vertexes[2844]=9761  	// x
+bigtorus_vertexes[2844+1]=-6521	// y
+bigtorus_vertexes[2844+2]=-3619	// z
+
+bigtorus_vertexes[2847]=10406  	// x
+bigtorus_vertexes[2847+1]=-6952	// y
+bigtorus_vertexes[2847+2]=-4256	// z
+
+bigtorus_vertexes[2850]=11142  	// x
+bigtorus_vertexes[2850+1]=-7444	// y
+bigtorus_vertexes[2850+2]=-4729	// z
+
+bigtorus_vertexes[2853]=11941  	// x
+bigtorus_vertexes[2853+1]=-7978	// y
+bigtorus_vertexes[2853+2]=-5021	// z
+
+bigtorus_vertexes[2856]=12771  	// x
+bigtorus_vertexes[2856+1]=-8533	// y
+bigtorus_vertexes[2856+2]=-5119	// z
+
+bigtorus_vertexes[2859]=13602  	// x
+bigtorus_vertexes[2859+1]=-9087	// y
+bigtorus_vertexes[2859+2]=-5021	// z
+
+bigtorus_vertexes[2862]=14401  	// x
+bigtorus_vertexes[2862+1]=-9621	// y
+bigtorus_vertexes[2862+2]=-4729	// z
+
+bigtorus_vertexes[2865]=15137  	// x
+bigtorus_vertexes[2865+1]=-10113	// y
+bigtorus_vertexes[2865+2]=-4256	// z
+
+bigtorus_vertexes[2868]=15782  	// x
+bigtorus_vertexes[2868+1]=-10544	// y
+bigtorus_vertexes[2868+2]=-3619	// z
+
+bigtorus_vertexes[2871]=16311  	// x
+bigtorus_vertexes[2871+1]=-10898	// y
+bigtorus_vertexes[2871+2]=-2844	// z
+
+bigtorus_vertexes[2874]=16704  	// x
+bigtorus_vertexes[2874+1]=-11161	// y
+bigtorus_vertexes[2874+2]=-1958	// z
+
+bigtorus_vertexes[2877]=16947  	// x
+bigtorus_vertexes[2877+1]=-11322	// y
+bigtorus_vertexes[2877+2]=-998	// z
+
+bigtorus_vertexes[2880]=18921  	// x
+bigtorus_vertexes[2880+1]=-7836	// y
+bigtorus_vertexes[2880+2]=0	// z
+
+bigtorus_vertexes[2883]=18830  	// x
+bigtorus_vertexes[2883+1]=-7799	// y
+bigtorus_vertexes[2883+2]=999	// z
+
+bigtorus_vertexes[2886]=18561  	// x
+bigtorus_vertexes[2886+1]=-7687	// y
+bigtorus_vertexes[2886+2]=1959	// z
+
+bigtorus_vertexes[2889]=18124  	// x
+bigtorus_vertexes[2889+1]=-7506	// y
+bigtorus_vertexes[2889+2]=2845	// z
+
+bigtorus_vertexes[2892]=17536  	// x
+bigtorus_vertexes[2892+1]=-7262	// y
+bigtorus_vertexes[2892+2]=3620	// z
+
+bigtorus_vertexes[2895]=16819  	// x
+bigtorus_vertexes[2895+1]=-6966	// y
+bigtorus_vertexes[2895+2]=4257	// z
+
+bigtorus_vertexes[2898]=16001  	// x
+bigtorus_vertexes[2898+1]=-6627	// y
+bigtorus_vertexes[2898+2]=4730	// z
+
+bigtorus_vertexes[2901]=15114  	// x
+bigtorus_vertexes[2901+1]=-6259	// y
+bigtorus_vertexes[2901+2]=5022	// z
+
+bigtorus_vertexes[2904]=14191  	// x
+bigtorus_vertexes[2904+1]=-5877	// y
+bigtorus_vertexes[2904+2]=5120	// z
+
+bigtorus_vertexes[2907]=13268  	// x
+bigtorus_vertexes[2907+1]=-5495	// y
+bigtorus_vertexes[2907+2]=5022	// z
+
+bigtorus_vertexes[2910]=12381  	// x
+bigtorus_vertexes[2910+1]=-5127	// y
+bigtorus_vertexes[2910+2]=4730	// z
+
+bigtorus_vertexes[2913]=11563  	// x
+bigtorus_vertexes[2913+1]=-4788	// y
+bigtorus_vertexes[2913+2]=4257	// z
+
+bigtorus_vertexes[2916]=10846  	// x
+bigtorus_vertexes[2916+1]=-4492	// y
+bigtorus_vertexes[2916+2]=3620	// z
+
+bigtorus_vertexes[2919]=10258  	// x
+bigtorus_vertexes[2919+1]=-4248	// y
+bigtorus_vertexes[2919+2]=2845	// z
+
+bigtorus_vertexes[2922]=9821  	// x
+bigtorus_vertexes[2922+1]=-4067	// y
+bigtorus_vertexes[2922+2]=1959	// z
+
+bigtorus_vertexes[2925]=9551  	// x
+bigtorus_vertexes[2925+1]=-3955	// y
+bigtorus_vertexes[2925+2]=999	// z
+
+bigtorus_vertexes[2928]=9461  	// x
+bigtorus_vertexes[2928+1]=-3918	// y
+bigtorus_vertexes[2928+2]=0	// z
+
+bigtorus_vertexes[2931]=9551  	// x
+bigtorus_vertexes[2931+1]=-3955	// y
+bigtorus_vertexes[2931+2]=-998	// z
+
+bigtorus_vertexes[2934]=9821  	// x
+bigtorus_vertexes[2934+1]=-4067	// y
+bigtorus_vertexes[2934+2]=-1958	// z
+
+bigtorus_vertexes[2937]=10258  	// x
+bigtorus_vertexes[2937+1]=-4248	// y
+bigtorus_vertexes[2937+2]=-2844	// z
+
+bigtorus_vertexes[2940]=10846  	// x
+bigtorus_vertexes[2940+1]=-4492	// y
+bigtorus_vertexes[2940+2]=-3619	// z
+
+bigtorus_vertexes[2943]=11563  	// x
+bigtorus_vertexes[2943+1]=-4788	// y
+bigtorus_vertexes[2943+2]=-4256	// z
+
+bigtorus_vertexes[2946]=12381  	// x
+bigtorus_vertexes[2946+1]=-5127	// y
+bigtorus_vertexes[2946+2]=-4729	// z
+
+bigtorus_vertexes[2949]=13268  	// x
+bigtorus_vertexes[2949+1]=-5495	// y
+bigtorus_vertexes[2949+2]=-5021	// z
+
+bigtorus_vertexes[2952]=14191  	// x
+bigtorus_vertexes[2952+1]=-5877	// y
+bigtorus_vertexes[2952+2]=-5119	// z
+
+bigtorus_vertexes[2955]=15114  	// x
+bigtorus_vertexes[2955+1]=-6259	// y
+bigtorus_vertexes[2955+2]=-5021	// z
+
+bigtorus_vertexes[2958]=16001  	// x
+bigtorus_vertexes[2958+1]=-6627	// y
+bigtorus_vertexes[2958+2]=-4729	// z
+
+bigtorus_vertexes[2961]=16819  	// x
+bigtorus_vertexes[2961+1]=-6966	// y
+bigtorus_vertexes[2961+2]=-4256	// z
+
+bigtorus_vertexes[2964]=17536  	// x
+bigtorus_vertexes[2964+1]=-7262	// y
+bigtorus_vertexes[2964+2]=-3619	// z
+
+bigtorus_vertexes[2967]=18124  	// x
+bigtorus_vertexes[2967+1]=-7506	// y
+bigtorus_vertexes[2967+2]=-2844	// z
+
+bigtorus_vertexes[2970]=18561  	// x
+bigtorus_vertexes[2970+1]=-7687	// y
+bigtorus_vertexes[2970+2]=-1958	// z
+
+bigtorus_vertexes[2973]=18830  	// x
+bigtorus_vertexes[2973+1]=-7799	// y
+bigtorus_vertexes[2973+2]=-998	// z
+
+bigtorus_vertexes[2976]=20086  	// x
+bigtorus_vertexes[2976+1]=-3994	// y
+bigtorus_vertexes[2976+2]=0	// z
+
+bigtorus_vertexes[2979]=19990  	// x
+bigtorus_vertexes[2979+1]=-3975	// y
+bigtorus_vertexes[2979+2]=999	// z
+
+bigtorus_vertexes[2982]=19704  	// x
+bigtorus_vertexes[2982+1]=-3918	// y
+bigtorus_vertexes[2982+2]=1959	// z
+
+bigtorus_vertexes[2985]=19240  	// x
+bigtorus_vertexes[2985+1]=-3826	// y
+bigtorus_vertexes[2985+2]=2845	// z
+
+bigtorus_vertexes[2988]=18616  	// x
+bigtorus_vertexes[2988+1]=-3702	// y
+bigtorus_vertexes[2988+2]=3620	// z
+
+bigtorus_vertexes[2991]=17855  	// x
+bigtorus_vertexes[2991+1]=-3551	// y
+bigtorus_vertexes[2991+2]=4257	// z
+
+bigtorus_vertexes[2994]=16987  	// x
+bigtorus_vertexes[2994+1]=-3378	// y
+bigtorus_vertexes[2994+2]=4730	// z
+
+bigtorus_vertexes[2997]=16045  	// x
+bigtorus_vertexes[2997+1]=-3190	// y
+bigtorus_vertexes[2997+2]=5022	// z
+
+bigtorus_vertexes[3000]=15065  	// x
+bigtorus_vertexes[3000+1]=-2996	// y
+bigtorus_vertexes[3000+2]=5120	// z
+
+bigtorus_vertexes[3003]=14085  	// x
+bigtorus_vertexes[3003+1]=-2801	// y
+bigtorus_vertexes[3003+2]=5022	// z
+
+bigtorus_vertexes[3006]=13143  	// x
+bigtorus_vertexes[3006+1]=-2613	// y
+bigtorus_vertexes[3006+2]=4730	// z
+
+bigtorus_vertexes[3009]=12275  	// x
+bigtorus_vertexes[3009+1]=-2441	// y
+bigtorus_vertexes[3009+2]=4257	// z
+
+bigtorus_vertexes[3012]=11514  	// x
+bigtorus_vertexes[3012+1]=-2289	// y
+bigtorus_vertexes[3012+2]=3620	// z
+
+bigtorus_vertexes[3015]=10890  	// x
+bigtorus_vertexes[3015+1]=-2165	// y
+bigtorus_vertexes[3015+2]=2845	// z
+
+bigtorus_vertexes[3018]=10425  	// x
+bigtorus_vertexes[3018+1]=-2073	// y
+bigtorus_vertexes[3018+2]=1959	// z
+
+bigtorus_vertexes[3021]=10140  	// x
+bigtorus_vertexes[3021+1]=-2016	// y
+bigtorus_vertexes[3021+2]=999	// z
+
+bigtorus_vertexes[3024]=10043  	// x
+bigtorus_vertexes[3024+1]=-1997	// y
+bigtorus_vertexes[3024+2]=0	// z
+
+bigtorus_vertexes[3027]=10140  	// x
+bigtorus_vertexes[3027+1]=-2016	// y
+bigtorus_vertexes[3027+2]=-998	// z
+
+bigtorus_vertexes[3030]=10425  	// x
+bigtorus_vertexes[3030+1]=-2073	// y
+bigtorus_vertexes[3030+2]=-1958	// z
+
+bigtorus_vertexes[3033]=10890  	// x
+bigtorus_vertexes[3033+1]=-2165	// y
+bigtorus_vertexes[3033+2]=-2844	// z
+
+bigtorus_vertexes[3036]=11514  	// x
+bigtorus_vertexes[3036+1]=-2289	// y
+bigtorus_vertexes[3036+2]=-3619	// z
+
+bigtorus_vertexes[3039]=12275  	// x
+bigtorus_vertexes[3039+1]=-2441	// y
+bigtorus_vertexes[3039+2]=-4256	// z
+
+bigtorus_vertexes[3042]=13143  	// x
+bigtorus_vertexes[3042+1]=-2613	// y
+bigtorus_vertexes[3042+2]=-4729	// z
+
+bigtorus_vertexes[3045]=14085  	// x
+bigtorus_vertexes[3045+1]=-2801	// y
+bigtorus_vertexes[3045+2]=-5021	// z
+
+bigtorus_vertexes[3048]=15065  	// x
+bigtorus_vertexes[3048+1]=-2996	// y
+bigtorus_vertexes[3048+2]=-5119	// z
+
+bigtorus_vertexes[3051]=16045  	// x
+bigtorus_vertexes[3051+1]=-3190	// y
+bigtorus_vertexes[3051+2]=-5021	// z
+
+bigtorus_vertexes[3054]=16987  	// x
+bigtorus_vertexes[3054+1]=-3378	// y
+bigtorus_vertexes[3054+2]=-4729	// z
+
+bigtorus_vertexes[3057]=17855  	// x
+bigtorus_vertexes[3057+1]=-3551	// y
+bigtorus_vertexes[3057+2]=-4256	// z
+
+bigtorus_vertexes[3060]=18616  	// x
+bigtorus_vertexes[3060+1]=-3702	// y
+bigtorus_vertexes[3060+2]=-3619	// z
+
+bigtorus_vertexes[3063]=19240  	// x
+bigtorus_vertexes[3063+1]=-3826	// y
+bigtorus_vertexes[3063+2]=-2844	// z
+
+bigtorus_vertexes[3066]=19704  	// x
+bigtorus_vertexes[3066+1]=-3918	// y
+bigtorus_vertexes[3066+2]=-1958	// z
+
+bigtorus_vertexes[3069]=19990  	// x
+bigtorus_vertexes[3069+1]=-3975	// y
+bigtorus_vertexes[3069+2]=-998	// z
+
+//Torus End

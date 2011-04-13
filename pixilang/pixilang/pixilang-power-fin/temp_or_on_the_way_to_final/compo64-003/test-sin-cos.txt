@@ -1,0 +1,24 @@
+width = get_window_xsize()
+height = get_window_ysize()
+
+widthd2  = width/2
+heightd2 = height/2
+
+x=0
+graph:
+
+  line(-widthd2,0,widthd2,0, #555555)
+  line(0,-heightd2,0,heightd2, #555555)
+
+  dot(x,sin(x),#ff00ff)
+  dot(x,sin(-x+256),#00ff00)
+  dot(x,cos(x),#ffff00)
+  x+1
+  if(x>512) {x=0}
+  print ("Why sin(x+pi/2) != cos(x) in pixilang?",-widthd2,-heightd2+5,#ff0000)
+  print ("sin(x)",-widthd2,-heightd2+30,#ff00ff)
+  print ("sin(x+pi/2) [pi/2 means 256 in fixed point]",-widthd2,-heightd2+50,#00ff00)
+  print ("cos(x)",-widthd2,-heightd2+70,#ffff00)
+  
+  frame
+go graph

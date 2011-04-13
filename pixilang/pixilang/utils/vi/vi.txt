@@ -1,0 +1,12 @@
+[quote="goglus"]мой вариант подсветки pixilang кода для межплатформенного редактора vi [url]http://www.vim.org/[/url]
+ногами не бить, vi я знаю на начальном уровне, подсвечивал только то с чем разобрался (не победил подсветку цвета)
+
+[url=http://pixi.gif.ru/vi/pixi.vim]этот файл[/url] бросаем в папку [b]syntax[/b] (если ее нет в локальной дир-ии то создаем)
+и пишем в конфигурационном файле [b].vimrc[/b] 
+
+[code]" Filetipes
+au BufRead,BufNewFile *.pixi  set filetype=pixi
+[/code]
+
+и получаем примерно такую картинку, при условии такой же цветовой схемы конечно
+[img]http://pixi.gif.ru/vi/vi_1.png[/img][/quote]

@@ -1,0 +1,241 @@
+
+conf:
+default_keyb_btn_xsize = 20 //px
+default_keyb_btn_ysize = 20 //px
+keyb_btn_xsize = default_keyb_btn_xsize
+keyb_btn_ysize = default_keyb_btn_ysize
+btn_back_color = #aaaaaa
+btn_fore_color = #000000
+btn_label="btn"
+text_color=#873151
+text_back_color=#ffffff
+cursor_blink_delay=500
+//undo_levels=50
+
+init:
+cursor_line=0
+cursor_pos=-1
+cursor_sel_begin=-1
+cursor_sel_end=-1
+cursor_pos_char=-1
+input_text="B HOPE KPOXA-KPOT OTHEC BOPOHE POM"
+delay=5
+start_timer(0)
+time_cursor=get_timer(0)
+/*undo=new_array(undo_levels)
+undo_index=0
+undo[undo_index]=input_text */
+
+init_resize:
+width  = get_pixi_xsize(0)
+height = get_pixi_ysize(0)
+toolbox_y=height/2+1 - 4*default_keyb_btn_ysize
+get_font_params
+clear(#ffffff)
+draw_interface
+chars_per_line = width/cur_font_width
+
+
+
+
+main:
+clear(text_back_color)
+  //draw_interface
+  text_x = -width/2+cur_font_width
+  text_y = -height/2+cur_font_height
+  curline=input_text
+  print(curline, text_x, text_y, text_color)
+  print("cur_font_width=$cur_font_width text_x=$text_x text_y=$text_y cursor_pos=$cursor_pos", -200, 0, text_color)
+  print("cursor_x=$cursor_x cursor_y=$cursor_y", -200, 20, text_color)
+  
+  print("cursor_pos_char=$cursor_pos_char", -200, 40, text_color)
+  
+  print("key char=$char", -200, 60, text_color)
+  
+  /*if (cursor_pos<0)
+  {
+    cursor_x=text_x+cur_font_width*get_string_size(curline)  - 22*cur_font_width
+    cursor_y=text_y-cur_font_width/2
+  }
+  else
+  {*/
+    cursor_x=cursor_pos-1
+    cursor_y=text_y-cur_font_width/2
+  //}
+  
+  handle_pen_keys (pen_cursor_pos,{},{})
+  handle_hard_keys (key_down, {})
+  
+  // Draw cursor
+  if ((get_timer(0)-time_cursor)>cursor_blink_delay)  
+  {
+    fbox(cursor_x,cursor_y, 1, 2*cur_font_height, text_color)    
+  }  
+  if ((get_timer(0)-time_cursor)>2*cursor_blink_delay)  
+  {
+    fbox(cursor_x,cursor_y, 1, 2*cur_font_height, text_back_color)
+    time_cursor=get_timer(0)
+  }
+  frame (delay,-width/2,-height/2,width,height-toolbox_y-1)
+go main
+
+// check if cursor in correct position (pos must be >= 0 and < string length)
+verify_cursor:
+  if cursor_pos_char>get_string_size(input_text)
+    {cursor_pos_char = get_string_size(input_text)}  
+  if cursor_pos_char<0
+    {cursor_pos_char=0}
+   // cursor_pos=(cursor_pos_char +2)*cur_font_width -width/2 - 3*cur_font_width*/
+ret
+
+pen_cursor_pos:
+  cursor_pos = gpx() - gpx() % cur_font_width
+  cursor_pos_char = (width/2+cur_font_width+cursor_pos)/cur_font_width -2
+  
+  /*cursor_pos_char +2= (width/2+cur_font_width+cursor_pos)/cur_font_width
+  (cursor_pos_char +2)*cur_font_width = width/2+cur_font_width+cursor_pos
+  (cursor_pos_char +2)*cur_font_width -width/2+cur_font_width = cursor_pos*/
+  
+  
+  verify_cursor
+ret
+
+key_down:
+    char = ghk()
+    if char=127 // backspace
+    {
+       remove_prev_char
+    }
+    
+    if char=269 // del
+    {    
+       remove_next_char        
+    }
+    
+    if char=266 // <- left arrow
+    {
+        cursor_pos_char-1
+        cursor_pos-cur_font_width
+    }
+    
+    if char=267 // -> right arrow
+    {
+        cursor_pos_char+1
+        cursor_pos+cur_font_width
+    }
+    
+  if cursor_pos_char>=0
+  {
+    insert_char  
+  }
+  verify_cursor
+ret
+
+remove_prev_char:
+  old_size = get_string_size(input_text)
+  buf = new_string(old_size-1)
+  n=0 while(n<cursor_pos_char-1)
+  {
+    buf[n]=input_text[n]
+    n+1
+  }
+  //buf[n] = key //'!' // input char
+  //n+1        
+  while(n<=old_size)
+  {
+    buf[n]=input_text[n+1]
+    n+1
+  }
+  old_text = input_text
+  input_text=buf
+  cursor_pos_char-1
+  cursor_pos-cur_font_width
+ret
+
+remove_next_char:
+  cursor_pos_char+1
+  remove_prev_char
+  //cursor_pos_char-1
+  cursor_pos+cur_font_width
+ret
+
+insert_char:
+  shift = char & 512
+  char = char & 255
+  if char>=' '// is inserted char printable?
+  {
+    if char!=127 // is inserted char printable?
+    {
+      old_size = get_string_size(input_text)
+      buf = new_string(old_size+2)
+      n=0 while(n<cursor_pos_char)
+      {
+        buf[n]=input_text[n]
+        n+1
+      }
+      //shift = char & 512
+      if (shift)
+      {
+        /*if char>='a'+512
+        {
+          if char<='z'+512
+          {*/
+          // TODO: make array of availible symbols and "shift convert" array
+            char=(char - ('a'-'A'))
+          /*}
+        }*/
+      }
+      buf[n] = char //'!' // input char
+      n+1
+      while(n<=old_size)
+      {
+        buf[n]=input_text[n-1]
+        n+1
+      }
+      old_text = input_text
+      input_text=buf
+      cursor_pos_char+1
+      cursor_pos+cur_font_width
+    }
+  }
+ret
+
+draw_interface: 
+  chars = "ABECTMHOKPX ,.?_!:*;-/"
+  chars[11]='"'
+  newline=12  
+  fbox(-width/2, toolbox_y, width, height/2, #888888)
+  chars_size = get_string_size(chars)
+  btn_x=-width/2+1
+  btn_y=toolbox_y
+  n=0 while(n<chars_size)
+  {
+    if newline=n
+    {
+      btn_y+keyb_btn_ysize
+      btn_x=-width/2+1
+    }
+    btn_label=" "
+    btn_label[0]=chars[n]
+    draw_btn
+    btn_x+keyb_btn_xsize
+    n+1
+  }
+  frame
+ret
+
+//args: btn_label
+// btn_x, btn_y
+draw_btn:
+  fbox(btn_x, btn_y, keyb_btn_xsize, keyb_btn_ysize, btn_back_color)
+  box(btn_x, btn_y, keyb_btn_xsize, keyb_btn_ysize, btn_fore_color)
+  xmargin=(keyb_btn_xsize-cur_font_width)/2
+  ymargin=(keyb_btn_ysize-cur_font_height)/2
+  print(btn_label, btn_x+xmargin, btn_y+ymargin, btn_fore_color)
+ret
+
+get_font_params:
+  cur_font = get_pixi_font()
+  cur_font_width  = get_pixi_xsize(cur_font)
+  cur_font_height = get_pixi_ysize(cur_font)
+ret

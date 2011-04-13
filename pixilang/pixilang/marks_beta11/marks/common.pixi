@@ -1,0 +1,284 @@
+rand_seed (8)
+start_timer (0)
+
+// ============================
+// some config
+screen_width=240
+screen_height=320
+// ============================
+
+
+BACK_COLOR = #888888
+
+fast_mode=1
+
+BENCH_COUNT=7
+bench_scores=new_array(BENCH_COUNT)
+bench_work_times =new_array(BENCH_COUNT)
+BENCH_INDEX_CPU=0
+BENCH_INDEX_MEMORY=1
+BENCH_INDEX_GRAPHICS=2
+BENCH_INDEX_GRAPHICS_TRANSP=3
+BENCH_INDEX_PIXI=4
+BENCH_INDEX_INNER3D=5
+BENCH_INDEX_INNER3D_TRANSP=6
+
+// Аргументы подпрограмм (используется в fputstr)
+pargs=new_array(32)
+number_str=new_array(32)
+
+resize_pixi(0, screen_width, screen_height)
+
+vesion_str = "beta1.1"
+
+// sub programs
+go common_end
+
+show_results:
+  clear(BACK_COLOR)
+  result_x = 4 - screen_width/2
+  result_y = 4 - screen_height/2
+  result_step=12
+  print ("Pixilang Benchmark 2008",result_x+1, result_y+1, #000000)
+  print ("Pixilang Benchmark 2008",result_x, result_y, #ffffff)
+  line(result_x+1, result_y+12+1, screen_width/2-5+1, result_y+12+1, #000000)
+  line(result_x, result_y+12, screen_width/2-5, result_y+12, #ffffff)
+  result_y+result_step
+  result_y+result_step
+  print ("Results",result_x, result_y, #ffffff)
+  result_y+result_step
+  work_time = bench_work_times[BENCH_INDEX_CPU]
+  marks = bench_scores[BENCH_INDEX_CPU]
+  str = "CPU time:  $work_time ms"  
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("CPU marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+
+  work_time = bench_work_times[BENCH_INDEX_MEMORY]
+  marks = bench_scores[BENCH_INDEX_MEMORY]
+  str = "Memory time:  $work_time ms"
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("Memory marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+
+  work_time = bench_work_times[BENCH_INDEX_GRAPHICS]
+  marks = bench_scores[BENCH_INDEX_GRAPHICS]
+  str = "Graphics time:  $work_time ms"
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("Graphics marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+  
+  work_time = bench_work_times[BENCH_INDEX_GRAPHICS_TRANSP]
+  marks = bench_scores[BENCH_INDEX_GRAPHICS_TRANSP]
+  str = "Transp. gfx time:  $work_time ms"
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("Transp. gfx marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+  
+  work_time = bench_work_times[BENCH_INDEX_PIXI]
+  marks = bench_scores[BENCH_INDEX_PIXI]
+  str = "Pixi time:  $work_time ms"
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("Pixi marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+  
+  work_time = bench_work_times[BENCH_INDEX_INNER3D]
+  marks = bench_scores[BENCH_INDEX_INNER3D]
+  str = "Inner 3D time:  $work_time ms"
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("Inner 3D marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+  
+  work_time = bench_work_times[BENCH_INDEX_INNER3D_TRANSP]
+  marks = bench_scores[BENCH_INDEX_INNER3D_TRANSP]
+  str = "Transp.In.3D time:  $work_time ms"
+  print(str, result_x, result_y, #ffffff)
+  result_y+result_step
+  print("Transp.In.3D marks: $marks", result_x, result_y, #ffffff)
+  result_y+result_step
+
+  result_y+result_step
+  result_y+result_step
+  work_time = 0
+  marks = 0
+  size = get_array_size(bench_work_times)
+  i=0 while(i<size)
+  {
+    work_time + bench_work_times[i]
+    marks + bench_scores[i]
+    i+1
+  }
+  marks/size
+  print("TOTAL", result_x+1, result_y+1, #000000)
+  print("TOTAL", result_x, result_y, #ffd258)  
+  line(result_x+1, result_y+12+1, screen_width/2-5+1, result_y+12+1, #000000)
+  line(result_x, result_y+12, screen_width/2-5, result_y+12, #ffd258)
+  result_y+result_step
+  result_y+result_step
+  print("Work time: $work_time ms", result_x+1, result_y+1, #000000)
+  print("Work time: $work_time ms", result_x, result_y, #ffd258)
+  result_y+result_step
+  print("Marks: $marks", result_x+1, result_y+1, #000000)
+  print("Marks: $marks", result_x, result_y, #ffd258)
+  result_y+result_step
+  
+  mnu_x = 0
+  mnu_y = result_y
+  buttlon_left = 16-screen_width/2
+  button_width = screen_width-16*2
+  button_height = 28
+
+  y_save_report=result_y
+  s = "Write report file"
+  draw_menu_button
+
+  mnu_y+40
+
+  handle_pen_keys(
+    {
+  
+    },{},{
+      if gpr(buttlon_left,y_save_report,button_width, button_height)=1
+      {
+        write_results
+      }
+    })
+
+  frame
+  go show_results
+ret
+
+write_results:
+  filename = "reports/report.txt                                                                         "
+  if( file_dialog( filename, "Chose report file (OVERWRITE)", "txt/log", "report_files_dialog" ) )
+  {
+    file = fopen(filename, "w")
+  
+    str="Pixilang Benchmark 2008" fputstr
+    str=vesion_str fputstr
+  
+    str="" fputstr
+    str="Results" fputstr
+    str="" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_CPU] str="CPU time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_CPU] str="CPU marks: %" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_MEMORY] str="Memory time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_MEMORY] str="Memory marks: %" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_GRAPHICS] str="Graphics time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_GRAPHICS] str="Graphics marks: %" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_GRAPHICS_TRANSP] str="Transp. gfx time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_GRAPHICS_TRANSP] str="Transp. gfx marks: %" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_PIXI] str="Pixi time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_PIXI] str="Pixi marks: %" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_INNER3D] str="Inner 3D time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_INNER3D] str="Inner 3D marks: %" fputstr
+  
+    pargs[0]=bench_work_times[BENCH_INDEX_INNER3D_TRANSP] str="Transp.In.3D time: % ms" fputstr
+    pargs[0]=bench_scores[BENCH_INDEX_INNER3D_TRANSP] str="Transp.In.3D marks: %" fputstr
+  
+    work_time = 0
+    marks = 0
+    size = get_array_size(bench_work_times)
+    i=0 while(i<size)
+    {
+      work_time + bench_work_times[i]
+      marks + bench_scores[i]
+      i+1
+    }
+    marks/size
+    str="" fputstr
+    str="TOTAL" fputstr
+    pargs[0]=work_time str="Work time: % ms" fputstr
+    pargs[0]=marks str="Marks: %" fputstr
+    fclose( file )
+  }
+  else
+  { /* файл не выбран */ }
+ret
+
+/*
+Output to file.
+You can use % for number argument.
+Usage:
+pargs[0]=12345
+pargs[1]=100
+str="two numbers: % %\%"
+fputstr
+// this will output to file "two numbers: 12345 100%"
+*/
+fputstr:
+  arg_index=0
+  shr_new_line=10 // 0x0A
+  strlen=get_string_size(str)
+  si=0
+  while(si<strlen)
+  {
+    if str[si]='%'
+    {
+      if str[si-1]!='\'
+      {
+        t=pargs[arg_index]
+        if t=0 {fputc('0', file)}
+        else
+        {
+          //digit=t%10
+          jj=0
+          while(t>0)
+          {
+            digit=t%10
+            number_str[jj]='0'+digit //fputc('0'+digit, file )
+            t/10
+            jj+1
+          }
+          jj-1
+          while(jj>=0)
+          {
+            fputc(number_str[jj], file )
+            jj-1
+          }
+        }
+        arg_index+1
+      }
+    }
+    else
+    {
+      if str[si]='\'
+      {
+        if str[si+1]='%'
+        {
+          fputc('%', file)
+        }
+      }
+      else
+      {
+        fputc(str[si], file )
+      }
+    }
+    si+1
+  }
+  fputc(shr_new_line, file )
+ret
+
+draw_menu_button:
+  fbox (16-screen_width/2+1, mnu_y+1, button_width, button_height, #555555)
+  fbox (16-screen_width/2, mnu_y, button_width, button_height, #999999)
+  box (16-screen_width/2+1, mnu_y+1, button_width-3, button_height-3, #808080)
+  //s = "Quit"
+  mnu_x = (screen_width - get_string_size(s)*8)/2 - screen_width/2
+  print(s,mnu_x+1,mnu_y+10+1, #000000)
+  print(s,mnu_x,mnu_y+10, #fff09e)
+ret
+
+common_end:

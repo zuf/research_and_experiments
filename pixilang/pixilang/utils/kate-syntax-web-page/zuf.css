@@ -1,0 +1,111 @@
+body {background-color:#efe7c5; color: #271400; font-size: 10pt;font-family: "lucida console", lucida , courier; margin-top:10px ;margin-right: 4px ;margin-left:8px}
+hr {border-width: 1px; border-style: solid; border-color: #4E4A3B;}
+h1 {letter-spacing: +7pt; color: #80492E;}
+p {text-align: justify;}
+
+img {border: none;}
+
+
+a:link {color: #3E3820;TEXT-DECORATION:underline ;} 
+a:visited {color:#928A63;TEXT-DECORATION:underline ;}
+a:hover {BACKGROUND: #F6E0AF; color: #49524D;TEXT-DECORATION: none;}
+a:active {color:#000;TEXT-DECORATION:underline ;}
+
+
+.pre_small {font-size: 5pt; font-weight: bold; line-height: 5pt; font-family: "lucida console", lucida , courier;}
+
+pre {background: #DDC692;}
+
+/*div {border: 1px solid #F00;}*/
+
+#main-menu
+{
+
+
+width: auto;
+
+background-color: #DDC692;
+border: 1px solid #777;
+
+padding: 8px;
+margin-right: 18px;
+
+}
+
+#main-menu a
+{
+font-size: larger;
+}
+#main-menu a:link { color: #3E3820;TEXT-DECORATION:underline ;} 
+#main-menu a:visited {color:#928A63;TEXT-DECORATION:underline ;}
+#main-menu a:hover {BACKGROUND: #F6E0AF; color: #49524D;TEXT-DECORATION: none;}
+#main-menu a:active {color:#000;TEXT-DECORATION:underline ;}
+
+#menu_container
+{
+float: left;
+
+padding-left: 8px;
+padding-bottom: 8px;
+width: 246px;
+clear: left;
+}
+
+
+#mainbar
+{
+	/*float: right;*/
+	/*width: 100%;*/
+	margin-left: 260px;
+
+/*background-color:#EBEBEB;
+border: 1px solid #777;
+padding: 8px;*/
+}
+
+#cleaner
+{
+	height: 0;
+	clear: both;
+}
+
+#np
+{
+	width: auto;
+	/*float: left;*/
+	/*margin-left: 258px;*/
+	text-align: center;
+
+
+/*	background-color:#EBEBEB;
+	border: 1px solid #777;
+	padding: 4px;
+*/
+}
+
+#bottombar
+{
+	width: 226px;
+	float: left;
+	text-align: center;
+	padding-left: 4px;
+	padding-right: 8px;
+}
+
+img {border: 1px solid #5C5C53; margin: 4px;}
+
+.epigraph
+{
+	text-align: right;
+	white-space: pre;
+	font-size: small;
+}
+
+.signature
+{
+	text-align: right;
+	white-space: pre;
+	font-size: small;
+	font-style: italic;	
+	margin: 8px 16px 8px 8px;
+}

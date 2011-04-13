@@ -1,0 +1,105 @@
+///// STARFIELD CONFIG /////
+frame_speed = 1		// ms Между кадрами
+speed = 2		// скорость полета сквозь звезды (рекомендуемое значение = 1)
+line_lengs=7		// Длина линии (размазанная звезда)
+stars_count = 3000
+max_brightness = 235	// Максимальная яркость звезды
+//zoom(2)
+word_display_time=6000 // in ms
+//////////////////
+
+str_begin = "begin"
+INCLUDE "words.txt" // Words to learn english =)s
+str_end = "end"
+
+str_show_time=0
+
+rand_seed(get_seconds)
+
+px = new_array (stars_count) 
+py = new_array (stars_count) 
+pz = new_array (stars_count) 
+
+i=0
+init:
+  if (i<stars_count)
+  {
+    new_star
+    pz[i] = (rand)/64
+    if (pz[i]<=0) {pz[i]=1}
+  }
+
+  if (i>=stars_count)
+  {
+    i=0
+    start_timer(1)
+    clear(0)
+    go main
+  }
+
+  i=i+1
+go init
+
+main:
+//clear(0)
+
+  begin_cycle:
+  if (pz[i]=0)
+{
+//print( "pz[i]=0", 0, -100, #FFFFFF )
+//stop 
+}
+
+  x = px[i]/pz[i]
+  y = py[i]/pz[i]
+  z = (pz[i]+line_lengs)
+  if (z=0){z=1}
+  xl = px[i]/z
+  yl = py[i]/z
+
+  color_t = max_brightness-pz[i]
+  color = get_color( color_t, color_t, color_t )
+  //dot (x, y, color)  
+  line (x,y,xl,yl,color )
+
+  pz[i] = pz[i] - speed
+  if (pz[i] < speed*4) 
+  {
+    new_star
+  }
+
+  i = i + 1
+  if (i>(stars_count-line_lengs-1))
+  {
+   i=0
+   clear(0)
+  }
+  if (i<(stars_count-line_lengs-1))
+  {
+   go begin_cycle
+  }
+
+  get_str_num:
+  t = get_timer(1)
+  if (t>word_display_time)
+  {
+   str_num = rand
+   if (str_num<=str_begin) {go get_str_num}
+   if (str_num>=str_end) {go get_str_num}
+   start_timer(1)
+  }
+  
+  ystr = get_string_size(str_num)/(-2)*8
+  ystr2 = ystr+1
+  print(str_num, ystr2, 1, #000000 )
+  print(str_num, ystr, 0, #FFFFFF )
+
+
+frame(frame_speed)
+go main
+
+new_star:
+   px[i] = (32768/2-rand)*4
+   py[i] = (32768/2-rand)*3
+   pz[i] = max_brightness
+ret

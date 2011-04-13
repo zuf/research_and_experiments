@@ -1,0 +1,48 @@
+//
+// Some random Lissajous curves on your screen
+// http://en.wikipedia.org/wiki/Lissajous_curve
+//
+
+// Some settings
+speed=8
+step=0.005
+
+// prepare screen
+screen = get_screen()
+xsize = 0.8*get_xsize( screen )/2
+ysize = 0.8*get_ysize( screen )/2
+
+// init random numbers generator
+rand_seed(get_seconds())
+
+// settings for first curve
+r1=5
+r2=4
+
+t=0.0 // init our parameter
+
+// get random light color
+color = get_color(rand()/64,rand()/64,rand()/64) 
+
+while( 3 ) // I mean while pixilang 3 :)
+{   
+  i=0
+  while( i<speed ) // draw some lines in same time
+  {
+    t2 = t+step
+    // draw partial line of our curve
+    line(xsize*cos(r1*t), ysize*sin(r2*t), xsize*cos(r1*t2), ysize*sin(r2*t2), color)  
+    t=t2
+    i=i+1
+  }
+  if t > 2*M_PI // init new curve if we get to beginning of out current curve
+  {
+    clear()
+    t=0
+    color = get_color(rand()/64,rand()/64,rand()/64)
+    r1=r1 + rand()/65536 - rand()/65536
+    r2=r2 + rand()/65536 - rand()/65536
+  }
+  frame(0)
+}
+

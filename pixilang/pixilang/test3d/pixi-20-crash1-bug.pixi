@@ -1,0 +1,8 @@
+
+main:
+  clear(#888888)
+
+  print("if you see this text, it's ok",-100,0, #ffFF00)
+
+  frame
+go main

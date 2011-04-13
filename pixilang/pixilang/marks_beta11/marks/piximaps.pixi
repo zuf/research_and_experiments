@@ -1,0 +1,172 @@
+//piximaps.pixi
+
+go pixi_bench_end
+
+start_pixi_bench:
+conf_pixi_bench:
+CYCLES_COUNT = 5000
+OPERATIONS_COUNT = 64
+if fast_mode=1 {CYCLES_COUNT = CYCLES_COUNT/10}
+if fast_mode=2 {CYCLES_COUNT = CYCLES_COUNT/100}
+
+init_pixi_bench:
+TEXTURE_SIZE=256
+texture0 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+texture1 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+texture2 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+texture3 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+
+y=0
+while(y<TEXTURE_SIZE)
+{
+  x=0
+  while(x<TEXTURE_SIZE)
+  {
+    texture0[TEXTURE_SIZE*y+x] = get_blend (get_color(x^y, x^y, x^y),cos(x)*sin(y),128)
+    texture1[TEXTURE_SIZE*y+x] = get_blend (get_color(x^y, x^y, x^y),cos(x)*sin(y),(128+csin(x*y))/2)
+    texture2[TEXTURE_SIZE*y+x] = get_blend (get_color(x|y, x|y, x|y),cos(x)*sin(y),(128+csin(x*y))/2)
+    texture3[TEXTURE_SIZE*y+x] = get_blend (cos(x)*cos(y),cos(x)*sin(y),(128+csin(x*y))/2)
+    x+1
+  }
+  y+1
+}
+
+rnd1_x = new_array(OPERATIONS_COUNT)
+rnd1_y = new_array(OPERATIONS_COUNT)
+rnd2_x = new_array(OPERATIONS_COUNT)
+rnd2_y = new_array(OPERATIONS_COUNT)
+rnd3_x = new_array(OPERATIONS_COUNT)
+rnd3_y = new_array(OPERATIONS_COUNT)
+rnd4_x = new_array(OPERATIONS_COUNT)
+rnd4_y = new_array(OPERATIONS_COUNT)
+rnd_color1 = new_array(OPERATIONS_COUNT)
+rnd_color2 = new_array(OPERATIONS_COUNT)
+rnd_color3 = new_array(OPERATIONS_COUNT)
+rnd_color4 = new_array(OPERATIONS_COUNT)
+texture0_x = new_array(OPERATIONS_COUNT)
+texture0_y = new_array(OPERATIONS_COUNT)
+texture1_x = new_array(OPERATIONS_COUNT)
+texture1_y = new_array(OPERATIONS_COUNT)
+texture2_x = new_array(OPERATIONS_COUNT)
+texture2_y = new_array(OPERATIONS_COUNT)
+texture3_x = new_array(OPERATIONS_COUNT)
+texture3_y = new_array(OPERATIONS_COUNT)
+
+i=0 while(i<OPERATIONS_COUNT)
+{
+  rnd1_x[i] = screen_width/2  - rand%screen_width
+  rnd1_y[i] = screen_height/2 - rand%(screen_height)
+  rnd2_x[i] = screen_width/2  - rand%screen_width
+  rnd2_y[i] = screen_height/2 - rand%(screen_height)
+  rnd3_x[i] = screen_width/2  - rand%screen_width
+  rnd3_y[i] = screen_height/2 - rand%(screen_height)
+  rnd4_x[i] = screen_width/2  - rand%screen_width
+  rnd4_y[i] = screen_height/2 - rand%(screen_height)
+
+  texture0_x[i]=rand%TEXTURE_SIZE
+  texture0_y[i]=rand%TEXTURE_SIZE
+  texture1_x[i]=rand%TEXTURE_SIZE
+  texture1_y[i]=rand%TEXTURE_SIZE
+  texture2_x[i]=rand%TEXTURE_SIZE
+  texture2_y[i]=rand%TEXTURE_SIZE
+  texture3_x[i]=rand%TEXTURE_SIZE
+  texture3_y[i]=rand%TEXTURE_SIZE
+
+  rnd_color1[i] = get_color(rand%256,rand%256,rand%256)
+  rnd_color2[i] = get_color(rand%256,rand%256,rand%256)
+  rnd_color3[i] = get_color(rand%256,rand%256,rand%256)
+  rnd_color4[i] = get_color(rand%256,rand%256,rand%256)
+
+  i+1
+}
+
+pic="
+ o   ooo   o 
+  o  o o  o  
+   ooo ooo   
+   ooooooo   
+ ooooooooooo 
+ o ooooooo o 
+oo         oo
++
+     ooo     
+     o o     
+ ooooo ooooo 
+   ooooooo   
+ ooooooooooo 
+ o ooooooo o 
+oo         oo
+"
+// тупо раскрашиваем все красненьким 
+a=RED
+pic_color="
+aaaaaaaaaaaaa
+aaaaaaaaaaaaa
+aaaaaaaaaaaaa
+aaaaaaaaaaaaa
+aaaaaaaaaaaaa
+aaaaaaaaaaaaa
+aaaaaaaaaaaaa
+"
+make_ascii_pixi(pic,pic_color)
+//создаем контейнер с ascii анимированным содержанием
+make_ascii_pixi(pic)
+
+
+divider = CYCLES_COUNT/100
+if divider<1 {divider=1}
+do_graphics_bench=1
+time_end = 0
+work_time = 0
+
+
+// ------------------------------------------------------------
+pixi_bench:
+
+i=0
+n=0
+rnd_offset=0
+
+  time_begin = get_timer (0)
+  while (i<CYCLES_COUNT)
+  {
+    clear(BACK_COLOR)
+    // memset
+    rnd_offset+1
+    n=0 while(n<OPERATIONS_COUNT)
+    {
+      index = (n+rnd_offset)%OPERATIONS_COUNT
+      //pixi_triangle (rnd1_x[i], rnd1_y[i],0,0,rnd2_x[i], rnd2_y[i],0,TEXTURE_SIZE,rnd6_x[i], rnd6_y[i],TEXTURE_SIZE,TEXTURE_SIZE,texture0)
+      //pixi (texture1,rnd3_x[index], rnd3_y[index],4,256)
+      //pixi (texture1,rnd2_x[index], rnd2_y[index],2,128)
+      pixi (texture0,rnd1_x[index], rnd1_y[index],1,0)
+      pixi (texture1,rnd2_x[index], rnd2_y[index],1,0)
+      pixi (texture2,rnd3_x[index], rnd3_y[index],1,0)
+      pixi(pic,rnd4_x[index], rnd4_y[index],4)
+      //triangle (rnd1_x[index], rnd1_y[index],rnd2_x[index], rnd2_y[index],rnd3_x[index],rnd3_y[index], rnd_color4[index])
+      n+1
+    }
+
+    f = fps
+    p   = i/divider
+    str = "Pixi bench: $p% fps: $f"
+    ix = -screen_width/2
+    iy = -screen_height/2
+    fbox (ix, iy, screen_width, 18,#000000)
+    //print(str, 4+ix+1, 4+iy+1, #000000)
+    print(str, 4+ix, 4+iy, #ffffff)
+    frame
+    i+1
+  }
+  //transp(256)
+
+  do_graphics_bench=0
+
+  time_end = get_timer (0)
+  work_time = time_end-time_begin
+  marks = (CYCLES_COUNT*OPERATIONS_COUNT*1000)/work_time
+  bench_work_times[BENCH_INDEX_PIXI] = work_time
+  bench_scores[BENCH_INDEX_PIXI] = marks
+
+ret
+pixi_bench_end:

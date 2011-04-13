@@ -1,0 +1,9 @@
+VERSIONS HISTORY
+----------------
+2008-12-11  beta1.1
+Added normal mode
+Reconfigured modes settings to take more uniform results
+Added feature to write report
+
+2008-12-11  beta1
+Initial beta release

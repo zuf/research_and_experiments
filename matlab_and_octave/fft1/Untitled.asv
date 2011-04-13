@@ -1,0 +1,80 @@
+[X,map] = imread('1.png');
+
+f=X(:,:,1);
+[M,N] = size(f);
+
+%M=100;
+%N=80;
+%f = zeros(100,80);
+%f(40:60,40:60)=1;
+%imshow(f,'InitialMagnification','fit');
+
+F = fft2(f);
+F = fftshift(F);       %п.1-2
+Fla = log(abs(F));
+
+%Fm = zeros(M,N);
+%re_Fm= Fm;
+%im_Fm=Fm;
+
+% % %преобразование Фурье по определению
+%  for k=1:M
+%  for l=1:N
+%      for m=1:M
+%     for n=1:N
+%        re_Fm(k,l) = re_Fm(k,l) + (-1)^(m+n)*f(m,n)*cos(  2*pi*( (m-1)*(k-1)/M + (n-1)*(l-1)/N ) );
+%        im_Fm(k,l) =  im_Fm(k,l) -  (-1)^(m+n)*f(m,n)*sin(  2*pi*( (m-1)*(k-1)/M + (n-1)*(l-1)/N ) );
+%     end
+%     end
+%  end
+% end
+% Fm = complex(  re_Fm, im_Fm);
+% Fmla = log(abs(Fm));
+%imshow(Fla,[-1 5],'InitialMagnification','fit');  colorbar
+
+
+R = N/14;
+%фильтрация------------------------------------------------------------------------
+  for k=1:M
+  for l=1:N
+   
+      H=0;
+  if( (k-M/2)^2 + (l-N/2)^2 < R^2 )
+      H = 1;
+  end
+  
+  F(k,l)= F(k,l)*H;
+    
+  end
+  end
+
+Fmla = log(abs(F));
+%imshow(Fmla,[-1 19],'InitialMagnification','fit');
+
+fil_f = ifft2(F);
+fil_f = real(fil_f);
+
+ for k=1:M
+ for l=1:N
+  
+  fil_f(k,l) = (-1)^(k+l)*fil_f(k,l);  
+      
+ end
+ end
+
+%fil_f = fftshift(fil_f);
+imshow(fil_f,'InitialMagnification','fit');
+
+
+
+
+
+
+
+
+
+
+
+
+
+

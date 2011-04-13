@@ -1,0 +1,76 @@
+<html>
+ <head>
+  <script type="application/x-javascript">
+  
+    function rnd_bmt() {
+      var x = 0, y = 0, rds, c;
+    
+      // Get two random numbers from -1 to 1.
+      // If the radius is zero or greater than 1, throw them out and pick two new ones
+      // Rejection sampling throws away about 20% of the pairs.
+      do {
+        x = Math.random()*2-1;
+        y = Math.random()*2-1;
+        rds = x*x + y*y;
+      }
+      while (rds == 0 || rds > 1)
+    
+      // This magic is the Box-Muller Transform
+      c = Math.sqrt(-2*Math.log(rds)/rds);
+    
+      // It always creates a pair of numbers. I'll return them in an array.
+      // This function is quite efficient so don't be afraid to throw one away if you don't need both.
+      return new Array(x*c, y*c);
+    }
+  
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        var style = style;
+        
+        var t=rnd_bmt();
+        var x=t[0]*400 + 400;
+        var y=t[1]*300 + 300;
+        //ctx.fillRect (x, y, 10, 10);
+        
+        var radius=10;
+        var startAngle=0;
+        var endAngle= 2*Math.PI;
+        var anticlockwise=false;
+        
+        var i=0;
+        for(i=0;i<1000;i++)
+        {          
+          t=rnd_bmt();
+          x=t[0]*100;
+          y=t[1]*100;
+          style="rgba("+ Math.round((x*x+y*y)/50) +",0,0, 0.01)";
+          //alert(style);
+          ctx.fillStyle = style;
+          ctx.fillRect (x+400, y+300, 10, 10);
+                    
+          /*ctx.beginPath();
+          ctx.arc(x,y,radius,startAngle,endAngle, anticlockwise);
+          ctx.fill();*/
+        }
+        /*ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);*/
+      }
+    }
+  </script>
+  <style type="text/css">    
+    #canvas {border: solid 1px #aaa; margin: auto;}
+  </style>
+ </head>
+ <body onload="/*draw();*/">
+   <canvas id="canvas" width="800" height="600"></canvas>
+   <div>
+    <button onclick="
+    draw(); 
+    setInterval(draw,1);
+    setTimeout(draw,1);
+    ">Redraw</button>
+   </div>
+ </body>
+</html>

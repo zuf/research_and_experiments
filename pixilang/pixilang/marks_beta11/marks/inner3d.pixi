@@ -1,0 +1,147 @@
+// pixilang 3d functions test
+
+go inner3d_bench_end
+start_inner3d_bench:
+
+conf_inner3d_bench:
+CYCLES_COUNT = 5000
+if fast_mode=1 {CYCLES_COUNT = CYCLES_COUNT/10}
+if fast_mode=2 {CYCLES_COUNT = CYCLES_COUNT/100}
+TRIANGLES=1000
+TEXTURE_SIZE=256
+
+init_inner3d_bench:
+VERTEX_COUNT=TRIANGLES*3
+vertexes = new_array(8*VERTEX_COUNT)
+distance_sq = new_array(TRIANGLES)
+texture0 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+texture1 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+
+y=0
+while(y<TEXTURE_SIZE)
+{
+  x=0
+  while(x<TEXTURE_SIZE)
+  {
+    texture0[TEXTURE_SIZE*y+x] = get_blend (get_color(x^y, x^y, x^y),cos(x)*sin(y),128)
+    texture1[TEXTURE_SIZE*y+x] = get_blend (get_color(x^y, x^y, x^y),cos(x)*sin(y),(128+csin(x*y))/2)
+    x+1
+  }
+  y+1
+}
+
+n=0
+while(n<VERTEX_COUNT*8)
+{
+  x = rand-rand
+  y = rand-rand
+  z = rand-rand
+  tx=rand%256
+  ty=rand%256
+  vertexes[n+0]=x
+  vertexes[n+1]=y
+  vertexes[n+2]=z
+  vertexes[n+3]=tx
+  vertexes[n+4]=ty
+  vertexes[n+5]=0
+  vertexes[n+6]=0
+  vertexes[n+7]=0
+  n+8
+}
+
+triangles = new_array(8*TRIANGLES)
+n=0
+i=0
+while(n<8*VERTEX_COUNT/3)
+{
+  triangles[n+0]=i i+1
+  triangles[n+1]=i i+1
+  triangles[n+2]=i i+1
+  triangles[n+3]=rand+rand*256 //#a8948a
+  triangles[n+4]=256
+  triangles[n+6]=1
+  triangles[n+7]=1
+  n+8
+}
+
+
+/*wx = get_window_xsize()
+wy = get_window_ysize()
+hwx = wx/2
+hwy = wy/2
+*/
+frame_counter=0
+//begin_time = get_timer( 0 )
+frames_count=0
+
+divider = CYCLES_COUNT/100
+if divider<1 {divider=1}
+do_graphics_bench=1
+time_end = 0
+work_time = 0
+text_rot_step=8
+
+// ------------------------------------------------------------
+inner3d_bench:
+begin_time = get_timer( 0 )
+i=0 while (i<CYCLES_COUNT)
+{
+  clear(BACK_COLOR)
+  //transp( 256 )
+  //print("test 3d",0,0, #ff0000)
+
+  //t_reset
+  t_rotate_z( t, 0, 0 )
+  //t_rotate_x( t * 2, 0, 0 )
+  //pixi_triangles3d (vertexes,triangles,texture0,0)
+  pixi (texture1,0,0,1,0)
+
+  t = get_timer( 0 ) / 32
+  c = get_color( csin( t ) + 168, ccos( t ) + 180, csin( t / 2 ) + 198 )
+
+  t_reset
+  t_scale( 256, 256, 256 )
+  t_rotate_z( t, 0, 0 )
+  t_rotate_x( t * 2, 0, 0 )
+  t_rotate_y( t * 3, 0, 0 )
+  //transp( 128 )
+
+  sort_triangles (vertexes, triangles)
+  pixi_triangles3d (vertexes,triangles,texture0,0)
+  //triangles3d (vertexes, triangles)
+  //pixi_triangles3d (vertexes,triangles,texture0,0)
+
+  t_reset  
+  t_scale( frame_counter, frame_counter, frame_counter )
+  t_rotate_z( t*4, 0, 0 )
+  t_rotate_x( t*2, 0, 0 )
+  t_rotate_y( t*6, 0, 0 )
+  frame_counter+text_rot_step
+  if frame_counter>256*4 {text_rot_step = -text_rot_step}
+  if frame_counter<8 {text_rot_step = -text_rot_step}
+  print( "3D Pixilang", -39, 1, #000000 )
+  t_translate (0,0,256)
+  print( "3D Pixilang", -40, 0, #FFFFFF )
+  t_reset
+  //transp( 256 )
+
+  f = fps
+  p   = i/divider
+  str = "Inner 3D bench: $p% fps: $f"
+  ix = -screen_width/2
+  iy = -screen_height/2
+  fbox (ix, iy, screen_width, 18,#000000)
+  //print(str, 4+ix+1, 4+iy+1, #000000)
+  print(str, 4+ix, 4+iy, #ffffff)
+  frame
+  i+1
+}
+
+time_end = get_timer (0)
+work_time = time_end-time_begin
+marks = (CYCLES_COUNT*OPERATIONS_COUNT*1000)/work_time
+bench_work_times[BENCH_INDEX_INNER3D] = work_time
+bench_scores[BENCH_INDEX_INNER3D] = marks
+
+ret
+inner3d_bench_end:

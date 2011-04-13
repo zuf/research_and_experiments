@@ -1,0 +1,139 @@
+clear(back_color)
+rand_seed(8)
+
+// "vertexes":
+//X, Y, Z, texture_X, texture_Y, 0, 0, 0,
+//X, Y, Z, texture_X, texture_Y, 0, 0, 0,
+...
+// "triangles":
+//V1, V2, V3, COLOR, TRANSPARENCY, 0, 0, ORDER, 
+//V1, V2, V3, COLOR, TRANSPARENCY, 0, 0, ORDER,
+
+TRIANGLES=100
+VERTEX_COUNT=TRIANGLES*3
+vertexes = new_array(8*VERTEX_COUNT)
+distance_sq = new_array(TRIANGLES)
+
+TEXTURE_SIZE=256
+texture0 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+
+y=0
+while(y<TEXTURE_SIZE)
+{
+  x=0
+  while(x<TEXTURE_SIZE)
+  {
+    texture0[TEXTURE_SIZE*y+x] = get_color(x^y, x^y, x^y)
+    x+1
+  }
+  y+1
+}
+
+n=0
+while(n<VERTEX_COUNT*8)
+{
+  x = rand-rand
+  y = rand-rand
+  z = rand-rand
+  tx=rand/(256)
+  ty=rand/(256)
+  vertexes[n+0]=x
+  vertexes[n+1]=y
+  vertexes[n+2]=z
+  vertexes[n+3]=tx
+  vertexes[n+4]=ty
+  vertexes[n+5]=0
+  vertexes[n+6]=0
+  vertexes[n+7]=0
+  n+8
+}
+
+triangles = new_array(8*TRIANGLES)
+n=0
+i=0
+while(n<8*VERTEX_COUNT/3)
+{
+  triangles[n+0]=i i+1
+  triangles[n+1]=i i+1
+  triangles[n+2]=i i+1
+  triangles[n+3]=rand+rand*256 //#a8948a
+  triangles[n+4]=256
+  triangles[n+6]=0
+  triangles[n+7]=0
+  n+8
+}
+/////////////////////////////////////////
+scale = 2000
+INCLUDE "mdl/fish01.pixi"
+//////////////////////////////////////////
+start_timer( 0 )
+
+wx = get_window_xsize()
+wy = get_window_ysize()
+hwx = wx/2
+hwy = wy/2
+
+frame_counter=0
+begin_time = get_timer( 0 )
+frames_count=0
+
+use_mouse=0
+rx=0
+ry=0
+main:
+  transp( 64 )
+  clear(#888888)
+  
+  t_origin = get_timer( 0 )
+  t = t_origin / 32
+  c = get_color( csin( t ) + 168, ccos( t ) + 180, csin( t / 2 ) + 198 )
+
+  t_reset
+  t_scale( 256, 256, 256 )
+  
+  handle_pen_keys ({use_mouse=1}, {if use_mouse=1 {rx=gpx ry=gpy}}, {use_mouse=0})
+  //t_rotate_z( 1, 0, 0 )
+  t_rotate_x( ry, 0, 0 )
+  t_rotate_y( rx, 0, 0 )
+  //transp( 128 )
+
+  pz1 = fish_verts[20*8+2]
+  pz2 = fish_verts[21*8+2]
+  pz3 = fish_verts[13*8+2]
+  pz4 = fish_verts[14*8+2]
+  pz5 = fish_verts[12*8+2]
+  pz6 = fish_verts[18*8+2]
+  pz7 = fish_verts[19*8+2]
+  fish_verts[12*8+2]=fish_verts[12*8+2] + sin(t_origin/8+192)*(scale/180)
+  fish_verts[11*8+2]=fish_verts[11*8+2] + sin(t_origin/8+192)*(scale/180)
+  fish_verts[18*8+2]=fish_verts[18*8+2] + sin(t_origin/8+192)*(scale/180)
+  fish_verts[19*8+2]=fish_verts[19*8+2] + sin(t_origin/8+192)*(scale/180)
+
+  fish_verts[13*8+2]=fish_verts[13*8+2] + sin(t_origin/8+128)*(scale/128)
+  fish_verts[20*8+2]=fish_verts[20*8+2] + sin(t_origin/8+32)*(scale/64)
+  fish_verts[21*8+2]=fish_verts[21*8+2] + sin(t_origin/8+32)*(scale/64)
+
+  sort_triangles (fish_verts, fish_triangles)
+  triangles3d (fish_verts, fish_triangles)
+  
+  fish_verts[20*8+2] = pz1
+  fish_verts[21*8+2] = pz2
+  fish_verts[13*8+2] = pz3
+  fish_verts[11*8+2] = pz4
+  fish_verts[12*8+2] = pz5
+  fish_verts[18*8+2] = pz6
+  fish_verts[19*8+2]= pz7
+
+  //sort_triangles (vertexes, triangles)
+  //pixi_triangles3d (vertexes,triangles,texture0,0)
+  //triangles3d (vertexes, triangles)
+  //pixi_triangles3d (vertexes,triangles,texture0,0)
+
+  t_reset  
+
+  transp( 256 )
+  f = fps  
+  print( "fps: $f", -hwx, -hwy, #FFFFFF )
+  frames_count+1
+  frame
+go main

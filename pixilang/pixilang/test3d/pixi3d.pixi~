@@ -1,0 +1,118 @@
+
+clear(back_color)
+rand_seed(8)
+
+// "vertexes":
+//X, Y, Z, texture_X, texture_Y, 0, 0, 0,
+//X, Y, Z, texture_X, texture_Y, 0, 0, 0,
+...
+// "triangles":
+//V1, V2, V3, COLOR, TRANSPARENCY, 0, 0, ORDER, 
+//V1, V2, V3, COLOR, TRANSPARENCY, 0, 0, ORDER,
+
+TRIANGLES=1000/3
+VERTEX_COUNT=TRIANGLES*3
+vertexes = new_array(8*VERTEX_COUNT)
+distance_sq = new_array(TRIANGLES)
+
+TEXTURE_SIZE=256
+texture0 = new_pixi( TEXTURE_SIZE, TEXTURE_SIZE, 1 )
+
+y=0
+while(y<TEXTURE_SIZE)
+{
+  x=0
+  while(x<TEXTURE_SIZE)
+  {
+    texture0[TEXTURE_SIZE*y+x] = get_color(x^y, x^y, x^y)
+    x+1
+  }
+  y+1
+}
+
+n=0
+while(n<VERTEX_COUNT*8)
+{
+  x = rand-rand
+  y = rand-rand
+  z = rand-rand
+  tx=rand/(256)
+  ty=rand/(256)
+  vertexes[n+0]=x
+  vertexes[n+1]=y
+  vertexes[n+2]=z
+  vertexes[n+3]=tx
+  vertexes[n+4]=ty
+  vertexes[n+5]=0
+  vertexes[n+6]=0
+  vertexes[n+7]=0
+  n+8
+}
+
+triangles = new_array(8*TRIANGLES)
+n=0
+i=0
+while(n<8*VERTEX_COUNT/3)
+{
+  triangles[n+0]=i i+1
+  triangles[n+1]=i i+1
+  triangles[n+2]=i i+1
+  triangles[n+3]=rand+rand*256 //#a8948a
+  triangles[n+4]=256
+  triangles[n+6]=1
+  triangles[n+7]=1
+  n+8
+}
+
+start_timer( 0 )
+
+wx = get_window_xsize()
+wy = get_window_ysize()
+hwx = wx/2
+hwy = wy/2
+
+frame_counter=0
+begin_time = get_timer( 0 )
+frames_count=0
+main:
+  transp( 64 )
+  clear(#888888)
+  //transp( 256 )
+  //print("test 3d",0,0, #ff0000)
+
+  //t_reset
+  t_rotate_z( t, 0, 0 )
+  //t_rotate_x( t * 2, 0, 0 )
+  //pixi_triangles3d (vertexes,triangles,texture0,0)
+pixi (texture0,0,0,1,0)
+
+  t = get_timer( 0 ) / 32
+  c = get_color( csin( t ) + 168, ccos( t ) + 180, csin( t / 2 ) + 198 )
+
+  t_reset
+  t_scale( 256, 256, 256 )
+  t_rotate_z( t, 0, 0 )
+  t_rotate_x( t * 2, 0, 0 )
+  t_rotate_y( t * 3, 0, 0 )
+  //transp( 128 )
+
+  sort_triangles (vertexes, triangles)
+  pixi_triangles3d (vertexes,triangles,texture0,0)
+  //triangles3d (vertexes, triangles)
+  //pixi_triangles3d (vertexes,triangles,texture0,0)
+
+  t_reset  
+  t_scale( frame_counter, frame_counter, frame_counter )
+  frame_counter+8
+  if frame_counter>256*16 {frame_counter = 0}
+  print( "3d bench", -32, 0, #FFFFFF )
+  t_reset
+  //transp( 256 )
+
+  transp( 256 )
+  f = fps
+  avgfps= (avgfps+fps*256)/2
+  print( "fps: $f avg fps: $avgfps", -hwx, -hwy, #FFFFFF )
+  frames_count+1
+  frame
+go main

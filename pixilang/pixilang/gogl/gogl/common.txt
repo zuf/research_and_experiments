@@ -1,0 +1,125 @@
+// Общие функции
+
+last_error=""
+
+current_color=#336699
+back_color=#ffffff
+
+mouse_down_x=0
+mouse_down_y=0
+mouse_down_prev_x=mouse_down_x
+mouse_down_prev_y=mouse_down_y
+
+mouse_move_x=0
+mouse_move_y=0
+mouse_move_prev_x=mouse_move_x
+mouse_move_prev_y=mouse_move_y
+
+mouse_up_x=0
+mouse_up_y=0
+mouse_up_prev_x=mouse_up_x
+mouse_up_prev_y=mouse_up_y
+
+mouse_is_down=0
+
+goto end_common
+
+// ---------------------------------------------------------------------
+
+error:
+  print (last_error, 1, 1, #000000)
+  print (last_error, 0, 0, #ff0000)
+ret
+
+gogl_pen_down:
+  mouse_down_prev_x=mouse_down_x
+  mouse_down_prev_y=mouse_down_y
+  mouse_down_x=get_pen_x
+  mouse_down_y=get_pen_y
+  
+  gogl_pen_move
+  
+  mouse_is_down = 1
+ret
+
+gogl_pen_move:
+  mouse_move_prev_x=mouse_move_x
+  mouse_move_prev_y=mouse_move_y
+  mouse_move_x=get_pen_x
+  mouse_move_y=get_pen_y
+ret
+
+gogl_pen_up:
+  mouse_up_prev_x=mouse_up_x
+  mouse_up_prev_y=mouse_up_y
+  mouse_up_x=get_pen_x
+  mouse_up_y=get_pen_y
+
+  gogl_pen_move
+
+  mouse_is_down = 0
+
+  undo_save
+ret
+
+gogl_key_down:
+  key_down = get_hard_key
+ret
+
+gogl_key_up:
+  key_up = get_hard_key
+  if key_up = '1'
+  {current_instrument = gogl_dot}
+  
+  if key_up = '2'
+  {current_instrument = gogl_line}
+  
+  if key_up = '3'
+  {current_instrument = gogle_brush}
+  
+  if key_up = 269 // DELETE
+  {clear(back_color)}
+  
+  if key_up = 'z'
+  {undo_undo}
+
+  if key_up = 'y'
+  {undo_redo}
+  
+  if key_up = 257 // F2
+  {
+  save_screen("test.txt", -get_pixi_xsize(0)/2, -get_pixi_ysize(0)/2, get_pixi_xsize(0), get_pixi_ysize(0))
+    filename = "                                                                                                                                                                                                                                             "
+    if( file_dialog( filename, "Save file", "txt", "gfx_files_dialog" ) )
+    {
+      //last_error = "File ok"
+      //print (filename,10,10, #ff5587)
+      //error
+      save_screen(filename, 0, 0, get_pixi_xsize(0), get_pixi_ysize(0))
+      
+    }
+    else
+    {
+      last_error = "Wrong file"
+      error
+    }
+  }
+  
+  if key_up = 258 // F3
+  {
+    filename = "                                                                                                                                                                                                                                             "
+    if( file_dialog( filename, "Open file", "jpg/gif/txt", "gfx_files_dialog" ) )
+    {
+      last_error = "File ok"
+      print (filename,10,10, #ff5587)
+      error
+    }
+    else
+    {
+      last_error = "Wrong file"
+      error
+    }
+  }
+ret
+
+end_common:

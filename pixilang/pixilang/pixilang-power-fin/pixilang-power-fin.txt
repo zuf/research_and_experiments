@@ -1,0 +1,867 @@
+clear(0)
+print("Loading...",0-5*8,0, #FFFFFF)
+frame
+clear(0)
+
+init:
+width = get_window_xsize()
+height = get_window_ysize()
+
+zbuffer_size=width*height
+zbuffer_min=-256*256*256*127
+zbuffer_max=256*256*256    
+zbuffer = new_array(zbuffer_size)
+
+widthd2  = width/2
+heightd2 = height/2
+
+fps_var = fps()
+
+background = 0
+//make_bg_gradient
+make_balls
+
+i=0
+i_inc=1
+start_timer(1)
+t1 = get_timer(1)
+t_rot=0
+tmr_z=0
+
+reset_minmax
+
+/////
+// fonts
+make_3d_font
+/////
+//////////////////
+// prepare simple 3d words
+string_3d="PIXILANG"
+make_3d_string
+w_pixilang=word
+
+string_3d="THE POWER!!!"
+make_3d_string
+w_the_power=word
+
+string_3d="Enjoy it"
+make_3d_string
+w_enjoy_it=word
+
+/////////////////
+
+//make_3d_tor_static
+//make_3d_tor
+INCLUDE "data/torus-big-mdl.txt"
+INCLUDE "data/torus_knot-mdl-3-7_a.txt"
+INCLUDE "data/knot_5-20.txt"
+INCLUDE "data/knot_3-4.txt"
+INCLUDE "data/knot_7-4.txt"
+
+make_3d_sphere
+
+//make_torus_knot
+objects_count=9
+index=0
+objects=new_array(objects_count)
+objects_color=new_array(objects_count)
+obj_zshift=new_array(objects_count)
+
+objects[index]=knot_vertexes
+objects_color[index]=#ff0000
+obj_zshift[index]=0
+index+1
+
+objects[index]=w_pixilang
+objects_color[index]=#00ff00
+obj_zshift[index]=190000
+index+1
+
+objects[index]=bigtorus_vertexes
+objects_color[index]=#0000ff
+obj_zshift[index]=0
+index+1
+
+objects[index]=w_the_power
+objects_color[index]=#ff00ff
+obj_zshift[index]=300000
+index+1
+
+objects[index]=sphere_vertexes
+objects_color[index]=#ffff00
+obj_zshift[index]=0
+index+1
+
+objects[index]=w_enjoy_it
+objects_color[index]=#ffffff
+obj_zshift[index]=190000
+index+1
+
+objects[index]=knot_5_20
+objects_color[index]=#00ffff
+obj_zshift[index]=0
+index+1
+
+objects[index]=knot_3_4
+objects_color[index]=#654684
+obj_zshift[index]=0
+index+1
+
+objects[index]=knot_7_4
+objects_color[index]=#01a586
+obj_zshift[index]=0
+index+1
+
+draw_vertexes_prev = knot_vertexes//bigtorus_vertexes//knot_vertexes
+draw_vertexes_next = w_the_power //w_pixilang//bigtorus_vertexes //word //font_3d['A'] //bigtorus_vertexes
+draw_vertexes = new_array(get_array_size(draw_vertexes_prev)+get_array_size(draw_vertexes_next))
+i=0
+while(i<get_array_size(bigtorus_vertexes))
+{
+draw_vertexes[i]=draw_vertexes_prev[i]
+i+1
+}
+draw_vertexes_size = get_array_size(draw_vertexes)
+
+frame_vertexes = new_array(get_array_size(draw_vertexes))
+frame_vertexes_size = get_array_size(frame_vertexes)
+
+t_transform=256
+t_transform_sin_count=256
+t_transform_inc=1
+
+object_old_index=0
+object_new_index=1
+
+/////////////////
+scroller_seed=new_array(5)
+scroller_seed[0]=6643
+scroller_seed[1]=6130
+scroller_seed[2]=4885
+scroller_seed[3]=22953
+scroller_seed[4]=29512
+scroller_seed_index=0
+scroller_init
+////////////////
+
+starfield_init
+reset_minmax
+//clear(0)
+print("Warming up...",0-6*8,0, #FFFFFF)
+warmup_succes=0
+frame
+t_fly=0
+main:
+	clear(#02040E)
+  t_fly+1
+  starfield_draw
+	make_bg_gradient  
+
+	/////////////////////////
+  // move 3d objects and stuff 
+  t_transform_sin_count+1
+  t_transform=(128+cos(t_transform_sin_count))
+  if (t_transform=(-256+128))
+  {
+    t_transform_sin_count=256
+    shift_objects
+    reset_minmax
+    warmup_succes=1
+  }
+  if (t_transform=(256+128))
+  {
+    t_transform_sin_count=256
+    shift_objects
+    //reset_minmax
+    warmup_succes=1
+  }
+  
+	j=0
+	tmr_z +1
+	cos_t = cos(t_rot)
+	sin_t = sin(t_rot)
+	center_x=sin(t_fly)*50
+	center_y=cos(t_fly)*50
+	center_z=cos(t_fly)+256
+  
+	fnum=0
+  dnum=0
+	while(fnum<draw_vertexes_size)
+	{
+	  x = (draw_vertexes[fnum]) //+sin(t+j*8) // molecular noise
+	  y = (draw_vertexes[fnum+1])  //+cos(t+j*8) // molecular noise
+	  z = (draw_vertexes[fnum+2])  //+ 20*cos(tmr_z)
+    
+    
+    old = objects[object_old_index]
+    new = objects[object_new_index]
+    cur = draw_vertexes
+    new_size=get_array_size(new)
+    old_size=get_array_size(old)
+    if(t_transform>=0)
+    {
+      if(t_transform<=256)
+      {
+        inv_transform = 256-t_transform
+        cur[fnum]=(old[fnum%old_size]*(inv_transform) + new[(fnum)%new_size]*(t_transform))/256
+        cur[fnum+1]=(old[(fnum+1)%old_size]*(inv_transform) + new[(fnum+1)%new_size]*(t_transform))/256
+        cur[fnum+2]=(old[(fnum+2)%old_size]*(inv_transform) + new[(fnum+2)%new_size]*(t_transform))/256
+        obj_color = get_blend(objects_color[object_old_index], objects_color[object_new_index], t_transform)
+        z_shift = (obj_zshift[object_old_index]*inv_transform + obj_zshift[object_new_index]*t_transform)/256
+      }
+    }
+    
+    zn = (-x*sin_t + z*cos_t)/256 + center_z*256+z_shift
+      cz = zn/256
+      if (cz<czmin) {czmin=cz}
+	    if (cz>czmax) {czmax=cz}
+    
+    // do not want draw empty points
+    if (z!=0)
+    {
+      if (zn>0)
+      {        
+    	  // This ok rotate
+    	  xn = x*cos_t + z*sin_t + center_x*256
+    	  yn = y*256 + center_y*256
+    	  //zn = (-x*sin_t + z*cos_t)/256 + center_z*256+z_shift
+        
+        frame_vertexes[dnum+0]=xn
+        frame_vertexes[dnum+1]=yn
+        frame_vertexes[dnum+2]=zn      
+        dnum+3
+      }
+    }
+          
+    fnum+3
+	}
+  
+  ////////////////////////////////////////////////////
+	//DRAW
+	j=0
+	while(j<frame_vertexes_size)
+	{
+	  xn=frame_vertexes[j+0]
+	  yn=frame_vertexes[j+1]
+	  zn=frame_vertexes[j+2]
+    
+    frame_vertexes[j+0]=0
+	  frame_vertexes[j+1]=0
+	  frame_vertexes[j+2]=0
+	  
+	  if (zn>0)
+	  {
+	    dx=xn/zn
+      dy=yn/zn
+      
+      cz = zn/256
+      
+      cv = ((cz-czmin)*255)/(czmax-czmin)
+	    color = get_blend (obj_color, #101010,cv) //get_color(c,c,c)
+      
+      zbuf_index = (dy+heightd2)*width + (dx+widthd2)
+      if (zbuffer[zbuf_index]>zn)
+      {
+      if (zbuffer[zbuf_index+1]>zn)
+      {
+        zbuf_index_y2 = (dy+heightd2+1)*width + (dx+widthd2)
+        if (zbuffer[zbuf_index_y2]>zn)
+        {
+        if (zbuffer[zbuf_index_y2+1]>zn)
+        {
+          zbuffer[zbuf_index] = zn
+          zbuffer[zbuf_index+1] = zn
+          zbuffer[(dy+heightd2+1)*width + (dx+widthd2)] = zn
+          zbuffer[(dy+heightd2+1)*width + (dx+widthd2)+1] = zn
+    	    dot(dx,dy, color)          
+    	    dot(dx+1,dy, color)
+    	    dot(dx,dy+1, color)
+    	    dot(dx+1,dy+1, color)
+          //pixi(balls[(cv)/64], dx, dy)
+        }
+        }
+      }
+      }      	    
+	  }
+	  j+3
+	}
+  
+  //clear z-buffer
+  iz=0
+  //scr=0
+  while(iz<(zbuffer_size))
+  {
+    //scr[iz]=zbuffer[iz]
+    //Mooohooo cycle optimization...
+    zbuffer[iz]=zbuffer_max
+    zbuffer[iz+1]=zbuffer_max
+    zbuffer[iz+2]=zbuffer_max
+    zbuffer[iz+3]=zbuffer_max
+    zbuffer[iz+4]=zbuffer_max
+    zbuffer[iz+5]=zbuffer_max
+    zbuffer[iz+6]=zbuffer_max
+    zbuffer[iz+7]=zbuffer_max
+    iz+8
+  }
+
+	t1+7
+	t_rot+2
+
+  handle_hard_keys(0, {scroller_init}, 0 )
+  
+  //////////////////////
+  //scroller
+  scroller_size = scroller_end-scroller_begin    
+  scroller_index=0
+  while(scroller_index<scroller_size)
+  {
+    scrl = scroller_begin+scroller_index  
+    if(scroller_x[scroller_size-1]>-width*3)
+    {        
+      //print(scrl, scroller_x[scroller_index]-widthd2, scroller_y[scroller_index], #FFFFFA)
+      print(scrl, scroller_x[scroller_index], scroller_y[scroller_index], #FFFFFA)
+      scroller_x[scroller_index]=scroller_x[scroller_index]-2
+    }
+    else
+    {
+      //scroller_x[scroller_index] = width+80*scroller_x[scroller_index]+rand()/128
+      scroller_init
+    }
+    scroller_index+1
+  }
+
+  
+	/////////////////////////////////////////////////////////
+	print( "fps: $fps_var", -widthd2, -heightd2, #000000 )
+	fps_var = fps
+	print( "fps: $fps_var", -widthd2, -heightd2, #666666 )
+
+  if(warmup_succes)
+  {
+	frame(16)
+  }
+go main
+
+
+shift_objects:
+    objects_size = get_array_size(objects)
+    object_old_index+1
+    if(object_old_index>=objects_size) {object_old_index=0}
+    object_new_index+1
+    if(object_new_index>=objects_size) {object_new_index=0}
+ret
+
+///////////////////////
+make_3d_tor:
+  SEGS1=16// количество сегментов в торе
+  SEGS2=16 // количество подсегментов в каждом сегменте тора
+  VERTEXES=(3*(SEGS1-1))*(3*(SEGS2-1))
+  R1=120
+  R2=20
+  tor_vertexes = new_array(3*VERTEXES)
+  // to -> [0,pi]; tf -> [0,2pi)
+  i=0
+  num=0
+  while(i<SEGS1)
+  {
+    j=0
+    while(j<SEGS2)
+    {
+      //x= ( (R + rc * cos(tf) ) * cos(to) ) / 256
+      //y= ( (R + rc * cos(tf) ) * sin(to) ) / 256
+      //z=rc*sin(tf)
+      a1=(i*512)/SEGS1
+      a2=(j*512)/SEGS2
+      
+      //x = (R1 + R2 * cos(a2)) * cos(a1)
+      //y = (R1 + R2 * cos(a2)) * sin(a1)
+      //z = R2 * sin(a2)
+
+      x = (R1 + R2 * cos(a2)) * cos(a1)
+      y = (R1 + R2 * cos(a2)) * sin(a1)
+      z = R2 * sin(a2)
+          
+      if (tor_vertexes[num]!=0)
+      {
+      	print("WARNING! OVERWRITE! at $num", 0, 0, #ff0000)
+      	n=1
+      	while(n>0)
+      	{
+      	print("WARNING! OVERWRITE! at $num", 0, 0, #ff0000)
+      	frame
+      	}
+      }
+      
+      tor_vertexes[num]=x/256
+      tor_vertexes[num+1]=y/256
+      tor_vertexes[num+2]=z
+      num+3
+      j+1
+    }
+    i+1
+  }
+ret
+
+//////////////////////////////
+sort_ptr_array:
+  size = get_array_size(ptr_array)
+  // ugly sort
+j=0
+  while(j<size)
+  {
+    u=j
+    while(u<size)
+    {
+      if (ptr_array[j+2]<ptr_array[u+2])
+      {
+        tx = ptr_array[j]
+        ty = ptr_array[j+1]
+        tz = ptr_array[j+2]
+  
+        ptr_array[j]   = ptr_array[u]
+        ptr_array[j+1] = ptr_array[u+1]
+        ptr_array[j+2] = ptr_array[u+2]
+  
+        ptr_array[u]   = tx
+        ptr_array[u+1] = ty
+        ptr_array[u+2] = tz
+      }
+      u+3
+    }
+    j+3
+  }
+//
+ret
+
+make_3d_font:
+  font_pixi = get_pixi_font
+  font_xsize = get_pixi_xsize(font_pixi)
+  font_ysize = get_pixi_ysize(font_pixi)
+  font_3d = new_array(256)  
+  font_tmp_buf=new_pixi (font_xsize,font_ysize,1)
+  set_screen(font_tmp_buf)
+  make_font_cycle:
+  i=0
+  //i='A'
+  while(i<256) // до Z
+  { 
+    font_3d[i] = new_array(font_xsize*font_ysize*3) // 3 значения на вершину и 3 будем в глубь делать
+    fnt = font_3d[i]          
+    set_screen(font_tmp_buf)
+    clear(0)
+    black=get_dot(0,0)
+    fpixi (font_pixi,0,0, 1, 0, i)
+
+    y=-font_ysize/2
+    
+    j=0
+    while(y<(font_ysize/2))
+    {
+      x=-font_xsize/2        
+      while(x<(font_xsize/2))
+      {
+        fnt[j]  =0 //x
+        fnt[j+1]=0 //y
+        fnt[j+2]=0 //z
+        c=get_dot(x,y)
+        if(c!=0)
+        {
+          fnt[j]  =(x)*256*15 //x
+          fnt[j+1]=(y)*256*15 //y
+          fnt[j+2]=256*64 //z
+        }
+        set_screen(font_tmp_buf)        
+        j+3
+      x+1        
+      }
+      y+1
+    }
+    next_char:
+    i+1
+  }  
+
+  set_screen(0)
+    fnt=font_3d['A']    
+    size = get_array_size(fnt)
+    g1:
+      n=0
+      j=0
+      while(n<size)
+      {
+        x=fnt[n]
+        y=fnt[n+1]
+        z=fnt[n+2]
+        n+3
+        j+1
+      }
+
+  set_screen(0)  
+ret
+
+make_3d_string:
+string = string_3d
+size=get_string_size(string)
+chars_count=size
+z_levels=1
+word = new_array(get_array_size(font_3d['A'])*chars_count*z_levels*3)
+i=0
+u=0
+while(i<chars_count)
+{
+  char_index = string[i]
+  char3d = font_3d[char_index]
+  n=0
+  while(n<get_array_size(char3d))
+  {
+    fnt=char3d
+    nz=0
+    while(nz<z_levels)
+    {      
+      word[u]  =fnt[n] +i*256*120 - (120*chars_count*128)
+      word[u+1]=fnt[n+1]
+      word[u+2]=fnt[n+2]+nz*256*z_levels
+      u+3
+      nz+1
+    }    
+    n+3
+  }
+  i+1
+}
+ret
+
+make_torus_knot:
+  p=3*81
+  q=7*81
+  vnum=0;
+  fi=0
+  pi=256
+  inc_val = ((2*pi)/256)
+  knot_vertexes = new_array(2000)
+  
+  
+  while(fi<=2*pi)
+  {
+    qfi = q * fi
+    x = (2*256+256*cos( qfi / p) ) * cos(fi)/256
+    y = (2*256+256*cos( qfi / p) ) * sin(fi)/256
+    qfid = qfi / p
+    z = sin( qfid )*256
+    s = sin(qfid)
+    qfid_p = qfid%(2*pi)
+    qfi_p = qfi%(2*pi)
+    print("(q=$q fi=$fi qfi=$qfi qfi_p=$qfi_p qfid=$qfid qfid_p=$qfid_p s=$s p=$p) $x $y $z", -widthd2+2,2-heightd2+vnum*3, #ff7521)
+    
+    dot(x,y, #56ff83)  
+    
+    knot_vertexes[vnum]=x
+    knot_vertexes[vnum]=y
+    knot_vertexes[vnum]=z
+    
+    vnum+3    
+    fi+inc_val
+  }
+ret
+
+//////////////////////////////////
+make_cube:
+VERTEXES=8*3
+cube_vertexes = new_array(VERTEXES)
+val = 256*16
+n=0
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]= val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]= val
+n+3
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]= val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]= val
+
+ret
+
+///////////////////////
+make_3d_sphere:
+STEP=8
+VERTEXES=(512/STEP)*(256/(STEP-1))
+R=(widthd2*20)/100  //60
+sphere_vertexes = new_array(3*VERTEXES)
+// to -> [0,pi]; tf -> [0,2pi)
+tf=0
+j=0
+while(tf<=512)
+{
+  to=0
+  while(to<=256)
+  {
+    x=(R*sin(to)*cos(tf))/256
+    y=(R*sin(to)*sin(tf))/256
+    z=R*cos(to)
+
+    sphere_vertexes[j]=x
+    sphere_vertexes[j+1]=y
+    sphere_vertexes[j+2]=z+1
+    to+STEP
+    j+3
+  }
+  tf+STEP
+}
+
+// ugly sort
+j=0
+while(j<3*VERTEXES)
+{
+  u=j
+  while(u<3*VERTEXES)
+  {
+    if (sphere_vertexes[j+2]>sphere_vertexes[u+2])
+    {
+      tx = sphere_vertexes[j]
+      ty = sphere_vertexes[j+1]
+      tz = sphere_vertexes[j+2]
+
+      sphere_vertexes[j]   = sphere_vertexes[u]
+      sphere_vertexes[j+1] = sphere_vertexes[u+1]
+      sphere_vertexes[j+2] = sphere_vertexes[u+2]
+
+      sphere_vertexes[u]   = tx
+      sphere_vertexes[u+1] = ty
+      sphere_vertexes[u+2] = tz
+    }
+    u+3
+  }
+  j+3
+}
+ret
+
+
+/////////////////////////////////
+// star field
+
+starfield_init:
+///// STARFIELD CONFIG /////
+frame_speed = 1		// ms Между кадрами
+speed = 3		// скорость полета сквозь звезды (рекомендуемое значение = 1)
+line_lengs=8		// Длина линии (размазанная звезда)
+stars_count = 512
+max_brightness = 202	// Максимальная яркость звезды
+//////////////////
+
+rand_seed(get_seconds)
+
+px = new_array (stars_count) 
+py = new_array (stars_count) 
+pz = new_array (stars_count) 
+
+i=0
+sf_init:
+  if (i<stars_count)
+  {
+    new_star
+    pz[i] = (rand)/64
+    if (pz[i]<=0) {pz[i]=1}
+  }
+
+  if (i>=stars_count)
+  {
+    i=0
+    start_timer(1)
+    //clear(0)
+    go sf_continue_load
+  }
+
+  i=i+1
+go sf_init
+sf_continue_load:
+ret
+///////
+starfield_draw:
+//clear(0)
+i=0
+  sf_begin_cycle:
+
+  x = px[i]/pz[i]
+  y = py[i]/pz[i]
+  z = (pz[i]+line_lengs)
+  if (z=0){z=1}
+  xl = px[i]/z
+  yl = py[i]/z
+
+  color_t = max_brightness-pz[i]
+  color = get_color( color_t, color_t, color_t )
+  //dot (x, y, color)  
+  line (x,y,xl,yl,color )
+
+  pz[i] = pz[i] - speed
+  if (pz[i] < speed*4) 
+  {
+    new_star
+  }
+
+  i + 1
+  if (i<(stars_count-line_lengs-1))
+  {
+   go sf_begin_cycle
+  }
+ret
+
+new_star:
+   px[i] = (16384-rand)*4
+   py[i] = (16384-rand)*3
+   pz[i] = max_brightness
+ret
+
+////////////////////////////////////////////////////////////////
+//TODO: make pixi work on v1.5
+make_bg_gradient:
+  y=heightd2/8
+  i=0
+  while( y < heightd2 )
+  {   
+    c=(cos(i)+256)/2
+    color=get_blend(#02040E, #9B6837,256-c)
+    line (-widthd2, y, widthd2, y, color)
+    line (-widthd2, y+1, widthd2, y+1, color)
+    line (-widthd2, y+2, widthd2, y+2, color)
+    y+1
+    i+1
+  }
+  //background = clone_pixi(0, 0)
+ret
+
+///////////////////////////
+make_balls:
+  size = 24
+  dsize=size*2
+
+  balls = new_array(256)
+  tmpbuf = new_pixi (dsize,dsize,1)
+
+  j=0
+  x=-dsize/2
+  y=-dsize/2
+  set_screen(tmpbuf)
+  clear(#02040E)
+  R = dsize
+  while(R>0)
+  {
+    t=0
+    while(t<512)
+    {
+      x=R*sin(t)/512
+      y=R*cos(t)/512
+      dot(x,y, 256-R*4)
+      t=t+1
+    }
+    R-1
+  }
+
+  i=0
+  while(i<5)
+  {
+    if(i>0)
+    {
+      tmpbuf = balls[i-1]
+      set_screen(tmpbuf)
+    }
+    balls[i] = new_pixi(size,size,1)
+    tdsize_x = get_pixi_xsize(tmpbuf)
+    tdsize_y = get_pixi_ysize(tmpbuf)
+    x=-tdsize_x/2
+    while(x<tdsize_x/2)
+    {
+      y=-tdsize_y/2
+      while(y<tdsize_y/2)
+      {
+        c = ((x+tdsize_x/2)^(y+tdsize_y/2))*2
+        c1 = get_dot(x,y)
+        c2 = get_dot(x+1,y)
+        c3 = get_dot(x,y+1)
+        c4 = get_dot(x+1,y+1)
+        a  = get_blend(c1,c3,128)
+        b  = get_blend(c2,c4,128)
+        fc = get_blend(a,b,128)
+        set_screen(balls[i])
+        if (fc!=#000000)
+        {dot(x/2,y/2, fc)}
+        set_screen(tmpbuf)
+        y=y+dsize/size
+      }
+      x=x+dsize/size
+    }
+    i+1
+  }
+  set_screen(0)
+ret
+
+reset_minmax:
+czmin = 256*256*256
+czmax = -256*256*256
+ret
+
+
+////////////////////////////////////////////////////////////////////////////
+//scroller
+scroller_init:
+i=0
+scroller = "Welcome to pixilang, the power of pixels!"
+scroller_begin=scroller
+i+1
+scroller = "Special greetings to NightRadio for work on pixi!"
+i+1
+scroller = "This small oldskhoolish intro is invitation to world of pixilang"
+i+1
+scroller = "You can see more information about pixilang at www.warmplace.ru"
+i+1
+scroller = ""
+i+1
+scroller = ""
+i+1
+scroller = ""
+i+1
+scroller_end=scroller
+scroller_x = new_array(scroller_end-scroller_begin)
+scroller_y = new_array(scroller_end-scroller_begin)
+i=0
+scroller_size = scroller_end-scroller_begin
+//rand_seed(894)
+//seed=rand()
+seed=scroller_seed[scroller_seed_index] // ultra magic nuber $)
+scroller_seed_index+1
+if (scroller_seed_index>=get_array_size(scroller_seed))
+{
+  scroller_seed_index=0
+}
+
+rand_seed(seed)
+while(i<scroller_size)
+{
+  //scroller_x[i] = (width+widthd2)*(i+1)
+  scroller_x[i] = 2*width+i*100+rand()/64-rand()/32
+  scroller_y[i] = heightd2-scroller_size*10+10+10*i
+  i+1
+}
+ret
+//////////////

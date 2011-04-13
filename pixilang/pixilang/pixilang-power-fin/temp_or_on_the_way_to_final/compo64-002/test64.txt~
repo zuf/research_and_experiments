@@ -1,0 +1,15 @@
+make_bg_gradient
+main:
+  pixi (background,0,0,0)
+  frame(0)
+go main
+
+make_bg_gradient:
+  y=0
+  while( y < 256 )
+  {
+    line (-widthd2, y, widthd2, y, get_color(y,y,y))
+    y+1
+  }
+  background = clone_pixi(0, 0)
+ret

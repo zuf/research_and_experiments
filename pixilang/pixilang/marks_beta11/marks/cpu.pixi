@@ -1,0 +1,65 @@
+go cpu_bench_end
+
+start_cpu_bench:
+conf_cpu_bench:
+CYCLES_COUNT = 5000 * 100000
+if fast_mode=1 {CYCLES_COUNT = CYCLES_COUNT/10}
+if fast_mode=2 {CYCLES_COUNT = CYCLES_COUNT/100}
+
+
+cpu_bench_init:
+divider = CYCLES_COUNT/100
+do_cpu_bench=1
+time_end = 0
+work_time = 0
+
+// ------------------------------------------------------------
+cpu_bench:
+
+i=1
+n=1
+j=0
+if do_cpu_bench=1
+{
+  time_begin = get_timer (0)
+  while (i<=CYCLES_COUNT)
+  {
+    n+2
+    j-3
+    a=sin(i+i)
+    b=cos(i-n)
+    c=csin(i*n)*j
+    d=ccos(n/(i+1))
+    t = i * n + (49648 * d) + b * (c - c % n) - j*j*j
+    g = t|(a^b&c)*87
+    if (i%divider=0)
+    {
+      clear(BACK_COLOR)
+      p   = i/divider
+      str = "CPU benchmark: $p%"
+      y   = -4*get_string_size(str)
+      print(str, y, 0, #ffffff)
+      frame
+    }
+    i+1
+  }
+
+  do_cpu_bench=0
+
+  time_end = get_timer (0)
+  work_time = time_end-time_begin
+  marks = CYCLES_COUNT/work_time
+  bench_work_times[BENCH_INDEX_CPU] = work_time
+  bench_scores[BENCH_INDEX_CPU] = marks
+}
+else
+{
+  clear(BACK_COLOR)
+  str = "CPU benchmark time: $work_time ms"
+  y   = -4*get_string_size(str)
+  print(str, y, 0, #ffffff)
+  print("marks: $marks", y, -16, #ffffff)
+  frame
+}
+ret
+cpu_bench_end:

@@ -1,0 +1,181 @@
+//
+// Some random Lissajous curves on your screen
+// http://en.wikipedia.org/wiki/Lissajous_curve
+//
+
+// Some settings
+speed=8
+step=0.005
+
+fn round($num)
+{
+  ret(floor($num+0.5))
+}
+
+fn fpart($num)
+{
+  ret($num-floor($num))
+}
+
+fn ipart($num)
+{
+  ret(floor($num))
+}
+
+fn rfpart($num)
+{
+  ret(1.0 - fpart($num))
+}
+
+fn colorize($num)
+{
+  ret( get_color($num*255,0,0) )
+}
+
+
+fn aaline($x1,$y1, $x2,$y2, $color)  
+{
+  //line($x1,$y1, $x2,$y2, $color)  
+
+  dx = $x2 - $x1
+  dy = $y2 - $y1
+  x1=$x1
+  x2=$x2
+  y1=$y1
+  y2=$y2
+  if abs(dx) < abs(dy)
+  {
+    buf=$x1
+    x1=$y1
+    y1=buf
+
+    buf=$x2
+    x2=$y2
+    y2=buf    
+  }  
+  if $x2 < $x1
+  {
+    //swap x1, x2
+    //swap y1, y2
+    buf=$x1
+    x1=$x2
+    x2=buf  
+
+    buf=$y1
+    y1=$y2
+    y2=buf  
+  }
+  
+  gradient = dy / dx
+  // handle first endpoint
+  xend = round(x1)
+  yend = y1 + gradient * (xend - x1)
+  xgap = rfpart(x1 + 0.5)
+  xpxl1 = xend  // this will be used in the main loop
+  ypxl1 = ipart(yend)
+  dot(xpxl1, ypxl1, colorize(rfpart(yend) * xgap))
+  dot(xpxl1, ypxl1 + 1, colorize(fpart(yend) * xgap))
+  intery = yend + gradient // first y-intersection for the main loop
+  // handle second endpoint
+  xend = round (x2)
+  yend = y2 + gradient * (xend - x2)
+  xgap = fpart(x2 + 0.5)
+  xpxl2 = xend  // this will be used in the main loop
+  ypxl2 = ipart (yend)
+  dot(xpxl2, ypxl2, colorize(rfpart (yend) * xgap))
+  dot(xpxl2, ypxl2 + 1, colorize(fpart (yend) * xgap))  
+  // main loop  
+  x=xpxl1 + 1
+  while(x<xpxl2 - 1)
+  {
+    dot(x, ipart (intery), colorize(rfpart (intery)))
+    dot(x, ipart (intery) + 1, colorize(fpart (intery)))
+    intery = intery + gradient
+    x= x+1
+  }
+
+  ///////////////////////////////////////
+  /*if $x2 < $x1 
+  {
+    buf = $x1
+    $x1 = $x2
+    $x1 = buf
+    buf = $y1
+    $y1=$y2
+    $y2=buf
+  }
+  
+   dx = $x2 - $x1
+   dy = $y2 - $y1
+   gradient = dy / dx
+  
+   // обработать первую точку
+   xend = round($x1) 
+   yend = $y1 + gradient * (xend - $x1)
+   xgap = 1 - fpart($x1 + 0.5)
+   xpxl1 = xend  // будет использоваться в основном цикле
+   ypxl1 = ipart(yend)
+   dot(xpxl1, ypxl1, get_color((1 - fpart(yend) * xgap)*255, 0,0))
+   dot(xpxl1, ypxl1 + 1, get_color((fpart(yend) * xgap)*255, 0,0))
+   intery = yend + gradient // первое y-пересечение для основоного цикла
+       
+   // обработать вторую точку
+   xend = round(x2)
+   yend = y2 + gradient * (xend - x2)
+   xgap = fpart(x2 + 0.5)
+   xpxl2 = xend  // будет использоваться в основном цикле
+   ypxl2 = ipart(yend)
+   dot(xpxl2, ypxl2,     get_color((1 - fpart(yend) * xgap)*255, 0,0))
+   dot(xpxl2, ypxl2 + 1, get_color((fpart(yend) * xgap)*255, 0,0) )
+     
+   // основной цикл
+   x=xpxl1 + 1 
+   while(x < xpxl2 - 1)
+   {
+    dot(x, ipart(intery), get_color((1 - fpart(intery))*255, 0,0) )
+    dot(x, ipart(intery) + 1, get_color((fpart(intery))*255, 0,0))
+    intery = intery + gradient
+    x=x+1
+   }*/
+}
+
+// prepare screen
+screen = get_screen()
+xsize = 0.8*get_xsize( screen )/2
+ysize = 0.8*get_ysize( screen )/2
+
+// init random numbers generator
+rand_seed(get_seconds())
+
+// settings for first curve
+r1=5
+r2=4
+
+t=0.0 // init our parameter
+
+// get random light color
+color = get_color(rand()/64,rand()/64,rand()/64) 
+
+while( 3 ) // I mean while pixilang 3 :)
+{   
+  i=0
+  while( i<speed ) // draw some lines in same time
+  {
+    t2 = t+step
+    // draw partial line of our curve
+    //aaline(xsize*cos(r1*t), ysize*sin(r2*t), xsize*cos(r1*t2), ysize*sin(r2*t2), color)  
+    t=t2
+    i=i+1
+  }
+  aaline(0,0, 80*cos(t),80*sin(t), 0)
+  if t > 2*M_PI // init new curve if we get to beginning of out current curve
+  {
+    //clear()
+    t=0
+    color = get_color(rand()/64,rand()/64,rand()/64)
+    r1=r1 + rand()/65536 - rand()/65536
+    r2=r2 + rand()/65536 - rand()/65536
+  }
+  frame(0)
+}
+

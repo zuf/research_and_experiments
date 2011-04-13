@@ -1,0 +1,36 @@
+<NotepadPlus>
+    <UserLang name="pixilang" ext="pixi.txt">
+        <Settings>
+            <Global caseIgnored="no" />
+            <TreatAsSymbol comment="no" commentLine="no" />
+            <Prefix words1="no" words2="no" words3="no" words4="no" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Delimiters">&apos;&quot;0&apos;&quot;0</Keywords>
+            <Keywords name="Folder+">{</Keywords>
+            <Keywords name="Folder-">}</Keywords>
+            <Keywords name="Operators">. ( ) [ ]</Keywords>
+            <Keywords name="Comment">1/* 2*/ 0//</Keywords>
+            <Keywords name="Words1">if else while ret goto go</Keywords>
+            <Keywords name="Words2">dot get_dot fps frame clear print line box fbox triangle pixi_triangle triangles3d sort_triangles save_screen set_screen make_pixi make_ascii_pixi new_pixi load_pixi remove_pixi resize_pixi clone_pixi get_pixi_xsize get_pixi_ysize get_pixi_frames get_pixi_alpha pixi_alpha pixi_transp pixi get_window_xsize get_window_ysize get_color get_red get_green get_blue get_blend transp effector pixel_shader pixi_font get_pixi_font t_reset t_rotate_x t_translate t_scale t_get_matrix t_set_matrix t_mul_matrix t_get_x t_get_y t_get_z new_string get_string_size new_array get_array_size start_timer get_timer get_seconds get_minutes get_hours handle_pen_keys get_pen_x gpx get_pen_y gpy get_pen_region gpr get_pen_key gpk handle_hard_keys get_hard_key ghk video_export_gif video_export_avi pause_video_export resume_video_export stop_video_export video_export_fps video_export_realtime video_export_dither video_export_hq load_music play_music stop_music music_volume get_music_pattern get_music_position send_sound send_sound_to get_sound_status sound_volume fopen fclose fgetc fputc fseek ftell feof set_disk0 set_disk1 set_disk2 set_disk3 set_disk4 set_disk5 set_disk6 set_disk7 set_disk8 set_disk9 file_dialog sin cos csin ccos rand rand_seed stop halt exit noesc</Keywords>
+            <Keywords name="Words3">INCLUDE</Keywords>
+            <Keywords name="Words4"></Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" styleID="11" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="FOLDEROPEN" styleID="12" fgColor="808000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="FOLDERCLOSE" styleID="13" fgColor="808000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="KEYWORD1" styleID="5" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD2" styleID="6" fgColor="000080" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD3" styleID="7" fgColor="804000" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD4" styleID="8" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="COMMENT" styleID="1" fgColor="808080" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="COMMENT LINE" styleID="2" fgColor="808080" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="NUMBER" styleID="4" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="OPERATOR" styleID="10" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="DELIMINER1" styleID="14" fgColor="FF0080" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="DELIMINER2" styleID="15" fgColor="800000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="DELIMINER3" styleID="16" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>

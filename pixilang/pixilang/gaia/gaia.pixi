@@ -1,0 +1,62 @@
+
+gaia = load_pixi("eyes-of-gaia-02.jpg")
+gaia = load_pixi("EyeOfGaia.gif")
+t=1
+rot=0
+start_timer(0)
+
+width = get_pixi_xsize(0)
+height = get_pixi_ysize(0)
+
+rk=1
+rot_saved=0
+angle=rand
+zoom_default=512*3
+s=zoom_default
+s_step=24
+main:
+  transp (64/2)
+  //clear
+
+  t_reset
+  //t_scale (256+sin(t/32),256+sin(t/32),256+sin(t/32))
+
+  t_scale (s,s,256)
+  if (s>zoom_default){s-s_step}
+  else {s=zoom_default}
+
+  if rk
+  {
+    t_rotate_z(t/24, 0, 0)
+  }
+  else
+  {
+    t_rotate_z(angle, 0, 0)
+  }
+  //t_translate (-300*256,200*256,0)
+  //t_scale (64,64,64)
+  pixi (gaia,0,0,1,0)
+
+//  handle_pen_keys({},{dot(gpx, gpy, #ffffff)},{})
+handle_pen_keys({angle=t/24 rk=0},{dot(gpx, gpy, #ffffff)},{rk=1})
+
+handle_hard_keys ({
+
+if ghk
+{
+  s+256
+}
+
+},{})
+
+  t = get_timer( 0 )
+  if t % 16 = 0
+  {rot+1}
+
+  t_reset
+  transp (256)
+  f=fps 
+  fbox(-width/2,-height/2, width, 16, #000000)
+  print("fps: $f time=$t", -width/2,-height/2, #ffffff)
+  frame
+go main

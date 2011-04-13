@@ -1,0 +1,35 @@
+video_export_dither(1)
+video_export_gif( "zuf_rot_label1.gif" )
+
+config:
+scale_level = 4
+ 
+init:
+font_size=8 // STUB: get real font size
+start_timer(0)
+tk=16
+scale_k = 256*scale_level
+ 
+main:
+clear
+ 
+x=0
+y=0
+ 
+t=get_timer(0)%32767
+t_use=t/tk
+ 
+t_reset
+t_scale (scale_k, scale_k, scale_k)
+t_rotate_x (45, x,y,0)
+t_rotate_y (t_use, x,y,0) print("P", x, y ,#ffffff)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("i", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("x", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("i", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("l", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("a", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("n", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size y=y+sin(t_use)/64 print("g", x, y)
+  
+frame(50)
+go main

@@ -1,0 +1,69 @@
+
+config:
+fore_color = #ffaced
+back_color = #765467
+
+x_start=0
+y_start=0
+
+str = new_string(16)
+
+test_pixi = new_pixi (16,16)
+n=0 while(n<16*16)
+{
+  test_pixi[n] = #aaaaaa
+  n+1
+}
+
+clear(#000000)
+main:
+ 
+ a = 'P'*256*256*256+'i'*256*256+'x'*256+'i'
+ str[0]=(a/(256*256*256))&255
+ str[1]=(a/(256*256))&255
+ str[2]=(a/(256))&255
+ str[3]=a&255 
+ a = 'l'*256*256*256+'a'*256*256+'n'*256+'g' 
+ str[4]=(a/(256*256*256))&255
+ str[5]=(a/(256*256))&255
+ str[6]=(a/(256))&255
+ str[7]=a&255
+ print(str, -100, -100, fore_color)
+
+set_screen (test_pixi)
+  y_start=-4
+  x_start=-4
+  a = 'P'*256*256*256+'i'*256*256+'x'*256+'i' encode_32bit  
+  
+  x_start=0+1
+  a = 'l'*256*256*256+'a'*256*256+'n'*256+'g' encode_32bit
+set_screen(0)
+
+  t_reset
+  k=512*2
+  t_scale(k,k,k)
+
+pixi(test_pixi)
+
+frame
+go main
+
+
+// a - arg with 32bit value to encode
+encode_32bit:
+  //shift = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2 // 0x 8000 0000
+  shift = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2 // 0x4000 0000
+  x = x_start+1
+  y = y_start
+  while (shift!=0)
+  {
+    if (a&shift) {dot(x,y, fore_color)}
+    else {dot(x,y, back_color)}
+    
+    x+1 if (x>x_start+3) {y+1 x=x_start}
+    shift=shift/2
+  }
+  shift = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2
+  if (a&shift) {dot(x_start,y_start, fore_color)}
+  else {dot(x_start,y_start, back_color)}
+ret

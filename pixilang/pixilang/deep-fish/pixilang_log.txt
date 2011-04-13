@@ -1,0 +1,42 @@
+
+
+SunDog Engine v1.3
+Aug 13 2008
+
+STARTING...
+
+
+MAIN: device start
+MAIN: screen_xsize = 320
+MAIN: screen_ysize = 240
+MAIN: system palette init
+MAIN: wmanager initialized
+Can't open sound device
+Pixilang: user close...
+Data tree size (bytes): 25088
+Pixilang: window removed...
+SOUND: sound_stream_close()
+SDL_Quit()...
+Removing mutexes...
+Max dynamic memory used: 1130785
+Max storage memory used: 32000
+0 0
+
+
+BYE !
+
+
+Pixilang: user close...
+Data tree size (bytes): 376320
+Pixilang: window removed...
+SOUND: sound_stream_close()
+SDL_Quit()...
+Removing mutexes...
+Max dynamic memory used: 1136314
+Max storage memory used: 32000
+0 0
+
+
+BYE !
+
+

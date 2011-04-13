@@ -1,0 +1,115 @@
+go graphics_bench_end
+
+start_graphics_bench:
+conf_graphics_bench:
+OPERATIONS_COUNT = 1024
+CYCLES_COUNT = 5000
+if fast_mode=1 {CYCLES_COUNT = CYCLES_COUNT/10}
+if fast_mode=2 {CYCLES_COUNT = CYCLES_COUNT/100}
+
+init_graphics_bench:
+rnd1_x = new_array(OPERATIONS_COUNT)
+rnd1_y = new_array(OPERATIONS_COUNT)
+rnd2_x = new_array(OPERATIONS_COUNT)
+rnd2_y = new_array(OPERATIONS_COUNT)
+rnd3_x = new_array(OPERATIONS_COUNT)
+rnd3_y = new_array(OPERATIONS_COUNT)
+rnd4_x = new_array(OPERATIONS_COUNT)
+rnd4_y = new_array(OPERATIONS_COUNT)
+rnd_color1 = new_array(OPERATIONS_COUNT)
+rnd_color2 = new_array(OPERATIONS_COUNT)
+rnd_color3 = new_array(OPERATIONS_COUNT)
+rnd_color4 = new_array(OPERATIONS_COUNT)
+
+i=0 while(i<OPERATIONS_COUNT)
+{
+  rnd1_x[i] = screen_width/2  - rand%screen_width
+  rnd1_y[i] = screen_height/2 - rand%(screen_height)
+  rnd2_x[i] = screen_width/2  - rand%screen_width
+  rnd2_y[i] = screen_height/2 - rand%(screen_height)
+  rnd3_x[i] = screen_width/2  - rand%screen_width
+  rnd3_y[i] = screen_height/2 - rand%(screen_height)
+  rnd4_x[i] = screen_width/2  - rand%screen_width
+  rnd4_y[i] = screen_height/2 - rand%(screen_height)
+
+  rnd_color1[i] = get_color(rand%256,rand%256,rand%256)
+  rnd_color2[i] = get_color(rand%256,rand%256,rand%256)
+  rnd_color3[i] = get_color(rand%256,rand%256,rand%256)
+  rnd_color4[i] = get_color(rand%256,rand%256,rand%256)
+
+  i+1
+}
+
+divider = CYCLES_COUNT/100
+if divider<1 {divider=1}
+do_graphics_bench=1
+time_end = 0
+work_time = 0
+
+
+// ------------------------------------------------------------
+graphics_bench:
+
+iloop=0
+n=0
+rnd_offset=0
+if do_graphics_bench=1
+{
+  time_begin = get_timer (0)
+  //transp(128)
+  while (iloop<CYCLES_COUNT)
+  {
+    clear(BACK_COLOR)
+    // memset
+    rnd_offset+1
+    n=0 while(n<OPERATIONS_COUNT)
+    {
+      i = (n+rnd_offset)%OPERATIONS_COUNT
+      dot(rnd1_x[i], rnd1_y[i], rnd_color1[i])
+      //dot(rnd2_x[i], rnd2_y[i], rnd_color2[i])
+      //dot(rnd3_x[i], rnd3_y[i], rnd_color3[i])
+      //dot(rnd4_x[i], rnd4_y[i], rnd_color4[i])
+      print("pixilang",rnd1_x[i], rnd3_y[i], rnd_color1[i])
+      //print("pixilang",rnd2_x[i], rnd2_y[i], rnd_color2[i])
+      //print("pixilang",rnd3_x[i], rnd1_y[i], rnd_color3[i])
+      line (rnd1_x[i], rnd1_y[i],rnd2_x[i], rnd2_y[i],rnd_color1[i])
+      //line (rnd3_x[i], rnd4_y[i],rnd3_x[i], rnd4_y[i],rnd_color2[i])
+      fbox (rnd1_x[i], rnd1_y[i],rnd2_x[i], rnd2_y[i],rnd_color1[i])
+      box (rnd3_x[i], rnd4_y[i],rnd3_x[i], rnd4_y[i],rnd_color2[i])
+      triangle (rnd1_x[i], rnd1_y[i],rnd2_x[i], rnd2_y[i],rnd3_x[i],rnd3_y[i], rnd_color4[i])
+      //pixi_triangle (x1,y1,tx1,ty1,x2,y2,tx2,ty2,x3,y3,tx3,ty3,image,frame)
+      n+1
+    }
+
+    f = fps
+    p   = iloop/divider
+    str = "Graphics bench: $p% fps: $f"
+    ix = -screen_width/2
+    iy = -screen_height/2
+    fbox (ix, iy, screen_width, 18,#000000)
+    //print(str, 4+ix+1, 4+iy+1, #000000)
+    print(str, 4+ix, 4+iy, #ffffff)
+    frame
+    iloop+1
+  }
+  //transp(256)
+
+  do_graphics_bench=0
+
+  time_end = get_timer (0)
+  work_time = time_end-time_begin
+  marks = (CYCLES_COUNT*OPERATIONS_COUNT*1000)/work_time
+  bench_work_times[BENCH_INDEX_GRAPHICS] = work_time
+  bench_scores[BENCH_INDEX_GRAPHICS] = marks
+}
+else
+{
+  clear(BACK_COLOR)
+  str = "Graphics benchmark time: $work_time ms"
+  y   = -4*get_string_size(str)
+  print(str, y, 0, #ffffff)
+  print("Graphics marks: $marks", y, -16, #ffffff)
+  frame
+}
+ret
+graphics_bench_end:

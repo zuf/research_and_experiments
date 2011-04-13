@@ -1,0 +1,176 @@
+start_timer(0)
+
+FIX_MUL=65536
+FIX_MUL_HALF=FIX_MUL/2
+
+init:
+width = get_window_xsize()
+height = get_window_ysize()
+
+widthd2  = width/2
+heightd2 = height/2
+
+fps_var = fps()
+clear(0)
+print("LOADING...",0,0, #FFFFFF)
+frame
+
+background = 0
+make_bg_gradient
+make_balls
+
+make_3d_sphere
+
+i=0
+i_inc=1
+start_timer(1)
+t1 = get_timer(1)
+////////////////////////////////////////////////////////////////////////////
+main:
+clear(0)
+t = get_timer(0)
+make_bg_gradient
+//pixi (background,0,0,0)
+
+
+if(i>=5*100) {i_inc=-i_inc}
+if(i<=0) {i_inc=-i_inc}
+i+i_inc
+ttt=4
+while (ttt>=0)
+{
+pixi(balls[ttt], 2*cos(t/15-22*ttt)/4, cos(t1/2-20*ttt)/3)
+ttt-1
+}
+//pixi(tmpbuf, -50, -50)
+
+print("Pixilang!", 0, 0, #ffffff)
+
+j=0
+while(j<64)
+{
+  x = sphere_vertexes[j]
+  y = sphere_vertexes[j+1]
+  z = sphere_vertexes[j+2]
+  print("$x $y $z", -heightd2, -heightd2+j*3)
+  if (z!=0)
+  {
+    dot(x,y, #ff0000)
+    print("$x $y $z", -heightd2, -heightd2+j*3, #FF0000)
+  }
+  j+3
+}
+t1+7
+
+/////////////////////////////////////////////////////////
+//print( "fps: $fps_var", -widthd2, -heightd2, #000000 )
+//fps_var = fps
+//print( "fps: $fps_var", -widthd2, -heightd2, #FFFFFF )
+
+frame(16)
+go main
+
+
+////////////////////////////////////////////////////////////////
+make_bg_gradient:
+  y=0
+  while( y < heightd2 )
+  {
+    line (-widthd2, y, widthd2, y, get_color(sin(y),sin(y),sin(y)))
+    y+1
+  }
+  //background = clone_pixi(0, 0)
+ret
+
+///////////////////////////
+make_balls:
+  size = 24
+  dsize=size*2
+
+  balls = new_array(256)
+  tmpbuf = new_pixi (dsize,dsize,1)
+
+  j=0
+  x=-dsize/2
+  y=-dsize/2
+  set_screen(tmpbuf)
+  clear(#000000)
+  R = dsize
+  while(R>0)
+  {
+    t=0
+    while(t<512)
+    {
+      x=R*sin(t)/512
+      y=R*cos(t)/512
+      dot(x,y, 256-R*4)
+      t=t+1
+    }
+    R-1
+  }
+
+  i=0
+  while(i<5)
+  {
+    if(i>0)
+    {
+      tmpbuf = balls[i-1]
+      set_screen(tmpbuf)
+    }
+    balls[i] = new_pixi(size,size,1)
+    tdsize_x = get_pixi_xsize(tmpbuf)
+    tdsize_y = get_pixi_ysize(tmpbuf)
+    x=-tdsize_x/2
+    while(x<tdsize_x/2)
+    {
+      y=-tdsize_y/2
+      while(y<tdsize_y/2)
+      {
+        c = ((x+tdsize_x/2)^(y+tdsize_y/2))*2
+        c1 = get_dot(x,y)
+        c2 = get_dot(x+1,y)
+        c3 = get_dot(x,y+1)
+        c4 = get_dot(x+1,y+1)
+        a  = get_blend(c1,c3,128)
+        b  = get_blend(c2,c4,128)
+        fc = get_blend(a,b,128)
+        set_screen(balls[i])
+        if (fc!=#000000)
+        {dot(x/2,y/2, fc)}
+        set_screen(tmpbuf)
+        y=y+dsize/size
+      }
+      x=x+dsize/size
+    }
+    i+1
+  }
+  set_screen(0)
+ret
+
+///////////////////////
+make_3d_sphere:
+VERTEXES=8
+R=120*FIX_MUL
+sphere_vertexes = new_array(3*VERTEXES*VERTEXES)
+// to -> [0,pi]; tf -> [0,2pi)
+t=0
+j=0
+while(t<512)
+{
+  tf=t
+  to=0
+  while(to<256)
+  {
+  x=(R*((sin(to)*cos(tf))/65536)+FIX_MUL_HALF)
+  y=(R*((sin(to)*cos(tf))/65536)+FIX_MUL_HALF)
+  z=(R*cos(to)+FIX_MUL_HALF)/256
+
+  sphere_vertexes[j]=x
+  sphere_vertexes[j+1]=y
+  sphere_vertexes[j+2]=z
+  t=t+(512/VERTEXES)
+  j+3
+  to=to+256/VERTEXES
+  }
+}
+ret

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+<title>Pixilang syntax highlight for Kate</title>
+<link href="zuf.css" type="text/css" rel="STYLESHEET" />
+</head>
+<body>
+
+<h1>Подсветка синтаксиса Pixilang для <a href="http://www.kate-editor.org/">Kate</a></h1>
+
+<p>
+<a href="http://ru.wikipedia.org/wiki/Pixilang">Pixilang</a> - это такой пиксель-ориентированный язык программирования.
+</p>
+
+<p>
+Вот сегодня набросал файл подсветки синтаксиса для текстового редактора Kate (<a href="http://ru.wikipedia.org/wiki/Kate">wikipedia</a>).
+Может кому сгодится.
+Файл я создал на основе подсветки для C, также заглядывал в другие файлы подсветки и в <a href="http://docs.kde.org/kde3/ru/kdebase/kate/highlight.html">документацию</a>.
+</p>
+<p>
+Чтобы установить файл подсветки нужно скопировать <strong>pixilang.xml</strong> его в <strong>$KDEDIR/share/apps/katepart/syntax</strong>.
+</p>
+
+<p>
+<a href="pixilang.xml.gz">Скачать файл подсветки pixilang.xml.gz</a>
+</p>
+
+<p>
+Скриншоты:
+<p><img src="kate-pixi-syntax-01.png" alt="Kate screenshot"/></p>
+<p><img src="kate-pixi-syntax-02.png" alt="Kate screenshot"/></p>
+<p><img src="kate-pixi-syntax-subprog-01.png" alt="Kate screenshot"/></p>
+<p><img src="kate-pixi-syntax-subprog-02.png" alt="Kate screenshot"/></p>
+<p><img src="kate-pixi-syntax-subprog-03.png" alt="Kate screenshot"/></p>
+<p><img src="kate-pixi-syntax-subprog-04.png" alt="Kate screenshot"/></p>
+</p>
+
+<h2>Примечания</h2>
+<p>
+1. В ходе создания этого файла возникло несколько проблем индентификации сущностей в пикси.
+
+Пример:
+
+<pre>
+INCLUDE "somefile.txt"
+
+// Не зная контекста совершенно невозможно понять zxc это переменная или подпрограмма.
+abc = 123 + zxc
+</pre>
+
+Так получается намного понятнее:
+
+<pre>
+INCLUDE "somefile.txt"
+
+abc = 123 + zxc()
+</pre>
+
+Поэтому не любой вызов подпрограммы подсвечивается. Подсвечивается только вызов со скобками() и одиночная команда вроде:
+<pre>
+zxc
+</pre>
+Хотя zxc может быть и переменной, все же обычно это вызов подпрограммы.
+</p>
+
+<p>
+2. Еще у меня было желание делать сворачиваемыми подпрограммы.
+Типичная подпрограмма:
+<pre>
+sub_prog1:
+// что-то делаем
+ret
+</pre>
+
+Если определить метку &quot;sub_prog1:&quot; в качестве начала блока и комманду &quot;ret&quot; (также блок могут завершить &quot;go&quot; или &quot;goto&quot;) в качетве конца, то в этом примере все работает хорошо.
+но если метки используются не для создания продпрограмм, а сами по себе, то возникает не очень красивая ситуация, как на одном из скриншотов,
+когда закрывается только &quot;вложенная&quot; (или лучше сказать &quot;следующая&quot;) метка, а вышестоящая метка тенется до конца файла.
+Кому не нравится такое поведение можно вообще убрать свертывание для подпрограмм. Для этого необходимо закомментировать строки в файле разметки:
+
+<pre>
+        <!-- BEGIN: Fold subprograms -->
+        &lt;RegExpr attribute=&quot;Label&quot; context=&quot;#stay&quot; String=&quot;[\w_]+:&quot; beginRegion=&quot;Subprog1&quot;   /&gt;
+        &lt;RegExpr attribute=&quot;Keyword&quot; context=&quot;#stay&quot; String=&quot;ret&quot; endRegion=&quot;Subprog1&quot; /&gt;
+        &lt;RegExpr attribute=&quot;Keyword&quot; context=&quot;#stay&quot; String=&quot;(^|\s)+(goto)(^|\s)+&quot; endRegion=&quot;Subprog1&quot; /&gt;
+        &lt;RegExpr attribute=&quot;Keyword&quot; context=&quot;#stay&quot; String=&quot;(^|\s)+(go)($|\s)+&quot; endRegion=&quot;Subprog1&quot; /&gt;
+        <!-- END: Fold subprograms -->
+</pre>
+
+А строку чуть выше, наоборот расскоментировать, чтобы осталась подсветка меток:
+<pre>
+        &lt;!--  Highlight labels UNCOMMENT ONLY IF YOU DON'T WANT USE subprograms folding (see below) --&gt;
+        &lt;!-- &lt;RegExpr attribute=&quot;Label&quot; context=&quot;#stay&quot; String=&quot;[\w_]+:&quot; /&gt; --&gt;
+</pre>
+
+</p>
+
+
+<p>
+3. Можно специальными комментариями задавать сворачиваемые блоки:
+
+<pre>
+//BEGIN initial values
+mouse_is_down=0
+select_forecolor=1
+//END
+</pre>
+
+См. скриншоты.
+</p>
+
+<p>
+А если у кого есть какие пожелания, или кто ошибки найдет - обращайтесь :)
+</p>
+
+
+
+<hr />
+<div class="signature">
+<script type="text/javascript">
+document.write("Последняя правка: "+document.lastModified);
+</script>
+
+Zuf
+</div>
+<a href="../">Back</a>
+</body>
+</html>

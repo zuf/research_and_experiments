@@ -1,0 +1,53 @@
+video_export_dither(1)
+video_export_gif( "zuf_rot_label1.gif" )
+
+config:
+scale_level = 4
+ 
+init:
+font_size=8 // STUB: get real font size
+start_timer(0)
+tk=16
+scale_k = 256*scale_level
+ 
+ print("", x, y ,#ffffff)
+transp(128)
+main:
+clear
+ 
+x=-20
+y=0
+ 
+t=get_timer(0)%32767
+t_use=t/tk
+ 
+t_reset
+t_translate(cos(t_use)*16,0,0)
+t_scale (scale_k, scale_k, scale_k)
+t_rotate_x (45+sin(t_use)/64, x,y,0)
+//t_rotate_y (t_use, x,y,0) print("P", x, y ,#ffffff)
+t_rotate_y (t_use, x,y,0) x+font_size print(" ", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print(" ", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("Ñ", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("ó", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("ï", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("å", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("ð", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print(" ", x, y)
+
+x=-20
+y=16
+t_reset
+t_translate(cos(t_use)*16,0,0)
+t_scale (scale_k, scale_k, scale_k)
+t_rotate_x (45, x,y,0)
+t_rotate_y (t_use, x,y,0) x+font_size print("Ç", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("À", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("É", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("×", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("È", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("Ê", x, y)
+t_rotate_y (t_use, x,y,0) x+font_size print("!", x, y)
+  
+frame(50)
+go main

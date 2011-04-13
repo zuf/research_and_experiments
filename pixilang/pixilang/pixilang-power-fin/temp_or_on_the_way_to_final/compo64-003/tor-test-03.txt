@@ -1,0 +1,962 @@
+stack_size=4096
+stack = new_array(stack_size) // our stack, hope not so small and not so big
+stack_sp=0 // oh, stack pointer
+stack_ax=0 // oh, fuck, use as value to push to stack or return from it!
+
+go init
+
+//////////////////////
+stack_pop:
+stack_sp-1
+if(stack_sp<0)
+{
+  while(2>1)
+  {
+    print("STACK UNDERFLOW!", 0, 0, #ff0000)
+  }
+}
+stack_ax = stack[stack_sp]
+ret
+/////////////////
+stack_push:
+stack[stack_sp]=stack_ax
+print("stack_sp: $stack_sp [stack_ax=$stack_ax]", -400, stack_sp*8, #998877)
+stack_sp+1
+if(stack_sp>stack_size)
+{
+  while(2>1)
+  {
+    print("STACK OVERFLOW!", 0, 0, #ff0000)
+  }
+}
+ret
+//////////////////////
+
+init:
+start_timer(0)
+
+FIX_MUL=65536
+FIX_MUL_HALF=FIX_MUL/2
+
+init:
+width = get_window_xsize()
+height = get_window_ysize()
+
+zbuffer_size=width*height
+zbuffer_min=-256*256*256*127
+zbuffer_max=256*256*256    
+zbuffer = new_array(zbuffer_size)
+
+widthd2  = width/2
+heightd2 = height/2
+
+fps_var = fps()
+clear(0)
+print("LOADING...",0,0, #FFFFFF)
+frame
+
+background = 0
+make_bg_gradient
+make_balls
+
+
+i=0
+i_inc=1
+start_timer(1)
+t1 = get_timer(1)
+t_rot=0
+tmr_z=0
+
+cmin = 256*256*256
+cmax = 0
+
+czmin = 256*256*256
+czmax = -256*256*256
+
+/////
+// fonts
+make_3d_font
+/////
+
+//make_3d_tor_static
+//make_3d_tor
+INCLUDE "torus-big-mdl.txt"
+
+INCLUDE "torus_knot-mdl-3-7_a.txt"
+
+//make_torus_knot
+
+//////////////////
+// prepare simple word
+chars_count=3
+word = new_array(get_array_size(font_3d['A'])*chars_count*4)
+i=0
+u=0
+while(i<chars_count)
+{
+  n=0
+  while(n<get_array_size(font_3d['A'+i]))
+  {
+    fnt=font_3d['A'+i]
+    nz=0
+    while(nz<4)
+    {      
+      word[u]  =fnt[n] +i*256*120 - 120*256
+      word[u+1]=fnt[n+1]
+      word[u+2]=fnt[n+2]+nz*256*4
+      u+3
+      nz+1
+    }    
+    n+3
+  }
+  i+1
+}
+/////////////////
+
+draw_vertexes_prev = knot_vertexes
+draw_vertexes_next = word //font_3d['A'] //bigtorus_vertexes
+draw_vertexes = new_array(get_array_size(bigtorus_vertexes))
+i=0
+while(i<get_array_size(bigtorus_vertexes))
+{
+draw_vertexes[i]=draw_vertexes_prev[i]
+i+1
+}
+draw_vertexes_size = get_array_size(draw_vertexes)
+//draw_vertexes = tor_vertexes
+
+//ptr_array=draw_vertexes
+//sort_ptr_array
+
+frame_vertexes = new_array(get_array_size(draw_vertexes))
+frame_vertexes_size = get_array_size(frame_vertexes)
+
+t_transform=0
+t_transform_inc=1
+////////////////////////////////////////////////////////////////////////////
+main:
+	clear(0)
+	t = get_timer(0)
+	//make_bg_gradient
+	pixi (background,0,0,0)
+  //pixi (font_pixi,0,0,0,65)
+
+	if(i>=5*100) {i_inc=-i_inc}
+	if(i<=0) {i_inc=-i_inc}
+	i+i_inc
+	ttt=4
+	while (ttt>=0)
+	{
+	//pixi(balls[ttt], cos(t/15-ttt*8)/2, sin(t/15-ttt*8)/2)
+	ttt-1
+	}
+	//pixi(tmpbuf, -50, -50)
+
+	//print("Pixilang!", 0, 0, #ffffff)
+
+	/////////////////////////
+
+  // move 4d objects and other
+  
+	j=0
+	tmr_z +1
+	cos_t = cos(t_rot)
+	sin_t = sin(t_rot)
+	center_x=sin(t/15-ttt*8)*50
+	center_y=cos(t/15-ttt*8)*50
+	center_z=cos(t/15-ttt*8)+256+100
+  
+	fnum=0
+	while(fnum<draw_vertexes_size)
+	{
+	  x = (draw_vertexes[fnum]) //+sin(t+j*8) // molecular noise
+	  y = (draw_vertexes[fnum+1])  //+cos(t+j*8) // molecular noise
+	  z = (draw_vertexes[fnum+2])  //+ 20*cos(tmr_z)
+	  //print("$x $y $z", -widthd2, -heightd2+j*8, #777777)
+
+    //t_transform=256
+    if(t_transform<=256)
+    {
+      if(t_transform>=0)
+      {
+        old = draw_vertexes_prev
+        new = draw_vertexes_next
+        cur = draw_vertexes
+        new_size=get_array_size(draw_vertexes_next)
+        
+        cur[fnum]=(old[fnum]*(256-t_transform)+new[(fnum)%new_size]*(t_transform))/256
+        cur[fnum+1]=(old[fnum+1]*(256-t_transform)+new[(fnum+1)%new_size]*(t_transform))/256
+        cur[fnum+2]=(old[fnum+2]*(256-t_transform)+new[(fnum+2)%new_size]*(t_transform))/256    
+      }
+      else
+      {
+        t_transform_inc=-t_transform_inc
+        t_transform=1
+      }
+    }
+    else
+    {
+      t_transform_inc=-t_transform_inc
+      t_transform=255
+    }
+    
+
+	  //xn = ((x*cos_t)-(y*sin_t))
+	  //yn = (x*sin_t)+(y*cos_t)
+	  //zn = z*256
+
+	  // This ok rotate
+	  xn = x*cos_t + z*sin_t + center_x*256
+	  yn = y*256 + center_y*256
+	  zn = (-x*sin_t + z*cos_t)/256 + center_z*256
+
+	  frame_vertexes[fnum+0]=xn
+	  frame_vertexes[fnum+1]=yn
+	  frame_vertexes[fnum+2]=zn
+	  fnum+3
+	}
+  
+  t_transform+t_transform_inc
+    //print("t_transform+1 $t_transform",0,0)
+
+	//sort
+	//ptr_array=frame_vertexes
+	//sort_ptr_array
+
+	//DRAW
+	j=0
+	while(j<frame_vertexes_size)
+	{
+	  xn=frame_vertexes[j+0]
+	  yn=frame_vertexes[j+1]
+	  zn=frame_vertexes[j+2]
+	  
+	  if (zn>0)
+	  {
+      //print ("fr $xn $yn $zn", -200, -500+j*4, #897654)	    
+	    dx=xn/zn
+      dy=yn/zn
+      
+      cz = zn/256
+      if (cz<czmin) {czmin=cz}
+	    if (cz>czmax) {czmax=cz}
+      
+      cv = ((cz-czmin)*255)/(czmax-czmin)
+	    color = get_blend (#57ff48, #333333,cv) //get_color(c,c,c)
+      
+      zbuf_index = (dy+heightd2)*width + (dx+widthd2)
+      if (zbuffer[zbuf_index]>zn)
+      {
+      if (zbuffer[zbuf_index+1]>zn)
+      {
+        zbuf_index_y2 = (dy+heightd2+1)*width + (dx+widthd2)
+        if (zbuffer[zbuf_index_y2]>zn)
+        {
+        if (zbuffer[zbuf_index_y2+1]>zn)
+        {
+          zbuffer[zbuf_index] = zn
+          zbuffer[zbuf_index+1] = zn
+          zbuffer[(dy+heightd2+1)*width + (dx+widthd2)] = zn
+          zbuffer[(dy+heightd2+1)*width + (dx+widthd2)+1] = zn
+    	    dot(dx,dy, color)          
+    	    dot(dx+1,dy, color)
+    	    dot(dx,dy+1, color)
+    	    dot(dx+1,dy+1, color)
+        }
+        }
+      }
+      }      
+	    //pixi(balls[(255-c)/64], dx, dy)
+	  }
+	  j+3
+	}
+  
+  //clear z-buffer
+  iz=0
+  //scr=0
+  while(iz<(zbuffer_size))
+  {
+    //scr[iz]=zbuffer[iz]
+    //Mooohooo cycle optimization...
+    zbuffer[iz]=zbuffer_max
+    zbuffer[iz+1]=zbuffer_max
+    zbuffer[iz+2]=zbuffer_max
+    zbuffer[iz+3]=zbuffer_max
+    zbuffer[iz+4]=zbuffer_max
+    zbuffer[iz+5]=zbuffer_max
+    zbuffer[iz+6]=zbuffer_max
+    zbuffer[iz+7]=zbuffer_max
+    iz+8
+  }
+
+	t1+7
+	t_rot+2
+
+	print("cz: [$cmin - $cmax]", widthd2-120, -heightd2, #aaaaaa)
+
+
+	/////////////////////////////////////////////////////////
+	print( "fps: $fps_var", -widthd2, -heightd2, #000000 )
+	fps_var = fps
+	print( "fps: $fps_var", -widthd2, -heightd2, #666666 )
+
+	frame(20)
+go main
+
+
+////////////////////////////////////////////////////////////////
+//TODO: make pixi work on v1.5
+make_bg_gradient:
+  y=0
+  while( y < heightd2 )
+  {
+    line (-widthd2, y, widthd2, y, get_color(sin(y),sin(y),sin(y)))
+    y+1
+  }
+  background = clone_pixi(0, 0)
+ret
+
+///////////////////////////
+make_balls:
+  size = 24
+  dsize=size*2
+
+  balls = new_array(256)
+  tmpbuf = new_pixi (dsize,dsize,1)
+
+  j=0
+  x=-dsize/2
+  y=-dsize/2
+  set_screen(tmpbuf)
+  clear(#000000)
+  R = dsize
+  while(R>0)
+  {
+    t=0
+    while(t<512)
+    {
+      x=R*sin(t)/512
+      y=R*cos(t)/512
+      dot(x,y, 256-R*4)
+      t=t+1
+    }
+    R-1
+  }
+
+  i=0
+  while(i<5)
+  {
+    if(i>0)
+    {
+      tmpbuf = balls[i-1]
+      set_screen(tmpbuf)
+    }
+    balls[i] = new_pixi(size,size,1)
+    tdsize_x = get_pixi_xsize(tmpbuf)
+    tdsize_y = get_pixi_ysize(tmpbuf)
+    x=-tdsize_x/2
+    while(x<tdsize_x/2)
+    {
+      y=-tdsize_y/2
+      while(y<tdsize_y/2)
+      {
+        c = ((x+tdsize_x/2)^(y+tdsize_y/2))*2
+        c1 = get_dot(x,y)
+        c2 = get_dot(x+1,y)
+        c3 = get_dot(x,y+1)
+        c4 = get_dot(x+1,y+1)
+        a  = get_blend(c1,c3,128)
+        b  = get_blend(c2,c4,128)
+        fc = get_blend(a,b,128)
+        set_screen(balls[i])
+        if (fc!=#000000)
+        {dot(x/2,y/2, fc)}
+        set_screen(tmpbuf)
+        y=y+dsize/size
+      }
+      x=x+dsize/size
+    }
+    i+1
+  }
+  set_screen(0)
+ret
+
+///////////////////////
+make_3d_tor:
+  SEGS1=16// количество сегментов в торе
+  SEGS2=16 // количество подсегментов в каждом сегменте тора
+  VERTEXES=(3*(SEGS1-1))*(3*(SEGS2-1))
+  R1=120
+  R2=20
+  tor_vertexes = new_array(3*VERTEXES)
+  // to -> [0,pi]; tf -> [0,2pi)
+  i=0
+  num=0
+  while(i<SEGS1)
+  {
+    j=0
+    while(j<SEGS2)
+    {
+      //x= ( (R + rc * cos(tf) ) * cos(to) ) / 256
+      //y= ( (R + rc * cos(tf) ) * sin(to) ) / 256
+      //z=rc*sin(tf)
+      a1=(i*512)/SEGS1
+      a2=(j*512)/SEGS2
+      
+      //x = (R1 + R2 * cos(a2)) * cos(a1)
+      //y = (R1 + R2 * cos(a2)) * sin(a1)
+      //z = R2 * sin(a2)
+
+      x = (R1 + R2 * cos(a2)) * cos(a1)
+      y = (R1 + R2 * cos(a2)) * sin(a1)
+      z = R2 * sin(a2)
+          
+      if (tor_vertexes[num]!=0)
+      {
+      	print("WARNING! OVERWRITE! at $num", 0, 0, #ff0000)
+      	n=1
+      	while(n>0)
+      	{
+      	print("WARNING! OVERWRITE! at $num", 0, 0, #ff0000)
+      	frame
+      	}
+      }
+      
+      tor_vertexes[num]=x/256
+      tor_vertexes[num+1]=y/256
+      tor_vertexes[num+2]=z
+      num+3
+      j+1
+    }
+    i+1
+  }
+ret
+
+//////////////////////////////
+sort_ptr_array:
+  size = get_array_size(ptr_array)
+  // ugly sort
+j=0
+  while(j<size)
+  {
+    u=j
+    while(u<size)
+    {
+      if (ptr_array[j+2]<ptr_array[u+2])
+      {
+        tx = ptr_array[j]
+        ty = ptr_array[j+1]
+        tz = ptr_array[j+2]
+  
+        ptr_array[j]   = ptr_array[u]
+        ptr_array[j+1] = ptr_array[u+1]
+        ptr_array[j+2] = ptr_array[u+2]
+  
+        ptr_array[u]   = tx
+        ptr_array[u+1] = ty
+        ptr_array[u+2] = tz
+      }
+      u+3
+    }
+    j+3
+  }
+//
+ret
+
+quicksort:
+//   void quicksort (int m[], int a, int b) // a - начало подмножества, b - конец
+//    {                                     // для первого вызова: a = 0, b = <элементов в массиве> - 1
+ // get params
+ stack_pop
+ b=stack_ax
+ stack_pop
+ a=stack_ax
+ stack_pop
+ m=stack_ax
+ 
+ print ("qs: m=$m a=$a b=$b", a+100, b, #ff0000)
+
+ if (a >= b) {go quicksort_ret}
+ 
+ //c = partition (m, a, b)
+ stack_ax = m
+ stack_push
+ stack_ax = a
+ stack_push
+ stack_ax = b
+ stack_push 
+ partition
+ c=partition_res
+ 
+ //quicksort (m, a, c-1); 
+ stack_ax = m
+ stack_push
+ stack_ax = a
+ stack_push
+ stack_ax = c-1 //b
+ stack_push
+ quicksort
+ 
+ //quicksort (m, c+1, b);
+ stack_ax = m
+ stack_push 
+ stack_ax = c+1 // a
+ stack_push
+ stack_ax = b
+ stack_push
+ quicksort
+
+ quicksort_ret:
+ret
+
+partition:
+//int partition (int m[], int a, int b) 
+ stack_pop
+ b=stack_ax
+ stack_pop
+ a=stack_ax
+ stack_pop
+ m=stack_ax
+
+  print("partition: a=$a, b=$b, m=$m $m1 $m2 $m3", -200, a*10,#00ff00)
+
+  i=a
+  //for (int j = a; j <= b; j++)    // просматриваем с a по b
+  j=a
+  while(j<=b)
+  {
+    print("partition: j=$j", -200, -200+j*10, #00ff00)
+    if (m[j] <= m[b])               // если элемент a[j] не превосходит a[b],
+    {
+      tj = m[j]
+      tb = m[b]
+      print("exchange: $tj <-> $tb", 200, -300+tj*10, #ff4466)
+      t = m[i]                    // меняем местами a[j] и a[a], a[a+1], a[a+2] и так далее...
+      m[i] = m[j]                 // то есть переносим элементы меньшие a[b] в начало,
+      m[j] = t                    // а затем и сам a[b] «сверху»
+      i+1                         // таким образом последний обмен: a[b] и a[i], после чего i++
+    }
+    j+1
+  }
+  partition_res = i-1                        // в индексе i хранится <новая позиция элемента a[b]> + 1    
+ret
+//////////////////////////////
+
+make_3d_font:
+  font_pixi = get_pixi_font
+  font_xsize = get_pixi_xsize(font_pixi)
+  font_ysize = get_pixi_ysize(font_pixi)
+  font_3d = new_array(256)  
+  font_tmp_buf=new_pixi (font_xsize,font_ysize,1)
+  set_screen(font_tmp_buf)
+  make_font_cycle:
+  i=0
+  i='A'
+  while(i<='Z') // до Z
+  { 
+    //font_3d[i] = new_pixi (font_xsize,font_ysize,1) ////new_array(font_xsize*font_ysize*3*4) // 3 значения на вершину и 3 будем в глубь делать
+    font_3d[i] = new_array(font_xsize*font_ysize*3) // 3 значения на вершину и 3 будем в глубь делать
+    fnt = font_3d[i]          
+    //fpixi (image, x, y, pixel_size, pixel_size_correction, frame)
+    set_screen(font_tmp_buf)
+    clear(0)
+    black=get_dot(0,0)
+    fpixi (font_pixi,0,0, 1, 0, i)
+    //print("A",-font_xsize/2,-font_ysize/2,#ffffff)
+   //frame(1000)
+    //go next_char
+    y=-font_ysize/2
+    
+    j=0
+    while(y<(font_ysize/2))
+    {
+      x=-font_xsize/2        
+      while(x<(font_xsize/2))
+      {
+        fnt[j]  =0 //x
+        fnt[j+1]=0 //y
+        fnt[j+2]=0 //z
+        c=get_dot(x,y)
+        if(c!=0)
+        {
+        //set_screen(fnt)
+        //clear(#888888)
+        //dot(x,y,#f56723)
+          fnt[j]  =(x)*256*15 //x
+          fnt[j+1]=(y)*256*15 //y
+          fnt[j+2]=256 //z
+        }
+        set_screen(font_tmp_buf)        
+        j+3
+      x+1        
+      }
+      y+1
+    }
+    next_char:
+    i+1
+  }  
+  //go make_font_cycle
+  
+  set_screen(0)
+    fnt=font_3d['A']
+    //pixi (fnt,-widthd2+50,-heightd2+n*3+50, 1, 0)
+    size = get_array_size(fnt)
+    g1:
+      n=0
+      j=0
+      while(n<size)
+      {
+        x=fnt[n]
+        y=fnt[n+1]
+        z=fnt[n+2]
+        print("$j: $x  $y  $z", -widthd2, -heightd2+n*3)
+        n+3
+        j+1
+      }
+       
+      frame
+    //go g1
+    
+  set_screen(0)  
+ret
+
+
+make_torus_knot:
+//void torus_knot(double p, double q)
+  p=3*81
+  q=7*81
+  vnum=0;
+  fi=0
+  pi=256
+  inc_val = ((2*pi)/256)
+  knot_vertexes = new_array(2000)
+  
+  
+  while(fi<=2*pi)
+  {
+    qfi = q * fi
+    x = (2*256+256*cos( qfi / p) ) * cos(fi)/256
+    y = (2*256+256*cos( qfi / p) ) * sin(fi)/256
+    qfid = qfi / p
+    z = sin( qfid )*256
+    s = sin(qfid)
+    qfid_p = qfid%(2*pi)
+    qfi_p = qfi%(2*pi)
+    print("(q=$q fi=$fi qfi=$qfi qfi_p=$qfi_p qfid=$qfid qfid_p=$qfid_p s=$s p=$p) $x $y $z", -widthd2+2,2-heightd2+vnum*3, #ff7521)
+    
+    dot(x,y, #56ff83)  
+    
+    knot_vertexes[vnum]=x
+    knot_vertexes[vnum]=y
+    knot_vertexes[vnum]=z
+    
+    vnum+3    
+    fi+inc_val
+  }
+  gggg:
+  frame
+  //go gggg
+ret
+
+//////////////////////////
+make_3d_tor_static:
+VERTEXES=192
+torus_vertexes = new_array(3*VERTEXES)
+//Torus
+torus_vertexes[0]=20480       // x
+torus_vertexes[0+1]=0 // y
+torus_vertexes[0+2]=0 // z
+
+torus_vertexes[3]=18980       // x
+torus_vertexes[3+1]=0 // y
+torus_vertexes[3+2]=3620      // z
+
+torus_vertexes[6]=15360       // x
+torus_vertexes[6+1]=0 // y
+torus_vertexes[6+2]=5120      // z
+
+torus_vertexes[9]=11740       // x
+torus_vertexes[9+1]=0 // y
+torus_vertexes[9+2]=3620      // z
+
+torus_vertexes[12]=10240      // x
+torus_vertexes[12+1]=0        // y
+torus_vertexes[12+2]=0        // z
+
+torus_vertexes[15]=11740      // x
+torus_vertexes[15+1]=0        // y
+torus_vertexes[15+2]=-3619    // z
+
+torus_vertexes[18]=15360      // x
+torus_vertexes[18+1]=0        // y
+torus_vertexes[18+2]=-5119    // z
+
+torus_vertexes[21]=18980      // x
+torus_vertexes[21+1]=0        // y
+torus_vertexes[21+2]=-3619    // z
+
+torus_vertexes[24]=14482      // x
+torus_vertexes[24+1]=14482    // y
+torus_vertexes[24+2]=0        // z
+
+torus_vertexes[27]=13421      // x
+torus_vertexes[27+1]=13421    // y
+torus_vertexes[27+2]=3620     // z
+
+torus_vertexes[30]=10861      // x
+torus_vertexes[30+1]=10861    // y
+torus_vertexes[30+2]=5120     // z
+
+torus_vertexes[33]=8301       // x
+torus_vertexes[33+1]=8301     // y
+torus_vertexes[33+2]=3620     // z
+
+torus_vertexes[36]=7241       // x
+torus_vertexes[36+1]=7241     // y
+torus_vertexes[36+2]=0        // z
+
+torus_vertexes[39]=8301       // x
+torus_vertexes[39+1]=8301     // y
+torus_vertexes[39+2]=-3619    // z
+
+torus_vertexes[42]=10861      // x
+torus_vertexes[42+1]=10861    // y
+torus_vertexes[42+2]=-5119    // z
+
+torus_vertexes[45]=13421      // x
+torus_vertexes[45+1]=13421    // y
+torus_vertexes[45+2]=-3619    // z
+
+torus_vertexes[48]=0          // x
+torus_vertexes[48+1]=20480    // y
+torus_vertexes[48+2]=0        // z
+
+torus_vertexes[51]=0          // x
+torus_vertexes[51+1]=18980    // y
+torus_vertexes[51+2]=3620     // z
+
+torus_vertexes[54]=0          // x
+torus_vertexes[54+1]=15360    // y
+torus_vertexes[54+2]=5120     // z
+
+torus_vertexes[57]=0          // x
+torus_vertexes[57+1]=11740    // y
+torus_vertexes[57+2]=3620     // z
+
+torus_vertexes[60]=0          // x
+torus_vertexes[60+1]=10240    // y
+torus_vertexes[60+2]=0        // z
+
+torus_vertexes[63]=0          // x
+torus_vertexes[63+1]=11740    // y
+torus_vertexes[63+2]=-3619    // z
+
+torus_vertexes[66]=0          // x
+torus_vertexes[66+1]=15360    // y
+torus_vertexes[66+2]=-5119    // z
+
+torus_vertexes[69]=0          // x
+torus_vertexes[69+1]=18980    // y
+torus_vertexes[69+2]=-3619    // z
+
+torus_vertexes[72]=-14481     // x
+torus_vertexes[72+1]=14482    // y
+torus_vertexes[72+2]=0        // z
+
+torus_vertexes[75]=-13420     // x
+torus_vertexes[75+1]=13421    // y
+torus_vertexes[75+2]=3620     // z
+
+torus_vertexes[78]=-10860     // x
+torus_vertexes[78+1]=10861    // y
+torus_vertexes[78+2]=5120     // z
+
+torus_vertexes[81]=-8300      // x
+torus_vertexes[81+1]=8301     // y
+torus_vertexes[81+2]=3620     // z
+
+torus_vertexes[84]=-7240      // x
+torus_vertexes[84+1]=7241     // y
+torus_vertexes[84+2]=0        // z
+
+torus_vertexes[87]=-8300      // x
+torus_vertexes[87+1]=8301     // y
+torus_vertexes[87+2]=-3619    // z
+
+torus_vertexes[90]=-10860     // x
+torus_vertexes[90+1]=10861    // y
+torus_vertexes[90+2]=-5119    // z
+
+torus_vertexes[93]=-13420     // x
+torus_vertexes[93+1]=13421    // y
+torus_vertexes[93+2]=-3619    // z
+
+torus_vertexes[96]=-20479     // x
+torus_vertexes[96+1]=0        // y
+torus_vertexes[96+2]=0        // z
+
+torus_vertexes[99]=-18979     // x
+torus_vertexes[99+1]=0        // y
+torus_vertexes[99+2]=3620     // z
+
+torus_vertexes[102]=-15359    // x
+torus_vertexes[102+1]=0       // y
+torus_vertexes[102+2]=5120    // z
+
+torus_vertexes[105]=-11739    // x
+torus_vertexes[105+1]=0       // y
+torus_vertexes[105+2]=3620    // z
+
+torus_vertexes[108]=-10239    // x
+torus_vertexes[108+1]=0       // y
+torus_vertexes[108+2]=0       // z
+
+torus_vertexes[111]=-11739    // x
+torus_vertexes[111+1]=0       // y
+torus_vertexes[111+2]=-3619   // z
+
+torus_vertexes[114]=-15359    // x
+torus_vertexes[114+1]=0       // y
+torus_vertexes[114+2]=-5119   // z
+
+torus_vertexes[117]=-18979    // x
+torus_vertexes[117+1]=0       // y
+torus_vertexes[117+2]=-3619   // z
+
+torus_vertexes[120]=-14481    // x
+torus_vertexes[120+1]=-14481  // y
+torus_vertexes[120+2]=0       // z
+
+torus_vertexes[123]=-13420    // x
+torus_vertexes[123+1]=-13420  // y
+torus_vertexes[123+2]=3620    // z
+
+torus_vertexes[126]=-10860    // x
+torus_vertexes[126+1]=-10860  // y
+torus_vertexes[126+2]=5120    // z
+
+torus_vertexes[129]=-8300     // x
+torus_vertexes[129+1]=-8300   // y
+torus_vertexes[129+2]=3620    // z
+
+torus_vertexes[132]=-7240     // x
+torus_vertexes[132+1]=-7240   // y
+torus_vertexes[132+2]=0       // z
+
+torus_vertexes[135]=-8300     // x
+torus_vertexes[135+1]=-8300   // y
+torus_vertexes[135+2]=-3619   // z
+
+torus_vertexes[138]=-10860    // x
+torus_vertexes[138+1]=-10860  // y
+torus_vertexes[138+2]=-5119   // z
+
+torus_vertexes[141]=-13420    // x
+torus_vertexes[141+1]=-13420  // y
+torus_vertexes[141+2]=-3619   // z
+
+torus_vertexes[144]=0         // x
+torus_vertexes[144+1]=-20479  // y
+torus_vertexes[144+2]=0       // z
+
+torus_vertexes[147]=0         // x
+torus_vertexes[147+1]=-18979  // y
+torus_vertexes[147+2]=3620    // z
+
+torus_vertexes[150]=0         // x
+torus_vertexes[150+1]=-15359  // y
+torus_vertexes[150+2]=5120    // z
+
+torus_vertexes[153]=0         // x
+torus_vertexes[153+1]=-11739  // y
+torus_vertexes[153+2]=3620    // z
+
+torus_vertexes[156]=0         // x
+torus_vertexes[156+1]=-10239  // y
+torus_vertexes[156+2]=0       // z
+
+torus_vertexes[159]=0         // x
+torus_vertexes[159+1]=-11739  // y
+torus_vertexes[159+2]=-3619   // z
+
+torus_vertexes[162]=0         // x
+torus_vertexes[162+1]=-15359  // y
+torus_vertexes[162+2]=-5119   // z
+
+torus_vertexes[165]=0         // x
+torus_vertexes[165+1]=-18979  // y
+torus_vertexes[165+2]=-3619   // z
+
+torus_vertexes[168]=14482     // x
+torus_vertexes[168+1]=-14481  // y
+torus_vertexes[168+2]=0       // z
+
+torus_vertexes[171]=13421     // x
+torus_vertexes[171+1]=-13420  // y
+torus_vertexes[171+2]=3620    // z
+
+torus_vertexes[174]=10861     // x
+torus_vertexes[174+1]=-10860  // y
+torus_vertexes[174+2]=5120    // z
+
+torus_vertexes[177]=8301      // x
+torus_vertexes[177+1]=-8300   // y
+torus_vertexes[177+2]=3620    // z
+
+torus_vertexes[180]=7241      // x
+torus_vertexes[180+1]=-7240   // y
+torus_vertexes[180+2]=0       // z
+
+torus_vertexes[183]=8301      // x
+torus_vertexes[183+1]=-8300   // y
+torus_vertexes[183+2]=-3619   // z
+
+torus_vertexes[186]=10861     // x
+torus_vertexes[186+1]=-10860  // y
+torus_vertexes[186+2]=-5119   // z
+
+torus_vertexes[189]=13421     // x
+torus_vertexes[189+1]=-13420  // y
+torus_vertexes[189+2]=-3619   // z
+//Torus End
+ret
+
+//////////////////////////////////
+make_cube:
+VERTEXES=8*3
+cube_vertexes = new_array(VERTEXES)
+val = 256*16
+n=0
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]= val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]=-val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]=-val
+cube_vertexes[n+2]= val
+n+3
+cube_vertexes[n]=  -val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]= val
+n+3
+cube_vertexes[n]=   val
+cube_vertexes[n+1]= val
+cube_vertexes[n+2]= val
+
+ret
