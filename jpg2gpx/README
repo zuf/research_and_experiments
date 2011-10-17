@@ -1,0 +1,14 @@
+Very simple script that extract GPS info from EXIF-data in jpeg files.
+(I use it with ActionGPS camera)
+
+Usage:
+
+Print GPX data from JPEG files:
+
+  jpg2gpx /path/to/jpegs/*.jpg
+
+Find JPEG files in all directories recursively:
+
+  jpg2gpx /path/to/dir/**/*.jpg
+  jpg2gpx /path/to/dir/**/*.jpg > track.gpx
+
