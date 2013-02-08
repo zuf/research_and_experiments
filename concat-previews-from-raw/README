@@ -1,0 +1,22 @@
+Script use exiv2 to extract full frame preview from raw photos and concatenate it in one file.
+This can help sometime to make previews of time lapse video. Or make fun video from your large photo collection.
+
+Tested with CR2 format only.
+
+General usage: ./concat-previews-from-raws.py <IMG_0001.CR2> [IMG_0002.CR2] ... <output_combined.jpegs>
+
+Save preview from CR2: ./concat-previews-from-raws.py IMG_0001.CR2 preview.jpg
+Output to stdout: ./concat-previews-from-raws.py <IMG_0001.CR2> [IMG_0002.CR2] ... -
+Read from stdin: ./concat-previews-from-raws.py - <output_combined.jpegs>
+Read from stdin and output to stdout: ./concat-previews-from-raws.py - -
+
+Examples: 
+
+
+# Join previews in one file and than make video frome it with ffmpeg
+./concat-previews-from-raws.py ~/photos/*CR2 ~/Desktop/joined-previews.jpegs
+ffmpeg -f image2pipe -r 25 -vcodec mjpeg -i ~/Desktop/joined-previews.jpegs -vf scale=1280:-1 -qmin 2 -qmax 2 -c:v mjpeg ~/Desktop/test.avi
+
+
+# find all CR2 and make avi from it without temp files
+find ~/photos -type f -name '*.CR2' | ./concat-previews-from-raws.py - - | ffmpeg -f image2pipe -r 25 -vcodec mjpeg -i - -vf scale=1920:-1 -qmin 1 -qmax 1 -c:v mjpeg ~/Desktop/test.avi
