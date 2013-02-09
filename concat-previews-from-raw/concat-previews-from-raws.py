@@ -68,8 +68,9 @@ str_count = str(count)
 for file in argv:
   if file == '-':
     for line in sys.stdin:
+      duration = time.time()-start
       l = line.strip()
-      sys.stderr.write('('+str(n)+') '+l+"\n")  
+      sys.stderr.write('('+str(n)+') '+str("%3.2f"%round(n/duration, 2))+' FPS '+l+"\n")  
       sys.stderr.flush()
       write_preview_from_file(l, f)
       n+=1
