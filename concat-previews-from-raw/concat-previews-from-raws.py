@@ -28,6 +28,22 @@ def eta_remains(seconds):
   else:
     return '%(secs)ds' % {"secs":secs}
 
+def get_preview_from_file(file, preview_index=2):
+  try:
+    metadata = GExiv2.Metadata(file)
+    all_props = metadata.get_preview_properties()
+    props = all_props[preview_index]
+    image = metadata.get_preview_image(props)
+    return image.get_data()
+  except (IndexError, RuntimeError) as err:
+    sys.stderr.write('ERROR: Can\'t get preview for '+file+": "+str(err)+"\n")  
+    sys.stderr.flush() 
+
+def write_preview_from_file(raw_file_path, out_io):
+  preview_data = get_preview_from_file(raw_file_path)
+  if preview_data:
+    out_io.write(preview_data)    
+
 # Note, these are equivalent:
 # metadata = GExiv2.Metadata()
 # metadata.open_path(argv[-1])
@@ -35,8 +51,9 @@ script_name = argv.pop(0)
 joined_preview_name = argv.pop(-1)
 
 # truncate output file
-f1 = open(joined_preview_name, 'wb')
-f1.close()
+if joined_preview_name != '-':
+  f1 = open(joined_preview_name, 'wb')
+  f1.close()
 
 start=time.time()
 if joined_preview_name == '-':
@@ -54,20 +71,14 @@ for file in argv:
       l = line.strip()
       sys.stderr.write('('+str(n)+') '+l+"\n")  
       sys.stderr.flush()
-      metadata = GExiv2.Metadata(l)
-      props = metadata.get_preview_properties()[2]
-      image = metadata.get_preview_image(props)
-      f.write(image.get_data())
+      write_preview_from_file(l, f)
       n+=1
   else:
     percent = 100*n/count
     duration = time.time()-start
     eta = (duration/percent)*(100-percent)
     sys.stderr.write(str("%3.2f"%round(percent, 2))+'% ('+str(n)+'/'+str_count+') '+eta_remains(eta)+' remains '+file+"\n")  
-    metadata = GExiv2.Metadata(file)
-    props = metadata.get_preview_properties()[2]
-    image = metadata.get_preview_image(props)
-    f.write(image.get_data())
+    write_preview_from_file(file, f)
     n+=1
     sys.stderr.flush()
 f.flush()
