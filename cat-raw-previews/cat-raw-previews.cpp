@@ -4,49 +4,41 @@
 #include <unistd.h>
 #include <libraw/libraw.h>
 
-// Cоздадим обработчик изображений
 LibRaw iProcessor;
 
 int send_raw_preview_to_stdout(char *file)
 {             
-        // Открыть файл и считать метаданные
-        int result;
-        result = iProcessor.open_file(file);
-        if (LIBRAW_SUCCESS!=result)
-        {
-          fprintf(stderr, "Can't open file %s. Error: %s\n", file, iProcessor.strerror(result));
-          return -1;
-        }       
+  int result;
+  result = iProcessor.open_file(file);
+  if (LIBRAW_SUCCESS!=result)
+  {
+    fprintf(stderr, "Can't open file %s. Error: %s\n", file, iProcessor.strerror(result));
+    return -1;
+  }       
 
-        // Метаданные доступны в полях данных класса
-        //printf("Image size: %d x %d\n",iProcessor.imgdata.sizes.width,iProcessor.imgdata.sizes.height);
+  //iProcessor.imgdata.params.half_size = 1;
+  result = iProcessor.unpack_thumb();
+  if (LIBRAW_SUCCESS!=result)
+  {
+    fprintf(stderr, "Can't unpack thumbnail for file %s. Error: %s\n", file, iProcessor.strerror(result));
+    return -2;
+  }
 
-        // Распакуем изображение
-        //iProcessor.imgdata.params.half_size = 1;
-        result = iProcessor.unpack_thumb();
-        if (LIBRAW_SUCCESS!=result)
-        {
-          fprintf(stderr, "Can't unpack thumbnail for file %s. Error: %s\n", file, iProcessor.strerror(result));
-          return -2;
-        }
-        
-        if (iProcessor.imgdata.thumbnail.tformat==LIBRAW_THUMBNAIL_JPEG)
-        {
-          //printf("Thumbnail format: JPEG [%dx%d] length: %d\n", iProcessor.imgdata.thumbnail.twidth, iProcessor.imgdata.thumbnail.theight,  iProcessor.imgdata.thumbnail.tlength);
-          
-          //int image_width = iProcessor.imgdata.thumbnail.twidth;
-          //int image_height = iProcessor.imgdata.thumbnail.theight;
-                    
-          fwrite(iProcessor.imgdata.thumbnail.thumb, sizeof(char), iProcessor.imgdata.thumbnail.tlength, stdout);
-        }
-        else if (iProcessor.imgdata.thumbnail.tformat==LIBRAW_THUMBNAIL_BITMAP)
-          fprintf(stderr, "Thumbnail format not supported: BITMAP [%dx%d]\n", iProcessor.imgdata.thumbnail.twidth, iProcessor.imgdata.thumbnail.theight);          
-        else
-          fprintf(stderr, "Thumbnail format: unknown or unsupported\n");
-                      
-        // Освободим процессор для работы со следующим изображением
-        iProcessor.recycle();
-        return 0;
+  if (iProcessor.imgdata.thumbnail.tformat==LIBRAW_THUMBNAIL_JPEG)
+  {                    
+    fwrite(iProcessor.imgdata.thumbnail.thumb, sizeof(char), iProcessor.imgdata.thumbnail.tlength, stdout);
+  }
+  else if (iProcessor.imgdata.thumbnail.tformat==LIBRAW_THUMBNAIL_BITMAP)
+  {
+    fprintf(stderr, "Thumbnail format not supported: BITMAP [%dx%d]\n", iProcessor.imgdata.thumbnail.twidth, iProcessor.imgdata.thumbnail.theight);          
+  }
+  else
+  {
+    fprintf(stderr, "Thumbnail format: unknown or unsupported\n");
+  }
+                
+  iProcessor.recycle();
+  return 0;
 }
 
 struct Options {
@@ -61,7 +53,8 @@ int init_options (int argc, char **argv)
   options.silend_mode = true;
   options.use_every_n_file=0;
   
- const char *help = "Usage: cat-raw-previews [KEYS]\n"
+  const char *help = 
+            "Usage: cat-raw-previews [KEYS]\n"
             "Reads raw photo files list from stdin and output preview images (JPEG) from that files to stdout.\n\n"            
             "Keys:\n"
             "  -h\tshow this help and exit\n"
