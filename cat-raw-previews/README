@@ -13,6 +13,6 @@ find -iname '*CR2' | ./cat-raw-previews | mplayer - -nosound -fps 25 -demuxer la
 # Save preview from CR2:
 echo IMG_0001.CR2 | ./cat-raw-previews > preview.jpg
 
-# find all CR2 and make avi from it (with ffmpeg) without temp files
+# Find all CR2 and make avi from it (with ffmpeg) without temp files
 find ~/photos -type f -name '*.CR2' | ./cat-raw-previews | ffmpeg -f image2pipe -r 25 -vcodec mjpeg -i - -vf scale=1920:-1 -qmin 1 -qmax 1 -c:v mjpeg ~/Desktop/test.avi
 
